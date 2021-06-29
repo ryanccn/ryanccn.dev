@@ -47,6 +47,7 @@ class Page {
             <h1 class="flex space-x-2 items-center">
               <img
                 src="/icons/solid.png"
+                alt=""
                 width="25"
                 height="25"
                 class="w-[25px] h-[25px] rounded-full"
