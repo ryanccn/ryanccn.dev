@@ -1,0 +1,45 @@
+---
+title: What is IIFE?
+date: 2020-11-14
+---
+
+You might have heard of IIFE if you've been dabbling with JavaScript for a little while. You might have used it in a `javascript:` bookmarklet, or maybe you've used a bundler such as [Rollup](https://rollupjs.org/) that exports to IIFE.
+
+So what even _is_ IIFE?
+
+**Immediately Invoked Function Expressions (IIFE)** is a format for JavaScript that runs code inside a container shell of a **function** that runs **immediately** after its expression. The basic format is like this:
+
+```jsx
+(() => {
+  'use strict';
+  // Your wonderful JavaScript code inside
+})();
+```
+
+But why do you need the wrapper of a function? Can't you just put the code just _as is_ inside?
+
+## Bookmarklets
+
+**Bookmarklets** are little snippets of JavaScript code that you can put in your bookmarks bar with a `javascript:` prefix before it so that it can run normally. It;s a wonderful little feature of browsers.
+
+But... Take an example of setting `document.designMode` to `true`. When you do that in a bookmarklet, it would become problematic because browsers automatically write the returned value **to the document**, which is not ideal since many JavaScript expressions do return values inadvertently.
+
+![Example of using document.designMode](images/designMode.png)
+
+When you wrap all of that in an **IIFE**, however, the return value is contained inside the IIFE, and the returnn value will only be the return value of the IIFE itself, which is empty air.
+
+Nice. But that's not the main reason why people use IIFEs in websites. The most important reason is...
+
+## Closures
+
+A **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+
+In JavaScript, closures are created every time a function is created, at function creation time. Which means that you get a separate closure when you run an IIFE.
+
+That in turn means that the variables that you define inside your code, using `let`, `const`, or `var`, will all be scoped just to the code block of the IIFE. `let` and `const` are **block-scoped**, meaning that they'll be containned in any block (including `function`), and `var` is **function- or global-scoped**, which here means that it will be contained innside the IIFE, which is a function. This can extremely useful for browser ennviroments, in which you might wannt scripts to run independently without interefering with each other.
+
+## Conclusion
+
+Please use **IIFEs** whenn you want to contain variables into a script (e.g. a browser context, runninng lots of `<script>`s on a single page or omit the return value in order to prevent annoying browser behavior.
+
+That's all for this article - thanks for reading!

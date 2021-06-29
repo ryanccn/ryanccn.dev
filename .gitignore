@@ -1,0 +1,8 @@
+node_modules/
+
+_site/
+.cache/
+pages.json
+
+**/.DS_Store
+**/.localized

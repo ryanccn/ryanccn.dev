@@ -1,0 +1,98 @@
+---
+title: A Complete Guide to Rewrites on the Web
+date: 2020-11-26
+---
+
+In this article, you’re going to get an understanding of what rewrites are (spoiler alert: they’re not a part of the HTTP spec like redirects are), and tons of ways you could make them in your web application.
+
+## Concept
+
+**Rewrites** are when you query a server for URL #1, but then the server decides to **fetch URL #2**, either on another domain or on the same domain, and then **serves you the response as-is from URL #2**. It is **not** an HTTP spec by itself, unlike redirects which use the `Location` header and response status codes `301` and `302` to identify one. Rewrites are a way of doing things on the server, not a spec.
+
+## Usage
+
+Rewrites are useful on several occasions:
+
+### Transitioning for legacy content
+
+Sometimes you are **transitioning** a website or web app from an old stack to a new stack, for instance, the old site being `blahdyblah.com` and the new site being `blahdyblah.dev`. And we want to **gradually** transition the stack, not just completely update the site all at once. This will create a **smoother experience** for users, and also make the transition team's life easier.
+
+With rewrites, you can **rewrite some routes on the new site to the legacy server**, because the URL wouldn't change but the content being served is still from the legacy stack. That way, you can have a **gradual** transition through rewrites and gradually replace these rewrites with **actual new content** until the full transition is complete!
+
+### Single-page applications
+
+Single-page applications only have a single entry point, `index.html`, so when users navigate to another route on the server directly through the address bar the server must return `index.html` rather than a 404 page because **that is what users expect**. If you use History API-based routing such as in [Vue Router](https://router.vuejs.org/), users expect to type the URL in again and get the page they were on. That is why you need **rewrites** to serve `index.html` on all routes and not do a redirect, which would change the URL.
+
+### Defeating CORS
+
+**Cross-origin resource sharing** is a system that allows JavaScript running on one domain to fetch data from an endpoint from another domain. For instance, a script running on `github.com` could fetch data from `api.github.com` and display it. However, when an API **does not support CORS**, it would be a pain to fetch data from that API on the client-side.
+
+Rewrites can solve that problem! If you use rewrites to **rewrite a directory on the same domain**, for instance, `/_github/`, to the **actual external domain**, `api.github.com`, what you could end up with is that you only have to query the data on the **same origin**, which is enabled on every single domain on Earth, and **the server** will handle querying the external domain, which will not be subject to CORS rules. The result will obviously be the same, since you just return the response **as-is**.
+
+### Development API Proxying
+
+Sometimes you might want to access an API on the production domain or a staging domain while you are in **local development**. Of course, when you actually push the code, there wouldn’t any problems since the fetch requests are same-origin. However, when the web app is running on **`localhost`**, obviously this has become **cross-origin**. To mitigate this problem, we can use rewriting to rewrite **a route on `localhost` to the production / staging / test API** so that even though when we push to production the code will work nicely with same-origin requests, **local development will work seamlessly** as well because it has also been **made same-origin by rewrites**. For instance, [Vite](https://github.com/vitejs/vite#dev-server-proxy) has this sort of **dev server proxy** in place through their development server, Koa, and [Snowpack](https://www.snowpack.dev/#dev-request-proxy) & [Parcel v2](https://v2.parceljs.org/features/api-proxy/) also support this feature.
+
+## Implementations
+
+### Netlify
+
+When you assign an HTTP status code of `200` to a **redirect rule** on Netlify, it becomes a **rewrite**. This means that the URL in the visitor's address bar remains the same, while **Netlify's servers fetch the new location behind the scenes**.
+
+The examples in this article use the `_redirects` file syntax, but all of these options are available in the Netlify configuration file syntax as well. :smile:
+
+If you're developing a single page app and want **history pushstate** to work so you get **clean URLs**, you'll want to enable the following rewrite rule:
+
+```
+/*    /index.html   200
+```
+
+This will effectively **serve the `index.html`** instead of giving a 404 **no matter what URL the browser requests**!
+
+### Vercel
+
+In your `vercel.json`, you can **define a `rewrites` key** which will enable Vercel to rewrite some routes on the CDN.
+
+**Limits:**
+
+- A maximum of **1,024** rewrites in the array.
+- A maximum of string length of **4,096** for the source and destination values.
+
+**Rewrite object definition:**
+
+- `source`: A **pattern** that matches each incoming pathname (excluding querystring).
+- `destination:` An **absolute pathname** to an **existing resource or an external URL**.
+
+This example configures custom rewrites that map to static files, Serverless Functions, automatic query string matching, and a wildcard proxy.
+
+```json
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about-our-company.html" },
+    { "source": "/resize/:width/:height", "destination": "/api/sharp" },
+    { "source": "/user/:id", "destination": "/api/user" },
+    {
+      "source": "/proxy/:match*",
+      "destination": "<https://example.com/:match*>"
+    }
+  ]
+}
+```
+
+### Cloudflare Workers
+
+In Cloudflare Workers, you can use the the in-built `fetch` API, which works directly identical to the browser `fetch` API, to just return the `Response` object provided by the `fetch` to the client using `respondWith`. Here's a demo:
+
+```tsx
+const returnURL = '<https://ryanccn.dev/>';
+
+addEventListener('fetch', (event) => {
+  return event.respondWith(fetch(`${returnURL}`));
+});
+```
+
+## Conclusion
+
+**Rewrites** are when you query a server for URL #1, but then the server decides to **fetch URL #2**, either on another domain or on the same domain, and then **serves you the response as-is from URL #2**. This can be useful for single page apps, proxying to other services, or transitioning for legacy content. And we have introduced in the **"Implementations"** section how you can implement rewrites in three distinct platforms that lots of people use: **Netlify**, **Vercel**, and **Cloudflare Workers**.
+
+Thanks for reading! :)
