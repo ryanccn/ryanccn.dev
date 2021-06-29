@@ -1,7 +1,7 @@
 const Image = require('@11ty/eleventy-img');
 const lqip = require('./lqip');
-const imageSize = require('image-size');
 
+const imageSize = require('image-size');
 const { JSDOM } = require('jsdom');
 
 module.exports = async (content, outputPath) => {

@@ -44,7 +44,16 @@ class Page {
           <header
             class="flex flex-col space-y-3 border-solid border-b-[1.25px] border-gray-300 pb-4 mb-4 md:border-none md:flex-none md:mb-8 md:pb-0"
           >
-            <h1 class="text-lg font-bold">Ryan Cao</h1>
+            <h1 class="flex space-x-2 items-center">
+              <img
+                src="/icons/solid.png"
+                width="25"
+                height="25"
+                class="w-[25px] h-[25px] rounded-full"
+                data-image-no-process="1"
+              />
+              <span class="text-lg font-bold">Ryan Cao</span>
+            </h1>
             <ul class="flex flex-col space-y-1">
               ${data.navLinks
                 .map(
