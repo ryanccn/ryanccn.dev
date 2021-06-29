@@ -16,9 +16,8 @@ class Page {
             content="width=device-width, initial-scale=1.0"
           />
           <title>${data.title}</title>
-          <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
-          <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-          <link rel="manifest" href="/manifest.webmanifest" />
+          <link rel="icon" href="/icons/transparent.png" />
+          <link rel="apple-touch-icon" href="/icons/solid.png" />
           <meta name="title" content="${data.title}" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="${data.title}" />

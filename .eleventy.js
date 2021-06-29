@@ -7,6 +7,10 @@ const inProduction = process.env.NODE_ENV === 'production';
 const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(require('@11tyrocks/eleventy-plugin-social-images'));
 
+  eleventyConfig.addPassthroughCopy({
+    './images/icons/*.png': 'icons',
+  });
+
   eleventyConfig.addTransform('images', imageTransform);
 
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
