@@ -36,7 +36,7 @@ class Page {
             ? html`<link rel="stylesheet" href="/assets/prism.css" />`
             : ''}
 
-          <script defer src="/assets/lqip.js"></script>
+          <script defer src="/assets/main.js"></script>
           ${data.inProduction
             ? html`<script
                 defer
@@ -79,6 +79,7 @@ class Page {
                 class="block text-blue-400 hover:text-blue-300"
                 target="_blank"
                 rel="noreferrer noopener"
+                id="twitter-social-link"
               >
                 ${twitter}
               </a>
@@ -87,6 +88,7 @@ class Page {
                 class="block text-black hover:text-gray-700"
                 target="_blank"
                 rel="noreferrer noopener"
+                id="github-social-link"
               >
                 ${github}
               </a>
