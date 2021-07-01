@@ -17,8 +17,11 @@ class Page {
             content="width=device-width, initial-scale=1.0"
           />
           <title>${data.title}</title>
+
           <link rel="icon" href="/icons/transparent.png" />
           <link rel="apple-touch-icon" href="/icons/solid.png" />
+          <meta name="theme-color" content="#5706e0" />
+
           <meta name="title" content="${data.title}" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="${data.title}" />
@@ -27,10 +30,12 @@ class Page {
           <meta name="twitter:title" content="${data.title}" />
           <meta property="og:image" content="${socialImg}" />
           <meta name="twitter:image" content="${socialImg}" />
+
           <link rel="stylesheet" href="/assets/tailwind.css" />
           ${data.includePrismCSS
             ? html`<link rel="stylesheet" href="/assets/prism.css" />`
             : ''}
+
           <script defer src="/assets/lqip.js"></script>
           ${data.inProduction
             ? html`<script
