@@ -1,4 +1,5 @@
 const slugify = require('../_11ty/slugify');
+const { twitter, github } = require('../_11ty/icons');
 
 const html = String.raw;
 
@@ -66,6 +67,24 @@ class Page {
                   </li>`
                 )
                 .join('\n')}
+            </ul>
+            <ul class="flex space-x-2">
+              <a
+                href="https://twitter.com/RyanCaoDev"
+                class="block text-blue-400 hover:text-blue-300"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                ${twitter}
+              </a>
+              <a
+                href="https://github.com/ryanccn"
+                class="block text-black hover:text-gray-700"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                ${github}
+              </a>
             </ul>
             <p
               class="text-sm text-gray-200 hover:text-gray-300 transition-colors cursor-default hidden md:block"
