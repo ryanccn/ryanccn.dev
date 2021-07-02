@@ -1,5 +1,5 @@
-const slugify = require('../_11ty/slugify');
-const { twitter, github } = require('../_11ty/icons');
+const slugify = require('../../utils/slugify');
+const { twitter, github } = require('../../utils/icons');
 
 const html = String.raw;
 

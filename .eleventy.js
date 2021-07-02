@@ -1,4 +1,4 @@
-const imageTransform = require('./_11ty/imageTransform');
+const imageTransform = require('./utils/imageTransform');
 const htmlmin = require('html-minifier');
 
 const inProduction = process.env.NODE_ENV === 'production';
@@ -34,10 +34,10 @@ const config = (eleventyConfig) => {
 
   return {
     dir: {
-      input: 'pages',
-      includes: '../_includes',
-      layouts: '../_layouts',
-      data: '../_data',
+      input: 'src',
+      includes: '_includes',
+      layouts: '_layouts',
+      data: '_data',
     },
   };
 };

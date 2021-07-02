@@ -1,4 +1,4 @@
-const slugify = require('../_11ty/slugify');
+const slugify = require('../utils/slugify');
 
 class Page {
   data() {

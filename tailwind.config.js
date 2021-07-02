@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./*.11ty.js', './**/*.11ty.js', './_11ty/icons.js'],
+  purge: ['./*.11ty.js', './**/*.11ty.js', './utils/icons.js'],
   darkMode: false,
   theme: {
     extend: {},

@@ -11,7 +11,7 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 
 ## Project
 
-- `_11ty/`: node scripts & utilities related to the build process
+- `utils/`: node scripts & utilities related to the build process
 - `_layouts/`: layouts
 - `_data/`: global data stuff fed to Eleventy
 - `content/`: the blog posts, written in Markdown

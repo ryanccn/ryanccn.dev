@@ -7,7 +7,7 @@ const globby = require('globby');
 const fs = require('fs/promises');
 const path = require('path');
 
-const cache = require('../_11ty/cache');
+const cache = require('../../utils/cache');
 
 const fetchData = async () => {
   const files = await globby(path.join(process.cwd(), 'content') + '/*.md');
