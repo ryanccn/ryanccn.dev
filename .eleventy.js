@@ -25,6 +25,7 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
   eleventyConfig.addWatchTarget('content');
+  eleventyConfig.addWatchTarget('src/assets/*.{js,css}');
   eleventyConfig.ignores.add('README.md');
   eleventyConfig.ignores.add('content');
 

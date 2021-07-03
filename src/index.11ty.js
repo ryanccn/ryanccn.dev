@@ -10,7 +10,7 @@ class Page {
   }
 
   render() {
-    return html`<p>My name is Ryan.</p>`;
+    return html`<p>My name is <span class="highlight">Ryan</span>.</p>`;
   }
 }
 

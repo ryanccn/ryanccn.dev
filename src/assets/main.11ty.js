@@ -15,7 +15,7 @@ class Page {
       format: 'iife',
       platform: 'browser',
       minify: true,
-      bundle: false,
+      bundle: true,
       write: false,
     });
 

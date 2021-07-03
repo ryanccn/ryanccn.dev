@@ -1,3 +1,5 @@
+import { annotate } from 'rough-notation';
+
 const changeThemeColor = (color) => {
   document
     .querySelector('meta[name="theme-color"]')
@@ -27,6 +29,18 @@ document
   .addEventListener('mouseout', () => {
     changeThemeColor('#5706e0');
   });
+
+const hls = document.querySelectorAll('.highlight');
+
+hls.forEach((hlElem) => {
+  const annotation = annotate(hlElem, {
+    type: 'highlight',
+    color: 'rgba(135, 206, 235, 0.5)',
+    animationDuration: 1000,
+  });
+
+  annotation.show();
+});
 
 document.body.addEventListener(
   'load',
