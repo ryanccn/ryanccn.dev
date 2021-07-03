@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+const logSize = require('../../../utils/logSize');
 
 const original = `
 @tailwind base;
@@ -25,6 +26,8 @@ class Page {
       from: undefined,
       to: undefined,
     });
+
+    logSize(css.content.length, 'tailwind.css');
 
     return css.content;
   }

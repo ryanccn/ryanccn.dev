@@ -1,4 +1,5 @@
 const esbuild = require('esbuild');
+const logSize = require('../../../utils/logSize');
 const { join } = require('path');
 
 class Page {
@@ -19,7 +20,11 @@ class Page {
       write: false,
     });
 
-    return build.outputFiles[0].text;
+    const output = build.outputFiles[0].text;
+
+    logSize(output.length, 'main.js');
+
+    return output;
   }
 }
 

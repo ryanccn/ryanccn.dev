@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+const logSize = require('../../../utils/logSize');
 
 const fs = require('fs/promises');
 const path = require('path');
@@ -21,6 +22,8 @@ class Page {
       from: undefined,
       to: undefined,
     });
+
+    logSize(css.content.length, 'prism.css');
 
     return css.content;
   }
