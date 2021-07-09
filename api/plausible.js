@@ -1,8 +1,10 @@
+import got from 'got';
+
 const URL = 'https://plausible.io/js/plausible.js';
 
 module.exports = async (_, res) => {
-  const origin = await fetch(URL);
-  const script = (await origin.text())
+  const origin = await got(URL);
+  const script = origin.body
     .replace(/window.plausible/g, 'window.syCCxbd3Ch')
     .replace(/plausible_ignore/g, 'plausibleIgnore');
 

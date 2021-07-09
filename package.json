@@ -26,6 +26,7 @@
     "datauri": "^3.0.0",
     "esbuild": "^0.12.14",
     "globby": "^11.0.4",
+    "got": "^11.8.2",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
