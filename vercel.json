@@ -33,5 +33,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/plausible/script.js",
+      "destination": "/api/plausible"
+    },
+    {
+      "source": "/plausible/event",
+      "destination": "https://plausible.io/api/event"
+    }
   ]
 }

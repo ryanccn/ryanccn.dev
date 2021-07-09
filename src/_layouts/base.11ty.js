@@ -40,7 +40,9 @@ class Page {
           ${data.inProduction
             ? html`<script
                 defer
-                src="https://plausible.ryanccn.dev/ryanccn.dev.js"
+                src="/plausible/script.js"
+                data-domain="ryanccn.dev"
+                data-api="/plausible/event"
               ></script>`
             : ''}
         </head>
