@@ -9,7 +9,7 @@ module.exports = async (_, res) => {
     .replace(/plausible_ignore/g, 'plausibleIgnore');
 
   res.setHeader('content-type', 'text/javascript');
-  res.setHeader('cache-control', 's-maxage=60');
+  res.setHeader('cache-control', 's-maxage=3600');
 
   res.send(script);
 };
