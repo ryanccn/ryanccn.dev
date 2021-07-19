@@ -1,11 +1,10 @@
-const slugify = require('../../utils/slugify');
 const { twitter, github } = require('../../utils/icons');
 
 const html = String.raw;
 
 class Page {
   render(data) {
-    const socialImg = `${data.domain}/previews/${slugify(data.title)}.png`;
+    const socialImg = `${data.domain}/previews/${this.slug(data.title)}.png`;
 
     return html`
       <!DOCTYPE html>
@@ -76,24 +75,26 @@ class Page {
                 .join('\n')}
             </ul>
             <ul class="flex space-x-2">
-              <a
-                href="https://twitter.com/RyanCaoDev"
-                class="block text-blue-400 hover:text-blue-300"
-                target="_blank"
-                rel="noreferrer noopener"
-                id="twitter-social-link"
-              >
-                ${twitter}
-              </a>
-              <a
-                href="https://github.com/ryanccn"
-                class="block text-black hover:text-gray-700"
-                target="_blank"
-                rel="noreferrer noopener"
-                id="github-social-link"
-              >
-                ${github}
-              </a>
+              <li class="block text-blue-400 hover:text-blue-300">
+                <a
+                  href="https://twitter.com/RyanCaoDev"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  id="twitter-social-link"
+                >
+                  ${twitter}
+                </a>
+              </li>
+              <li class="block text-black hover:text-gray-700">
+                <a
+                  href="https://github.com/ryanccn"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  id="github-social-link"
+                >
+                  ${github}
+                </a>
+              </li>
             </ul>
             <p
               class="text-sm text-gray-200 hover:text-gray-300 transition-colors cursor-default hidden md:block"

@@ -1,5 +1,3 @@
-const slugify = require('../utils/slugify');
-
 class Page {
   data() {
     return {
@@ -17,11 +15,11 @@ class Page {
         )
         .map((page) => ({
           title: this.addNbsp(page.data.title),
-          imgName: slugify(page.data.title),
+          imgName: this.slug(page.data.title),
         })),
       ...data.posts.map((post) => ({
         title: this.addNbsp(post.metadata.title),
-        imgName: slugify(post.metadata.title),
+        imgName: this.slug(post.metadata.title),
       })),
     ]);
   }
