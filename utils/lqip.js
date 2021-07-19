@@ -6,6 +6,8 @@ const sizeOf = promisify(require('image-size'));
 const DatauriParser = require('datauri/parser');
 const parser = new DatauriParser();
 
+const html = String.raw;
+
 const PIXEL_TARGET = 60;
 
 const ESCAPE_TABLE = {
@@ -44,6 +46,7 @@ function getBitmapDimensions_(imgWidth, imgHeight) {
   // Aims for a bitmap of ~P pixels (w * h = ~P).
   // Gets the ratio of the width to the height. (r = w0 / h0 = w / h)
   const ratioWH = imgWidth / imgHeight;
+
   // Express the width in terms of height by multiply the ratio by the
   // height. (h * r = (w / h) * h)
   // Plug this representation of the width into the original equation.
@@ -51,32 +54,40 @@ function getBitmapDimensions_(imgWidth, imgHeight) {
   // Divide the bitmap size by the ratio to get the all expressions using
   // height on one side. (h * h = ~P / r)
   let bitmapHeight = PIXEL_TARGET / ratioWH;
+
   // Take the square root of the height instances to find the singular value
   // for the height. (h = sqrt(~P / r))
   bitmapHeight = Math.sqrt(bitmapHeight);
+
   // Divide the goal total pixel amount by the height to get the width.
   // (w = ~P / h).
   const bitmapWidth = PIXEL_TARGET / bitmapHeight;
+
   return { width: Math.round(bitmapWidth), height: Math.round(bitmapHeight) };
 }
 
-module.exports = async function (src) {
+module.exports = async (src) => {
   // We wrap the blurred image in a SVG to avoid rasterizing the filter on each layout.
   const dataURI = await getDataURI(src);
-  let svg = `<svg xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 ${dataURI.width} ${dataURI.height}">
-                  <filter id="b" color-interpolation-filters="sRGB">
-                    <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
-                    <feComponentTransfer>
-                      <feFuncA type="discrete" tableValues="1 1"></feFuncA>
-                    </feComponentTransfer>
-                  </filter>
-                  <image filter="url(#b)" preserveAspectRatio="none"
-                    height="100%" width="100%"
-                    xlink:href="${dataURI.src}">
-                  </image>
-                </svg>`;
+  let svg = html`<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 ${dataURI.width} ${dataURI.height}"
+  >
+    <filter id="b" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+      </feComponentTransfer>
+    </filter>
+    <image
+      filter="url(#b)"
+      preserveAspectRatio="none"
+      height="100%"
+      width="100%"
+      xlink:href="${dataURI.src}"
+    ></image>
+  </svg>`;
 
   // Optimizes dataURI length by deleting line breaks, and
   // removing unnecessary spaces.

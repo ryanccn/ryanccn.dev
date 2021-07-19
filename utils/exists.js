@@ -1,13 +1,10 @@
 const fs = require('fs/promises');
 
-module.exports = async (path) => {
-  let exists = true;
-
-  try {
-    await fs.stat(path);
-  } catch {
-    exists = false;
-  }
-
-  return exists;
+const exists = async (path) => {
+  return fs
+    .stat(path)
+    .then(() => true)
+    .catch(() => false);
 };
+
+module.exports = exists;

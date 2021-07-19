@@ -1,32 +1,30 @@
-const chalk = require('chalk');
-const exists = require('./exists');
-const fs = require('fs/promises');
+const kleur = require('kleur');
+
+const { pathExists, ensureDir, readJSON, writeJSON } = require('fs-extra');
 const path = require('path');
 
 const inProduction = process.env.NODE_ENV === 'production';
 
 const ensureCacheDir = async () => {
-  if (!(await exists('.cache'))) {
-    await fs.mkdir('.cache');
-  }
+  ensureDir(path.join(process.cwd(), '.cache'));
 };
 
 module.exports = async (fetchData, id) => {
-  ensureCacheDir();
+  await ensureCacheDir();
 
   const cacheFile = path.join(process.cwd(), `.cache/${id}.json`);
 
-  if (!inProduction && (await exists(cacheFile))) {
-    const fileContent = await fs.readFile(cacheFile);
+  if (!inProduction && (await pathExists(cacheFile))) {
+    const fileContent = await readJSON(cacheFile);
 
-    console.log(chalk.yellowBright(`> Using cached version of ${id}`));
+    console.log(kleur.yellow().bold(`[${id}] Using cached data`));
 
-    return JSON.parse(fileContent);
+    return fileContent;
   } else {
     const freshData = await fetchData();
-    await fs.writeFile(cacheFile, JSON.stringify(freshData));
+    await writeJSON(cacheFile, freshData);
 
-    console.log(chalk.blueBright(`> Using fresh data for ${id}`));
+    console.log(kleur.blue().bold(`[${id}] Using fresh data`));
 
     return freshData;
   }

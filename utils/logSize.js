@@ -1,16 +1,16 @@
-const chalk = require('chalk');
+const kleur = require('kleur');
 
 module.exports = (length, name) => {
   const kb = (length / 1000).toFixed(2);
   let sizeStr = `(${kb}KB)`;
 
   if (kb < 15) {
-    sizeStr = chalk.greenBright(sizeStr);
+    sizeStr = kleur.green(sizeStr);
   } else if (kb >= 15 && kb < 25) {
-    sizeStr = chalk.yellowBright(sizeStr);
+    sizeStr = kleur.yellow(sizeStr);
   } else {
-    sizeStr = chalk.redBright(sizeStr);
+    sizeStr = kleur.red(sizeStr);
   }
 
-  console.log(`Creating ${chalk.bold(name)} ${sizeStr}`);
+  console.log(`Creating ${kleur.bold(name)} ${sizeStr}`);
 };
