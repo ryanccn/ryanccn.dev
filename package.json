@@ -8,8 +8,10 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
-    "build:ogimage": "AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer eleventy-social-images --siteName 'ryanccn.dev' --theme minimal",
-    "build": "NODE_ENV=production eleventy && yarn build:ogimage",
+    "social:local": "eleventy-social-images --siteName 'ryanccn.dev' --theme minimal",
+    "social:aws": "AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer eleventy-social-images --siteName 'ryanccn.dev' --theme minimal",
+    "build:local": "NODE_ENV=production eleventy && yarn social:local",
+    "build": "NODE_ENV=production eleventy && yarn social:aws",
     "clean": "rm -rf _site .cache pages.json"
   },
   "dependencies": {
