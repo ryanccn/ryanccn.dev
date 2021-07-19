@@ -7,6 +7,8 @@ const globby = require('globby');
 const fs = require('fs/promises');
 const path = require('path');
 
+const kleur = require('kleur');
+
 const cache = require('../../utils/cache');
 
 const fetchData = async () => {
@@ -14,6 +16,8 @@ const fetchData = async () => {
 
   const posts = await Promise.all(
     files.map(async (item) => {
+      const timeStart = performance.now();
+
       const fileContent = await fs.readFile(item, 'utf8');
       const slug = path.basename(item).replace('.md', '');
       const { data, content: mdContent } = gray(fileContent);
@@ -23,6 +27,20 @@ const fetchData = async () => {
         .use(html)
         .processSync(mdContent)
         .toString();
+
+      const timeEnd = performance.now();
+
+      let timeStr = `${(timeEnd - timeStart).toFixed(2)}ms`;
+
+      if (timeEnd - timeStart > 1000) {
+        timeStr = kleur.yellow(timeStr);
+      } else {
+        timeStr = kleur.green(timeStr);
+      }
+
+      console.log(
+        `[posts] Processing post ${kleur.bold(slug)} took ${timeStr}`
+      );
 
       return {
         metadata: data,

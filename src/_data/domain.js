@@ -1,4 +1,4 @@
 module.exports =
   process.env.NODE_ENV === 'production'
-    ? 'https://ryanccn.dev' // TODO: change when pushing to `ryanccn.dev` domain!!!
+    ? 'https://ryanccn.dev'
     : 'http://localhost:8080';
