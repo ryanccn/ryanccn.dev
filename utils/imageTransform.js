@@ -1,13 +1,12 @@
 const Image = require('@11ty/eleventy-img');
 const lqip = require('./lqip');
-
 const imageSize = require('image-size');
-const { JSDOM } = require('jsdom');
+
+const { parseHTML } = require('linkedom');
 
 module.exports = async (content, outputPath) => {
   if (outputPath.endsWith('.html')) {
-    const dom = new JSDOM(content);
-    const document = dom.window.document;
+    const { document } = parseHTML(content);
 
     const imgElems = [...document.querySelectorAll('img')].filter(
       (i) => i.getAttribute('data-image-no-process') !== '1'
@@ -68,7 +67,7 @@ module.exports = async (content, outputPath) => {
       imgElem.replaceWith(picElem);
     }
 
-    return dom.serialize();
+    return document.toString();
   } else {
     return content;
   }
