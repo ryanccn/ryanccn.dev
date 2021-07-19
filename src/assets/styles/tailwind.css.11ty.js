@@ -18,11 +18,13 @@ class Page {
   }
 
   async render() {
-    const css = await postcss([
-      require('tailwindcss'),
-      require('autoprefixer'),
-      require('cssnano'),
-    ]).process(original, {
+    let plugins = [require('tailwindcss'), require('autoprefixer')];
+
+    if (process.env.NODE_ENV === 'production') {
+      plugins = [...plugins, require('cssnano')];
+    }
+
+    const css = await postcss(plugins).process(original, {
       from: undefined,
       to: undefined,
     });
