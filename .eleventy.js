@@ -33,6 +33,10 @@ const config = (eleventyConfig) => {
     ui: false,
   });
 
+  if (inProduction) {
+    eleventyConfig.setQuietMode(true);
+  }
+
   return {
     dir: {
       input: 'src',
