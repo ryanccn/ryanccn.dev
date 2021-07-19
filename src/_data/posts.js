@@ -8,6 +8,7 @@ const fs = require('fs/promises');
 const path = require('path');
 
 const kleur = require('kleur');
+const now = require('performance-now');
 
 const cache = require('../../utils/cache');
 
@@ -16,7 +17,7 @@ const fetchData = async () => {
 
   const posts = await Promise.all(
     files.map(async (item) => {
-      const timeStart = performance.now();
+      const timeStart = now();
 
       const fileContent = await fs.readFile(item, 'utf8');
       const slug = path.basename(item).replace('.md', '');
@@ -28,7 +29,7 @@ const fetchData = async () => {
         .processSync(mdContent)
         .toString();
 
-      const timeEnd = performance.now();
+      const timeEnd = now();
 
       let timeStr = `${(timeEnd - timeStart).toFixed(2)}ms`;
 

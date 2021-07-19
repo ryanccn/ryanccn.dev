@@ -32,6 +32,7 @@
     "image-size": "^1.0.0",
     "kleur": "^4.1.4",
     "linkedom": "^0.11.0",
+    "performance-now": "^2.1.0",
     "postcss": "^8.3.5",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
