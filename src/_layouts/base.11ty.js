@@ -1,6 +1,6 @@
-const { twitter, github } = require('../../utils/icons');
-
 const html = String.raw;
+
+const navLinkClasses = 'text-black hover:text-blue-500 transition-colors';
 
 class Page {
   render(data) {
@@ -45,13 +45,11 @@ class Page {
               ></script>`
             : ''}
         </head>
-        <body
-          class="flex flex-col md:flex-row md:space-x-12 my-36 mx-auto w-10/12"
-        >
+        <body class="flex flex-col mb-20 mx-auto">
           <header
-            class="flex flex-col space-y-3 border-solid border-b-[1.25px] border-gray-300 pb-4 mb-4 md:border-none md:flex-none md:mb-8 md:pb-0"
+            class="flex justify-between mb-16 p-8 bg-white bg-opacity-50 backdrop-blur-lg sticky top-0"
           >
-            <h1 class="flex space-x-2 items-center">
+            <a class="flex space-x-2 items-center ${navLinkClasses}" href="/">
               <img
                 src="/icons/50px.png"
                 alt=""
@@ -60,49 +58,46 @@ class Page {
                 class="w-[25px] h-[25px] rounded-full"
                 data-image-no-process="1"
               />
-              <span class="text-lg font-bold">Ryan Cao</span>
-            </h1>
-            <ul class="flex flex-col space-y-1">
-              ${data.navLinks
+              <span class="text-lg font-bold capitalize">Ryan Cao</span>
+            </a>
+            <ul class="flex space-x-4 items-center">
+              ${data.navLinks.links
                 .map(
                   (link) => html`<li>
-                    <a href="${link.href}" class="font-medium hover:underline">
+                    <a
+                      href="${link.href}"
+                      class="text-lg font-medium ${navLinkClasses}"
+                    >
                       ${link.title}
                     </a>
-                    ${data.page.url === link.href ? html`<span>⇠</span>` : ''}
+                  </li>`
+                )
+                .join('\n')}
+              ${data.navLinks.social
+                .map(
+                  (link) => html`<li
+                    class="block transition-transform transform-gpu scale-100 hover:scale-125"
+                  >
+                    <a
+                      href="${link.href}"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      ${link.icon}
+                    </a>
                   </li>`
                 )
                 .join('\n')}
             </ul>
-            <ul class="flex space-x-2">
-              <li class="block text-blue-400 hover:text-blue-300">
-                <a
-                  href="https://twitter.com/RyanCaoDev"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  id="twitter-social-link"
-                >
-                  ${twitter}
-                </a>
-              </li>
-              <li class="block text-black hover:text-gray-700">
-                <a
-                  href="https://github.com/ryanccn"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  id="github-social-link"
-                >
-                  ${github}
-                </a>
-              </li>
-            </ul>
-            <p
-              class="text-sm text-gray-200 hover:text-gray-300 transition-colors cursor-default hidden md:block"
-            >
+          </header>
+          <main class="mx-auto w-10/12 md:w-8/12 lg:w-7/12">
+            ${data.content}
+          </main>
+          <footer class="text-center mt-16">
+            <p class="text-gray-200 hover:text-gray-300 transition-colors">
               &copy; Ryan Cao 2020-${new Date().getFullYear()}
             </p>
-          </header>
-          <main class="md:flex-1 md:mb-8">${data.content}</main>
+          </footer>
         </body>
       </html>
     `;

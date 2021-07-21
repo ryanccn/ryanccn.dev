@@ -18,7 +18,7 @@ const bodyBackgroundWhite = plugin(({ addBase }) => {
 
 module.exports = {
   mode: 'jit',
-  purge: ['./*.11ty.js', './**/*.11ty.js', './utils/icons.js'],
+  purge: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
   darkMode: false,
   theme: {
     extend: {},
