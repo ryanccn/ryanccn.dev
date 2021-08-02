@@ -13,6 +13,11 @@ class Page {
   async render() {
     const build = await esbuild.build({
       entryPoints: [join(__dirname, 'main.js')],
+      define: {
+        DEV: JSON.stringify(
+          process.env.NODE_ENV || process.env.NODE_ENV !== 'production'
+        ),
+      },
       format: 'iife',
       platform: 'browser',
       minify: true,

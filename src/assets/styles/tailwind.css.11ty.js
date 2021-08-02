@@ -4,6 +4,16 @@ const logSize = require('../../../utils/logSize');
 const original = `
 @tailwind base;
 
+@layer base {
+  body {
+    background-color: #ffffff;
+  }
+
+  mark {
+    background-color: transparent;
+  }
+}
+
 @tailwind components;
 
 @tailwind utilities;
