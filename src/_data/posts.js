@@ -23,11 +23,9 @@ const fetchData = async () => {
       const slug = path.basename(item).replace('.md', '');
       const { data, content: mdContent } = gray(fileContent);
 
-      const htmlContent = remark()
-        .use(prism)
-        .use(html)
-        .processSync(mdContent)
-        .toString();
+      const htmlContent = (
+        await remark().use(prism).use(html).process(mdContent)
+      ).toString();
 
       const timeEnd = now();
 
