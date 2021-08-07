@@ -9,6 +9,13 @@ const customProseStyles = {
     fontWeight: defaultTheme.fontWeight.bold,
   },
 
+  a: {
+    color: defaultTheme.colors.blue[400],
+  },
+  'a:hover': {
+    color: defaultTheme.colors.blue[500],
+  },
+
   'ol, ul': {
     listStyle: 'normal',
   },

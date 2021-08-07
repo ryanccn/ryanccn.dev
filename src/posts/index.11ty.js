@@ -6,7 +6,7 @@ class Page {
       layout: 'base',
       title: 'Posts',
       permalink: '/posts/',
-      tags: [],
+      'override:tags': [],
     };
   }
 
@@ -18,6 +18,7 @@ class Page {
 
       <ol reversed class="flex flex-col space-y-4">
         ${data.collections.posts
+          .sort((a, b) => (a.date > b.date ? -1 : 1))
           .map(
             (i) => html`<li>
               <h2
@@ -25,7 +26,7 @@ class Page {
               >
                 <a href="${i.url}"> ${i.data.title.replace('&', '&amp;')} </a>
               </h2>
-              <p class="text-sm">${new Date(i.date).toDateString()}</p>
+              <p class="text-sm">${i.date.toDateString()}</p>
             </li>`
           )
           .join('\n')}
