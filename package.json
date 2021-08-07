@@ -18,16 +18,15 @@
     "rough-notation": "^0.5.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.0-canary.38",
+    "@11ty/eleventy": "^1.0.0-canary.38",
     "@11ty/eleventy-img": "^0.9.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
     "@11tyrocks/eleventy-plugin-social-images": "^0.2.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.7",
     "datauri": "^3.0.0",
     "esbuild": "^0.12.18",
-    "fs-extra": "^10.0.0",
-    "globby": "^12.0.0",
     "got": "^11.8.2",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
@@ -36,13 +35,10 @@
     "linkedom": "^0.11.1",
     "performance-now": "^2.1.0",
     "postcss": "^8.3.6",
-    "remark": "^14.0.1",
-    "remark-html": "^14.0.0",
-    "remark-prism": "^1.3.6",
     "sharp": "^0.28.3",
     "tailwindcss": "^2.2.7"
   },
   "resolutions": {
-    "puppeteer": "^10.0.0"
+    "puppeteer": "^10.2.0"
   }
 }

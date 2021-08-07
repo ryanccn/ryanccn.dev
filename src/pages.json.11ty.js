@@ -9,18 +9,14 @@ class Page {
 
   render(data) {
     return JSON.stringify([
-      ...data.collections.all
-        .filter(
-          (page) => !(page.url.startsWith('/posts/') && page.url !== '/posts/')
-        )
-        .map((page) => ({
-          title: this.addNbsp(page.data.title),
-          imgName: this.slug(page.data.title),
-        })),
-      ...data.posts.map((post) => ({
+      ...data.collections.all.map((page) => ({
+        title: this.addNbsp(page.data.title),
+        imgName: this.slug(page.data.title),
+      })),
+      /* ...data.posts.map((post) => ({
         title: this.addNbsp(post.metadata.title),
         imgName: this.slug(post.metadata.title),
-      })),
+      })), */
     ]);
   }
 }

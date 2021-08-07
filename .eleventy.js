@@ -1,3 +1,4 @@
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const imageTransform = require('./utils/imageTransform');
 const htmlmin = require('html-minifier');
 
@@ -5,6 +6,7 @@ const inProduction = process.env.NODE_ENV === 'production';
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(require('@11tyrocks/eleventy-plugin-social-images'));
 
   eleventyConfig.addPassthroughCopy({
@@ -35,10 +37,6 @@ const config = (eleventyConfig) => {
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
   });
-
-  if (inProduction) {
-    eleventyConfig.setQuietMode(true);
-  }
 
   return {
     dir: {
