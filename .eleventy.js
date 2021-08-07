@@ -17,6 +17,7 @@ const config = (eleventyConfig) => {
     if (inProduction && outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
         collapseWhitespace: true,
+        useShortDoctype: true,
       });
     } else {
       return content;
