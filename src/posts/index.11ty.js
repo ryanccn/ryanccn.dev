@@ -6,6 +6,7 @@ class Page {
       layout: 'base',
       title: 'Posts',
       permalink: '/posts/',
+      tags: [],
     };
   }
 
