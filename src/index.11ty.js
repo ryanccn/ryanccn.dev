@@ -11,7 +11,7 @@ class Page {
 
   render() {
     return html`
-      <p class="text-4xl font-semibold mb-10">
+      <p class="text-lg font-semibold mb-10">
         Hi! I'm <span class="font-bold">Ryan</span>.
       </p>
       <p class="mb-4">

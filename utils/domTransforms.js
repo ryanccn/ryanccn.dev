@@ -8,6 +8,8 @@ module.exports = async (content, outputPath) => {
   if (outputPath.endsWith('.html')) {
     const { document } = parseHTML(content);
 
+    /* Image optimization */
+
     const imgElems = [...document.querySelectorAll('img')].filter(
       (i) => i.getAttribute('data-image-no-process') !== '1'
     );
@@ -65,6 +67,28 @@ module.exports = async (content, outputPath) => {
       picElem.appendChild(newImgElem);
 
       imgElem.replaceWith(picElem);
+    }
+
+    /* External link security */
+
+    const linkElems = [...document.querySelectorAll('a')].filter((e) => {
+      if (
+        !e.getAttribute('href').startsWith('https://') &&
+        !e.getAttribute('href').startsWith('http://')
+      ) {
+        return false;
+      }
+
+      const href = new URL(e.getAttribute('href'));
+
+      return (
+        href.hostname !== 'ryanccn.dev' && href.hostname !== 'localhost:8080'
+      );
+    });
+
+    for (const elem of linkElems) {
+      elem.setAttribute('target', '_blank');
+      elem.setAttribute('rel', 'noopener noreferrer');
     }
 
     return document.toString();

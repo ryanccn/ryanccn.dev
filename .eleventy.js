@@ -1,5 +1,5 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const imageTransform = require('./utils/imageTransform');
+const domTransforms = require('./utils/domTransforms');
 const htmlmin = require('html-minifier');
 
 const inProduction = process.env.NODE_ENV === 'production';
@@ -13,7 +13,7 @@ const config = (eleventyConfig) => {
     './src/assets/icons/*.png': 'icons',
   });
 
-  eleventyConfig.addTransform('images', imageTransform);
+  eleventyConfig.addTransform('domtransforms', domTransforms);
 
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
     if (inProduction && outputPath.endsWith('.html')) {

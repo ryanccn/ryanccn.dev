@@ -16,6 +16,16 @@ const original = `
 
 @tailwind components;
 
+@layer components {
+  .contain {
+    @apply px-6 mx-auto max-w-prose;
+  }
+
+  .nav-link {
+    @apply font-medium hover:text-gray-500 transition-colors;
+  }
+}
+
 @tailwind utilities;
 `;
 

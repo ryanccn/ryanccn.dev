@@ -2,35 +2,18 @@ const html = require('../../utils/htmlTag');
 
 const safe = (a) => ({ value: a, safe: true });
 
-const navLinkClasses = 'text-black hover:text-blue-500 transition-colors';
-
 const header = (data) => {
   return html`
-    <header
-      class="flex justify-between mb-16 p-8 bg-white bg-opacity-50 backdrop-blur-lg sticky top-0 z-50"
-    >
-      <a class="flex space-x-2 items-center ${navLinkClasses}" href="/">
-        <img
-          src="/icons/50px.png"
-          alt=""
-          width="25"
-          height="25"
-          class="w-[25px] h-[25px] rounded-full"
-          data-image-no-process="1"
-        />
-        <span class="text-lg font-bold capitalize">Ryan Cao</span>
-      </a>
+    <header class="contain mt-24 mb-28">
       <ul class="flex space-x-4 items-center">
+        <li class="mr-6">
+          <a href="/" class="nav-link text-xl font-semibold">Ryan Cao</a>
+        </li>
         ${safe(
           data.navLinks.links
             .map(
               (link) => html`<li>
-                <a
-                  href="${link.href}"
-                  class="text-lg font-medium ${navLinkClasses}"
-                >
-                  ${link.title}
-                </a>
+                <a href="${link.href}" class="nav-link">${link.title}</a>
               </li>`
             )
             .join('\n')
@@ -39,7 +22,7 @@ const header = (data) => {
           data.navLinks.social
             .map(
               (link) => html`<li
-                class="block transition-transform transform-gpu scale-100 hover:scale-125"
+                class="block transition-opacity hover:opacity-70"
               >
                 <a
                   href="${link.href}"
@@ -59,7 +42,9 @@ const header = (data) => {
 
 class Page {
   render(data) {
-    const socialImg = `${data.domain}/previews/${this.slug(data.title)}.png`;
+    const socialImg = `${data.domain}/previews/${encodeURIComponent(
+      this.slug(data.title)
+    )}.png`;
 
     return html`
       <!DOCTYPE html>
@@ -100,16 +85,12 @@ class Page {
               ></script>`)
             : ''}
         </head>
-        <body class="flex flex-col mb-20 mx-auto">
+        <body>
           ${safe(header(data))}
 
-          <main
-            class="mx-auto w-10/12 md:w-8/12 lg:w-7/12 max-w-prose min-h-screen"
-          >
-            ${safe(data.content)}
-          </main>
+          <main class="contain min-h-screen">${safe(data.content)}</main>
 
-          <footer class="text-center mt-16">
+          <footer class="contain text-center my-28">
             <p class="text-gray-200 hover:text-gray-300 transition-colors">
               &copy; Ryan Cao 2020-${new Date().getFullYear()}
             </p>

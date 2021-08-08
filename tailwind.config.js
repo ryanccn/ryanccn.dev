@@ -1,5 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
+// const plugin = require('tailwindcss/plugin');
 
 const customProseStyles = {
   color: defaultTheme.colors.black,
@@ -7,23 +7,21 @@ const customProseStyles = {
 
   h1: {
     fontWeight: defaultTheme.fontWeight.bold,
+    fontSize: defaultTheme.fontSize['2xl'],
+  },
+  h2: {
+    fontSize: defaultTheme.fontSize['xl'],
+  },
+  h3: {
+    fontSize: defaultTheme.fontSize['lg'],
   },
 
   a: {
-    color: defaultTheme.colors.blue[400],
+    color: defaultTheme.colors.gray[500],
   },
   'a:hover': {
-    color: defaultTheme.colors.blue[500],
+    color: defaultTheme.colors.gray[400],
   },
-
-  'ol, ul': {
-    listStyle: 'normal',
-  },
-
-  'ol > li': null,
-  'ul > li': null,
-  'ol > li::before': null,
-  'ul > li::before': null,
 
   blockquote: {
     fontStyle: 'normal',
@@ -36,6 +34,7 @@ module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
   darkMode: false,
+
   theme: {
     extend: {
       typography: {
@@ -45,8 +44,10 @@ module.exports = {
       },
     },
   },
+
   variants: {
     extend: {},
   },
+
   plugins: [require('@tailwindcss/typography')],
 };
