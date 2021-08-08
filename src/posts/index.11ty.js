@@ -27,7 +27,7 @@ class Page {
                 <h2
                   class="text-lg font-semibold text-black hover:text-blue-500 transition-colors"
                 >
-                  <a href="${i.url}"> ${i.data.title.replace('&', '&amp;')} </a>
+                  <a href="${i.url}">${i.data.title} </a>
                 </h2>
                 <p class="text-sm">${i.date.toDateString()}</p>
               </li>`
