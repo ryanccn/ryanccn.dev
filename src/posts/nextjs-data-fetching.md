@@ -69,7 +69,7 @@ Here the `fetcher` object is an asynchronous function that accepts the URL/query
 
 import fetch from 'unfetch';
 import { request } from 'graphql-request';
-const API = '<https://api.graph.cool/simple/v1/movies>';
+const API = 'https://api.graph.cool/simple/v1/movies';
 
 const GraphQLFetcher = (query) => request(API, query);
 

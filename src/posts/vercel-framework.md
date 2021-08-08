@@ -56,7 +56,7 @@ The example for the`src`property shows how both methods work together to create
 
 {
   "routes": [
-    { "src": "/about", "dest": "<https://about.me>" },
+    { "src": "/about", "dest": "https://about.me" },
     { "src": "/action", "dest": "my-serverless-function-action/index" }
   ]
 }
@@ -131,7 +131,7 @@ The `status` property defines the status code that Vercel should respond wit
 For example, you can use this property in combination with the`headers`property to create a redirect with the initial status code of 308 (Moved Permanently).
 
 ```json
-// Redirecting one path to another using the status property to provide a [HTTP status code](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>).
+// Redirecting one path to another using the status property to provide a [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 {
   "routes": [

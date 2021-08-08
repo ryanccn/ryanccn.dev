@@ -73,7 +73,7 @@ This example configures custom rewrites that map to static files, Serverless Fun
     { "source": "/user/:id", "destination": "/api/user" },
     {
       "source": "/proxy/:match*",
-      "destination": "<https://example.com/:match*>"
+      "destination": "https://example.com/:match*"
     }
   ]
 }
@@ -83,8 +83,8 @@ This example configures custom rewrites that map to static files, Serverless Fun
 
 In Cloudflare Workers, you can use the the in-built `fetch` API, which works directly identical to the browser `fetch` API, to just return the `Response` object provided by the `fetch` to the client using `respondWith`. Here's a demo:
 
-```tsx
-const returnURL = '<https://ryanccn.dev/>';
+```ts
+const returnURL = 'https://ryanccn.dev/';
 
 addEventListener('fetch', (event) => {
   return event.respondWith(fetch(`${returnURL}`));
