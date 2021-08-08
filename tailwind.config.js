@@ -7,13 +7,22 @@ const customProseStyles = {
 
   h1: {
     fontWeight: defaultTheme.fontWeight.bold,
-    fontSize: defaultTheme.fontSize['2xl'],
+    fontSize: defaultTheme.fontSize['3xl'],
   },
   h2: {
     fontSize: defaultTheme.fontSize['xl'],
   },
   h3: {
     fontSize: defaultTheme.fontSize['lg'],
+  },
+  h4: {
+    fontSize: defaultTheme.fontSize['base'],
+  },
+  h5: {
+    fontSize: defaultTheme.fontSize['base'],
+  },
+  h6: {
+    fontSize: defaultTheme.fontSize['base'],
   },
 
   a: {

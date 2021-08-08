@@ -1,33 +1,7 @@
 const postcss = require('postcss');
+const fs = require('fs/promises');
+
 const logSize = require('../../../utils/logSize');
-
-const original = `
-@tailwind base;
-
-@layer base {
-  body {
-    background-color: #ffffff;
-  }
-
-  mark {
-    background-color: transparent;
-  }
-}
-
-@tailwind components;
-
-@layer components {
-  .contain {
-    @apply px-6 mx-auto max-w-prose;
-  }
-
-  .nav-link {
-    @apply font-medium hover:text-gray-500 transition-colors;
-  }
-}
-
-@tailwind utilities;
-`;
 
 class Page {
   data() {
@@ -38,14 +12,16 @@ class Page {
   }
 
   async render() {
+    const source = `${__dirname}/tailwind.css`;
+
     let plugins = [require('tailwindcss'), require('autoprefixer')];
 
     if (process.env.NODE_ENV === 'production') {
       plugins = [...plugins, require('cssnano')];
     }
 
-    const css = await postcss(plugins).process(original, {
-      from: undefined,
+    const css = await postcss(plugins).process(await fs.readFile(source), {
+      from: source,
       to: undefined,
     });
 

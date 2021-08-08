@@ -1,0 +1,36 @@
+@tailwind base;
+
+@layer base {
+  body {
+    background-color: #ffffff;
+  }
+
+  mark {
+    background-color: transparent;
+  }
+}
+
+@tailwind components;
+
+@layer components {
+  .contain {
+    @apply px-6 mx-auto max-w-prose;
+  }
+
+  .link {
+    @apply text-black hover:text-blue-400 transition-colors;
+  }
+
+  .nav-link {
+    @apply font-medium link;
+  }
+
+  .big-blue-btn {
+    @apply font-semibold text-sm;
+    @apply py-3 px-4 rounded-md;
+    @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
+  }
+}
+
+@tailwind utilities;

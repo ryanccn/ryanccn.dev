@@ -1,4 +1,4 @@
-const html = require('../utils/htmlTag');
+const { html } = require('../utils/htmlTag');
 
 class Page {
   data() {
@@ -11,7 +11,7 @@ class Page {
 
   render() {
     return html`
-      <p class="text-lg font-semibold mb-10">
+      <p class="text-3xl font-semibold mb-10">
         Hi! I'm <span class="font-bold">Ryan</span>.
       </p>
       <p class="mb-4">
@@ -40,12 +40,7 @@ class Page {
           >SwiftUI</mark
         >.
       </p>
-      <a
-        class="font-semibold py-3 px-4 rounded-md bg-blue-500 hover:bg-blue-400 text-white transition-colors"
-        href="/posts"
-      >
-        Read my blog posts →
-      </a>
+      <a class="big-blue-btn" href="/posts"> Read my blog posts → </a>
     `;
   }
 }

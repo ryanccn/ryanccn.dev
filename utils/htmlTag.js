@@ -23,4 +23,7 @@ const html = (s, ...f) => {
   return String.raw(s, ...f.map(escapeHtml));
 };
 
-module.exports = html;
+const safe = (a) => ({ value: a, safe: true });
+
+exports.html = html;
+exports.safe = safe;

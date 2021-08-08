@@ -6,7 +6,7 @@ const sizeOf = promisify(require('image-size'));
 const DatauriParser = require('datauri/parser');
 const parser = new DatauriParser();
 
-const html = require('./htmlTag');
+const { html } = require('./htmlTag');
 
 const PIXEL_TARGET = 60;
 

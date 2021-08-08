@@ -1,6 +1,4 @@
-const html = require('../../utils/htmlTag');
-
-const safe = (a) => ({ value: a, safe: true });
+const { html, safe } = require('../../utils/htmlTag');
 
 class Post {
   data() {

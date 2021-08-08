@@ -1,43 +1,43 @@
-const html = require('../../utils/htmlTag');
-
-const safe = (a) => ({ value: a, safe: true });
+const { html, safe } = require('../../utils/htmlTag');
 
 const header = (data) => {
-  return html`
-    <header class="contain mt-24 mb-28">
-      <ul class="flex space-x-4 items-center">
-        <li class="mr-6">
-          <a href="/" class="nav-link text-xl font-semibold">Ryan Cao</a>
-        </li>
-        ${safe(
-          data.navLinks.links
-            .map(
-              (link) => html`<li>
-                <a href="${link.href}" class="nav-link">${link.title}</a>
-              </li>`
-            )
-            .join('\n')
-        )}
-        ${safe(
-          data.navLinks.social
-            .map(
-              (link) => html`<li
-                class="block transition-opacity hover:opacity-70"
-              >
-                <a
-                  href="${link.href}"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  ${link.icon}
-                </a>
-              </li>`
-            )
-            .join('\n')
-        )}
-      </ul>
-    </header>
-  `;
+  return html`<header class="contain mt-24 mb-16">
+    <ul class="flex items-center">
+      <img
+        src="/icons/50px.png"
+        alt=""
+        width="25"
+        height="25"
+        class="w-[25px] h-[25px] rounded-full mr-2"
+        data-image-no-process="1"
+      />
+      <li class="mr-6">
+        <a href="/" class="nav-link text-xl font-semibold">Ryan Cao</a>
+      </li>
+      ${safe(
+        data.navLinks.links
+          .map(
+            (link) => html`<li>
+              <a href="${link.href}" class="nav-link mr-4">${link.title}</a>
+            </li>`
+          )
+          .join('\n')
+      )}
+      ${safe(
+        data.navLinks.social
+          .map(
+            (link) => html`<li
+              class="block transition-opacity hover:opacity-70 mr-4 last:mr-0"
+            >
+              <a href="${link.href}" target="_blank" rel="noreferrer noopener">
+                ${link.icon}
+              </a>
+            </li>`
+          )
+          .join('\n')
+      )}
+    </ul>
+  </header>`;
 };
 
 class Page {
@@ -91,7 +91,7 @@ class Page {
           <main class="contain min-h-screen">${safe(data.content)}</main>
 
           <footer class="contain text-center my-28">
-            <p class="text-gray-200 hover:text-gray-300 transition-colors">
+            <p class="text-gray-400">
               &copy; Ryan Cao 2020-${new Date().getFullYear()}
             </p>
           </footer>
