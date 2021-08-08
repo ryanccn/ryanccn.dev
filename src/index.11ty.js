@@ -1,4 +1,4 @@
-const html = String.raw;
+const html = require('../utils/htmlTag');
 
 class Page {
   data() {

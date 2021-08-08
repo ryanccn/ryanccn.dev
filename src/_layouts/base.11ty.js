@@ -1,4 +1,6 @@
-const html = String.raw;
+const html = require('../../utils/htmlTag');
+
+const safe = (a) => ({ value: a, safe: true });
 
 const navLinkClasses = 'text-black hover:text-blue-500 transition-colors';
 
@@ -19,29 +21,37 @@ const header = (data) => {
         <span class="text-lg font-bold capitalize">Ryan Cao</span>
       </a>
       <ul class="flex space-x-4 items-center">
-        ${data.navLinks.links
-          .map(
-            (link) => html`<li>
-              <a
-                href="${link.href}"
-                class="text-lg font-medium ${navLinkClasses}"
+        ${safe(
+          data.navLinks.links
+            .map(
+              (link) => html`<li>
+                <a
+                  href="${link.href}"
+                  class="text-lg font-medium ${navLinkClasses}"
+                >
+                  ${link.title}
+                </a>
+              </li>`
+            )
+            .join('\n')
+        )}
+        ${safe(
+          data.navLinks.social
+            .map(
+              (link) => html`<li
+                class="block transition-transform transform-gpu scale-100 hover:scale-125"
               >
-                ${link.title}
-              </a>
-            </li>`
-          )
-          .join('\n')}
-        ${data.navLinks.social
-          .map(
-            (link) => html`<li
-              class="block transition-transform transform-gpu scale-100 hover:scale-125"
-            >
-              <a href="${link.href}" target="_blank" rel="noreferrer noopener">
-                ${link.icon}
-              </a>
-            </li>`
-          )
-          .join('\n')}
+                <a
+                  href="${link.href}"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  ${link.icon}
+                </a>
+              </li>`
+            )
+            .join('\n')
+        )}
       </ul>
     </header>
   `;
@@ -77,24 +87,28 @@ class Page {
 
           <link rel="stylesheet" href="/assets/tailwind.css" />
           ${data.includePrismCSS
-            ? html`<link rel="stylesheet" href="/assets/prism.css" />`
+            ? safe(html`<link rel="stylesheet" href="/assets/prism.css" />`)
             : ''}
 
           <script defer src="/assets/main.js"></script>
           ${data.inProduction
-            ? html`<script
+            ? safe(html`<script
                 defer
                 src="/plausible/script.js"
                 data-domain="ryanccn.dev"
                 data-api="/plausible/event"
-              ></script>`
+              ></script>`)
             : ''}
         </head>
         <body class="flex flex-col mb-20 mx-auto">
-          ${header(data)}
-          <main class="mx-auto w-10/12 md:w-8/12 lg:w-7/12 min-h-screen">
-            ${data.content}
+          ${safe(header(data))}
+
+          <main
+            class="mx-auto w-10/12 md:w-8/12 lg:w-7/12 max-w-prose min-h-screen"
+          >
+            ${safe(data.content)}
           </main>
+
           <footer class="text-center mt-16">
             <p class="text-gray-200 hover:text-gray-300 transition-colors">
               &copy; Ryan Cao 2020-${new Date().getFullYear()}
