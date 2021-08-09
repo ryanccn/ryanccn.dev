@@ -1,8 +1,8 @@
 const kleur = require('kleur');
 
 module.exports = (length, name) => {
-  const kb = (length / 1000).toFixed(2);
-  let sizeStr = `(${kb}KB)`;
+  const kb = length / 1000;
+  let sizeStr = `(${kb.toFixed(2)}KB)`;
 
   if (kb < 15) {
     sizeStr = kleur.green(sizeStr);
