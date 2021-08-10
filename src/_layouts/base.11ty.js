@@ -3,14 +3,16 @@ const { html, safe } = require('../../utils/htmlTag');
 const header = (data) => {
   return html`<header class="contain mt-24 mb-16">
     <ul class="flex items-center">
-      <img
-        src="/icons/50px.png"
-        alt=""
-        width="25"
-        height="25"
-        class="w-[25px] h-[25px] rounded-full mr-2"
-        data-image-no-process="1"
-      />
+      <li class="mr-2">
+        <img
+          src="/icons/50px.png"
+          alt=""
+          width="25"
+          height="25"
+          class="w-[25px] h-[25px] rounded-full"
+          data-image-no-process="1"
+        />
+      </li>
       <li class="mr-6">
         <a href="/" class="nav-link text-xl font-semibold">Ryan Cao</a>
       </li>
@@ -62,11 +64,14 @@ class Page {
           <meta name="theme-color" content="#5706e0" />
 
           <meta name="title" content="${data.title}" />
+          <meta name="description" content="A blog on web development, etc." />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="${data.title}" />
+
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content="@RyanCaoDev" />
           <meta name="twitter:title" content="${data.title}" />
+
           <meta property="og:image" content="${socialImg}" />
           <meta name="twitter:image" content="${socialImg}" />
 
@@ -91,7 +96,7 @@ class Page {
           <main class="contain min-h-screen">${safe(data.content)}</main>
 
           <footer class="contain text-center my-28">
-            <p class="text-gray-400">
+            <p class="text-gray-500">
               &copy; Ryan Cao 2020-${new Date().getFullYear()}
             </p>
           </footer>
