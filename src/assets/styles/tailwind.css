@@ -28,7 +28,7 @@
   .big-blue-btn {
     @apply font-semibold text-sm;
     @apply py-3 px-4 rounded-md;
-    @apply bg-blue-600 hover:bg-blue-500 text-white transition-colors;
+    @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
     @apply focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
   }
 }

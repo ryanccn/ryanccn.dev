@@ -27,12 +27,10 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
-  eleventyConfig.addWatchTarget('content');
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,css}');
   eleventyConfig.addWatchTarget('utils/*.js');
 
   eleventyConfig.ignores.add('README.md');
-  eleventyConfig.ignores.add('content');
 
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
@@ -41,9 +39,7 @@ const config = (eleventyConfig) => {
   return {
     dir: {
       input: 'src',
-      includes: '_includes',
       layouts: '_layouts',
-      data: '_data',
     },
   };
 };
