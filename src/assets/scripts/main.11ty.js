@@ -15,7 +15,7 @@ class Page {
       entryPoints: [join(__dirname, 'main.js')],
       define: {
         DEV: JSON.stringify(
-          process.env.NODE_ENV || process.env.NODE_ENV !== 'production'
+          process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
         ),
       },
       format: 'iife',
