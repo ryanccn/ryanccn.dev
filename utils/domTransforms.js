@@ -17,15 +17,17 @@ module.exports = async (content, outputPath) => {
     for (const imgElem of imgElems) {
       const originalSrc = imgElem.getAttribute('src');
 
+      const { width: originalWidth, height: originalHeight } =
+        imageSize.imageSize(`./${originalSrc}`);
+
       const stats = await Image(`./${originalSrc}`, {
-        widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, originalWidth]
+          .filter((a) => a <= originalWidth)
+          .sort((a, b) => a - b),
         formats: ['avif', 'webp', 'jpeg'],
         outputDir: './_site/images',
         urlPath: '/images/',
       });
-
-      const { width: originalWidth, height: originalHeight } =
-        imageSize.imageSize(`./${originalSrc}`);
 
       const lowsrc = stats.jpeg[stats.jpeg.length - 1];
 
