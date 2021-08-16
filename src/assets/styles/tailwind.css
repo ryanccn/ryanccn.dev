@@ -27,4 +27,9 @@
     @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
     @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400;
   }
+
+  .article-cta {
+    @apply text-white p-8 rounded-2xl w-full flex flex-col items-start transform-gpu transition-all hover:scale-105;
+    @apply bg-blue-500;
+  }
 }
