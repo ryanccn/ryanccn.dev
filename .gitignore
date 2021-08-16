@@ -4,5 +4,7 @@ _site/
 .cache/
 pages.json
 
+.vscode/
+
 **/.DS_Store
 **/.localized

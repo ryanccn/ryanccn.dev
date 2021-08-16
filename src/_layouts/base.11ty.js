@@ -1,26 +1,29 @@
 const { html, safe } = require('../../utils/htmlTag');
 
 const header = (data) => {
-  return html`<header class="contain mt-24 mb-16">
+  return html`<header
+    class="contain flex justify-between items-center mt-24 mb-16"
+  >
+    <div class="flex items-center">
+      <img
+        src="/icons/50px.png"
+        alt=""
+        width="25"
+        height="25"
+        class="w-[25px] h-[25px] rounded-full mr-2"
+        data-image-no-process="1"
+      />
+
+      <a href="/" class="link text-xl font-semibold mr-6">Ryan Cao</a>
+    </div>
     <ul class="flex items-center">
-      <li class="mr-2">
-        <img
-          src="/icons/50px.png"
-          alt=""
-          width="25"
-          height="25"
-          class="w-[25px] h-[25px] rounded-full"
-          data-image-no-process="1"
-        />
-      </li>
-      <li class="mr-6">
-        <a href="/" class="nav-link text-xl font-semibold">Ryan Cao</a>
-      </li>
       ${safe(
         data.navLinks.links
           .map(
             (link) => html`<li>
-              <a href="${link.href}" class="nav-link mr-4">${link.title}</a>
+              <a href="${link.href}" class="link font-medium mr-4">
+                ${link.title}
+              </a>
             </li>`
           )
           .join('\n')
