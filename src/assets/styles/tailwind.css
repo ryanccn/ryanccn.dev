@@ -29,8 +29,8 @@
   }
 
   .article-cta {
-    @apply text-white p-8 rounded-2xl w-full
-    @apply flex flex-col items-start
+    @apply text-white p-8 rounded-2xl w-full;
+    @apply flex flex-col items-start;
     @apply transform-gpu transition-all hover:scale-105;
     @apply bg-blue-500;
   }
