@@ -2,7 +2,9 @@ const { html, safe } = require('../../utils/htmlTag');
 
 const header = (data) => {
   return html`<header
-    class="contain flex justify-between items-center mt-24 mb-16"
+    class="contain flex justify-between items-center
+    p-6 mt-20 mb-16 rounded-lg sticky top-6 z-50
+    bg-gray-50 bg-opacity-60 backdrop-filter backdrop-blur-lg"
   >
     <div class="flex items-center">
       <img
@@ -14,14 +16,14 @@ const header = (data) => {
         data-image-no-process="1"
       />
 
-      <a href="/" class="link text-xl font-semibold mr-6">Ryan Cao</a>
+      <a href="/" class="link text-2xl font-semibold mr-6">Ryan Cao</a>
     </div>
     <ul class="flex items-center">
       ${safe(
         data.navLinks.links
           .map(
             (link) => html`<li>
-              <a href="${link.href}" class="link font-medium mr-4">
+              <a href="${link.href}" class="link text-lg font-medium mr-4">
                 ${link.title}
               </a>
             </li>`
@@ -96,13 +98,15 @@ class Page {
         <body>
           ${safe(header(data))}
 
-          <main class="contain min-h-screen">${safe(data.content)}</main>
+          <main class="contain">${safe(data.content)}</main>
 
-          <footer class="contain text-center my-28">
-            <p class="text-gray-500">
-              &copy; Ryan Cao 2020-${new Date().getFullYear()}
-            </p>
-          </footer>
+          ${data.page.url !== '/'
+            ? safe(html`<footer class="contain text-center my-28">
+                <p class="text-gray-500">
+                  &copy; Ryan Cao 2020-${new Date().getFullYear()}
+                </p>
+              </footer>`)
+            : ''}
         </body>
       </html>
     `;

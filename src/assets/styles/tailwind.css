@@ -14,7 +14,7 @@
 
 @layer components {
   .contain {
-    @apply px-6 mx-auto max-w-prose;
+    @apply px-6 mx-auto max-w-[70ch];
   }
 
   .link {

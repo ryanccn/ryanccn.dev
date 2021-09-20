@@ -6,7 +6,7 @@ const twitterIcon = safe(
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      class="block w-[1rem] h-[1rem] fill-current text-[#1DA1F2]"
+      class="block w-[1.2rem] h-[1.2rem] fill-current text-[#1DA1F2]"
     >
       <title>Twitter</title>
       <path
@@ -22,7 +22,7 @@ const githubIcon = safe(
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      class="block w-[1rem] h-[1rem] fill-current text-[#181717]"
+      class="block w-[1.2rem] h-[1.2rem] fill-current text-[#181717]"
     >
       <title>GitHub</title>
       <path
