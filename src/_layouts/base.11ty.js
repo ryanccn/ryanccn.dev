@@ -3,8 +3,9 @@ const { html, safe } = require('../../utils/htmlTag');
 const header = (data) => {
   return html`<header
     class="contain flex justify-between items-center
-    p-6 mt-20 mb-16 rounded-lg sticky top-6 z-50
-    bg-gray-50 bg-opacity-60 backdrop-filter backdrop-blur-lg"
+    p-6 md:mt-20 mb-16 md:rounded-lg
+    sticky top-0 md:top-6 z-50
+    bg-gray-50 bg-opacity-75 backdrop-blur-lg"
   >
     <div class="flex items-center">
       <img

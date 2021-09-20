@@ -43,6 +43,10 @@ const customProseStyles = {
   },
   'blockquote p:first-of-type::before': null,
   'blockquote p:last-of-type::after': null,
+
+  code: {
+    wordBreak: 'break-all',
+  },
 };
 
 module.exports = {
