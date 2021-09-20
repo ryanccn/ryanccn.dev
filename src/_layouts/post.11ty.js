@@ -13,7 +13,10 @@ class Post {
         <h1>${data.title}</h1>
         ${safe(data.content)}
       </article>
-      <button class="article-cta rounded-2xl mt-16 mb-3" data-share-button>
+      <button
+        class="bg-blue-500 article-cta rounded-2xl mt-16"
+        data-share-button
+      >
         <h1 class="font-semibold text-2xl lg:text-3xl mb-4">
           If you liked this post...
         </h1>
@@ -25,7 +28,7 @@ class Post {
         </p>
       </button>
       <a
-        class="bg-green-400 article-cta rounded-2xl"
+        class="bg-green-400 article-cta rounded-2xl mt-3"
         href="https://twitter.com/RyanCaoDev"
       >
         <h1 class="font-semibold text-2xl lg:text-3xl mb-4">
