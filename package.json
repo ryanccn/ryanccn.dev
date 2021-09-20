@@ -23,20 +23,22 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
     "@11tyrocks/eleventy-plugin-social-images": "^0.2.0",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.2",
+    "autoprefixer": "^10.3.4",
     "cssnano": "^5.0.8",
     "datauri": "^4.1.0",
-    "esbuild": "^0.12.22",
+    "esbuild": "^0.12.28",
     "got": "^11.8.2",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
     "kleur": "^4.1.4",
     "linkedom": "^0.11.2",
+    "markdown-it": "^12.2.0",
+    "markdown-it-emoji": "^2.0.0",
     "performance-now": "^2.1.0",
     "postcss": "^8.3.6",
-    "sharp": "^0.29.0",
-    "tailwindcss": "^2.2.7"
+    "sharp": "^0.29.1",
+    "tailwindcss": "^2.2.15"
   },
   "resolutions": {
     "puppeteer": "^10.2.0"

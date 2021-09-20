@@ -26,6 +26,15 @@ const config = (eleventyConfig) => {
     }
   });
 
+  const markdownIt = require('markdown-it');
+  const markdownItEmoji = require('markdown-it-emoji');
+  const options = {
+    html: true,
+  };
+  const markdownLib = markdownIt(options).use(markdownItEmoji);
+
+  eleventyConfig.setLibrary('md', markdownLib);
+
   eleventyConfig.addWatchTarget('tailwind.config.js');
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,css}');
   eleventyConfig.addWatchTarget('utils/*.js');
