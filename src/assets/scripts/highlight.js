@@ -1,7 +1,10 @@
 import { annotate } from 'rough-notation';
+import { RoughAnnotationConfig } from 'rough-notation/lib/model';
 import createObserver from './observer';
 
+/** @param {Element} hlElem */
 const parseOptions = (hlElem) => {
+  /** @type {RoughAnnotationConfig} */
   let options = {
     type: hlElem.getAttribute('data-type') ?? 'highlight',
     color: hlElem.getAttribute('data-color') ?? 'rgba(135, 206, 235, 0.6)',
@@ -12,7 +15,8 @@ const parseOptions = (hlElem) => {
   }
 
   if (hlElem.getAttribute('data-duration')) {
-    options.animationDuration = Number(hlElem.getAttribute('data-duration'));
+    options.animationDuration = parseInt(hlElem.getAttribute('data-duration'));
+    if (options.animationDuration === NaN) options.animationDuration = 1;
   }
 
   if (hlElem.getAttribute('data-multiline') === '1') {
@@ -20,7 +24,8 @@ const parseOptions = (hlElem) => {
   }
 
   if (hlElem.getAttribute('data-iterations')) {
-    options.iterations = Number(hlElem.getAttribute('data-iterations'));
+    options.iterations = parseInt(hlElem.getAttribute('data-iterations'));
+    if (options.iterations === NaN) options.iterations = 1;
   }
 
   return options;

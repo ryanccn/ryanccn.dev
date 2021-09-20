@@ -1,3 +1,7 @@
+/**
+@param {Element} elem
+@param {() => void} callback
+*/
 export default (elem, callback) => {
   const options = {
     root: null,
