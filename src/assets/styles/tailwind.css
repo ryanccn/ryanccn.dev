@@ -10,6 +10,10 @@
   mark {
     background-color: transparent;
   }
+
+  ::selection {
+    @apply text-white bg-blue-500;
+  }
 }
 
 @layer components {
