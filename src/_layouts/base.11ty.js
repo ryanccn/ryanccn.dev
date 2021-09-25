@@ -3,8 +3,8 @@ const { html, safe } = require('../../utils/htmlTag');
 const header = (data) => {
   return html`<header
     class="contain flex justify-between items-center
-    p-6 md:mt-20 mb-16 md:rounded-lg
-    sticky top-0 md:top-6 z-50
+    p-6 pt-10 mb-16 md:rounded-b-lg
+    sticky top-0 z-50
     bg-gray-50 bg-opacity-75 backdrop-blur-lg"
   >
     <div class="flex items-center">
@@ -67,7 +67,6 @@ class Page {
 
           <link rel="icon" href="/icons/transparent.png" />
           <link rel="apple-touch-icon" href="/icons/solid.png" />
-          <meta name="theme-color" content="#5706e0" />
 
           <meta name="title" content="${data.title}" />
           <meta name="description" content="A blog on web development, etc." />
