@@ -15,8 +15,6 @@
     "clean": "rm -rf _site .cache pages.json"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.4.2",
-    "alpinejs": "^3.4.2",
     "rough-notation": "^0.5.1"
   },
   "devDependencies": {
