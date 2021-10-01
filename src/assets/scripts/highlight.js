@@ -16,7 +16,7 @@ const parseOptions = (hlElem) => {
 
   if (hlElem.getAttribute('data-duration')) {
     options.animationDuration = parseInt(hlElem.getAttribute('data-duration'));
-    if (options.animationDuration === NaN) options.animationDuration = 1;
+    if (isNaN(options.animationDuration)) options.animationDuration = 1;
   }
 
   if (hlElem.getAttribute('data-multiline') === '1') {
@@ -25,7 +25,7 @@ const parseOptions = (hlElem) => {
 
   if (hlElem.getAttribute('data-iterations')) {
     options.iterations = parseInt(hlElem.getAttribute('data-iterations'));
-    if (options.iterations === NaN) options.iterations = 1;
+    if (isNaN(options.iterations)) options.iterations = 1;
   }
 
   return options;

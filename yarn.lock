@@ -91,6 +91,11 @@
     puppeteer-core "^5.5.0"
     yargs-parser "^20.2.4"
 
+"@alpinejs/collapse@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.4.2.tgz#8504b3c68c039ea86ee4cc7054e217d73b00d172"
+  integrity sha512-WhN6WvfQtF1Z0e28M8/DtIchwfyXgLbnwSnLEX6UYKCljFBhnJ6fNJxyvMElDBOz2buDMU7bTY7SYFObka2tFQ==
+
 "@babel/code-frame@^7.0.0":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.14.5.tgz#23b08d740e83f49c5e59945fbf1b43e80bbf4edb"
@@ -250,6 +255,18 @@
   resolved "https://registry.yarnpkg.com/@ungap/event-target/-/event-target-0.2.3.tgz#be682c681126dca2371c4e1a1721f8e8bb400905"
   integrity sha512-7Bz0qdvxNGV9n0f+xcMKU7wsEfK6PNzo8IdAcOiBgMNyCuU0Mk9dv0Hbd/Kgr+MFFfn4xLHFbuOt820egT5qEA==
 
+"@vue/reactivity@~3.1.1":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.5.tgz#dbec4d9557f7c8f25c2635db1e23a78a729eb991"
+  integrity sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==
+  dependencies:
+    "@vue/shared" "3.1.5"
+
+"@vue/shared@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
+  integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
+
 a-sync-waterfall@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz#75b6b6aa72598b497a125e7a2770f14f4c8a1fa7"
@@ -308,6 +325,13 @@ alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+alpinejs@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.4.2.tgz#e570b7439a32cb07a1b5f1a47d2966388469111d"
+  integrity sha512-PCTLdySJG5ercbN/g4sO+Nyo0TjzV3IP5W9L3UiSj3756VZPUctNiikLAoKX5al2NlLE2O7jPpgtakuRpLLeIQ==
+  dependencies:
+    "@vue/reactivity" "~3.1.1"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
