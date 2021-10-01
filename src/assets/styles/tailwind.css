@@ -25,6 +25,14 @@
     @apply text-black hover:text-blue-500 transition-colors;
   }
 
+  .navbar {
+    @apply contain flex justify-between items-center;
+    @apply p-6 md:pt-10 mb-16;
+    @apply md:rounded-b-lg;
+    @apply sticky top-0 z-50;
+    @apply bg-gray-50 bg-opacity-75 backdrop-blur-lg;
+  }
+
   .big-blue-btn {
     @apply font-semibold;
     @apply py-3 px-4 rounded-md;

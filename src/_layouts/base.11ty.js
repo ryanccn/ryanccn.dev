@@ -1,12 +1,7 @@
 const { html, safe } = require('../../utils/htmlTag');
 
 const header = (data) => {
-  return html`<header
-    class="contain flex justify-between items-center
-    p-6 pt-10 mb-16 md:rounded-b-lg
-    sticky top-0 z-50
-    bg-gray-50 bg-opacity-75 backdrop-blur-lg"
-  >
+  return html`<header class="navbar">
     <div class="flex items-center">
       <img
         src="/icons/50px.png"
