@@ -26,7 +26,7 @@ class Page {
         </mark>
         who loves working with SSGs and performant stuff.
       </p>
-      <p class="mb-12">
+      <p class="mb-16">
         I do
         <mark data-iterations="1" data-duration="750" class="font-medium"
           >web development</mark

@@ -18,31 +18,36 @@
 
 @layer components {
   .contain {
-    @apply px-6 mx-auto max-w-[70ch];
+    @apply px-9 mx-auto max-w-[70ch];
   }
 
   .link {
     @apply text-black hover:text-blue-500 transition-colors;
   }
 
+  .nav.link {
+    @apply rounded-md px-3 py-2 hover:bg-gray-100;
+  }
+
+  .nav.link.active {
+    @apply text-blue-500 bg-gray-100;
+  }
+
   .navbar {
     @apply contain flex justify-between items-center;
     @apply p-6 md:pt-10 mb-16;
-    @apply md:rounded-b-lg;
-    @apply sticky top-0 z-50;
-    @apply bg-gray-50 bg-opacity-75 backdrop-blur-lg;
   }
 
   .big-blue-btn {
-    @apply font-semibold;
-    @apply py-3 px-4 rounded-md;
+    @apply text-lg font-semibold;
+    @apply py-4 px-6 rounded-md;
     @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400;
+    @apply focus:outline-none focus:ring-[3px] focus:ring-offset-2 focus:ring-blue-400;
   }
 
   .article-cta {
     @apply text-white p-8 rounded-2xl w-full;
     @apply flex flex-col items-start text-left;
-    @apply transform-gpu transition-all hover:scale-105;
+    @apply transition-shadow shadow-md hover:shadow-2xl;
   }
 }

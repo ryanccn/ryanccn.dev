@@ -28,7 +28,7 @@ class Post {
         </p>
       </button>
       <a
-        class="bg-green-400 article-cta rounded-2xl mt-3"
+        class="bg-green-400 article-cta rounded-2xl mt-6"
         href="https://twitter.com/RyanCaoDev"
       >
         <h1 class="font-semibold text-2xl lg:text-3xl mb-4">

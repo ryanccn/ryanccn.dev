@@ -16,16 +16,24 @@ class Page {
         A list of posts that I have written
       </h2>
 
-      <ol reversed class="flex flex-col space-y-8">
+      <ol reversed class="flex flex-col space-y-4">
         ${safe(
           data.collections.posts
             .sort((a, b) => (a.date > b.date ? -1 : 1))
             .map(
               (i) => html`<li>
-                <h2 class="text-lg font-semibold">
-                  <a class="link" href="${i.url}">${i.data.title} </a>
-                </h2>
-                <p class="text-sm">${i.date.toDateString()}</p>
+                <a
+                  href="${i.url}"
+                  class="block link p-4 -mx-4 rounded-md hover:bg-gray-100"
+                >
+                  <h2 class="text-lg font-semibold">${i.data.title}</h2>
+                  <p class="text-sm text-gray-800 font-medium">
+                    <span data-reads>-</span> reads
+                  </p>
+                  <p class="text-sm text-gray-800 font-medium">
+                    ${i.date.toDateString()}
+                  </p>
+                </a>
               </li>`
             )
             .join('\n')

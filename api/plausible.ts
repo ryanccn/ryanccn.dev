@@ -1,3 +1,4 @@
+import { VercelApiHandler } from '@vercel/node';
 import got from 'got';
 
 const originalUrl = 'https://plausible.io/js/plausible.js';
@@ -14,7 +15,7 @@ const randomStr = () => {
   return str;
 };
 
-module.exports = async (_, res) => {
+const handler: VercelApiHandler = async (_, res) => {
   const replacement = randomStr();
   const origin = await got(originalUrl);
 
@@ -29,3 +30,5 @@ module.exports = async (_, res) => {
 
   res.send(script);
 };
+
+export default handler;

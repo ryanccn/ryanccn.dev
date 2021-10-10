@@ -1,8 +1,8 @@
 const { html, safe } = require('../../utils/htmlTag');
 
 const header = (data) => {
-  return html`<header class="navbar">
-    <div class="flex items-center">
+  return html`<header class="navbar contain">
+    <a class="flex items-center nav link mr-6" href="/">
       <img
         src="/icons/50px.png"
         alt=""
@@ -12,14 +12,19 @@ const header = (data) => {
         data-image-no-process="1"
       />
 
-      <a href="/" class="link text-2xl font-semibold mr-6">Ryan Cao</a>
-    </div>
+      <span class="text-2xl font-semibold">Ryan Cao</span>
+    </a>
     <ul class="flex items-center">
       ${safe(
         data.navLinks.links
           .map(
             (link) => html`<li>
-              <a href="${link.href}" class="link text-lg font-medium mr-4">
+              <a
+                href="${link.href}"
+                class="nav link ${link.href === data.page.url
+                  ? 'active'
+                  : ''} text-lg font-medium p-2 mr-4"
+              >
                 ${link.title}
               </a>
             </li>`
