@@ -1,3 +1,9 @@
+import observe from './observer';
+
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 /** @param {string} slug */
 const fetchData = async (slug) => {
   if (!DEV) {
@@ -5,22 +11,28 @@ const fetchData = async (slug) => {
     return await req.json();
   } else {
     console.log('mocking a fetch call to', slug, 'read count');
-    return 100;
+    await sleep(1000);
+    return { value: 100 };
   }
 };
 
-(async () => {
-  const u = window.location.pathname;
-  const f = u.split('/').filter((k) => !!k);
+const u = window.location.pathname;
+const f = u.split('/').filter((k) => !!k);
 
-  if (DEV) console.log({ u, f });
+if (DEV) console.log({ u, f });
 
-  if (f[0] === 'posts' && f.length === 1) {
-    const e = document.querySelectorAll('span[data-reads]');
+if (f[0] === 'posts' && f.length === 1) {
+  const e = document.querySelectorAll('span[data-reads]');
 
-    Promise.all(
-      [...e].map(async (ek) => {
-        const slug = ek.parentElement.parentElement
+  for (const ek of e) {
+    const linkElem = ek.parentElement.parentElement;
+
+    observe(
+      linkElem,
+      async () => {
+        console.log('reads observer tripped');
+
+        const slug = linkElem
           .getAttribute('href')
           .split('/')
           .filter((k) => !!k)[1];
@@ -29,7 +41,8 @@ const fetchData = async (slug) => {
         if (a.error || a.value === undefined) return;
 
         ek.innerHTML = a.value;
-      })
+      },
+      0
     );
   }
-})();
+}

@@ -1,12 +1,13 @@
 /**
 @param {Element} elem
 @param {() => void} callback
+@param {number} pad
 */
-export default (elem, callback) => {
+export default (elem, callback, pad) => {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 1.0,
+    threshold: pad ? pad : 1.0,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
