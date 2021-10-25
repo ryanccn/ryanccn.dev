@@ -12,11 +12,11 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 ## Project
 
 - `utils/`: node scripts & utilities related to the build process
-- `_layouts/`: layouts
-- `_data/`: global data stuff fed to Eleventy
-- `content/`: the blog posts, written in Markdown
+- `src/_layouts/`: layouts
+- `src/_data/`: global data stuff fed to Eleventy
+- `src/`: the pages for Eleventy to generate from
+- `src/posts/*.md`: the blog posts, written in Markdown
 - `images/`: images for the blog posts
-- `pages/`: the pages for Eleventy to generate from
 
 ## Get started
 
