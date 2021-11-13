@@ -29,10 +29,5 @@ $ yarn clean  # clean up build artifacts and caches
 
 ## License(s)
 
-- Code: **MIT**
-
-  Feel free to copy my code, edit it, or republish it for your own benefit, but please don't rip off my entire site and custmoize some text and make it your own...
-
-- Content: **CC-BY-SA-4.0**
-
-  You could republish my articles or quote them, but this is subject to providing credit and license notice. (aka attribution)
+- Code: **MIT** (`LICENSE`)
+- Content & Images: **CC-BY-SA-4.0** (`LICENSE-content`)
