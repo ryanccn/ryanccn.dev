@@ -9,7 +9,7 @@ const customProseStyles = {
   h1: {
     fontWeight: defaultTheme.fontWeight.bold,
     fontSize: defaultTheme.fontSize['4xl'],
-    lineHeight: defaultTheme.lineHeight['4xl'],
+    lineHeight: defaultTheme.lineHeight['tight'],
   },
   h2: {
     fontSize: defaultTheme.fontSize['xl'],
