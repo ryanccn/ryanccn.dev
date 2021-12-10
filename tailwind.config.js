@@ -1,68 +1,67 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-// const plugin = require('tailwindcss/plugin');
-
-const customProseStyles = {
-  color: defaultTheme.colors.black,
-  maxWidth: null,
-
-  /* header font sizes */
-  h1: {
-    fontWeight: defaultTheme.fontWeight.bold,
-    fontSize: defaultTheme.fontSize['4xl'],
-    lineHeight: defaultTheme.lineHeight['tight'],
-  },
-  h2: {
-    fontSize: defaultTheme.fontSize['xl'],
-  },
-  h3: {
-    fontSize: defaultTheme.fontSize['lg'],
-  },
-  h4: {
-    fontSize: defaultTheme.fontSize['base'],
-  },
-  h5: {
-    fontSize: defaultTheme.fontSize['base'],
-  },
-  h6: {
-    fontSize: defaultTheme.fontSize['base'],
-  },
-
-  /* custom link colors */
-  a: {
-    color: defaultTheme.colors.blue[500],
-    transitionProperty: 'background-color, border-color, color, fill, stroke',
-    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-    transitionDuration: '150ms',
-  },
-  'a:hover': {
-    color: defaultTheme.colors.blue[300],
-  },
-
-  /* remove most blockquote styling */
-  blockquote: {
-    fontStyle: 'normal',
-  },
-  'blockquote p:first-of-type::before': null,
-  'blockquote p:last-of-type::after': null,
-
-  code: {
-    wordBreak: 'break-all',
-  },
-};
+// const defaultTheme = require('tailwindcss/defaultTheme');
+// const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
-
-  purge: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
-  darkMode: false,
+  content: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
+  darkMode: 'media',
 
   theme: {
     extend: {
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
-          css: customProseStyles,
+          css: {
+            color: theme('colors.black'),
+            maxWidth: null,
+
+            /* header font sizes */
+            h1: {
+              fontWeight: theme('fontWeight.bold'),
+              fontSize: theme('fontSize.4xl')[0],
+              lineHeight: theme('lineHeight.tight'),
+            },
+            h2: {
+              fontSize: theme('fontSize.xl')[0],
+            },
+            h3: {
+              fontSize: theme('fontSize.lg')[0],
+            },
+            h4: {
+              fontSize: theme('fontSize.base')[0],
+            },
+            h5: {
+              fontSize: theme('fontSize.base')[0],
+            },
+            h6: {
+              fontSize: theme('fontSize.base')[0],
+            },
+
+            /* custom link colors */
+            a: {
+              color: theme('colors.blue.500'),
+
+              transitionProperty: theme('transitionProperty.colors'),
+              transitionTimingFunction: theme(
+                'transitionTimingFunction.DEFAULT'
+              ),
+              transitionDuration: theme('transitionDuration.150'),
+            },
+            'a:hover': {
+              color: theme('colors.blue.300'),
+            },
+
+            /* remove most blockquote styling */
+            blockquote: {
+              fontStyle: 'normal',
+            },
+            'blockquote p:first-of-type::before': null,
+            'blockquote p:last-of-type::after': null,
+
+            code: {
+              wordBreak: 'break-all',
+            },
+          },
         },
-      },
+      }),
     },
   },
 
