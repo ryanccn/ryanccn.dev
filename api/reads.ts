@@ -1,5 +1,5 @@
 import { VercelApiHandler } from '@vercel/node';
-import got from 'got';
+import fetch from 'node-fetch';
 
 type PlausibleReturnType = {
   results: {
@@ -20,7 +20,7 @@ const handler: VercelApiHandler = async (req, res) => {
   let data: PlausibleReturnType;
 
   try {
-    data = await got(
+    data = await fetch(
       `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(
         `event:page==/posts/${slug}`
       )}`,
@@ -29,7 +29,9 @@ const handler: VercelApiHandler = async (req, res) => {
           Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}`,
         },
       }
-    ).json();
+    ).then((a) => {
+      return <Promise<PlausibleReturnType>>a.json();
+    });
   } catch {
     res.json({ error: 'an error occurred in fetching the data.' });
     return;

@@ -1,5 +1,5 @@
 import { VercelApiHandler } from '@vercel/node';
-import got from 'got';
+import fetch from 'node-fetch';
 
 const originalUrl = 'https://plausible.io/js/plausible.js';
 
@@ -17,13 +17,11 @@ const randomStr = () => {
 
 const handler: VercelApiHandler = async (_, res) => {
   const replacement = randomStr();
-  const origin = await got(originalUrl);
+  const origin = await fetch(originalUrl).then((res) => res.text());
 
-  const script = origin.body
+  const script = origin
     .replace(/window.plausible/g, `window.${replacement}`)
     .replace(/plausible_ignore/g, 'plausibleIgnore');
-
-  console.log('plausible replacement:', replacement);
 
   res.setHeader('content-type', 'text/javascript');
   res.setHeader('cache-control', 's-maxage=3600');
