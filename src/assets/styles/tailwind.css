@@ -4,11 +4,12 @@
 
 @layer base {
   body {
-    background-color: #ffffff;
+    @apply bg-white;
+    @apply antialiased tracking-tight;
   }
 
   mark {
-    background-color: transparent;
+    @apply bg-transparent;
   }
 
   ::selection {
