@@ -4,12 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-white;
-    @apply antialiased tracking-tight;
+    @apply bg-white dark:bg-zinc-900;
+    @apply text-black dark:text-white;
+    @apply tracking-[-0.015rem];
   }
 
   mark {
-    @apply bg-transparent;
+    @apply bg-transparent text-black dark:text-white;
   }
 
   ::selection {
@@ -23,15 +24,17 @@
   }
 
   .link {
-    @apply text-black hover:text-blue-500 transition-colors;
+    @apply text-black dark:text-white;
+    @apply hover:text-blue-500 dark:hover:text-blue-400;
+    @apply transition-colors;
   }
 
   .nav.link {
-    @apply rounded-md px-3 py-2 hover:bg-gray-100;
+    @apply rounded-md px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800;
   }
 
   .nav.link.active {
-    @apply text-blue-500 bg-gray-100;
+    @apply text-blue-500 dark:text-blue-400 bg-zinc-100 dark:bg-zinc-800;
   }
 
   .navbar {
@@ -43,12 +46,12 @@
     @apply text-lg font-semibold;
     @apply py-4 px-6 rounded-md;
     @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
-    @apply focus:outline-none focus:ring-[3px] focus:ring-offset-2 focus:ring-blue-400;
+    @apply focus:outline-none focus:ring-[3px] focus:ring-offset-2 dark:focus:ring-offset-zinc-900 focus:ring-blue-400;
   }
 
   .article-cta {
     @apply text-white p-8 rounded-2xl w-full;
     @apply flex flex-col items-start text-left;
-    @apply transition-shadow shadow-md hover:shadow-2xl;
+    @apply transition-shadow shadow-md hover:shadow-lg;
   }
 }

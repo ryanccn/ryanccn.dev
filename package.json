@@ -27,7 +27,7 @@
     "autoprefixer": "^10.4.0",
     "cssnano": "^5.0.12",
     "datauri": "^4.1.0",
-    "esbuild": "^0.14.2",
+    "esbuild": "^0.14.8",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",

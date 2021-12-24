@@ -9,12 +9,12 @@ class Post {
   }
 
   render(data) {
-    return html`<article class="prose">
+    return html`<article class="prose dark:prose-invert">
         <h1>${data.title}</h1>
         ${safe(data.content)}
       </article>
       <button
-        class="bg-blue-500 article-cta rounded-2xl mt-16"
+        class="article-cta bg-blue-500 dark:bg-blue-500 shadow-blue-400/30 hover:shadow-blue-400/60 mt-16"
         data-share-button
       >
         <h1 class="font-semibold text-2xl lg:text-3xl mb-4">
@@ -28,7 +28,7 @@ class Post {
         </p>
       </button>
       <a
-        class="bg-green-400 article-cta rounded-2xl mt-6"
+        class="article-cta bg-green-400 dark:bg-green-500 shadow-green-400/30 hover:shadow-green-400/60 mt-6"
         href="https://twitter.com/RyanCaoDev"
       >
         <h1 class="font-semibold text-2xl lg:text-3xl mb-4">

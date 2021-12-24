@@ -102,7 +102,7 @@ class Page {
 
           ${data.page.url !== '/'
             ? safe(html`<footer class="contain text-center my-28">
-                <p class="text-gray-500">
+                <p class="text-zinc-500">
                   &copy; Ryan Cao 2020-${new Date().getFullYear()}
                 </p>
               </footer>`)

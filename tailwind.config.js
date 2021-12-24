@@ -3,14 +3,11 @@
 
 module.exports = {
   content: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
-  darkMode: 'media',
-
   theme: {
     extend: {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
             maxWidth: null,
 
             /* header font sizes */

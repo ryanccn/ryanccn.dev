@@ -12,7 +12,7 @@ class Page {
 
   render(data) {
     return html`<h1 class="text-4xl font-bold mb-1">Posts</h1>
-      <h2 class="text-lg text-gray-600 font-medium mb-12">
+      <h2 class="text-lg text-zinc-600 dark:text-zinc-300 font-medium mb-12">
         A list of posts that I have written
       </h2>
 
@@ -24,13 +24,17 @@ class Page {
               (i) => html`<li>
                 <a
                   href="${i.url}"
-                  class="block link p-4 -mx-4 rounded-md hover:bg-gray-100"
+                  class="block link p-4 -mx-4 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
                 >
                   <h2 class="text-lg font-semibold">${i.data.title}</h2>
-                  <p class="text-sm text-gray-800 font-medium">
+                  <p
+                    class="text-sm text-zinc-800 dark:text-zinc-100 font-medium"
+                  >
                     <span data-reads>-</span> reads
                   </p>
-                  <p class="text-sm text-gray-800 font-medium">
+                  <p
+                    class="text-sm text-zinc-800 dark:text-zinc-100 font-medium"
+                  >
                     ${i.date.toDateString()}
                   </p>
                 </a>

@@ -22,7 +22,7 @@ const githubIcon = safe(
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      class="block w-[1.2rem] h-[1.2rem] fill-current text-[#181717]"
+      class="block w-[1.2rem] h-[1.2rem] fill-current text-neutral-900 dark:text-neutral-100"
     >
       <title>GitHub</title>
       <path
