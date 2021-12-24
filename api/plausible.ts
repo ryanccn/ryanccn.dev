@@ -1,15 +1,16 @@
-import { VercelApiHandler } from '@vercel/node';
+import type { VercelApiHandler } from '@vercel/node';
 import fetch from 'node-fetch';
 
 const originalUrl = 'https://plausible.io/js/plausible.js';
 
 const randomStr = () => {
-  const chars =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const chars = [
+    ...'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+  ];
 
   let str = '';
   for (let i = 0; i < 20; i++) {
-    str += chars.charAt(Math.floor(Math.random() * chars.length));
+    str += chars[Math.floor(Math.random() * chars.length)];
   }
 
   return str;

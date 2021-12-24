@@ -1,4 +1,4 @@
-import { VercelApiHandler } from '@vercel/node';
+import type { VercelApiHandler } from '@vercel/node';
 import fetch from 'node-fetch';
 
 type PlausibleReturnType = {
