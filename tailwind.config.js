@@ -2,7 +2,13 @@
 // const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: ['./src/**/*.11ty.js', './src/_data/navLinks.js'],
+  content: [
+    './src/**/*.11ty.js',
+    './src/_data/navLinks.js',
+    './src/assets/scripts/theme.ts',
+  ],
+  darkMode: 'class',
+
   theme: {
     extend: {
       typography: (theme) => ({

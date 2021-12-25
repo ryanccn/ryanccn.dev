@@ -1,4 +1,7 @@
 const { html, safe } = require('../../utils/htmlTag');
+const esbuild = require('esbuild');
+const { join } = require('path');
+const logSize = require('../../utils/logSize');
 
 const header = (data) => {
   return html`<header class="navbar contain">
@@ -44,15 +47,51 @@ const header = (data) => {
           )
           .join('\n')
       )}
+      <li>
+        <button class="block" data-theme-toggle>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+        </button>
+      </li>
     </ul>
   </header>`;
 };
 
 class Page {
-  render(data) {
+  async render(data) {
     const socialImg = `${data.domain}/previews/${encodeURIComponent(
       this.slug(data.title)
     )}.png`;
+
+    const build = await esbuild.build({
+      entryPoints: [join(__dirname, '../assets/scripts/theme.ts')],
+      define: {
+        DEV: JSON.stringify(
+          process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
+        ),
+      },
+      format: 'iife',
+      platform: 'browser',
+      minify: true,
+      bundle: true,
+      write: false,
+    });
+
+    const themeScript = build.outputFiles[0].text;
+
+    logSize(themeScript.length, '[theme script]');
 
     return html`
       <!DOCTYPE html>
@@ -85,7 +124,10 @@ class Page {
             ? safe(html`<link rel="stylesheet" href="/assets/prism.css" />`)
             : ''}
 
-          <script defer src="/assets/main.js"></script>
+          <script defer async src="/assets/main.js"></script>
+          <script>
+            ${safe(themeScript)};
+          </script>
           ${data.inProduction
             ? safe(html`<script
                 defer

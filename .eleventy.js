@@ -36,7 +36,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdownLib);
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
-  eleventyConfig.addWatchTarget('src/assets/**/*.{js,css}');
+  eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
   eleventyConfig.addWatchTarget('utils/*.js');
 
   eleventyConfig.ignores.add('README.md');

@@ -40,7 +40,7 @@ class Page {
           >SwiftUI</mark
         >.
       </p>
-      <a class="big-blue-btn" href="/posts"> Read my blog posts → </a>
+      <a class="big-blue-btn" href="/posts">Read my blog posts →</a>
     `;
   }
 }
