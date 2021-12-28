@@ -50,9 +50,12 @@ const updateClass = () => {
   if (DEV)
     console.log(`[theme] updating classes for theme ${themeProxy.theme}`);
 
+  const systemIsDark = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
   if (
-    (themeProxy.theme === 'system' &&
-      window.matchMedia('prefers-color-scheme: dark')) ||
+    (themeProxy.theme === 'system' && systemIsDark) ||
     themeProxy.theme === 'dark'
   ) {
     document.documentElement.classList.add('dark');
@@ -63,7 +66,7 @@ const updateClass = () => {
   document.documentElement.style.setProperty(
     'color-scheme',
     themeProxy.theme === 'system'
-      ? window.matchMedia('prefers-color-scheme: dark')
+      ? systemIsDark
         ? 'dark'
         : 'light'
       : themeProxy.theme
