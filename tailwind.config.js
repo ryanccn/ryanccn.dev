@@ -39,18 +39,18 @@ module.exports = {
             },
 
             /* custom link colors */
-            a: {
-              color: theme('colors.blue.500'),
+            // a: {
+            //   color: theme('colors.blue.500'),
 
-              transitionProperty: theme('transitionProperty.colors'),
-              transitionTimingFunction: theme(
-                'transitionTimingFunction.DEFAULT'
-              ),
-              transitionDuration: theme('transitionDuration.150'),
-            },
-            'a:hover': {
-              color: theme('colors.blue.300'),
-            },
+            //   transitionProperty: theme('transitionProperty.colors'),
+            //   transitionTimingFunction: theme(
+            //     'transitionTimingFunction.DEFAULT'
+            //   ),
+            //   transitionDuration: theme('transitionDuration.150'),
+            // },
+            // 'a:hover': {
+            //   color: theme('colors.blue.300'),
+            // },
 
             /* remove most blockquote styling */
             blockquote: {

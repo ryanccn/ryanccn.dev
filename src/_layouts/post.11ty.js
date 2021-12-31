@@ -9,7 +9,13 @@ class Post {
   }
 
   render(data) {
-    return html`<article class="prose dark:prose-invert">
+    return html`<article
+        class="prose dark:prose-invert
+        prose-a:text-blue-500 hover:prose-a:text-blue-400
+        dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-500
+        prose-a:underline-offset-1
+        prose-a:transition-colors"
+      >
         <h1>${data.title}</h1>
         ${safe(data.content)}
       </article>
