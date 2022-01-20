@@ -1,7 +1,7 @@
 const { html, safe } = require('../../utils/htmlTag');
 const esbuild = require('esbuild');
 const { join } = require('path');
-const logSize = require('../../utils/logSize');
+// const logSize = require('../../utils/logSize');
 
 const header = (data) => {
   return html`<header class="navbar contain">
@@ -91,7 +91,7 @@ class Page {
 
     const themeScript = build.outputFiles[0].text;
 
-    logSize(themeScript.length, '[theme script]');
+    // logSize(themeScript.length, '[theme script]');
 
     return html`
       <!DOCTYPE html>

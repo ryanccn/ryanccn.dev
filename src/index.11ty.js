@@ -28,16 +28,16 @@ class Page {
       </p>
       <p class="mb-16">
         I do
-        <mark data-iterations="1" data-duration="750" class="font-medium"
-          >web development</mark
-        >
+        <mark data-iterations="1" data-duration="750" class="font-medium">
+          web development
+        </mark>
         and am currently learning
         <mark
           data-color="rgba(110, 231, 183, 0.5)"
           data-iterations="1"
           data-duration="750"
           class="font-medium"
-          >SwiftUI</mark
+          >Electron</mark
         >.
       </p>
       <a class="big-blue-btn" href="/posts">Read my blog posts →</a>
