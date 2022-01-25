@@ -14,13 +14,13 @@
   }
 
   ::selection {
-    @apply text-white bg-blue-500;
+    @apply bg-blue-500 text-white;
   }
 }
 
 @layer components {
   .contain {
-    @apply px-9 mx-auto max-w-[70ch];
+    @apply mx-auto max-w-[70ch] px-9;
   }
 
   .link {
@@ -34,24 +34,24 @@
   }
 
   .nav.link.active {
-    @apply text-blue-500 dark:text-blue-400 bg-zinc-100 dark:bg-zinc-800;
+    @apply bg-zinc-100 text-blue-500 dark:bg-zinc-800 dark:text-blue-400;
   }
 
   .navbar {
-    @apply contain flex justify-between items-center;
-    @apply p-6 md:pt-10 mb-16;
+    @apply contain flex items-center justify-between;
+    @apply mb-16 p-6 md:pt-10;
   }
 
   .big-blue-btn {
     @apply text-lg font-semibold;
-    @apply py-4 px-6 rounded-md;
-    @apply bg-blue-500 hover:bg-blue-400 text-white transition-colors;
-    @apply focus:outline-none focus:ring-[3px] focus:ring-offset-2 dark:focus:ring-offset-zinc-900 focus:ring-blue-400;
+    @apply rounded-md py-4 px-6;
+    @apply bg-blue-500 text-white transition-colors hover:bg-blue-400;
+    @apply focus:outline-none focus:ring-[3px] focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-zinc-900;
   }
 
   .article-cta {
-    @apply text-white p-8 rounded-2xl w-full;
+    @apply w-full rounded-2xl p-8 text-white;
     @apply flex flex-col items-start text-left;
-    @apply transition-shadow shadow-md hover:shadow-lg;
+    @apply shadow-md transition-shadow hover:shadow-lg;
   }
 }

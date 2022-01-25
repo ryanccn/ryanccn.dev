@@ -1,0 +1,7 @@
+/_site
+/.vercel
+
+node_modules
+
+.env.local
+/pages.json

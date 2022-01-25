@@ -5,13 +5,13 @@ const { join } = require('path');
 
 const header = (data) => {
   return html`<header class="navbar contain">
-    <a class="flex items-center nav link mr-6" href="/">
+    <a class="nav link mr-6 flex items-center" href="/">
       <img
         src="/icons/50px.png"
         alt=""
         width="25"
         height="25"
-        class="w-[25px] h-[25px] rounded-full mr-2"
+        class="mr-2 h-[25px] w-[25px] rounded-full"
         data-image-no-process="1"
       />
 
@@ -26,7 +26,7 @@ const header = (data) => {
                 href="${link.href}"
                 class="nav link ${link.href === data.page.url
                   ? 'active'
-                  : ''} text-lg font-medium p-2 mr-4"
+                  : ''} mr-4 p-2 text-lg font-medium"
               >
                 ${link.title}
               </a>
@@ -38,7 +38,7 @@ const header = (data) => {
         data.navLinks.social
           .map(
             (link) => html`<li
-              class="block transition-opacity hover:opacity-70 mr-4 last:mr-0"
+              class="mr-4 block transition-opacity last:mr-0 hover:opacity-70"
             >
               <a href="${link.href}" target="_blank" rel="noreferrer noopener">
                 ${link.icon}
@@ -143,7 +143,7 @@ class Page {
           <main class="contain">${safe(data.content)}</main>
 
           ${data.page.url !== '/'
-            ? safe(html`<footer class="contain text-center my-28">
+            ? safe(html`<footer class="contain my-28 text-center">
                 <p class="text-zinc-500">
                   &copy; Ryan Cao 2020-${new Date().getFullYear()}
                 </p>

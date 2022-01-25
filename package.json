@@ -12,34 +12,37 @@
     "social:aws": "AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer yarn social:local",
     "build:local": "NODE_ENV=production eleventy && yarn social:local",
     "build": "NODE_ENV=production eleventy && yarn social:aws",
-    "clean": "rm -rf _site .cache pages.json"
+    "clean": "rm -rf _site .cache pages.json",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "rough-notation": "^0.5.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.0",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^1.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.2.2",
     "@11tyrocks/eleventy-plugin-social-images": "^0.4.1",
     "@tailwindcss/typography": "^0.5.0",
     "@vercel/node": "^1.12.1",
     "autoprefixer": "^10.4.2",
-    "cssnano": "^5.0.15",
+    "cssnano": "^5.0.16",
     "datauri": "^4.1.0",
-    "esbuild": "^0.14.11",
+    "esbuild": "^0.14.13",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.1",
     "kleur": "^4.1.4",
-    "linkedom": "^0.13.0",
+    "linkedom": "^0.13.1",
     "markdown-it": "^12.3.2",
     "markdown-it-emoji": "^2.0.0",
     "node-fetch": "2",
     "performance-now": "^2.1.0",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.4",
     "sharp": "^0.29.3",
-    "tailwindcss": "^3.0.15"
+    "tailwindcss": "^3.0.16"
   },
   "resolutions": {
     "puppeteer": "^13.0.0"
