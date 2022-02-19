@@ -7,6 +7,7 @@
     @apply bg-white dark:bg-zinc-900;
     @apply text-black dark:text-white;
     @apply tracking-[-0.015rem];
+    @apply overflow-y-scroll;
   }
 
   mark {
