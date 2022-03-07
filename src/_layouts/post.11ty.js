@@ -5,6 +5,7 @@ class Post {
     return {
       layout: 'base',
       includePrismCSS: true,
+      permalink: '/posts/{{ page.fileSlug }}.html',
     };
   }
 
