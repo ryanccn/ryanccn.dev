@@ -1,0 +1,54 @@
+<header class="navbar contain">
+  <a class="nav link mr-6 flex items-center" href="/">
+    <img
+      src="/icons/50px.png"
+      alt=""
+      width="25"
+      height="25"
+      class="mr-2 h-[25px] w-[25px] rounded-full"
+      data-image-no-process="1"
+    />
+
+    <span class="text-2xl font-semibold">Ryan Cao</span>
+  </a>
+
+  <ul class="flex items-center">
+    {% for link in navLinks.links %}
+    <li>
+      <a
+        href="{{ link.href }}"
+        class="nav link {%- if link.href === data.page.url -%} active {%- endif -%} mr-4 p-2 text-lg font-medium"
+      >
+        {{ link.title }}
+      </a>
+    </li>
+    {% endfor %}
+    
+    {% for link in navLinks.social %}
+    <li class="mr-4 block transition-opacity last:mr-0 hover:opacity-70">
+      <a href="{{ link.href }}" target="_blank" rel="noreferrer noopener">
+        {{ link.icon | safe }}
+      </a>
+    </li>
+    {% endfor %}
+    
+    <li>
+      <button class="block" data-theme-toggle>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+</header>

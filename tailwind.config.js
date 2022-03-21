@@ -3,9 +3,9 @@
 
 module.exports = {
   content: [
-    './src/**/*.11ty.js',
-    './src/_data/navLinks.js',
-    './src/assets/scripts/theme.ts',
+    './**/*.{11ty.js,njk}',
+    './_data/navLinks.js',
+    './assets/scripts/theme.ts',
   ],
   darkMode: 'class',
 

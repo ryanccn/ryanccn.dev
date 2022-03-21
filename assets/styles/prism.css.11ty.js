@@ -1,5 +1,5 @@
 const postcss = require('postcss');
-const logSize = require('../../../utils/logSize');
+const logSize = require('../../utils/logSize');
 
 const fs = require('fs/promises');
 const path = require('path');

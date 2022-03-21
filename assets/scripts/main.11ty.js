@@ -1,5 +1,5 @@
 const esbuild = require('esbuild');
-const logSize = require('../../../utils/logSize');
+const logSize = require('../../utils/logSize');
 const { join } = require('path');
 
 class Page {

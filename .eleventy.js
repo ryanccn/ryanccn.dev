@@ -2,6 +2,10 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const domTransforms = require('./utils/domTransforms');
 const htmlmin = require('html-minifier');
 
+const { build: esbuild } = require('esbuild');
+const { join } = require('path');
+const logSize = require('./utils/logSize');
+
 const inProduction = process.env.NODE_ENV === 'production';
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
@@ -11,6 +15,33 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons/*.png': 'icons',
+  });
+
+  let cachedThemeScript = null;
+
+  eleventyConfig.addAsyncShortcode('themeScript', async () => {
+    if (!cachedThemeScript) {
+      const build = await esbuild({
+        entryPoints: [join(__dirname, './assets/scripts/theme.ts')],
+        define: {
+          DEV: JSON.stringify(
+            process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
+          ),
+        },
+        format: 'iife',
+        platform: 'browser',
+        minify: true,
+        bundle: true,
+        write: false,
+      });
+
+      const themeScript = build.outputFiles[0].text;
+      cachedThemeScript = themeScript;
+
+      logSize(cachedThemeScript.length, '[embedded theme script]');
+    }
+
+    return cachedThemeScript;
   });
 
   eleventyConfig.addTransform('domtransforms', domTransforms);
@@ -36,7 +67,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdownLib);
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
-  eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
+  eleventyConfig.addWatchTarget('assets/**/*.{js,ts,css}');
   eleventyConfig.addWatchTarget('utils/*.js');
 
   eleventyConfig.ignores.add('README.md');
@@ -47,7 +78,6 @@ const config = (eleventyConfig) => {
 
   return {
     dir: {
-      input: 'src',
       layouts: '_layouts',
     },
   };
