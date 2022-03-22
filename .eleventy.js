@@ -44,6 +44,33 @@ const config = (eleventyConfig) => {
     return cachedThemeScript;
   });
 
+  let cachedThemeScript = null;
+
+  eleventyConfig.addAsyncShortcode('themeScript', async () => {
+    if (!cachedThemeScript) {
+      const build = await esbuild({
+        entryPoints: [join(__dirname, './assets/scripts/theme.ts')],
+        define: {
+          DEV: JSON.stringify(
+            process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
+          ),
+        },
+        format: 'iife',
+        platform: 'browser',
+        minify: true,
+        bundle: true,
+        write: false,
+      });
+
+      const themeScript = build.outputFiles[0].text;
+      cachedThemeScript = themeScript;
+
+      logSize(cachedThemeScript.length, '[embedded theme script]');
+    }
+
+    return cachedThemeScript;
+  });
+
   eleventyConfig.addTransform('domtransforms', domTransforms);
 
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
