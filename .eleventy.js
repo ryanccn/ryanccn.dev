@@ -14,7 +14,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(require('@11tyrocks/eleventy-plugin-social-images'));
 
   eleventyConfig.addPassthroughCopy({
-    './src/assets/icons/*.png': 'icons',
+    './assets/icons/*.png': 'icons',
   });
 
   let cachedThemeScript = null;
