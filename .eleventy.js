@@ -10,38 +10,15 @@ const inProduction = process.env.NODE_ENV === 'production';
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
+  require('dotenv').config({
+    path: '.env.local',
+  });
+
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(require('@11tyrocks/eleventy-plugin-social-images'));
 
   eleventyConfig.addPassthroughCopy({
     './assets/icons/*.png': 'icons',
-  });
-
-  let cachedThemeScript = null;
-
-  eleventyConfig.addAsyncShortcode('themeScript', async () => {
-    if (!cachedThemeScript) {
-      const build = await esbuild({
-        entryPoints: [join(__dirname, './assets/scripts/theme.ts')],
-        define: {
-          DEV: JSON.stringify(
-            process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
-          ),
-        },
-        format: 'iife',
-        platform: 'browser',
-        minify: true,
-        bundle: true,
-        write: false,
-      });
-
-      const themeScript = build.outputFiles[0].text;
-      cachedThemeScript = themeScript;
-
-      logSize(cachedThemeScript.length, '[embedded theme script]');
-    }
-
-    return cachedThemeScript;
   });
 
   let cachedThemeScript = null;
@@ -98,6 +75,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addWatchTarget('utils/*.js');
 
   eleventyConfig.ignores.add('README.md');
+  eleventyConfig.ignores.add('utils/socialTmpl.html');
 
   eleventyConfig.setBrowserSyncConfig({
     ui: false,

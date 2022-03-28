@@ -16,6 +16,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "just-group-by": "^2.0.1",
     "rough-notation": "^0.5.1"
   },
   "devDependencies": {
@@ -23,11 +24,13 @@
     "@11ty/eleventy-img": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@11tyrocks/eleventy-plugin-social-images": "^0.4.1",
+    "@notionhq/client": "^1.0.4",
     "@tailwindcss/typography": "^0.5.2",
     "@vercel/node": "^1.13.0",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.1.3",
     "datauri": "^4.1.0",
+    "dotenv": "^16.0.0",
     "esbuild": "^0.14.25",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
