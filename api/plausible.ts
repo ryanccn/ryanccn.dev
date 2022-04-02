@@ -4,9 +4,7 @@ import fetch from 'node-fetch';
 const originalUrl = 'https://plausible.io/js/plausible.js';
 
 const randomStr = () => {
-  const chars = [
-    ...'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
-  ];
+  const chars = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'];
 
   let str = '';
   for (let i = 0; i < 20; i++) {
