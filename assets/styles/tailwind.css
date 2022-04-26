@@ -21,7 +21,7 @@
 
 @layer components {
   .contain {
-    @apply mx-auto max-w-[70ch] px-9;
+    @apply mx-auto max-w-[75ch] px-9;
   }
 
   .link {
