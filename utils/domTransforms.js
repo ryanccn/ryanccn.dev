@@ -71,7 +71,7 @@ module.exports = async (content, outputPath) => {
       imgElem.replaceWith(picElem);
     }
 
-    /* External link security */
+    /* External links */
 
     const linkElems = [...document.querySelectorAll('a')].filter((e) => {
       if (
