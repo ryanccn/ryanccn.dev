@@ -48,6 +48,6 @@
     "tailwindcss": "^3.0.24"
   },
   "resolutions": {
-    "puppeteer": "^13.0.0"
+    "puppeteer": "^13.7.0"
   }
 }
