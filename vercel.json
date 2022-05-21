@@ -30,7 +30,11 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-        }
+        },
+	{
+          "key": "X-PolyMC-Message",
+	  "value": "Use PolyMC! https://polymc.org/"
+	}
       ]
     }
   ],
