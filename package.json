@@ -37,7 +37,7 @@
     "linkedom": "^0.14.12",
     "markdown-it": "^13.0.1",
     "markdown-it-emoji": "^2.0.2",
-    "node-fetch": "3.2.9",
+    "node-fetch": "2",
     "performance-now": "^2.1.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
