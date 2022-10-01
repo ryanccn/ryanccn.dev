@@ -84,7 +84,8 @@ module.exports = async (content, outputPath) => {
       const href = new URL(e.getAttribute('href'));
 
       return (
-        href.hostname !== 'ryanccn.dev' && href.hostname !== 'localhost:8080'
+        href.hostname !== 'www.ryanccn.dev' &&
+        href.hostname !== 'localhost:8080'
       );
     });
 
