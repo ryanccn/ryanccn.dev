@@ -2,8 +2,13 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const domTransforms = require('./src/utils/domTransforms');
 const htmlmin = require('html-minifier');
 
+const lucide = require('lucide-static/lib');
+const icons = require('simple-icons/icons');
+const { parseHTML } = require('linkedom');
+
 const hasha = require('hasha');
 const { build: esbuild } = require('esbuild');
+
 const { readFile } = require('fs/promises');
 const { join } = require('path');
 const logSize = require('./src/utils/logSize');
@@ -22,6 +27,20 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons/*.png': 'icons',
     './src/assets/fonts': 'assets/fonts',
+  });
+
+  eleventyConfig.addShortcode('lucide', (a, classes) => {
+    const { document } = parseHTML(lucide[a]);
+    document.querySelector('svg').classList.add(classes);
+    return document.toString();
+  });
+
+  eleventyConfig.addShortcode('simpleicon', (a, classes) => {
+    const original = Object.values(icons).filter((k) => k.slug === a)[0].svg;
+
+    const { document } = parseHTML(original);
+    document.querySelector('svg').classList.add(classes);
+    return document.toString();
   });
 
   eleventyConfig.addAsyncShortcode('themeScript', async () => {

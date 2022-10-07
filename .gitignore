@@ -15,3 +15,5 @@ pages.json
 .env.development
 
 .vercel
+
+yarn-*.log

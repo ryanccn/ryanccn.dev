@@ -2563,6 +2563,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+lucide-static@^0.91.0:
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/lucide-static/-/lucide-static-0.91.0.tgz#89d0030a12e2cd0d79dee46a2b5a8cdb137c8b4e"
+  integrity sha512-Y1lETjY2TRJxslCJt9FRfGwEDnKwpaCNOLrUOchT7XGAIpx4cPGKaLURJgT7GXNRisvmVYBZas2qoH4x/vwC7w==
+
 luxon@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-2.5.0.tgz#098090f67d690b247e83c090267a60b1aa8ea96c"
@@ -3959,6 +3964,11 @@ simple-get@^4.0.1:
     decompress-response "^6.0.0"
     once "^1.3.1"
     simple-concat "^1.0.0"
+
+simple-icons@^7.14.0:
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-7.14.0.tgz#b2bb9d5a038835c916614d1601b2e9e1a5d50239"
+  integrity sha512-peojKZtdmNlM4ofTERoJWwP5p/R3mRBtFf9ERTaEmnepXQxdealNZOyjPQie9M1gKQYuy0xD5ckwUWvNFK/fNQ==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
