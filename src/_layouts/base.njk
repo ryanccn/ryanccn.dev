@@ -43,10 +43,10 @@ eleventyComputed:
     {% if inProduction %}
     <script
       defer
-      src="/plausible/script.js"
       data-domain="ryanccn.dev"
-      data-api="/plausible/event"
-    ></script>
+      data-api="/plausible/api/event"
+      src="/plausible/js/script.js">
+    </script>
     {% endif %}
   </head>
 

@@ -36,7 +36,7 @@
   }
 
   mark {
-    @apply bg-transparent text-white;
+    @apply bg-transparent text-black dark:text-white;
   }
 
   a.buttonish,
