@@ -7,7 +7,7 @@ const sleep = (ms) => {
 /** @param {string} slug */
 const fetchData = async (slug) => {
   if (!DEV) {
-    const req = await fetch(`/api/reads?slug=${slug}`);
+    const req = await fetch(`/.netlify/functions/reads?slug=${slug}`);
     return await req.json();
   } else {
     console.log('mocking a fetch call to', slug, 'read count');

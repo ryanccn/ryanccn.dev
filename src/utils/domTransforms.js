@@ -3,6 +3,7 @@ const lqip = require('./lqip');
 const imageSize = require('image-size');
 
 const { parseHTML } = require('linkedom');
+const { readFileSync } = require('fs');
 
 module.exports = async (content, outputPath) => {
   if (outputPath.endsWith('.html')) {
@@ -69,28 +70,6 @@ module.exports = async (content, outputPath) => {
       picElem.appendChild(newImgElem);
 
       imgElem.replaceWith(picElem);
-    }
-
-    /* External links */
-
-    const linkElems = [...document.querySelectorAll('a')].filter((e) => {
-      if (
-        !e.getAttribute('href').startsWith('https://') &&
-        !e.getAttribute('href').startsWith('http://')
-      ) {
-        return false;
-      }
-
-      const href = new URL(e.getAttribute('href'));
-
-      return (
-        href.hostname !== 'ryanccn.dev' && href.hostname !== 'localhost:8080'
-      );
-    });
-
-    for (const elem of linkElems) {
-      elem.setAttribute('target', '_blank');
-      elem.setAttribute('rel', 'noopener noreferrer');
     }
 
     return document.toString();
