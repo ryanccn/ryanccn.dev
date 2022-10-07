@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'Inter var', theme('fontFamily.sans');
+    }
+  }
+
+  body {
+    @apply flex flex-col md:flex-row;
+    @apply mx-auto max-w-[100ch] overflow-y-scroll px-6 pb-20 md:py-40;
+    @apply bg-white text-black dark:bg-zinc-900 dark:text-white;
+    @apply tracking-[-0.015rem];
+  }
+
+  ::selection {
+    @apply bg-blue-500 text-white;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply outline-none focus:ring;
+  }
+
+  .title {
+    @apply mb-12 font-satoshi text-4xl font-bold;
+  }
+
+  .prose .anchor {
+    @apply ml-3 text-base font-medium text-zinc-600 no-underline dark:text-zinc-400;
+  }
+
+  mark {
+    @apply bg-transparent text-white;
+  }
+
+  a.buttonish,
+  button {
+    @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;
+    @apply transition-all hover:brightness-[80%] disabled:opacity-75;
+
+    &.primary {
+      @apply bg-blue-500 text-white;
+    }
+
+    &.danger {
+      @apply bg-red-500 text-white;
+      @apply focus:ring-red-400/50;
+    }
+  }
+}

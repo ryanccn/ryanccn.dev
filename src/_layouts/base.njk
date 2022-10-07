@@ -1,0 +1,106 @@
+---
+eleventyComputed:
+  socialImg: "{{ domain }}/previews/{{ title | slugify }}.png"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="icon" href="/icons/transparent.png" />
+    <link rel="apple-touch-icon" href="/icons/solid.png" />
+    <link rel="canonical" href="https://ryanccn.dev{{ page.url }}" />
+    <meta name="title" content="{{ title }}" />
+    <meta name="description" content="A blog on web development, etc." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="A blog on web development, etc." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@RyanCaoDev" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta property="og:image" content="{{ socialImg }}" />
+    <meta name="twitter:image" content="{{ socialImg }}" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/fonts/inter/inter.css" />
+    <link rel="stylesheet" href="/assets/fonts/satoshi/satoshi.css" />
+
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter/Inter-roman.var.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter/Inter-Regular.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/satoshi/Satoshi-Bold.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/satoshi/Satoshi-Medium.woff2" crossorigin="anonymous" />
+
+    {% if includePrismCSS %}
+    <link rel="stylesheet" href="/assets/prism.css" />
+    {% endif %}
+
+    <script defer async src="/assets/main.js"></script>
+    <script>
+      {% themeScript %}
+    </script>
+
+    {% if inProduction %}
+    <script
+      defer
+      src="/plausible/script.js"
+      data-domain="ryanccn.dev"
+      data-api="/plausible/event"
+    ></script>
+    {% endif %}
+  </head>
+
+  <body>
+    <header
+      class="mb-10 flex w-full flex-none flex-col py-6 md:mb-0 md:mr-20 md:w-fit md:max-w-[22.5%] md:py-0"
+    >
+      <div class="mb-8 flex items-center justify-between">
+        <a href="/" class="font-satoshi text-xl font-bold">
+          <h1>Ryan Cao</h1>
+        </a>
+        <button
+          class="flex-none rounded p-1 md:hidden"
+        >
+          <Menu class="block h-5 w-5" />
+        </button>
+      </div>
+
+      <div class="mb-12 flex-col gap-2 flex">
+        <a
+          href="/posts"
+          class="font-medium transition-colors text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-300"
+        >
+          Blog
+        </a>
+
+        <div class="mt-6 flex items-center gap-2">
+          <a href="https://twitter.com/RyanCaoDev" class="rounded p-1 transition-shadow">
+            <Twitter class="block h-5 w-5 fill-twitter" />
+          </a>
+          <a href="https://github.com/ryanccn" class="rounded p-1 transition-shadow">
+            <GitHub class="block h-5 w-5 fill-github dark:fill-white" />
+          </a>
+          <a href="https://buymeacoffee.com/ryanccn" class="rounded p-1 transition-shadow">
+            <Coffee class="block h-5 w-5 fill-coffee" />
+          </a>
+        </div>
+      </div>
+
+      <p class="hidden text-xs text-zinc-500 md:block">
+        Code licensed under MIT, content licensed under CC by-SA 4.0
+      </p>
+    </header>
+
+    <div class="flex flex-1 flex-col">
+      <main class="flex flex-col">
+        {{ content | safe }}
+      </main>
+
+      <footer
+        class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs text-zinc-500 md:hidden"
+      >
+        Code licensed under MIT, content licensed under CC by-SA 4.0
+      </footer>
+    </div>
+  </body>
+</html>
