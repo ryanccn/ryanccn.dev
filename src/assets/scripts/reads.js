@@ -32,7 +32,7 @@ if (f[0] === 'posts' && f.length === 1) {
       async () => {
         console.log('reads observer tripped');
 
-        const slug = e
+        const slug = ek
           .getAttribute('data-reads')
           .split('/')
           .filter((k) => !!k)[1];
