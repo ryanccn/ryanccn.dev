@@ -45,7 +45,7 @@
     @apply transition-all hover:brightness-[80%] disabled:opacity-75;
 
     &.primary {
-      @apply bg-blue-500 text-white;
+      @apply bg-blue-600 text-white;
     }
 
     &.danger {
