@@ -32,8 +32,8 @@ if (f[0] === 'posts' && f.length === 1) {
       async () => {
         console.log('reads observer tripped');
 
-        const slug = linkElem
-          .getAttribute('href')
+        const slug = e
+          .getAttribute('data-reads')
           .split('/')
           .filter((k) => !!k)[1];
         const a = await fetchData(slug);
