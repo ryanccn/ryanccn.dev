@@ -1,0 +1,19 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none'; img-src * blob: data:; media-src 'none'; connect-src *;
+
+/assets/fonts/*.woff2
+  Cache-Control: max-age=31536000, public, immutable
+
+/assets/fonts/*.woff
+  Cache-Control: max-age=31536000, public, immutable
+
+/assets/fonts/*.ttf
+  Cache-Control: max-age=31536000, public, immutable
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
