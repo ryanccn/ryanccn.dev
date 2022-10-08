@@ -44,39 +44,44 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addAsyncShortcode('themeScript', async () => {
-    const sourceHash = await hasha.fromFile(
-      join(__dirname, './src/assets/scripts/theme.ts')
+    const result = await esbuild({
+      entryPoints: [join(__dirname, './src/assets/scripts/theme.ts')],
+      define: {
+        DEV: JSON.stringify(
+          process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
+        ),
+      },
+      format: 'iife',
+      platform: 'browser',
+      minify: true,
+      bundle: true,
+      write: false,
+    });
+
+    return result.outputFiles[0].text;
+  });
+
+  eleventyConfig.addAsyncShortcode('fontStyles', async () => {
+    const inter = await readFile('./src/assets/fonts/inter/inter.css', 'utf-8');
+    const satoshi = await readFile(
+      './src/assets/fonts/satoshi/satoshi.css',
+      'utf-8'
     );
-    const cacheFile = `./node_modules/.cache/theme/${sourceHash}.js`;
 
-    let cachedThemeScript;
+    return inter + satoshi;
+  });
 
-    try {
-      cachedThemeScript = await readFile(cacheFile, 'utf-8');
-    } catch {
-      /* */
-    }
+  eleventyConfig.addAsyncShortcode('fontScript', async () => {
+    const result = await esbuild({
+      entryPoints: [join(__dirname, './src/assets/scripts/fonts.ts')],
+      format: 'iife',
+      platform: 'browser',
+      minify: true,
+      bundle: true,
+      write: false,
+    });
 
-    if (!cachedThemeScript) {
-      await esbuild({
-        entryPoints: [join(__dirname, './src/assets/scripts/theme.ts')],
-        define: {
-          DEV: JSON.stringify(
-            process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
-          ),
-        },
-        format: 'iife',
-        platform: 'browser',
-        minify: true,
-        bundle: true,
-        outfile: cacheFile,
-      });
-
-      cachedThemeScript = await readFile(cacheFile, 'utf-8');
-      logSize(cachedThemeScript.length, '[embedded theme script]');
-    }
-
-    return cachedThemeScript;
+    return result.outputFiles[0].text;
   });
 
   eleventyConfig.addTransform('domtransforms', domTransforms);

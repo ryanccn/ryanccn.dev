@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  @supports (font-variation-settings: normal) {
-    html {
-      font-family: 'Inter var', theme('fontFamily.sans');
-    }
-  }
-
   body {
     @apply flex flex-col md:flex-row;
     @apply mx-auto max-w-[100ch] overflow-y-scroll px-6 pb-20 md:py-40;
