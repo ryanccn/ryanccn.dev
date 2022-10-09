@@ -1,4 +1,7 @@
 declare const DEV: boolean;
+
+/* Weird theme sysem */
+
 type ThemeString = 'dark' | 'light' | 'system';
 
 const BUTTONS = () => document.querySelectorAll('button[data-theme-toggle]');
@@ -120,7 +123,6 @@ const themeProxy = new Proxy<{ theme: ThemeString }>(
 );
 
 updateClass();
-BUTTONS().forEach(updateHTML);
 
 window.addEventListener('load', () => {
   BUTTONS().forEach((e) => {
@@ -132,9 +134,39 @@ window.addEventListener('load', () => {
   });
 });
 
+document.addEventListener(
+  'load',
+  (e) => {
+    if (e.target.tagName != 'IMG') {
+      return;
+    }
+
+    e.target.style.backgroundImage = 'none';
+  },
+  true
+);
+
 window.addEventListener('storage', (e) => {
   if (DEV) console.log('[theme] storage listener triggered');
 
   if (e.key !== 'theme') return;
   themeProxy.theme = getLocalStorageValue();
 });
+
+/* Fonts */
+
+if ('fonts' in document) {
+  let satoshiVar = new FontFace(
+    'Satoshi',
+    "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221008172130') format('woff2'), url(/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221008172130) format('woff')"
+  );
+
+  let interVar = new FontFace(
+    'Inter',
+    "url('/assets/fonts/inter/Inter-roman.var.woff2?v=20221008172130') format('woff2')"
+  );
+
+  Promise.all([satoshiVar.load(), interVar.load()]).then((fonts) => {
+    fonts.forEach((font) => document.fonts.add(font));
+  });
+}

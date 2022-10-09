@@ -43,9 +43,9 @@ const config = (eleventyConfig) => {
     return document.toString();
   });
 
-  eleventyConfig.addAsyncShortcode('themeScript', async () => {
+  eleventyConfig.addAsyncShortcode('inlinedScript', async () => {
     const result = await esbuild({
-      entryPoints: [join(__dirname, './src/assets/scripts/theme.ts')],
+      entryPoints: [join(__dirname, './src/assets/scripts/inlinedScript.ts')],
       define: {
         DEV: JSON.stringify(
           process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
@@ -69,19 +69,6 @@ const config = (eleventyConfig) => {
     );
 
     return inter + satoshi;
-  });
-
-  eleventyConfig.addAsyncShortcode('fontScript', async () => {
-    const result = await esbuild({
-      entryPoints: [join(__dirname, './src/assets/scripts/fonts.ts')],
-      format: 'iife',
-      platform: 'browser',
-      minify: true,
-      bundle: true,
-      write: false,
-    });
-
-    return result.outputFiles[0].text;
   });
 
   eleventyConfig.addTransform('domtransforms', domTransforms);
