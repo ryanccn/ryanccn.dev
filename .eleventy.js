@@ -27,6 +27,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons/*.png': 'icons',
     './src/assets/fonts': 'assets/fonts',
+    './_headers': '_headers',
   });
 
   eleventyConfig.addShortcode('lucide', (a, classes) => {
