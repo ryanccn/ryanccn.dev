@@ -1,4 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const EleventyFetch = require('@11ty/eleventy-fetch');
+
 const domTransforms = require('./src/utils/domTransforms');
 const htmlmin = require('html-minifier');
 
@@ -6,7 +8,6 @@ const lucide = require('lucide-static/lib');
 const icons = require('simple-icons/icons');
 const { parseHTML } = require('linkedom');
 
-const hasha = require('hasha');
 const { build: esbuild } = require('esbuild');
 
 const { readFile } = require('fs/promises');
@@ -59,7 +60,10 @@ const config = (eleventyConfig) => {
       write: false,
     });
 
-    return result.outputFiles[0].text;
+    const output = result.outputFiles[0].text;
+    logSize(output.length, 'inlinedScript');
+
+    return output;
   });
 
   eleventyConfig.addAsyncShortcode('fontStyles', async () => {
@@ -71,6 +75,33 @@ const config = (eleventyConfig) => {
 
     return inter + satoshi;
   });
+
+  eleventyConfig.addAsyncShortcode(
+    'postReads',
+    /**
+     * @param originalUrl {string}
+     */
+    async (originalUrl) => {
+      console.log(`Fetching analytics data for ${originalUrl}`);
+
+      const url = `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(
+        `event:page==${originalUrl}` +
+          (originalUrl.endsWith('/')
+            ? `\|${originalUrl.substring(0, originalUrl.length - 1)}`
+            : '')
+      )}`;
+
+      const res = await EleventyFetch(url, {
+        fetchOptions: {
+          headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}` },
+        },
+        duration: '1d',
+        type: 'json',
+      });
+
+      return `${res.results.pageviews.value}`;
+    }
+  );
 
   eleventyConfig.addTransform('domtransforms', domTransforms);
 

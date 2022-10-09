@@ -3,7 +3,6 @@ const lqip = require('./lqip');
 const imageSize = require('image-size');
 
 const { parseHTML } = require('linkedom');
-const { readFileSync } = require('fs');
 
 module.exports = async (content, outputPath) => {
   if (outputPath.endsWith('.html')) {
