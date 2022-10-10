@@ -31,6 +31,8 @@ const config = (eleventyConfig) => {
     './_headers': '_headers',
   });
 
+  eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
+
   eleventyConfig.addShortcode('lucide', (a, classes) => {
     const { document } = parseHTML(lucide[a]);
     document.querySelector('svg').classList.add(classes);
