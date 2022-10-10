@@ -16,6 +16,11 @@ const logSize = require('./src/utils/logSize');
 
 const inProduction = process.env.NODE_ENV === 'production';
 
+/**
+ * @param {string} path
+ */
+const absoluteUrl = (path) => new URL(path, 'https://ryanccn.dev').toString();
+
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
   require('dotenv').config({
@@ -45,6 +50,17 @@ const config = (eleventyConfig) => {
     const { document } = parseHTML(original);
     document.querySelector('svg').classList.add(classes);
     return document.toString();
+  });
+
+  eleventyConfig.addShortcode('twitterShareLink', function () {
+    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      encodeURIComponent(absoluteUrl(this.page.url))
+    )}`;
+  });
+  eleventyConfig.addShortcode('hnShareLink', function () {
+    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+      encodeURIComponent(absoluteUrl(this.page.url))
+    )}&t=${encodeURIComponent(this.page.title)}`;
   });
 
   eleventyConfig.addAsyncShortcode('inlinedScript', async () => {

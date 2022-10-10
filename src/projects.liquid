@@ -1,0 +1,34 @@
+---
+layout: 'base'
+title: 'Projects'
+---
+
+<h2 class="font-satoshi font-bold text-3xl mb-8">Projects</h2>
+<div class="projects-grid">
+  {% for project in projects.projects %}
+    {% include 'projectCard.liquid' %}
+  {% endfor %}
+</div>
+
+<h3 class="projects-page">Notable Contributions</h3>
+<div class="projects-grid">
+  {% for project in projects.contributions %}
+    {% include 'projectCard.liquid' %}
+  {% endfor %}
+</div>
+
+<h3 class="projects-page">Minecraft Mods</h3>
+<div class="projects-grid">
+  {% for project in projects.mods %}
+    {% include 'projectCard.liquid' %}
+  {% endfor %}
+</div>
+
+<h3 class="projects-page">Archived Projects</h3>
+<div class="projects-grid">
+  {% for project in projects.archived %}
+    {% include 'projectCard.liquid' %}
+  {% endfor %}
+</div>
+
+{% include 'shareLinks.liquid' %}

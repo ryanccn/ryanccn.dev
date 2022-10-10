@@ -47,4 +47,12 @@
       @apply focus:ring-red-400/50;
     }
   }
+
+  h3.projects-page {
+    @apply mb-6 font-satoshi text-2xl font-semibold;
+  }
+
+  div.projects-grid {
+    @apply mb-12 grid grid-cols-1 gap-4 md:grid-cols-2;
+  }
 }

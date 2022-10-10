@@ -1,0 +1,128 @@
+{
+  "projects": [
+    {
+      "name": "Moddermore",
+      "description": "Share the mods you use with anyone.",
+      "tags": [
+        "nextjs",
+        "react",
+        "typescript",
+        "tailwindcss",
+        "nodejs",
+        "mongodb"
+      ],
+      "github": "ryanccn/moddermore",
+      "featured": true
+    },
+    {
+      "name": "ryanccn.dev",
+      "description": "My personal website, made with Eleventy and Tailwind CSS!",
+      "tags": ["eleventy", "tailwindcss", "nodejs", "cloudflare"],
+      "github": "ryanccn/ryanccn.dev",
+      "featured": true
+    },
+    {
+      "name": "custom-iosevka",
+      "description": "Ryan's custom Iosevka Nerd Font build!",
+      "tags": ["deno", "fonts", "monospace", "ci/cd"],
+      "github": "ryanccn/custom-iosevka"
+    },
+    {
+      "name": "quilted-dependabot",
+      "description": "Update certain dependencies for Quilt",
+      "tags": ["minecraft", "quilt", "ci/cd"],
+      "github": "RyanModDev/quilted-dependabot"
+    }
+  ],
+  "mods": [
+    {
+      "name": "Vanillish",
+      "description": "A lightweight and beautiful vanilla experience",
+      "tags": ["minecraft", "fabric", "modpack", "packwiz"],
+      "github": "RyanModDev/Vanillish",
+      "featured": true
+    },
+    {
+      "name": "Postmortal Inventory",
+      "description": "Totems work in your inventory. Period.",
+      "tags": ["minecraft", "quilt", "java"],
+      "github": "RyanModDev/postmortal-inventory"
+    },
+    {
+      "name": "uwuify chat",
+      "description": "uwuify the chat messages owo",
+      "tags": ["minecraft", "quilt", "java", "uwu", "owo"],
+      "github": "RyanModDev/uwuify-chat"
+    },
+    {
+      "name": "Myriad Bows",
+      "description": "A Myriad enchantment for bows that consumes arrows depending on your luck",
+      "tags": ["minecraft", "quilt", "java"],
+      "github": "RyanModDev/MyriadBows"
+    },
+    {
+      "name": "EmuNO",
+      "description": "Disables various macOS-specific behaviors, making your life better",
+      "tags": ["minecraft", "fabric", "macos", "java"],
+      "github": "RyanModDev/EmuNO"
+    }
+  ],
+  "contributions": [
+    {
+      "name": "PolyMC",
+      "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once",
+      "tags": ["minecraft", "qt", "c++"],
+      "github": "PolyMC/PolyMC"
+    },
+    {
+      "name": "Fig",
+      "description": "The next-generation command line.",
+      "tags": ["terminal", "deno", "typescript"],
+      "github": "withfig/autocomplete"
+    },
+    {
+      "name": "Modrinth",
+      "description": "Discover, play, and create Minecraft content",
+      "tags": ["minecraft", "nuxt", "vue"],
+      "github": "modrinth/knossos"
+    },
+    {
+      "name": "jet",
+      "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
+      "tags": ["eleventy", "tailwindcss", "nodejs"],
+      "github": "marcamos/jet"
+    }
+  ],
+  "archived": [
+    {
+      "name": "WarmerDistance",
+      "description": "Social distancing maintenance system based on computer vision",
+      "tags": ["ml", "opencv", "python"],
+      "github": "ryanccn/warmerdistance"
+    },
+    {
+      "name": "PolyM1",
+      "description": "An M1 hack for PolyMC",
+      "tags": ["minecraft", "polymc", "go"],
+      "github": "ryanccn/PolyM1"
+    },
+    {
+      "name": "sieve-of-eratosthenes",
+      "description": "A demo of the Sieve of Eratosthenes, made with Vue 3 & Vite",
+      "tags": ["vue", "vite", "typescript"],
+      "github": "ryanccn/sieve-of-eratosthenes"
+    },
+    {
+      "name": "clank",
+      "description": "A simple CLI that runs your C++ code JIT",
+      "tags": ["deno", "cliffy", "c++", "typescript"],
+      "github": "ryanccn/clank"
+    },
+    {
+      "name": "bookmarklet",
+      "description": "A CLI for creating bookmarklets",
+      "tags": ["bookmarklet", "browser", "nodejs"],
+      "github": "ryanccn/bookmarklet"
+    }
+  ]
+}

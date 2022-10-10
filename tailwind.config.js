@@ -1,10 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-// const colors = require('tailwindcss/colors');
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{11ty.js,njk}',
+    './src/**/*.{11ty.js,njk,liquid}',
     './src/_data/navLinks.js',
     './src/assets/scripts/theme.ts',
   ],
@@ -21,6 +21,14 @@ module.exports = {
         twitter: '#1DA1F2',
         github: '#181717',
         coffee: '#FFDD00',
+
+        tag: {
+          1: colors.rose[500],
+          2: colors.amber[500],
+          3: colors.green[600],
+          4: colors.blue[500],
+          0: colors.indigo[500],
+        },
       },
     },
   },
