@@ -2,7 +2,7 @@
   bg-tag-0 bg-tag-1 bg-tag-2 bg-tag-3 bg-tag-4
 {%- endcomment -%}
 
-<a class="group flex flex-col gap-y-2 p-4 rounded transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800{% if project.featured %} col-span-2{% endif %}" href="https://github.com/{{ project.github | escape }}">
+<a class="group flex flex-col gap-y-2 p-4 rounded transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800{% if project.featured %} md:col-span-2{% endif %}" href="https://github.com/{{ project.github | escape }}">
   <h4 class="font-semibold font-satoshi text-xl">
     {{ project.name | escape }}
   </h4>
