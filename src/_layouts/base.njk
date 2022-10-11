@@ -71,7 +71,7 @@ eleventyComputed:
         </a>
         {% endfor %}
 
-        <div class="mt-6 flex items-center gap-2">
+        <div class="mt-6 flex flex-wrap items-center gap-2">
           <a href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
             {% simpleicon "twitter", "block h-5 w-5 fill-twitter" %}
           </a>
@@ -81,6 +81,9 @@ eleventyComputed:
           <a href="https://buymeacoffee.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all">
             {% simpleicon "buymeacoffee", "block h-5 w-5 fill-coffee" %}
           </a>
+          <button type="button" data-theme-toggle class="rounded p-1 hover:brightness-90 transition-all">
+            <svg class="block h-5 w-5" />
+          </button>
         </div>
       </div>
 
