@@ -21,6 +21,7 @@ module.exports = {
         twitter: '#1DA1F2',
         github: '#181717',
         coffee: '#FFDD00',
+        discord: '#5865F2',
 
         tag: {
           1: colors.rose[500],
