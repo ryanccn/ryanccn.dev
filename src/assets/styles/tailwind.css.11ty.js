@@ -18,11 +18,12 @@ class Page {
       require('tailwindcss/nesting'),
       require('tailwindcss'),
       require('autoprefixer'),
+      require('cssnano'),
     ];
 
     const css = await postcss(plugins).process(await fs.readFile(source), {
       from: source,
-      to: undefined,
+      to: source,
     });
 
     logSize(css.content.length, 'tailwind.css');

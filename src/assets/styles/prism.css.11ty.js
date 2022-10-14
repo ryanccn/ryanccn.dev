@@ -13,14 +13,15 @@ class Page {
   }
 
   async render() {
-    const original = await fs.readFile(path.join(__dirname, 'prism.css'));
+    const prismPath = path.join(__dirname, 'prism.css');
+    const original = await fs.readFile(prismPath);
 
     const css = await postcss([
       require('autoprefixer'),
       require('cssnano'),
     ]).process(original, {
-      from: undefined,
-      to: undefined,
+      from: prismPath,
+      to: prismPath,
     });
 
     logSize(css.content.length, 'prism.css');
