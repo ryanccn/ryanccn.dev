@@ -16,6 +16,23 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
         satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
+
+      typography: {
+        DEFAULT: {
+          css: {
+            blockquote: {
+              'font-style': 'normal',
+            },
+            'blockquote p:first-of-type::before': {
+              content: '',
+            },
+            'blockquote p:last-of-type::after': {
+              content: '',
+            },
+          },
+        },
+      },
+
       colors: {
         hn: '#F0652F',
         twitter: '#1DA1F2',
