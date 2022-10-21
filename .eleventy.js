@@ -136,10 +136,19 @@ const config = (eleventyConfig) => {
 
   const markdownIt = require('markdown-it');
   const markdownItEmoji = require('markdown-it-emoji');
-  const options = {
-    html: true,
-  };
-  const markdownLib = markdownIt(options).use(markdownItEmoji);
+  const markdownItAnchor = require('markdown-it-anchor');
+
+  const markdownLib = markdownIt({ html: true })
+    .use(markdownItEmoji)
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after',
+        class: 'anchor',
+        symbol: '#',
+        level: [2, 3, 4],
+      }),
+      slugify: eleventyConfig.getFilter('slug'),
+    });
 
   eleventyConfig.setLibrary('md', markdownLib);
 
