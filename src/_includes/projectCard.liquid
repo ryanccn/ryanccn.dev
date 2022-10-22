@@ -2,7 +2,7 @@
   bg-tag-0 bg-tag-1 bg-tag-2 bg-tag-3 bg-tag-4
 {%- endcomment -%}
 
-<a class="group flex flex-col gap-y-2 p-4 rounded transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800{% if project.featured %} md:col-span-2{% endif %}" href="https://github.com/{{ project.github | escape }}">
+<a class="flex flex-col gap-y-2 p-4 rounded transition-all hover:bg-zinc-100 dark:hover:bg-zinc-800{% if project.featured %} md:col-span-2{% endif %}" href="https://github.com/{{ project.github | escape }}">
   <h4 class="font-semibold font-satoshi text-xl">
     {{ project.name | escape }}
   </h4>
@@ -12,7 +12,7 @@
   {% if project.tags.length %}
     <div class="flex flex-wrap mt-4 gap-x-2 gap-y-1">
       {% for tag in project.tags %}
-        <span class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-tag-{{ forloop.index | modulo: 5 }} text-white brightness-90 group-hover:brightness-100 transition">
+        <span class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-tag-{{ forloop.index | modulo: 5 }} text-white">
           {{ tag | escape }}
         </span>
       {% endfor %}
