@@ -7,7 +7,8 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "esModuleInterop": true,
-    "isolatedModules": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": false
   },
   "exclude": ["node_modules", "**/node_modules/*"]
 }

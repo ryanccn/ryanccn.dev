@@ -41,7 +41,7 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}" />
     {% endif %}
 
-    <script>{% inlinedScript %}</script>
+    <script data-input-path="{{ page.inputPath }}">{% inlinedScript %}</script>
 
     {% if inProduction %}
     <script
