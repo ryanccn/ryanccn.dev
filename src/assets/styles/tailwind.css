@@ -54,7 +54,7 @@
   }
 
   h3.projects-page {
-    @apply mb-6 font-satoshi text-2xl font-semibold;
+    @apply mb-6 font-satoshi text-2xl font-bold;
   }
 
   div.projects-grid {
