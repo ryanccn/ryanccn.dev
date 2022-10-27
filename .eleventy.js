@@ -53,14 +53,10 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addShortcode('twitterShareLink', function () {
-    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      encodeURIComponent(absoluteUrl(this.page.url))
-    )}`;
+    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(absoluteUrl(this.page.url))}`;
   });
   eleventyConfig.addShortcode('hnShareLink', function () {
-    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
-      encodeURIComponent(absoluteUrl(this.page.url))
-    )}&t=${encodeURIComponent(this.page.title)}`;
+    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(absoluteUrl(this.page.url))}&t=${encodeURIComponent(this.title)}`;
   });
 
   eleventyConfig.addAsyncShortcode('inlinedScript', async () => {
