@@ -64,7 +64,7 @@ const twitterShortcode = async (id) => {
           </div>
         </div>
         <p class="text-lg">
-          ${safe(escapeHtml(tweet.text).replace('\n', '<br>'))}
+          ${safe(escapeHtml(tweet.text).replace(/\n/g, '<br>'))}
         </p>
         <div class="flex justify-between">
           <div class="flex items-center gap-x-1">
