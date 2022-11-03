@@ -27,3 +27,4 @@ const safe = (a) => ({ value: a, safe: true });
 
 exports.html = html;
 exports.safe = safe;
+exports.escapeHtml = escapeHtml;

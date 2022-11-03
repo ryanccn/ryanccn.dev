@@ -1,11 +1,16 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
-const domTransforms = require('./src/utils/domTransforms');
+const lucideShortcode = require('./src/_11ty/lucideShortcode');
+const { twitterShortcode } = require('./src/_11ty/twitterShortcode');
 const htmlmin = require('html-minifier');
 
-const lucide = require('lucide-static/lib');
 const icons = require('simple-icons/icons');
+
+const Image = require('@11ty/eleventy-img');
+const imageSize = require('image-size');
+const lqip = require('./src/_11ty/lqip');
+
 const { parseHTML } = require('linkedom');
 
 const { build: esbuild } = require('esbuild');
@@ -38,11 +43,7 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
 
-  eleventyConfig.addShortcode('lucide', (a, classes) => {
-    const { document } = parseHTML(lucide[a]);
-    document.querySelector('svg').classList.add(classes);
-    return document.toString();
-  });
+  eleventyConfig.addShortcode('lucide', lucideShortcode);
 
   eleventyConfig.addShortcode('simpleicon', (a, classes) => {
     const original = Object.values(icons).filter((k) => k.slug === a)[0].svg;
@@ -52,12 +53,66 @@ const config = (eleventyConfig) => {
     return document.toString();
   });
 
+  eleventyConfig.addAsyncShortcode('respimg', async (src, alt) => {
+    const { document } = parseHTML('');
+
+    const { width: originalWidth, height: originalHeight } =
+      imageSize.imageSize(src);
+
+    const stats = await Image(src, {
+      widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, originalWidth]
+        .filter((a) => a <= originalWidth)
+        .sort((a, b) => a - b),
+      formats: ['avif', 'webp', 'jpeg'],
+      outputDir: './_site/images',
+      urlPath: '/images/',
+    });
+
+    const lowsrc = stats.jpeg[stats.jpeg.length - 1];
+
+    const lqipURI = await lqip(lowsrc.outputPath);
+
+    const picElem = document.createElement('picture');
+
+    Object.values(stats).forEach((i) => {
+      const srcElem = document.createElement('source');
+      srcElem.setAttribute('type', i[0].sourceType);
+      srcElem.setAttribute('srcset', i.map((entry) => entry.srcset).join(', '));
+      srcElem.setAttribute('sizes', '100vw');
+
+      picElem.appendChild(srcElem);
+    });
+
+    const newImgElem = document.createElement('img');
+    newImgElem.setAttribute('src', lowsrc.url);
+    newImgElem.setAttribute('width', originalWidth);
+    newImgElem.setAttribute('height', originalHeight);
+    newImgElem.setAttribute('alt', alt);
+    newImgElem.setAttribute('loading', 'lazy');
+    newImgElem.setAttribute('decoding', 'async');
+    newImgElem.setAttribute('sizes', '100vw');
+    newImgElem.setAttribute(
+      'style',
+      `content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`
+    );
+
+    picElem.appendChild(newImgElem);
+
+    return picElem.toString();
+  });
+
   eleventyConfig.addShortcode('twitterShareLink', function () {
-    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(absoluteUrl(this.page.url))}`;
+    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      absoluteUrl(this.page.url)
+    )}`;
   });
   eleventyConfig.addShortcode('hnShareLink', function () {
-    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(absoluteUrl(this.page.url))}&t=${encodeURIComponent(this.title)}`;
+    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+      absoluteUrl(this.page.url)
+    )}&t=${encodeURIComponent(this.title)}`;
   });
+
+  eleventyConfig.addAsyncShortcode('tweet', twitterShortcode);
 
   eleventyConfig.addAsyncShortcode('inlinedScript', async () => {
     const result = await esbuild({
@@ -117,8 +172,6 @@ const config = (eleventyConfig) => {
     }
   );
 
-  eleventyConfig.addTransform('domtransforms', domTransforms);
-
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
     if (inProduction && outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
@@ -144,7 +197,8 @@ const config = (eleventyConfig) => {
         level: [2, 3, 4],
       }),
       slugify: eleventyConfig.getFilter('slug'),
-    });
+    })
+    .disable('code');
 
   eleventyConfig.setLibrary('md', markdownLib);
 

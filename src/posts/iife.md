@@ -24,7 +24,7 @@ But why do you need the wrapper of a function? Can't you just put the code just 
 
 But... Take an example of setting `document.designMode` to `true`. When you do that in a bookmarklet, it would become problematic because browsers automatically write the returned value **to the document**, which is not ideal since many JavaScript expressions do return values inadvertently.
 
-![Example of using document.designMode](images/designMode.png)
+{% respimg 'images/designMode.png' 'Example of using document.designMode' %}
 
 When you wrap all of that in an **IIFE**, however, the return value is contained inside the IIFE, and the returnn value will only be the return value of the IIFE itself, which is empty air.
 

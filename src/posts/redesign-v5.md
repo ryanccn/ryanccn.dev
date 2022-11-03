@@ -9,6 +9,8 @@ Last week, this website was redesigned. It includes two new fonts (<span class="
 
 The two-column layout was used in the second iteration of my website over a year ago, inspired by [@tmcw's website](https://macwright.com/). I've come back to this because I wanted to have a simplistic, accessible design without a fully formed navigation bar (which looks overpowered for a personal website).
 
+{% tweet '1408399548364464131' %}
+
 ## Fonts
 
 To make headings stand out more, I decided to add the recently released <a class="font-satoshi font-semibold" href="https://www.fontshare.com/fonts/satoshi">Satoshi</a> for headings. I also added the [Inter](https://rsms.me/inter) font to ensure the body font looks as good as the macOS system font everywhere. This resulted in a much more unique and legible design.
@@ -17,7 +19,7 @@ Unfortunately, adding web fonts has tradeoffs. In an initial version which simpl
 
 I did some reading and research and discovered [Zach Leatherman's guide on web font loading mechanisms](https://www.zachleat.com/web/comprehensive-webfonts/). I chose to adopt the [Critical FOFT with `preload` method](https://www.zachleat.com/web/comprehensive-webfonts/#critical-foft-preload) since it seemed the most future-proof and also worked with Cloudflare Pages's [Early Hints](https://developers.cloudflare.com/pages/platform/early-hints/). Using `fonttools`, I generated a subsetted font that only included Latin glyphs, since most of my website is English. This subsetted font is used in the stylesheet and preloaded. In a second stage, a piece of JavaScript waits for the page load to finish and replaces the subsetted font with the full font (including italic variants) using the [Font Loading API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API). This reduces the CLS by a lot (depending on whether the fonts or the stylesheet loads faster) and ensures a blazing fast loading speed.
 
-![Waterfall diagram in DevTools Network tab](images/redesign-v5/waterfall.png)
+{% respimg 'images/redesign-v5/waterfall.png' 'Waterfall diagram in DevTools Network tab' %}
 
 ## Icons
 
