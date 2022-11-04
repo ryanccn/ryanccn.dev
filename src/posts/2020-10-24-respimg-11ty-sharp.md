@@ -255,7 +255,7 @@ eleventyConfig.addTransform('responsiveimg', async (content, outputPath) => {
 So when you have an original Markdown image defined as
 
 ```markdown
-
+![SWR Cover](/images/swr-cover.png)
 ```
 
 You will have the result in the HTML as

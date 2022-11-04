@@ -5,8 +5,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   content: [
     './src/**/*.{11ty.js,njk,liquid}',
-    './src/_data/navLinks.js',
-    './src/_11ty/twitterShortcode.js',
+    './src/_11ty/shortcodes/*.js',
     './src/assets/scripts/theme.ts',
   ],
   darkMode: 'class',
