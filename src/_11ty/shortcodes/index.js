@@ -19,10 +19,12 @@ module.exports = (eleventyConfig) => {
     )}`;
   });
 
-  eleventyConfig.addShortcode('hnShareLink', function () {
-    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
-      absoluteUrl(this.page.url)
-    )}&t=${encodeURIComponent(this.title)}`;
+  eleventyConfig.addShortcode('hnShareLink', function (title) {
+    return (
+      `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+        absoluteUrl(this.page.url)
+      )}` + (title ? `&t=${encodeURIComponent(title)}` : '')
+    );
   });
 
   eleventyConfig.addAsyncShortcode('fontStyles', fontStyles);
