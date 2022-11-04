@@ -1,13 +1,13 @@
 const { Client } = require('twitter-api-sdk');
 const Image = require('@11ty/eleventy-img');
 
-const { html, safe, escapeHtml } = require('../utils/htmlTag');
-const lucideShortcode = require('./lucideShortcode');
+const { html, safe, escapeHtml } = require('../../utils/htmlTag');
+const lucideShortcode = require('./lucide');
 
 /**
  * @param id {string}
  */
-const twitterShortcode = async (id) => {
+module.exports = async (id) => {
   const twitterClient = new Client(process.env.TWITTER_ACCESS_TOKEN);
 
   const { data: tweet, includes } = await twitterClient.tweets.findTweetById(
@@ -88,5 +88,3 @@ const twitterShortcode = async (id) => {
     </div>
   `.trim();
 };
-
-exports.twitterShortcode = twitterShortcode;

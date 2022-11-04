@@ -1,30 +1,9 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const EleventyFetch = require('@11ty/eleventy-fetch');
+const registerShortcodes = require('./src/_11ty/shortcodes');
 
-const lucideShortcode = require('./src/_11ty/lucideShortcode');
-const { twitterShortcode } = require('./src/_11ty/twitterShortcode');
 const htmlmin = require('html-minifier');
 
-const icons = require('simple-icons/icons');
-
-const Image = require('@11ty/eleventy-img');
-const imageSize = require('image-size');
-const lqip = require('./src/_11ty/lqip');
-
-const { parseHTML } = require('linkedom');
-
-const { build: esbuild } = require('esbuild');
-
-const { readFile } = require('fs/promises');
-const { join } = require('path');
-const logSize = require('./src/utils/logSize');
-
 const inProduction = process.env.NODE_ENV === 'production';
-
-/**
- * @param {string} path
- */
-const absoluteUrl = (path) => new URL(path, 'https://ryanccn.dev').toString();
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
@@ -42,134 +21,7 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
 
-  eleventyConfig.addShortcode('lucide', lucideShortcode);
-
-  eleventyConfig.addShortcode('simpleicon', (a, classes) => {
-    const original = Object.values(icons).filter((k) => k.slug === a)[0].svg;
-
-    const { document } = parseHTML(original);
-    document.querySelector('svg').classList.add(classes);
-    return document.toString();
-  });
-
-  eleventyConfig.addAsyncShortcode('respimg', async (src, alt) => {
-    const { document } = parseHTML('');
-
-    const { width: originalWidth, height: originalHeight } =
-      imageSize.imageSize(src);
-
-    const stats = await Image(src, {
-      widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, originalWidth]
-        .filter((a) => a <= originalWidth)
-        .sort((a, b) => a - b),
-      formats: ['avif', 'webp', 'jpeg'],
-      outputDir: './_site/images',
-      urlPath: '/images/',
-    });
-
-    const lowsrc = stats.jpeg[stats.jpeg.length - 1];
-
-    const lqipURI = await lqip(lowsrc.outputPath);
-
-    const picElem = document.createElement('picture');
-
-    Object.values(stats).forEach((i) => {
-      const srcElem = document.createElement('source');
-      srcElem.setAttribute('type', i[0].sourceType);
-      srcElem.setAttribute('srcset', i.map((entry) => entry.srcset).join(', '));
-      srcElem.setAttribute('sizes', '100vw');
-
-      picElem.appendChild(srcElem);
-    });
-
-    const newImgElem = document.createElement('img');
-    newImgElem.setAttribute('src', lowsrc.url);
-    newImgElem.setAttribute('width', originalWidth);
-    newImgElem.setAttribute('height', originalHeight);
-    newImgElem.setAttribute('alt', alt);
-    newImgElem.setAttribute('loading', 'lazy');
-    newImgElem.setAttribute('decoding', 'async');
-    newImgElem.setAttribute('sizes', '100vw');
-    newImgElem.setAttribute(
-      'style',
-      `content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`
-    );
-
-    picElem.appendChild(newImgElem);
-
-    return picElem.toString();
-  });
-
-  eleventyConfig.addShortcode('twitterShareLink', function () {
-    return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      absoluteUrl(this.page.url)
-    )}`;
-  });
-  eleventyConfig.addShortcode('hnShareLink', function () {
-    return `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
-      absoluteUrl(this.page.url)
-    )}&t=${encodeURIComponent(this.title)}`;
-  });
-
-  eleventyConfig.addAsyncShortcode('tweet', twitterShortcode);
-
-  eleventyConfig.addAsyncShortcode('inlinedScript', async () => {
-    const result = await esbuild({
-      entryPoints: [join(__dirname, './src/assets/scripts/inlinedScript.ts')],
-      define: {
-        DEV: JSON.stringify(
-          process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true
-        ),
-      },
-      format: 'iife',
-      platform: 'browser',
-      minify: true,
-      bundle: true,
-      write: false,
-    });
-
-    const output = result.outputFiles[0].text;
-    logSize(output.length, 'inlinedScript');
-
-    return output;
-  });
-
-  eleventyConfig.addAsyncShortcode('fontStyles', async () => {
-    const inter = await readFile('./src/assets/fonts/inter/inter.css', 'utf-8');
-    const satoshi = await readFile(
-      './src/assets/fonts/satoshi/satoshi.css',
-      'utf-8'
-    );
-
-    return inter + satoshi;
-  });
-
-  eleventyConfig.addAsyncShortcode(
-    'postReads',
-    /**
-     * @param originalUrl {string}
-     */
-    async (originalUrl) => {
-      console.log(`Fetching analytics data for ${originalUrl}`);
-
-      const url = `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(
-        `event:page==${originalUrl}` +
-          (originalUrl.endsWith('/')
-            ? `\|${originalUrl.substring(0, originalUrl.length - 1)}`
-            : '')
-      )}`;
-
-      const res = await EleventyFetch(url, {
-        fetchOptions: {
-          headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}` },
-        },
-        duration: '1d',
-        type: 'json',
-      });
-
-      return `${res.results.pageviews.value}`;
-    }
-  );
+  registerShortcodes(eleventyConfig);
 
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
     if (inProduction && outputPath.endsWith('.html')) {
@@ -195,7 +47,7 @@ const config = (eleventyConfig) => {
         symbol: '#',
         level: [2, 3, 4],
       }),
-      slugify: eleventyConfig.getFilter('slug'),
+      slugify: eleventyConfig.getFilter('slugify'),
     })
     .disable('code');
 

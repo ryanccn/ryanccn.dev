@@ -5,9 +5,11 @@ import { join } from 'node:path';
 import { mkdir, readFile, rm } from 'node:fs/promises';
 
 import { format } from 'date-fns';
-import { bold, green, cyan } from 'kleur/colors';
+import { bold, green, cyan, dim } from 'kleur/colors';
 import pLimit from 'p-limit';
 import sharp from 'sharp';
+
+const timeA = performance.now();
 
 const FONTS_DIR = join(fileURLToPath(new URL('.', import.meta.url)), 'fonts');
 const FONTS = [
@@ -74,6 +76,10 @@ const FONTS = [
 ];
 
 const makeImage = async (data) => {
+  console.log(
+    `[social] Writing ${dim('_site/previews/')}${cyan(data.slug)}${dim('.png')}`
+  );
+
   const result = await satori(
     {
       type: 'div',
@@ -164,8 +170,6 @@ const makeImage = async (data) => {
   await sharp(Buffer.from(result))
     .png()
     .toFile(`_site/previews/${data.slug}.png`);
-
-  console.log('Wrote', cyan(data.slug));
 };
 
 const pagesData = await readFile('./pages.json').then(JSON.parse);
@@ -176,4 +180,6 @@ await mkdir('_site/previews');
 
 await Promise.all(pagesData.map((data) => lim(() => makeImage(data))));
 
-console.log(bold(green('Done!')));
+const timeB = performance.now();
+
+console.log(bold(green(`[social] Done in ${(timeB - timeA).toFixed(2)}ms!`)));
