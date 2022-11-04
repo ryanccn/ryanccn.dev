@@ -38,7 +38,7 @@ module.exports = async (id) => {
     <div class="not-prose">
       <a
         class="flex flex-col gap-y-4 rounded-lg border border-zinc-300 p-6 transition hover:border-zinc-400 dark:border-zinc-600 dark:hover:border-zinc-500"
-        href="https://twitter.com/${tweet.author_id}/status/${tweet.id}"
+        href="https://twitter.com/${tweet.username}/status/${tweet.id}"
       >
         <div class="flex items-start gap-x-2">
           <picture>
