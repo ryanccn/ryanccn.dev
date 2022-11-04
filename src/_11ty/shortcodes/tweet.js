@@ -25,7 +25,7 @@ module.exports = async (id) => {
     author.profile_image_url.replace('_normal', ''),
     {
       widths: [64, 32],
-      formats: ['png'],
+      formats: ['webp', 'png'],
       outputDir: './_site/images/twitter',
       urlPath: '/images/twitter',
     }
@@ -33,6 +33,10 @@ module.exports = async (id) => {
 
   const avatar2xUrl = optimizedAvatar.png.filter((a) => a.width === 64)[0].url;
   const avatar1xUrl = optimizedAvatar.png.filter((a) => a.width === 32)[0].url;
+  const avatar2xWebpUrl = optimizedAvatar.webp.filter((a) => a.width === 64)[0]
+    .url;
+  const avatar1xWebpUrl = optimizedAvatar.webp.filter((a) => a.width === 32)[0]
+    .url;
 
   return html`
     <div class="not-prose">
@@ -42,6 +46,10 @@ module.exports = async (id) => {
       >
         <div class="flex items-start gap-x-2">
           <picture>
+            <source
+              type="image/webp"
+              srcset="${avatar2xWebpUrl} 2x, ${avatar1xWebpUrl} 1x"
+            />
             <source
               type="image/png"
               srcset="${avatar2xUrl} 2x, ${avatar1xUrl} 1x"
