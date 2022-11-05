@@ -64,9 +64,9 @@ module.exports = async (id) => {
               class="h-[32px] w-[32px] rounded-full"
             />
           </picture>
-          <div class="flex flex-col -space-y-1">
-            <span class="font-semibold">${author.name}</span>
-            <span class="text-sm text-zinc-600 dark:text-zinc-400">
+          <div class="flex flex-col gap-y-1">
+            <span class="font-semibold leading-none">${author.name}</span>
+            <span class="text-sm leading-none text-zinc-600 dark:text-zinc-400">
               @${author.username}
             </span>
           </div>
