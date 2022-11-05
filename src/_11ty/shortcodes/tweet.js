@@ -76,19 +76,17 @@ module.exports = async (id) => {
         </p>
         <div class="flex justify-between">
           <div class="flex items-center gap-x-1">
-            ${safe(
-              lucideShortcode('messageCircle', 'block w-4 h-4 fill-current')
-            )}
+            ${safe(lucideShortcode('messageCircle', 'block w-4 h-4'))}
             <span class="font-medium">${tweet.public_metrics.reply_count}</span>
           </div>
           <div class="flex items-center gap-x-1">
-            ${safe(lucideShortcode('refreshCcw', 'block w-4 h-4 stroke-2'))}
-            <span class="font-medium"
-              >${tweet.public_metrics.retweet_count}</span
-            >
+            ${safe(lucideShortcode('refreshCcw', 'block w-4 h-4'))}
+            <span class="font-medium">
+              ${tweet.public_metrics.retweet_count}
+            </span>
           </div>
           <div class="flex items-center gap-x-1">
-            ${safe(lucideShortcode('heart', 'block w-4 h-4 fill-current'))}
+            ${safe(lucideShortcode('heart', 'block w-4 h-4'))}
             <span class="font-medium">${tweet.public_metrics.like_count}</span>
           </div>
         </div>
