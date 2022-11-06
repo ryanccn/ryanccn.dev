@@ -37,6 +37,7 @@ module.exports = {
         hn: '#F0652F',
         twitter: '#1DA1F2',
         github: '#181717',
+        mastodon: '#6364FF',
         coffee: '#FFDD00',
         discord: '#5865F2',
 
