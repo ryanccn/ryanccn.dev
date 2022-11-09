@@ -32,7 +32,7 @@ eleventyComputed:
     <meta name="twitter:image" content="{{ socialImg }}" />
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}" />
-    <style>{% fontStyles %}</style>
+    <style>{{ fontStyles }}</style>
 
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter/Inter-roman.latin.var.woff2?v=20221008172130" crossorigin="anonymous" />
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/satoshi/Satoshi-Variable.latin.woff2?v=20221008172130" crossorigin="anonymous" />
@@ -41,7 +41,7 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}" />
     {% endif %}
 
-    <script data-input-path="{{ page.inputPath }}">{% inlinedScript %}</script>
+    <script data-input-path="{{ page.inputPath }}">{{ inlinedScript }}</script>
 
     {% if inProduction %}
     <script

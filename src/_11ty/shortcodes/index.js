@@ -1,5 +1,3 @@
-const fontStyles = require('./fontStyles');
-const inlinedScript = require('./inlinedScript');
 const lucide = require('./lucide');
 const postReads = require('./postReads');
 const respimg = require('./respimg');
@@ -27,8 +25,6 @@ module.exports = (eleventyConfig) => {
     );
   });
 
-  eleventyConfig.addAsyncShortcode('fontStyles', fontStyles);
-  eleventyConfig.addAsyncShortcode('inlinedScript', inlinedScript);
   eleventyConfig.addShortcode('lucide', lucide);
   eleventyConfig.addShortcode('simpleicon', simpleicon);
   eleventyConfig.addAsyncShortcode('tweet', tweet);

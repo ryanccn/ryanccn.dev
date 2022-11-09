@@ -1,7 +1,7 @@
 const { build: esbuild } = require('esbuild');
 
 const { join } = require('path');
-const logSize = require('../../utils/logSize');
+const logSize = require('../utils/logSize');
 
 module.exports = async () => {
   const result = await esbuild({
