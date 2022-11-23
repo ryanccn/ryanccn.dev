@@ -5,6 +5,7 @@ _site/
 pages.json
 
 .vscode/
+.obsidian/
 
 **/.DS_Store
 **/.localized
