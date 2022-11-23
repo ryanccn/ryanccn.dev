@@ -1,5 +1,7 @@
 ---
 title: Reflections on Qt
+tags:
+  - opinion
 date: 2022-05-07
 ---
 

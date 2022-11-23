@@ -39,7 +39,6 @@
     "markdown-it-emoji": "^2.0.2",
     "ohmyfetch": "^0.4.21",
     "p-limit": "^4.0.0",
-    "performance-now": "^2.1.0",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",

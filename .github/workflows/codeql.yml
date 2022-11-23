@@ -1,11 +1,10 @@
-name: "CodeQL"
+name: 'CodeQL'
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    branches: ['main']
   schedule:
     - cron: '0 0 * * 0'
 
@@ -21,23 +20,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: ['javascript']
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        
-    - run: yarn install --frozen-lockfile
-    - run: yarn run build
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{matrix.language}}"
+      - run: yarn install --frozen-lockfile
+      - run: yarn run build
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: '/language:${{matrix.language}}'

@@ -22,7 +22,7 @@
   }
 
   .title {
-    @apply mb-12 font-satoshi text-4xl font-bold;
+    @apply mb-8 font-satoshi text-3xl font-extrabold;
   }
 
   .prose {
@@ -36,6 +36,10 @@
 
   mark {
     @apply bg-transparent text-black dark:text-white;
+  }
+
+  .link-colors {
+    @apply text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-300;
   }
 
   a.buttonish,

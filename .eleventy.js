@@ -1,6 +1,8 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
+const { format } = require('date-fns');
+
 const htmlmin = require('html-minifier');
 
 const inProduction = process.env.NODE_ENV === 'production';
@@ -19,7 +21,33 @@ const config = (eleventyConfig) => {
     './_headers': '_headers',
   });
 
+  /**
+   * @param {String[]} k list of tags
+   * @returns {String[]} list of *filtered* tags
+   */
+  const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
+
+  eleventyConfig.addFilter('filterTagsList', filterTagsList);
+  eleventyConfig.addCollection('postsTagList', (collection) => {
+    let tagSet = new Set();
+
+    collection.getFilteredByTag('posts').forEach((item) => {
+      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+    });
+
+    return filterTagsList([...tagSet]);
+  });
+
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
+
+  eleventyConfig.addFilter(
+    'customDateFormat',
+    /**
+     * @param {Date} a a date object
+     * @return {String} a formatted string
+     */
+    (d) => format(d, 'yyyy-MM-dd')
+  );
 
   registerShortcodes(eleventyConfig);
 

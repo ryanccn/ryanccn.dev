@@ -1,5 +1,7 @@
 ---
 title: Vercel as a Framework
+tags:
+  - tutorial
 date: 2020-07-06
 ---
 

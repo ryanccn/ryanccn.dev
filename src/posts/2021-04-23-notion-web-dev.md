@@ -1,5 +1,7 @@
 ---
 title: Notion in Web Development
+tags:
+  - ideas
 date: 2021-04-23
 ---
 

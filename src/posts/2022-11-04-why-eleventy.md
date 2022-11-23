@@ -1,5 +1,7 @@
 ---
 title: Why I use Eleventy
+tags:
+  - opinion
 date: 2022-11-04
 ---
 

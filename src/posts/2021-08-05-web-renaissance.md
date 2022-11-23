@@ -1,5 +1,7 @@
 ---
 title: The Web Renaissance
+tags:
+  - ideas
 date: 2021-08-05
 ---
 

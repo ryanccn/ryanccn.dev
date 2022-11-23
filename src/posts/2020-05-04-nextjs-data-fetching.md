@@ -1,5 +1,7 @@
 ---
 title: Data Fetching with Next.js
+tags:
+  - technical
 date: 2020-05-04
 ---
 

@@ -5,20 +5,5 @@ permalink: '/posts/'
 override:tags:
 ---
 
-<ol reversed class="flex flex-col gap-y-8">
-  {% for i in collections.posts | sort(true, true, 'date')  %}
-  <li class="flex flex-col gap-y-2">
-    <div class="flex flex-col gap-y-1 md:flex-row md:justify-between">
-      <a href="{{ i.url }}" class="text-lg font-semibold font-satoshi hover:underline underline-offset-2">
-        <h2>{{ i.data.title }}</h2>
-      </a>
-      <span class="text-zinc-500 dark:text-zinc-400 text-sm">
-        {{ i.date.toDateString() }}
-      </span>
-    </div>
-    <p class="text-sm font-medium text-zinc-800 dark:text-zinc-100">
-      {% postReads i.url %} reads
-    </p>
-  </li>
-  {% endfor %}
-</ol>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}

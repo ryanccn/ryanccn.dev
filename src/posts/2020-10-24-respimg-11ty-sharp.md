@@ -1,5 +1,7 @@
 ---
 title: Responsive Images with Eleventy & Sharp
+tags:
+  - tutorial
 date: 2020-10-24
 ---
 
