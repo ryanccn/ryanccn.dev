@@ -25,7 +25,10 @@
     @apply mb-8 font-satoshi text-3xl font-extrabold;
   }
 
-  .prose {
+  .enhanced-prose {
+    @apply prose break-words prose-headings:font-satoshi dark:prose-invert;
+    @apply prose-a:text-blue-500 prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-blue-400 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-500;
+
     & :is(h2, h3, h4, h5) {
       @apply flex items-center;
     }

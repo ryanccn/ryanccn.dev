@@ -1,5 +1,11 @@
-<ol reversed class="flex flex-col gap-y-12">
-  {% for i in postslist | sort(true, true, 'date')  %}
+{% if postslistcompact %}
+{% set listClasses = "grid grid-cols-1 md:grid-cols-2 gap-12" %}
+{% else %}
+{% set listClasses = "flex flex-col gap-y-12" %}
+{% endif %}
+
+<ol reversed class="{{ listClasses }}">
+  {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
     <a href="{{ i.url }}" class="text-xl font-semibold font-satoshi hover:underline underline-offset-2 transition">
       <h2>{{ i.data.title }}</h2>
@@ -14,4 +20,11 @@
     </p>
   </li>
   {% endfor %}
+  {% if postslistcompact %}
+  <li class="place-self-stretch">
+    <a class="grid place-content-center w-full h-full rounded-md border-dashed border-2 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 transition" href="{{ '/posts/' | url }}">
+      <span class="text-zinc-600 dark:text-zinc-300 font-medium">Read more &rightarrow;</span>
+    </a>
+  </li>
+  {% endif %}
 </ol>

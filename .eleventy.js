@@ -1,3 +1,4 @@
+const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
@@ -13,6 +14,7 @@ const config = (eleventyConfig) => {
     path: '.env.local',
   });
 
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPassthroughCopy({
@@ -20,6 +22,18 @@ const config = (eleventyConfig) => {
     './src/assets/fonts': 'assets/fonts',
     './_headers': '_headers',
   });
+
+  eleventyConfig.addFilter(
+    'head',
+    /**
+     * @param {unknown[]} arr array of *stuff*
+     * @param {number} k number of items to return
+     * @returns truncated array
+     */
+    (arr, k) => {
+      return arr.slice(0, k);
+    }
+  );
 
   /**
    * @param {String[]} k list of tags
@@ -73,9 +87,9 @@ const config = (eleventyConfig) => {
         placement: 'after',
         class: 'anchor',
         symbol: '#',
-        level: [2, 3, 4],
       }),
       slugify: eleventyConfig.getFilter('slugify'),
+      level: [2, 3, 4],
     })
     .disable('code');
 
@@ -93,6 +107,7 @@ const config = (eleventyConfig) => {
   });
 
   return {
+    markdownTemplateEngine: 'njk',
     dir: {
       input: 'src',
       layouts: '_layouts',
