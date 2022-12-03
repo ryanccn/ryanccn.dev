@@ -163,12 +163,12 @@ if ('fonts' in document) {
 
   let plexVar = new FontFace(
     'IBM Plex Sans',
-    "url('/assets/fonts/plex/plexvar-roman.var.woff2?v=20221203155602') format('woff2')"
+    "url('/assets/fonts/plex/plexvar-roman.woff2?v=20221203155602') format('woff2')"
   );
 
   let plexVarItalic = new FontFace(
     'IBM Plex Sans',
-    "url('/assets/fonts/plex/plexvar-roman.var.woff2?v=20221203155602') format('woff2')",
+    "url('/assets/fonts/plex/plexvar-italic.woff2?v=20221203155602') format('woff2')",
     { style: 'italic' }
   );
 
