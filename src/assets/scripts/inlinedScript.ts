@@ -137,11 +137,11 @@ window.addEventListener('load', () => {
 document.addEventListener(
   'load',
   (e) => {
-    if (e.target.tagName != 'IMG') {
+    if (e.target!.tagName != 'IMG') {
       return;
     }
 
-    e.target.style.backgroundImage = 'none';
+    e.target!.style!.backgroundImage = 'none';
   },
   true
 );
@@ -161,14 +161,27 @@ if ('fonts' in document) {
     "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221008172130') format('woff2'), url(/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221008172130) format('woff')"
   );
 
+  let plexVar = new FontFace(
+    'IBM Plex Sans',
+    "url('/assets/fonts/plex/plexvar-roman.var.woff2?v=20221203155602') format('woff2')"
+  );
+
+  let plexVarItalic = new FontFace(
+    'IBM Plex Sans',
+    "url('/assets/fonts/plex/plexvar-roman.var.woff2?v=20221203155602') format('woff2')",
+    { style: 'italic' }
+  );
+
   let interVar = new FontFace(
     'Inter',
     "url('/assets/fonts/inter/Inter-roman.var.woff2?v=20221008172130') format('woff2')"
   );
 
-  Promise.all([satoshiVar.load(), interVar.load()]).then((fonts) => {
-    fonts.forEach((font) => document.fonts.add(font));
-  });
+  Promise.all([satoshiVar.load(), plexVar.load(), plexVarItalic.load()]).then(
+    (fonts) => {
+      fonts.forEach((font) => document.fonts.add(font));
+    }
+  );
 }
 
 // Edit on GitHub
