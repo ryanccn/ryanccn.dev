@@ -34,8 +34,10 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}" />
     <style>{{ fontStyles | safe }}</style>
 
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter/Inter-roman.latin.var.woff2?v=20221008172130" crossorigin="anonymous" />
+    {# <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter/Inter-roman.latin.var.woff2?v=20221008172130" crossorigin="anonymous" /> #}
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/satoshi/Satoshi-Variable.latin.woff2?v=20221008172130" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plex/plexvar-roman.latin.woff2?v=20221203155602" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plex/plexvar-italic.latin.woff2?v=20221203155602" crossorigin="anonymous" />
 
     {% if includePrismCSS %}
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}" />
