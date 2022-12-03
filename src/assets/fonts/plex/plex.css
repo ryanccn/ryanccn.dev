@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/assets/fonts/plex/plexvar-roman.latin.woff2?v=20221203155602')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/assets/fonts/plex/plexvar-italic.latin.woff2?v=20221203155602')
+    format('woff2');
+}
+

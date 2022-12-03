@@ -5,6 +5,7 @@ const logSize = require('../utils/logSize');
 
 module.exports = async () => {
   const inter = await readFile('./src/assets/fonts/inter/inter.css', 'utf-8');
+  const plex = await readFile('./src/assets/fonts/plex/plex.css', 'utf-8');
   const satoshi = await readFile(
     './src/assets/fonts/satoshi/satoshi.css',
     'utf-8'
@@ -13,7 +14,7 @@ module.exports = async () => {
   const { content: css } = await postcss([
     require('autoprefixer'),
     require('cssnano'),
-  ]).process(inter + satoshi, {
+  ]).process(inter + plex + satoshi, {
     from: undefined,
     to: undefined,
   });
