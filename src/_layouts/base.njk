@@ -43,7 +43,7 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}" />
     {% endif %}
 
-    <script data-input-path="{{ page.inputPath }}">{{ inlinedScript | safe }}</script>
+    <script>{{ inlinedScript | safe }}</script>
 
     {% if inProduction %}
     <script
@@ -95,9 +95,9 @@ eleventyComputed:
         </div>
       </div>
 
-      <p class="hidden text-xs text-zinc-500 md:block">
-        Code licensed under MIT, content licensed under CC by-SA 4.0
-      </p>
+      <a class="hidden text-xs text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors md:block" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+        Code licensed under MIT, content licensed under CC BY-SA 4.0
+      </a>
     </header>
 
     <div class="flex flex-1 flex-col">
@@ -106,9 +106,11 @@ eleventyComputed:
       </main>
 
       <footer
-        class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs text-zinc-500 md:hidden"
+        class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs md:hidden"
       >
-        Code licensed under MIT, content licensed under CC by-SA 4.0
+        <a class="text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+          Code licensed under MIT, content licensed under CC BY-SA 4.0
+        </a>
       </footer>
     </div>
   </body>

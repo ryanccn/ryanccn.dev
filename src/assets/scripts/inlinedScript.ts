@@ -183,17 +183,3 @@ if ('fonts' in document) {
     }
   );
 }
-
-// Edit on GitHub
-(() => {
-  if (!document.currentScript) return;
-  const inputPath = document.currentScript.getAttribute('data-input-path');
-  if (!inputPath) return;
-
-  window.addEventListener('keydown', (ev) => {
-    if (ev.key === '.') {
-      location.href =
-        'https://github.com/ryanccn/ryanccn.dev/blob/main/' + inputPath;
-    }
-  });
-})();
