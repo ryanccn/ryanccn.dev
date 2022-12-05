@@ -83,10 +83,11 @@ const config = (eleventyConfig) => {
   const markdownLib = markdownIt({ html: true })
     .use(markdownItEmoji)
     .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.ariaHidden({
+      permalink: markdownItAnchor.permalink.linkInsideHeader({
         placement: 'after',
         class: 'anchor',
         symbol: '#',
+        ariaHidden: false,
       }),
       slugify: eleventyConfig.getFilter('slugify'),
       level: [2, 3, 4],
