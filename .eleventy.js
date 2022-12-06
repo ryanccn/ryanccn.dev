@@ -63,6 +63,21 @@ const config = (eleventyConfig) => {
     (d) => format(d, 'yyyy-MM-dd')
   );
 
+  eleventyConfig.addFilter(
+    'scoreToUnicode',
+    /**
+     * @param {number} score an integer score
+     * @return {string} formatted string
+     */
+    (score) => {
+      let ret = '';
+      ret += '●'.repeat(Math.floor(score));
+      ret += score > Math.floor(score) ? '◐' : '';
+      ret = ret.padEnd(10, '○');
+      return ret;
+    }
+  );
+
   registerShortcodes(eleventyConfig);
 
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
