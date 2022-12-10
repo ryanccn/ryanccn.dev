@@ -57,61 +57,58 @@ eleventyComputed:
 
   <body>
     <header
-      class="mb-6 flex w-full flex-none flex-col py-6 md:mb-0 md:mr-20 md:w-fit md:max-w-[22.5%] md:py-0"
+      class="flex flex-col md:flex-row max-w-[100ch] md:justify-between md:items-center mb-16 md:mb-32 gap-y-6 md:gap-y-0"
     >
-      <a href="/" class="font-satoshi text-xl font-bold mb-8">
+      <a href="/" class="font-satoshi text-2xl font-extrabold">
         <h1>Ryan Cao</h1>
       </a>
 
-      <div class="md:mb-12 flex-col gap-2 flex">
-        {% for link in navLinks %}
-        <a
-          href="{{ link.url }}"
-          class="font-medium transition-colors {% if link.url === page.url -%} text-blue-500 dark:text-blue-300 {%- else -%} link-colors {%- endif %}"
-        >
-          {{ link.title }}
-        </a>
-        {% endfor %}
+      <div class="flex flex-col md:flex-row gap-x-6 gap-y-4 md:items-center">
+        <div class="flex flex-col gap-y-1 md:flex-row md:gap-x-4 md:gap-y-0">
+          {% for link in navLinks %}
+          <a
+            href="{{ link.url }}"
+            class="text-lg font-medium transition-colors {% if link.url === page.url -%} text-blue-500 dark:text-blue-300 {%- else -%} link-colors {%- endif %}"
+          >
+            {{ link.title }}
+          </a>
+          {% endfor %}
+        </div>
 
-        <div class="mt-6 flex flex-wrap items-center gap-2">
-          <a rel="me" href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "twitter", "block h-5 w-5 fill-twitter" %}
+        <div class="flex items-center gap-2">
+          <a rel="me" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
+            {% simpleicon "mastodon", "block h-5 w-5 fill-mastodon" %}
           </a>
           <a rel="me" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all">
             {% simpleicon "github", "block h-5 w-5 fill-github dark:fill-white" %}
           </a>
-          <a rel="me" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "mastodon", "block h-5 w-5 fill-mastodon" %}
+          <a rel="me" href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
+            {% simpleicon "twitter", "block h-5 w-5 fill-twitter" %}
           </a>
           <a href="https://discord.com/invite/ty7GCnN87U" class="rounded p-1 hover:brightness-90 transition-all">
             {% simpleicon "discord", "block h-5 w-5 fill-discord" %}
           </a>
           <a rel="me" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "kofi", "block h-5 w-5 fill-coffee" %}
+            {% simpleicon "kofi", "block h-5 w-5 fill-kofi" %}
           </a>
-          <button type="button" data-theme-toggle aria-label="Change theme" class="rounded p-1 hover:brightness-90 transition-all">
-            <svg class="block h-5 w-5" />
-          </button>
         </div>
-      </div>
 
-      <a class="hidden text-xs text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors md:block" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
-        Code licensed under MIT, content licensed under CC BY-SA 4.0
-      </a>
+        <button type="button" data-theme-toggle aria-label="Change theme" class="rounded p-1 hover:brightness-90 transition-all">
+          <svg class="block h-5 w-5" />
+        </button>
+      </div>
     </header>
 
-    <div class="flex flex-1 flex-col">
-      <main class="flex flex-col">
-        {{ content | safe }}
-      </main>
+    <main class="flex flex-col w-full max-w-[75ch] mx-auto">
+      {{ content | safe }}
+    </main>
 
-      <footer
-        class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs md:hidden"
-      >
-        <a class="text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
-          Code licensed under MIT, content licensed under CC BY-SA 4.0
-        </a>
-      </footer>
-    </div>
+    <footer
+      class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs"
+    >
+      <a class="text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+        Code licensed under MIT, content licensed under CC BY-SA 4.0
+      </a>
+    </footer>
   </body>
 </html>

@@ -55,5 +55,3 @@ Eleventy has a large, friendly, and enthusiastic community that is constantly sp
 The fact that Eleventy is so simplistic in its design makes it perhaps seem unwelcoming for newcomers. In addition, it doesn't do as much advertising and promotional content as, for instance, Next.js does. This makes the community small, friendly, and progressive, becoming better and better every day.
 
 When you see all these Eleventy sites with incredible performance, it's ultimately because Eleventy doesn't assume things about what you want to build and gives you the flexibility to do whatever you want with the build process so that you _can_ optimize it to the best of your ability if you want to. You are not in a constant battle with the framework - the framework is helping you get things done.
-
-> I want ESM for Eleventy v2 though. CommonJS really sucks.
