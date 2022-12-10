@@ -7,7 +7,7 @@
     @apply flex flex-col;
     @apply mx-auto max-w-[100ch] overflow-y-scroll px-6 py-20;
     @apply bg-white text-black dark:bg-zinc-900 dark:text-white;
-    @apply tracking-[-0.015rem];
+    @apply tracking-tight;
   }
 
   ::selection {
@@ -18,7 +18,7 @@
   button,
   input,
   textarea {
-    @apply outline-none focus:ring;
+    @apply outline-none focus:ring focus:ring-blue-400/50;
   }
 
   .title {

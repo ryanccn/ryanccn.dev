@@ -50,7 +50,7 @@ This "no assumptions" philosophy is also evident in these individual plugins, bo
 
 ## Community
 
-Eleventy has a large, friendly, and enthusiastic community that is constantly spitting out new ideas, tips & tricks, plugins, and open source websites. And the Eleventy team is very welcoming towards these community projects: [@eleven_ty](https://twitter.com/eleven_ty) Retweets a ton of them every day. Compare this to [@nextjs](https://nextjs.org/) and you see the difference immediately.
+Eleventy has a large, friendly, and enthusiastic community that is constantly spitting out new ideas, tips & tricks, plugins, and open source websites. And the Eleventy team is very welcoming towards these community projects: [@eleven_ty](https://twitter.com/eleven_ty) Retweets a ton of them every day. Compare this to [@nextjs](https://twitter.com/nextjs) and you see the difference immediately.
 
 The fact that Eleventy is so simplistic in its design makes it perhaps seem unwelcoming for newcomers. In addition, it doesn't do as much advertising and promotional content as, for instance, Next.js does. This makes the community small, friendly, and progressive, becoming better and better every day.
 
