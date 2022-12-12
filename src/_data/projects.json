@@ -102,12 +102,6 @@
       "github": "ryanccn/warmerdistance"
     },
     {
-      "name": "PolyM1",
-      "description": "An M1 hack for PolyMC",
-      "tags": ["minecraft", "polymc", "go"],
-      "github": "ryanccn/PolyM1"
-    },
-    {
       "name": "sieve-of-eratosthenes",
       "description": "A demo of the Sieve of Eratosthenes, made with Vue 3 & Vite",
       "tags": ["vue", "vite", "typescript"],
