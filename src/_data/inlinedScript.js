@@ -13,7 +13,7 @@ module.exports = async () => {
     },
     format: 'iife',
     platform: 'browser',
-    minify: true,
+    minify: process.env.NODE_ENV === 'production',
     bundle: true,
     write: false,
   });

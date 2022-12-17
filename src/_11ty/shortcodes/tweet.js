@@ -41,7 +41,7 @@ module.exports = async (id) => {
   return html`
     <div class="not-prose">
       <a
-        class="flex flex-col gap-y-4 rounded-lg border border-zinc-300 p-6 transition hover:border-zinc-400 dark:border-zinc-600 dark:hover:border-zinc-500"
+        class="flex flex-col gap-y-4 rounded-lg border border-surface p-6 transition"
         href="https://twitter.com/${tweet.username}/status/${tweet.id}"
       >
         <div class="flex items-start gap-x-2">
@@ -66,7 +66,7 @@ module.exports = async (id) => {
           </picture>
           <div class="flex flex-col gap-y-1">
             <span class="font-semibold leading-none">${author.name}</span>
-            <span class="text-sm leading-none text-zinc-600 dark:text-zinc-400">
+            <span class="text-zinc-600 dark:text-zinc-400 text-sm leading-none">
               @${author.username}
             </span>
           </div>

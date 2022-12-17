@@ -57,18 +57,18 @@ eleventyComputed:
 
   <body>
     <header
-      class="flex flex-col md:flex-row max-w-[100ch] md:justify-between md:items-center mb-16 md:mb-32 md:px-3 py-2 gap-y-6 md:gap-y-0"
+      class="flex flex-col md:flex-row md:justify-between md:items-center mb-16 md:mb-32 md:px-3 pt-12 pb-2 gap-y-6 md:gap-y-0"
     >
       <a href="/" class="font-satoshi text-2xl font-extrabold md:px-2 py-1 my-1 transition rounded-sm">
         <h1>Ryan Cao</h1>
       </a>
 
-      <div class="flex flex-col md:flex-row md:gap-x-4 gap-y-4 md:items-center">
-        <div class="flex flex-col gap-y-1 md:flex-row md:gap-x-2 md:gap-y-0">
+      <div class="flex flex-col md:flex-row md:gap-x-8 gap-y-4 md:items-center">
+        <div class="flex flex-col gap-y-1 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
           {% for link in navLinks %}
           <a
             href="{{ link.url }}"
-            class="text-lg md:px-2 py-1 rounded-sm font-medium transition {% if link.url === page.url -%} text-blue-500 dark:text-blue-300 {%- else -%} link-colors {%- endif %}"
+            class="text-lg md:px-2 py-1 rounded-sm font-medium transition {% if link.url === page.url -%} text-accent {%- else -%} link-colors {%- endif %}"
           >
             {{ link.title }}
           </a>
@@ -92,10 +92,6 @@ eleventyComputed:
             {% simpleicon "kofi", "block h-5 w-5 fill-kofi" %}
           </a>
         </div>
-
-        <button type="button" data-theme-toggle aria-label="Change theme" class="rounded p-1 hover:brightness-90 transition-all">
-          <svg class="block h-5 w-5" />
-        </button>
       </div>
     </header>
 
@@ -104,9 +100,13 @@ eleventyComputed:
     </main>
 
     <footer
-      class="mt-24 block w-full max-w-[30ch] self-center text-center text-xs"
+      class="text-fg-dimmed mt-24 flex flex-col items-center gap-y-4 w-full max-w-[30ch] self-center text-center text-xs"
     >
-      <a class="text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+      <button type="button" data-theme-toggle aria-label="Change theme" class="rounded px-2 py-1 before:content-['Theme:'] before:mr-1">
+        &nbsp;
+      </button>
+
+      <a class="hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
       </a>
     </footer>

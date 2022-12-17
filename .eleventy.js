@@ -3,6 +3,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
 const { format } = require('date-fns');
+const { readFileSync } = require('fs');
 
 const htmlmin = require('html-minifier');
 
@@ -120,6 +121,15 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
+    callbacks: {
+      ready: function (_err, bs) {
+        const content_404 = readFileSync('_site/404.html');
+        bs.addMiddleware('*', (_req, res) => {
+          res.write(content_404);
+          res.end();
+        });
+      },
+    },
   });
 
   return {

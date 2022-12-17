@@ -1,24 +1,110 @@
 @tailwind base;
+
+:root {
+  --fg: 15 23 42;
+  --fg-less-dimmed: 51 65 85;
+  --fg-dimmed: 100 116 139;
+  --accent: 59 130 246;
+  --accent-lighter: 96 165 250;
+
+  --background: 255 255 255;
+  --surface: 241 245 249;
+  --surface-hover: 226 232 240;
+}
+
+.theme-dark {
+  --fg: 255 255 255;
+  --fg-less-dimmed: 241 245 249;
+  --fg-dimmed: 226 232 240;
+  --accent: 96 165 250;
+  --accent-lighter: 59 130 246;
+
+  --background: 15 23 42;
+  --surface: 51 65 85;
+  --surface-hover: 100 116 139;
+}
+
+.theme-ctp-latte {
+  --fg: 76 79 105;
+  --fg-less-dimmed: 92 95 119;
+  --fg-dimmed: 108 111 133;
+  --accent: 4 165 229;
+  --accent-lighter: 34 190 252; /* not part of the default palette, lightened via HSL */
+
+  --background: 239 241 245;
+  --surface: 204 208 218;
+  --surface-hover: 188 192 204;
+}
+
+.theme-ctp-frappe {
+  --fg: 198 208 245;
+  --fg-less-dimmed: 181 191 226;
+  --fg-dimmed: 165 173 206;
+  --accent: 140 170 238;
+  --accent-lighter: 166 189 242; /* same as above */
+
+  --background: 48 52 70;
+  --surface: 65 69 89;
+  --surface-hover: 81 87 109;
+}
+
+.theme-ctp-macchiato {
+  --fg: 202 211 245;
+  --fg-less-dimmed: 184 192 224;
+  --fg-dimmed: 165 173 203;
+  --accent: 138 173 244;
+  --accent-lighter: 162 190 246; /* same as above */
+
+  --background: 36 39 58;
+  --surface: 54 58 79;
+  --surface-hover: 73 77 100;
+}
+
+.theme-ctp-mocha {
+  --fg: 205 214 244;
+  --fg-less-dimmed: 186 194 222;
+  --fg-dimmed: 166 173 200;
+  --accent: 137 180 250;
+  --accent-lighter: 162 196 251; /* same as above */
+
+  --background: 30 30 46;
+  --surface: 49 50 68;
+  --surface-hover: 69 71 90;
+}
+
+.theme-hack {
+  --fg: 255 255 255;
+  --fg-less-dimmed: 245 245 245;
+  --fg-dimmed: 229 229 229;
+  --accent: 34 197 94;
+  --accent-lighter: 74 222 128;
+
+  --background: 0 0 0;
+  --surface: 0 0 0;
+  --surface-hover: var(--accent);
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   body {
-    @apply flex flex-col;
-    @apply mx-auto max-w-[100ch] overflow-y-scroll px-6 py-20;
-    @apply bg-white text-black dark:bg-zinc-900 dark:text-white;
+    @apply flex min-h-screen flex-col;
+    @apply mx-auto max-w-[130ch] overflow-y-scroll px-6 pb-32;
+    @apply bg-background text-fg;
     @apply tracking-tight;
+    scrollbar-color: rgb(var(--surface-hover)) rgb(var(--surface));
   }
 
   ::selection {
-    @apply bg-blue-500 text-white;
+    @apply bg-accent text-white;
   }
 
   a,
   button,
   input,
   textarea {
-    @apply outline-none focus:ring focus:ring-blue-400/50;
+    @apply outline-none focus:ring focus:ring-accent/50;
   }
 
   .title {
@@ -26,24 +112,24 @@
   }
 
   .enhanced-prose {
-    @apply prose break-words prose-headings:font-satoshi dark:prose-invert;
-    @apply prose-a:text-blue-500 prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-blue-400 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-500;
+    @apply prose break-words prose-headings:font-satoshi;
+    @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
     @apply max-w-none;
+
+    --tw-prose-body: rgba(var(--fg-less-dimmed) / 1);
+    --tw-prose-headings: rgba(var(--fg) / 1);
+    --tw-prose-code: rgba(var(--fg) / 1);
 
     & :is(h2, h3, h4, h5) {
       @apply flex items-center;
     }
     & :is(h2, h3, h4, h5) .anchor {
-      @apply ml-3 text-base font-medium text-zinc-600 no-underline hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300;
+      @apply ml-3 text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
     }
   }
 
-  mark {
-    @apply bg-transparent text-black dark:text-white;
-  }
-
-  .link-colors {
-    @apply text-black hover:text-blue-500 dark:text-white dark:hover:text-blue-300;
+  .link {
+    @apply text-fg hover:text-accent;
   }
 
   a.buttonish,
@@ -52,12 +138,7 @@
     @apply transition-all hover:brightness-[80%] disabled:opacity-75;
 
     &.primary {
-      @apply bg-blue-600 text-white;
-    }
-
-    &.danger {
-      @apply bg-red-500 text-white;
-      @apply focus:ring-red-400/50;
+      @apply bg-accent text-white;
     }
   }
 
