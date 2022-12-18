@@ -112,8 +112,9 @@
   }
 
   .enhanced-prose {
-    @apply prose break-words prose-headings:font-satoshi;
+    @apply break-words prose-headings:font-satoshi;
     @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
+    @apply prose-pre:bg-surface;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg-less-dimmed) / 1);
