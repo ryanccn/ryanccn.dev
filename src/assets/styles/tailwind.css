@@ -19,9 +19,9 @@
   --accent: 96 165 250;
   --accent-lighter: 59 130 246;
 
-  --background: 15 23 42;
-  --surface: 51 65 85;
-  --surface-hover: 100 116 139;
+  --background: 24 24 27;
+  --surface: 39 39 42;
+  --surface-hover: 63 63 70;
 }
 
 .theme-ctp-latte {
@@ -114,7 +114,7 @@
   .enhanced-prose {
     @apply break-words prose-headings:font-satoshi;
     @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
-    @apply prose-pre:bg-surface;
+    @apply prose-blockquote:text-fg prose-strong:text-fg prose-pre:bg-surface;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg-less-dimmed) / 1);
