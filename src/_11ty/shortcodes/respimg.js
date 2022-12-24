@@ -3,17 +3,21 @@ const imageSize = require('image-size');
 const lqip = require('../lqip');
 const { parseHTML } = require('linkedom');
 
-module.exports = async (src, alt) => {
+module.exports = async (src, alt, width, height) => {
   const { document } = parseHTML('');
 
-  const { width: originalWidth, height: originalHeight } =
-    imageSize.imageSize(src);
+  if (!width || !height) {
+    const originalDimensions = imageSize.imageSize(src);
+
+    width = originalDimensions.width;
+    height = originalDimensions.height;
+  }
 
   const stats = await Image(src, {
-    widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, originalWidth]
-      .filter((a) => a <= originalWidth)
+    widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, width]
+      .filter((a) => a <= width)
       .sort((a, b) => a - b),
-    formats: ['avif', 'webp', 'jpeg'],
+    formats: ['webp', 'jpeg'],
     outputDir: './_site/images',
     urlPath: '/images/',
   });
@@ -35,8 +39,8 @@ module.exports = async (src, alt) => {
 
   const newImgElem = document.createElement('img');
   newImgElem.setAttribute('src', lowsrc.url);
-  newImgElem.setAttribute('width', originalWidth);
-  newImgElem.setAttribute('height', originalHeight);
+  newImgElem.setAttribute('width', width);
+  newImgElem.setAttribute('height', height);
   newImgElem.setAttribute('alt', alt);
   newImgElem.setAttribute('loading', 'lazy');
   newImgElem.setAttribute('decoding', 'async');

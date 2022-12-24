@@ -92,7 +92,7 @@
     @apply flex min-h-screen flex-col;
     @apply mx-auto max-w-[130ch] overflow-y-scroll px-6 pb-32;
     @apply bg-background text-fg;
-    @apply tracking-tight;
+    @apply tracking-[-0.01em];
     scrollbar-color: rgb(var(--surface-hover)) rgb(var(--surface));
   }
 
@@ -108,13 +108,14 @@
   }
 
   .title {
-    @apply mb-8 font-satoshi text-3xl font-extrabold;
+    @apply mb-8 font-display text-3xl font-extrabold;
   }
 
   .enhanced-prose {
-    @apply break-words prose-headings:font-satoshi;
+    @apply break-words prose-headings:font-display;
     @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
     @apply prose-blockquote:text-fg prose-strong:text-fg prose-pre:bg-surface;
+    @apply prose-img:mx-auto;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg-less-dimmed) / 1);
@@ -144,7 +145,7 @@
   }
 
   h3.projects-page {
-    @apply mb-6 font-satoshi text-2xl font-bold;
+    @apply mb-6 font-display text-2xl font-bold;
   }
 
   div.projects-grid {

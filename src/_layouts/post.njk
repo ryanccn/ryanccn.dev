@@ -5,7 +5,18 @@ includePrismCSS: true
 
 <article class="prose enhanced-prose mb-12">
   <h1>{{ title }}</h1>
+  <div class="not-prose mb-10">
+    <div class="flex flex-row items-center gap-x-4">
+      <picture>
+        <source srcset="/icons/ryan-64.webp 2x, /icons/ryan-32.webp" type="image/webp" />
+        <source srcset="/icons/ryan-64.png 2x, /icons/ryan-32.png" type="image/png" />
+        <img src="/icons/ryan-64.png" class="rounded-full" width="32" height="32" alt="" loading="lazy" decoding="async" />
+      </picture>
+      <span class="text-lg font-semibold">Ryan Cao</span>
+    </div>
+  </div>
   {{ content | safe }}
+  <p class="mt-16 text-fg-dimmed">{{ date | customDateFormat }}</p>
 </article>
 
 {% include 'shareLinks.njk' %}

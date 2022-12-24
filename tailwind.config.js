@@ -42,8 +42,8 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
-        satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
+        display: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
 
       typography: {

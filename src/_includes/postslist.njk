@@ -7,7 +7,7 @@
 <ol reversed class="{{ listClasses }}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="text-xl font-semibold font-satoshi hover:underline underline-offset-2 transition">
+    <a href="{{ i.url }}" class="text-xl font-semibold font-display hover:underline underline-offset-2 transition">
       <h2>{{ i.data.title }}</h2>
     </a>
     <div class="flex flex-wrap gap-x-2 font-medium text-xs">
@@ -16,7 +16,7 @@
       {% endfor %}
     </div>
     <p class="text-sm text-fg-dimmed">
-      {% postReads i.url %} reads · {{ i.date | customDateFormat }}
+      {% postReads i.url %} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | customDateFormat }}
     </p>
   </li>
   {% endfor %}

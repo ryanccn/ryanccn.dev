@@ -26,6 +26,7 @@
     "datauri": "^4.1.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
+    "eleventy-plugin-reading-time": "^0.0.1",
     "esbuild": "^0.15.18",
     "execa": "^6.1.0",
     "gray-matter": "^4.0.3",

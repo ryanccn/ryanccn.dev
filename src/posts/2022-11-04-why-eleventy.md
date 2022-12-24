@@ -32,7 +32,7 @@ I was able to bypass the set output directory and build the file outside of it, 
 
 This flexibility is in a way provided by `11ty.js` files, which I also happen to use for building assets. Instead of using complicated npm script setups or bringing in yet another framework like [Vite](https://vitejs.dev/) running in parallel, assets on my website are built directly in Eleventy via Node.js APIs for each of the build tools that I use. For CSS, the PostCSS API is used to build the file, get the string, and write it into `_site/`. For JavaScript, [esbuild](https://esbuild,github.io/)'s Node API is similarly used. The thing worth noting here is all of this is _encapsulated in_ the Eleventy build process - there's no other command running or anything.
 
-Font optimizations are also an essential part of my website. With <span class="font-medium font-satoshi">web fonts</span>, the design system of my website becomes much more legible and unique. However, without the proper optimizations, there will inevitably be [CLS](https://web.dev/cls) and a plethora of other issues.
+Font optimizations are also an essential part of my website. With <span class="font-medium font-display">web fonts</span>, the design system of my website becomes much more legible and unique. However, without the proper optimizations, there will inevitably be [CLS](https://web.dev/cls) and a plethora of other issues.
 
 With Eleventy, I have full control of every single part of the markup and assets, so I have the freedom to do whatever I want: add `<link rel="preload">`s, inline JavaScript into the `<head>`... With various other frameworks, this would not have been possible. You make do with whatever the framework gives you.
 

@@ -1,4 +1,5 @@
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
+const readingTime = require('eleventy-plugin-reading-time');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
@@ -16,10 +17,11 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPassthroughCopy({
-    './src/assets/icons/*.png': 'icons',
+    './src/assets/icons': 'icons',
     './src/assets/fonts': 'assets/fonts',
     './_headers': '_headers',
   });
