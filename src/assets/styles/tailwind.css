@@ -13,9 +13,9 @@
 }
 
 .theme-dark {
-  --fg: 255 255 255;
-  --fg-less-dimmed: 241 245 249;
-  --fg-dimmed: 226 232 240;
+  --fg: 226 232 240;
+  --fg-less-dimmed: 228 228 231;
+  --fg-dimmed: 212 212 216;
   --accent: 96 165 250;
   --accent-lighter: 59 130 246;
 
@@ -118,7 +118,7 @@
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
-    --tw-prose-body: rgba(var(--fg-less-dimmed) / 1);
+    --tw-prose-body: rgba(var(--fg) / 1);
     --tw-prose-headings: rgba(var(--fg) / 1);
     --tw-prose-code: rgba(var(--fg) / 1);
 
