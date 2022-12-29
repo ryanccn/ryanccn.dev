@@ -143,15 +143,32 @@ window.addEventListener('storage', (e) => {
 if ('fonts' in document) {
   let satoshiVar = new FontFace(
     'Satoshi',
-    "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221224') format('woff2'), url(/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221224) format('woff')"
+    "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221229') format('woff')"
   );
 
   let satoshiVarItalic = new FontFace(
     'Satoshi',
-    "url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff2?v=20221224') format('woff2'), url(/assets/fonts/satoshi/Satoshi-VariableItalic.woff?v=20221224) format('woff')"
+    "url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff?v=20221229') format('woff')",
+    { style: 'italic' }
   );
 
-  Promise.all([satoshiVar.load(), satoshiVarItalic.load()]).then((fonts) => {
+  let plexVar = new FontFace(
+    'IBM Plex Sans',
+    "url('/assets/fonts/plex/IBMPlexSansVar-Roman.woff2?v=20221229') format('woff2'), url('/assets/fonts/plex/IBMPlexSansVar-Roman.woff?v=20221229') format('woff')"
+  );
+
+  let plexVarItalic = new FontFace(
+    'IBM Plex Sans',
+    "url('/assets/fonts/plex/IBMPlexSansVar-Italic.woff2?v=20221229') format('woff2'), url('/assets/fonts/plex/IBMPlexSansVar-Italic.woff?v=20221229') format('woff')",
+    { style: 'italic' }
+  );
+
+  Promise.all([
+    satoshiVar.load(),
+    satoshiVarItalic.load(),
+    plexVar.load(),
+    plexVarItalic.load(),
+  ]).then((fonts) => {
     fonts.forEach((font) => document.fonts.add(font));
   });
 }
