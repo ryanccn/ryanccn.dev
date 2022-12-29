@@ -40,6 +40,8 @@ const THEMES: { [id: string]: { name: string; dark: boolean } } = {
   'ctp-frappe': { name: 'Catppuccin Frappé', dark: true },
   'ctp-macchiato': { name: 'Catppuccin Macchiato', dark: true },
   'ctp-mocha': { name: 'Catppuccin Mocha', dark: true },
+  'nord-light': { name: 'Nord Light', dark: false },
+  'nord-dark': { name: 'Nord Dark', dark: true },
   hack: { name: 'Hack', dark: true },
 };
 

@@ -72,6 +72,30 @@
   --surface-hover: 69 71 90;
 }
 
+.theme-nord-light {
+  --fg: 46 52 64;
+  --fg-less-dimmed: 59 66 82;
+  --fg-dimmed: 67 76 94;
+  --accent: 129 161 193;
+  --accent-lighter: 136 192 208;
+
+  --background: 236 239 244;
+  --surface: 229 233 240;
+  --surface-hover: 216 222 233;
+}
+
+.theme-nord-dark {
+  --fg: 236 239 244;
+  --fg-less-dimmed: 229 233 240;
+  --fg-dimmed: 216 222 233;
+  --accent: 136 192 208;
+  --accent-lighter: 129 161 193;
+
+  --background: 46 52 64;
+  --surface: 59 66 82;
+  --surface-hover: 67 76 94;
+}
+
 .theme-hack {
   --fg: 255 255 255;
   --fg-less-dimmed: 245 245 245;

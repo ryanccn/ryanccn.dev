@@ -19,6 +19,8 @@ module.exports = {
       kofi: '#FF5E5B',
       discord: '#5865F2',
 
+      transparent: colors.transparent,
+      black: colors.black,
       white: colors.white,
 
       fg: 'rgba(var(--fg) / <alpha-value>)',
@@ -30,14 +32,6 @@ module.exports = {
       background: 'rgba(var(--background) / <alpha-value>)',
       surface: 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
-
-      tag: {
-        1: colors.rose[500],
-        2: colors.amber[500],
-        3: colors.green[600],
-        4: colors.blue[500],
-        0: colors.indigo[500],
-      },
     },
 
     extend: {
