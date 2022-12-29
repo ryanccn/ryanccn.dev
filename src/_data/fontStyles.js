@@ -8,11 +8,12 @@ module.exports = async () => {
     './src/assets/fonts/satoshi/satoshi.css',
     'utf-8'
   );
+  const plex = await readFile('./src/assets/fonts/plex/plex.css', 'utf-8');
 
   const { content: css } = await postcss([
     require('autoprefixer'),
     require('cssnano'),
-  ]).process(switzer, {
+  ]).process(switzer + plex, {
     from: undefined,
     to: undefined,
   });

@@ -42,7 +42,7 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        sans: [...defaultTheme.fontFamily.sans],
+        prose: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
         display: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
 
