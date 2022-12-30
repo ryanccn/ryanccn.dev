@@ -2,6 +2,7 @@
 
 :root {
   --fg: 15 23 42;
+  --fg-brighter: 0 0 0;
   --fg-less-dimmed: 51 65 85;
   --fg-dimmed: 100 116 139;
   --accent: 59 130 246;
@@ -14,6 +15,7 @@
 
 .theme-dark {
   --fg: 226 232 240;
+  --fg-brighter: 255 255 255;
   --fg-less-dimmed: 228 228 231;
   --fg-dimmed: 212 212 216;
   --accent: 96 165 250;
@@ -26,6 +28,7 @@
 
 .theme-ctp-latte {
   --fg: 76 79 105;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 92 95 119;
   --fg-dimmed: 108 111 133;
   --accent: 4 165 229;
@@ -38,6 +41,7 @@
 
 .theme-ctp-frappe {
   --fg: 198 208 245;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 181 191 226;
   --fg-dimmed: 165 173 206;
   --accent: 140 170 238;
@@ -50,6 +54,7 @@
 
 .theme-ctp-macchiato {
   --fg: 202 211 245;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 184 192 224;
   --fg-dimmed: 165 173 203;
   --accent: 138 173 244;
@@ -62,6 +67,7 @@
 
 .theme-ctp-mocha {
   --fg: 205 214 244;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 186 194 222;
   --fg-dimmed: 166 173 200;
   --accent: 137 180 250;
@@ -74,6 +80,7 @@
 
 .theme-nord-light {
   --fg: 46 52 64;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 59 66 82;
   --fg-dimmed: 67 76 94;
   --accent: 129 161 193;
@@ -86,6 +93,7 @@
 
 .theme-nord-dark {
   --fg: 236 239 244;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 229 233 240;
   --fg-dimmed: 216 222 233;
   --accent: 136 192 208;
@@ -98,6 +106,7 @@
 
 .theme-hack {
   --fg: 255 255 255;
+  --fg-brighter: var(--fg);
   --fg-less-dimmed: 245 245 245;
   --fg-dimmed: 229 229 229;
   --accent: 34 197 94;
@@ -116,7 +125,6 @@
     @apply flex min-h-screen flex-col;
     @apply mx-auto max-w-[130ch] overflow-y-scroll px-6 pb-32;
     @apply bg-background text-fg;
-    /* @apply tracking-[-0.01em]; */
     scrollbar-color: rgb(var(--surface-hover)) rgb(var(--surface));
   }
 
@@ -132,19 +140,23 @@
   }
 
   .title {
-    @apply mb-8 font-display text-3xl font-extrabold;
+    @apply mb-8 font-display text-3xl font-extrabold tracking-tight;
   }
 
   .enhanced-prose {
     @apply break-words prose-headings:font-display;
     @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
-    @apply prose-blockquote:text-fg prose-strong:text-fg prose-pre:bg-surface;
+    @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg) / 1);
-    --tw-prose-headings: rgba(var(--fg) / 1);
+    --tw-prose-headings: rgba(var(--fg-brighter) / 1);
     --tw-prose-code: rgba(var(--fg) / 1);
+    --tw-prose-bold: rgba(var(--fg-brighter) / 1);
+    --tw-prose-quotes: rgba(var(--fg) / 1);
+    --tw-prose-quote-borders: rgba(var(--surface) / 1);
+    --tw-prose-bullets: rgba(var(--surface-hover) / 1);
 
     & :is(h2, h3, h4, h5) {
       @apply flex items-center;

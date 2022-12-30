@@ -18,12 +18,14 @@ module.exports = {
       mastodon: '#6364FF',
       kofi: '#FF5E5B',
       discord: '#5865F2',
+      modrinth: '#00AF5C',
 
       transparent: colors.transparent,
       black: colors.black,
       white: colors.white,
 
       fg: 'rgba(var(--fg) / <alpha-value>)',
+      'fg-brighter': 'rgba(var(--fg-brighter) / <alpha-value>)',
       'fg-less-dimmed': 'rgba(var(--fg-less-dimmed) / <alpha-value>)',
       'fg-dimmed': 'rgba(var(--fg-dimmed) / <alpha-value>)',
       accent: 'rgba(var(--accent) / <alpha-value>)',

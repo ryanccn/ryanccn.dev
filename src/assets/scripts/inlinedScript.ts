@@ -97,12 +97,12 @@ const updateClass = (prev: string | null, curr: string) => {
 
   document.documentElement.style.setProperty(
     'color-scheme',
-    THEMES[curr] ? 'dark' : 'light'
+    THEMES[curr].dark ? 'dark' : 'light'
   );
 };
 
 const updateHTML = (e: Element) => {
-  e.innerHTML = THEMES[theme].name;
+  e.querySelector('span')!.innerHTML = THEMES[theme].name;
 };
 
 updateClass(null, theme);

@@ -5,15 +5,8 @@ includePrismCSS: true
 
 <article class="prose enhanced-prose font-prose mb-12">
   <h1>{{ title }}</h1>
-  <div class="not-prose mb-10 font-sans">
-    <div class="flex flex-row items-center gap-x-4">
-      <picture>
-        <source srcset="/icons/ryan-64.webp 2x, /icons/ryan-32.webp" type="image/webp" />
-        <source srcset="/icons/ryan-64.png 2x, /icons/ryan-32.png" type="image/png" />
-        <img src="/icons/ryan-64.png" class="rounded-full" width="32" height="32" alt="" loading="lazy" decoding="async" />
-      </picture>
-      <span class="text-lg font-semibold">Ryan Cao</span>
-    </div>
+  <div class="not-prose -mt-2 mb-10 font-sans">
+    <span class="text-lg font-medium text-fg-dimmed">by <span class="font-semibold text-fg-brighter font-display">Ryan Cao</span></span>
   </div>
   {{ content | safe }}
   <p class="mt-16 text-fg-dimmed">{{ date | customDateFormat }}</p>
