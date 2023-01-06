@@ -97,6 +97,7 @@ const config = (eleventyConfig) => {
   const markdownIt = require('markdown-it');
   const markdownItEmoji = require('markdown-it-emoji');
   const markdownItAnchor = require('markdown-it-anchor');
+  const markdownItTOC = require('markdown-it-toc-done-right');
 
   const markdownLib = markdownIt({ html: true })
     .use(markdownItEmoji)
@@ -109,6 +110,10 @@ const config = (eleventyConfig) => {
       }),
       slugify: eleventyConfig.getFilter('slugify'),
       level: [2, 3, 4],
+    })
+    .use(markdownItTOC, {
+      level: 2,
+      listType: 'ul',
     })
     .disable('code');
 

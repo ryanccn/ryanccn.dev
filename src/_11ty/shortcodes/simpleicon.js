@@ -6,5 +6,6 @@ module.exports = (a, classes) => {
 
   const { document } = parseHTML(original);
   document.querySelector('svg').classList.add(classes);
+  document.querySelector('svg').setAttribute('fill', 'currentColor');
   return document.toString();
 };

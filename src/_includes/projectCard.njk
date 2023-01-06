@@ -1,19 +1,15 @@
-<a class="flex flex-col gap-y-2 p-6 rounded-lg transition-all border-2 border-surface hover:border-surface-hover{% if project.featured %} md:col-span-2{% endif %}" href="https://github.com/{{ project.github }}">
-  <h4 class="font-bold font-display text-xl">
-    {{ project.name }}
-  </h4>
-  <p class="text-opacity-90">
-    {{ project.description }}
-  </p>
-  {% if project.tags.length %}
-    <div class="flex flex-wrap mt-4 gap-x-2 gap-y-1">
-      {% for tag in project.tags %}
-        <span class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-surface">
-          {{ tag }}
-        </span>
-      {% endfor %}
-    </div>
+<a class="flex flex-col justify-between p-6 rounded-lg transition-all bg-surface hover:bg-surface-hover shadow-md shadow-surface/20 {% if project.featured %}md:col-span-2{% endif %}" href="{{ project.link }}">
+  <div class="flex flex-col gap-y-2">
+    <h4 class="font-bold font-display text-xl">
+      {{ project.name }}
+    </h4>
+    <p class="text-fg-dimmed">
+      {{ project.description }}
+    </p>
+  </div>
+  {% if project.link.startsWith("https://github.com") %}
+    {% simpleicon 'github', 'block w-4 h-4 mt-4 self-end text-current' %}
+  {% else %}
+    <svg class="block w-4 h-4 mt-4 self-end" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
   {% endif %}
 </a>
-
-{# bg-tag-0 bg-tag-1 bg-tag-2 bg-tag-3 bg-tag-4 #}

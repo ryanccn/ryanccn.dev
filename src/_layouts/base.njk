@@ -2,8 +2,13 @@
 navLinks:
   - title: Projects
     url: /projects/
+    icon: album
+  - title: Stack
+    url: /stack/
+    icon: bookmark
   - title: Blog
     url: /posts/
+    icon: pencil
 
 eleventyComputed:
   socialImg: "{{ domain }}/previews/{{ title | slugify }}.png"
@@ -14,7 +19,7 @@ eleventyComputed:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
+    <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
     <link rel="icon" href="/icons/transparent.png" />
     <link rel="apple-touch-icon" href="/icons/solid.png" />
     <link rel="canonical" href="https://ryanccn.dev{{ page.url }}" />
@@ -55,43 +60,44 @@ eleventyComputed:
 
   <body>
     <header
-      class="flex flex-col md:flex-row md:justify-between md:items-center md:px-6 py-16 md:mb-12 gap-y-6 md:gap-y-0"
+      class="flex flex-col md:flex-row md:justify-between md:items-center md:px-6 py-16 md:mb-12 gap-y-10 md:gap-y-0"
     >
-      <a href="/" class="font-display tracking-tight flex gap-x-4 text-2xl font-extrabold md:px-3 py-2 my-1 transition rounded-sm">
+      <a href="/" class="font-display tracking-tight flex gap-x-4 text-3xl font-black md:px-3 py-2 my-1 transition rounded-sm">
         {% include 'pictureOfMe.njk' %}
         <h1>Ryan Cao</h1>
       </a>
 
-      <div class="flex flex-col md:flex-row md:gap-x-6 gap-y-4 md:items-center">
-        <div class="flex flex-col gap-y-1 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
+      <div class="flex flex-col md:flex-row md:gap-x-10 gap-y-8 md:items-center">
+        <div class="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
           {% for link in navLinks %}
           <a
             href="{{ link.url }}"
-            class="text-lg md:px-3 py-1 rounded-sm font-medium transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
+            class="flex flex-row gap-x-3 items-center text-lg md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
           >
-            {{ link.title }}
+            {% lucide link.icon, 'block w-5 h-5' %}
+            <span>{{ link.title }}</span>
           </a>
           {% endfor %}
         </div>
 
         <div class="flex items-center gap-3">
-          <a rel="me" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "mastodon", "block h-5 w-5 fill-mastodon" %}
+          <a rel="me" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-mastodon/30">
+            {% simpleicon "mastodon", "block h-5 w-5 text-mastodon" %}
           </a>
-          <a rel="me" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "github", "block h-5 w-5 fill-github dark:fill-white" %}
+          <a rel="me" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-github/30 dark:focus:ring-white/30">
+            {% simpleicon "github", "block h-5 w-5 text-github dark:text-white" %}
           </a>
-          <a rel="me" href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "twitter", "block h-5 w-5 fill-twitter" %}
+          <a rel="me" href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-twitter/30">
+            {% simpleicon "twitter", "block h-5 w-5 text-twitter" %}
           </a>
-          <a href="https://discord.com/invite/ty7GCnN87U" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "discord", "block h-5 w-5 fill-discord" %}
+          <a href="https://discord.com/invite/ty7GCnN87U" class="rounded p-1 hover:brightness-90 transition-all focus:ring-discord/30">
+            {% simpleicon "discord", "block h-5 w-5 text-discord" %}
           </a>
-          <a href="https://modrinth.com/user/ryanccn" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "modrinth", "block h-5 w-5 fill-modrinth" %}
+          <a href="https://modrinth.com/user/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-modrinth/30">
+            {% simpleicon "modrinth", "block h-5 w-5 text-modrinth" %}
           </a>
-          <a rel="me" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all">
-            {% simpleicon "kofi", "block h-5 w-5 fill-kofi" %}
+          <a rel="me" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-kofi/30">
+            {% simpleicon "kofi", "block h-5 w-5 text-kofi" %}
           </a>
         </div>
       </div>

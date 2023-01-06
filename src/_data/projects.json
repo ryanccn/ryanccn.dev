@@ -3,121 +3,108 @@
     {
       "name": "Moddermore",
       "description": "Share the mods you use with anyone.",
-      "tags": [
-        "nextjs",
-        "react",
-        "typescript",
-        "tailwindcss",
-        "nodejs",
-        "mongodb"
-      ],
-      "github": "ryanccn/moddermore",
+      "link": "https://moddermore.net/",
       "featured": true
     },
     {
       "name": "ryanccn.dev",
       "description": "My personal website, made with Eleventy and Tailwind CSS!",
-      "tags": ["eleventy", "tailwindcss", "nodejs", "cloudflare"],
-      "github": "ryanccn/ryanccn.dev",
+      "link": "https://github.com/ryanccn/ryanccn.dev",
       "featured": true
     },
     {
       "name": "custom-iosevka",
       "description": "Ryan's custom Iosevka Nerd Font build!",
-      "tags": ["deno", "fonts", "monospace", "ci/cd"],
-      "github": "ryanccn/custom-iosevka"
+      "link": "https://github.com/ryanccn/custom-iosevka"
     },
     {
       "name": "quilted-dependabot",
       "description": "Update certain dependencies for Quilt",
-      "tags": ["minecraft", "quilt", "ci/cd"],
-      "github": "RyanModDev/quilted-dependabot"
+      "link": "https://github.com/RyanModDev/quilted-dependabot"
     }
   ],
   "mods": [
     {
       "name": "Vanillish",
       "description": "A lightweight and beautiful vanilla experience",
-      "tags": ["minecraft", "fabric", "modpack", "packwiz"],
-      "github": "RyanModDev/Vanillish",
+      "link": "https://github.com/RyanModDev/vanillish",
       "featured": true
     },
     {
       "name": "Postmortal Inventory",
       "description": "Totems work in your inventory. Period.",
-      "tags": ["minecraft", "quilt", "java"],
-      "github": "RyanModDev/postmortal-inventory"
+      "link": "https://github.com/RyanModDev/postmortal-inventory"
     },
     {
       "name": "uwuify chat",
       "description": "uwuify the chat messages owo",
-      "tags": ["minecraft", "quilt", "java", "uwu", "owo"],
-      "github": "RyanModDev/uwuify-chat"
+      "link": "https://github.com/RyanModDev/uwuify-chat"
     },
     {
       "name": "Myriad Bows",
       "description": "A Myriad enchantment for bows that consumes arrows depending on your luck",
-      "tags": ["minecraft", "quilt", "java"],
-      "github": "RyanModDev/MyriadBows"
+      "link": "https://github.com/RyanModDev/MyriadBows"
     },
     {
       "name": "EmuNO",
       "description": "Disables various macOS-specific behaviors, making your life better",
-      "tags": ["minecraft", "fabric", "macos", "java"],
-      "github": "RyanModDev/EmuNO"
+      "link": "https://github.com/RyanModDev/EmuNO"
     }
   ],
   "contributions": [
     {
       "name": "Prism Launcher",
       "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once",
-      "tags": ["minecraft", "qt", "c++"],
-      "github": "PrismLauncher/PrismLauncher",
+      "link": "https://prismlauncher.org/",
+      "featured": true
+    },
+    {
+      "name": "Catppuccin",
+      "description": "Soothing pastel theme for the high-spirited!",
+      "link": "https://catppuccin.com/",
       "featured": true
     },
     {
       "name": "Fig",
       "description": "The next-generation command line.",
-      "tags": ["terminal", "deno", "typescript"],
-      "github": "withfig/autocomplete"
+      "link": "https://github.com/withfig/autocomplete"
+    },
+    {
+      "name": "InvokeAI",
+      "description": "A leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies.",
+      "link": "https://invoke-ai.github.io/InvokeAI/"
     },
     {
       "name": "Modrinth",
       "description": "Discover, play, and create Minecraft content",
-      "tags": ["minecraft", "nuxt", "vue"],
-      "github": "modrinth/knossos"
+      "link": "https://modrinth.com/"
     },
     {
       "name": "jet",
       "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
-      "tags": ["eleventy", "tailwindcss", "nodejs"],
-      "github": "marcamos/jet"
+      "link": "https://github.com/marcamos/jet"
     }
   ],
   "archived": [
     {
       "name": "WarmerDistance",
       "description": "Social distancing maintenance system based on computer vision",
-      "tags": ["ml", "opencv", "python"],
-      "github": "ryanccn/warmerdistance"
+      "link": "https://github.com/ryanccn/warmerdistance"
     },
     {
       "name": "sieve-of-eratosthenes",
       "description": "A demo of the Sieve of Eratosthenes, made with Vue 3 & Vite",
-      "tags": ["vue", "vite", "typescript"],
-      "github": "ryanccn/sieve-of-eratosthenes"
+      "link": "https://github.com/ryanccn/sieve-of-eratosthenes"
     },
     {
       "name": "clank",
       "description": "A simple CLI that runs your C++ code JIT",
-      "tags": ["deno", "cliffy", "c++", "typescript"],
-      "github": "ryanccn/clank"
+      "link": "https://github.com/ryanccn/clank"
     },
     {
       "name": "bookmarklet",
       "description": "A CLI for creating bookmarklets",
-      "tags": ["bookmarklet", "browser", "nodejs"],
-      "github": "ryanccn/bookmarklet"
+      "link": "https://github.com/ryanccn/bookmarklet"
     }
   ]
 }
