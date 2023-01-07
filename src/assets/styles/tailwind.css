@@ -181,7 +181,7 @@
     }
   }
 
-  h3.projects-page {
+  h2.projects-page {
     @apply mb-6 font-display text-2xl font-bold;
   }
 
