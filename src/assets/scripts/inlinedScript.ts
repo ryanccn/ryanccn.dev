@@ -152,23 +152,7 @@ if ('fonts' in document) {
     { style: 'italic' }
   );
 
-  let plexVar = new FontFace(
-    'IBM Plex Sans',
-    "url('/assets/fonts/plex/IBMPlexSansVar-Roman.woff2?v=20221229') format('woff2'), url('/assets/fonts/plex/IBMPlexSansVar-Roman.woff?v=20221229') format('woff')"
-  );
-
-  let plexVarItalic = new FontFace(
-    'IBM Plex Sans',
-    "url('/assets/fonts/plex/IBMPlexSansVar-Italic.woff2?v=20221229') format('woff2'), url('/assets/fonts/plex/IBMPlexSansVar-Italic.woff?v=20221229') format('woff')",
-    { style: 'italic' }
-  );
-
-  Promise.all([
-    satoshiVar.load(),
-    satoshiVarItalic.load(),
-    plexVar.load(),
-    plexVarItalic.load(),
-  ]).then((fonts) => {
+  Promise.all([satoshiVar.load(), satoshiVarItalic.load()]).then((fonts) => {
     fonts.forEach((font) => document.fonts.add(font));
   });
 }

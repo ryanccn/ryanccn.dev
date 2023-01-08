@@ -38,7 +38,6 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        prose: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
         display: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
 
@@ -58,10 +57,6 @@ module.exports = {
         },
       },
     },
-  },
-
-  variants: {
-    extend: {},
   },
 
   plugins: [require('@tailwindcss/typography')],
