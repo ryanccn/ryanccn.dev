@@ -41,7 +41,7 @@ Feel free to make any recommendations to me through social media!
 - [Raycast](https://raycast.com/) for a powerful, developer-oriented Spotlight alternative
 - [KnockKnock](https://objective-see.org/products/knockknock.html) for macOS system scans
 - [IINA](https://iina.io/) for video & audio player
-- [Shottr](https://shottr.cc/) for screenshotting
+- [CleanShot X](https://cleanshot.com/) for screenshotting
 - [Stats](https://github.com/exelban/stats) for menubar stats
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) for preventing system sleep
 - [Velja](https://sindresorhus.com/velja) for multi-browser link opening
