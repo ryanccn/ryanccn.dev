@@ -27,6 +27,7 @@ Feel free to make any recommendations to me through social media!
 - [Mimestream](https://mimestream.com/) for Gmail
 - [Discord](https://discord.com/) for community involvement
 - [OBS](https://obsproject.com/) for the occasional stream
+- [NetNewsWire](https://netnewswire.com/) for reading RSS feeds
 
 ### Development
 
