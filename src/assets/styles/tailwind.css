@@ -141,7 +141,7 @@
   }
 
   .title {
-    @apply mb-8 font-display text-4xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-10 font-display text-4xl font-extrabold tracking-tight text-fg-brighter;
   }
 
   .enhanced-prose {

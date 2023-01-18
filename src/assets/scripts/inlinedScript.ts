@@ -140,19 +140,19 @@ window.addEventListener('storage', (e) => {
 
 /* Fonts */
 
-if ('fonts' in document) {
-  let satoshiVar = new FontFace(
-    'Satoshi',
-    "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221229') format('woff')"
-  );
+// if ('fonts' in document) {
+//   let satoshiVar = new FontFace(
+//     'Satoshi',
+//     "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221229') format('woff')"
+//   );
 
-  let satoshiVarItalic = new FontFace(
-    'Satoshi',
-    "url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff?v=20221229') format('woff')",
-    { style: 'italic' }
-  );
+//   let satoshiVarItalic = new FontFace(
+//     'Satoshi',
+//     "url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff?v=20221229') format('woff')",
+//     { style: 'italic' }
+//   );
 
-  Promise.all([satoshiVar.load(), satoshiVarItalic.load()]).then((fonts) => {
-    fonts.forEach((font) => document.fonts.add(font));
-  });
-}
+//   Promise.all([satoshiVar.load(), satoshiVarItalic.load()]).then((fonts) => {
+//     fonts.forEach((font) => document.fonts.add(font));
+//   });
+// }

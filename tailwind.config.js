@@ -38,7 +38,7 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        display: ['Satoshi', ...defaultTheme.fontFamily.sans],
+        display: ['Switzer', ...defaultTheme.fontFamily.sans],
       },
 
       typography: {
