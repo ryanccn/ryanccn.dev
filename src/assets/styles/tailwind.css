@@ -146,7 +146,7 @@
 
   .enhanced-prose {
     @apply break-words prose-headings:font-display;
-    @apply prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
+    @apply prose-a:font-display prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;

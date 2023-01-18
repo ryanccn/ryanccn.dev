@@ -71,7 +71,7 @@ eleventyComputed:
           {% for link in navLinks %}
           <a
             href="{{ link.url }}"
-            class="flex flex-row gap-x-3 items-center text-lg md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
+            class="flex flex-row gap-x-3 items-center text-lg font-display md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
           >
             {% lucide link.icon, 'block w-5 h-5' %}
             <span>{{ link.title }}</span>
