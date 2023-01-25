@@ -24,6 +24,7 @@ const config = (eleventyConfig) => {
     './src/assets/icons': 'icons',
     './src/assets/fonts': 'assets/fonts',
     './_headers': '_headers',
+    './_redirects': '_redirects',
   });
 
   eleventyConfig.addFilter(

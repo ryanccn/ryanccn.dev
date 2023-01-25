@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Stack
+title: Uses
 date: 2023-01-06
 ---
 
-# Stack
+# Uses
 
 All sorts of things that I use on my computer (and occasionally phone), services I use for my daily life and web development, etc.
 
