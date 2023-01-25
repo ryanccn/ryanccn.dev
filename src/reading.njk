@@ -5,19 +5,19 @@ title: 'Reading'
 
 <h1 class="title">Reading</h1>
 
-<ul class="flex flex-col gap-y-6">
+<ul class="flex flex-col gap-y-8">
 {% for book in reading %}
-  <li class="flex flex-col lg:flex-row lg:justify-between gap-2">
+  <li class="flex flex-col lg:flex-row lg:justify-between gap-3">
     <div class="flex flex-col gap-y-1">
-      <a class="text-lg font-semibold hover:underline underline-offset-2" href="{{ book.link }}">{{ book.title }}</a>
-      <p class="text-sm font-medium text-fg-dimmed">{{ book.author }}</p>
+      <a class="text-lg font-bold font-display hover:underline underline-offset-2" href="{{ book.link }}">{{ book.title }}</a>
+      <p class="text-sm font-semibold text-fg-dimmed">{{ book.author }}</p>
     </div>
 
-    <p class="text-fg-dimmed">{{ book.date }}</p>
+    <p class="text-fg-dimmed text-xs">{{ book.date or "Unknown" }}</p>
   </li>
 {% endfor %}
 </ul>
 
-<p class="mt-16 text-fg-dimmed max-w-prose">
-  Reading before January 17, 2022 are not tracked. This list may be incomplete, but I try to keep it up-to-date.
+<p class="mt-20 text-sm text-fg-dimmed">
+  Reading before a certain date are not tracked. This list may be incomplete, but I try to keep it up-to-date.
 </p>
