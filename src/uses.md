@@ -6,7 +6,7 @@ date: 2023-01-06
 
 # Uses
 
-All sorts of things that I use on my computer (and occasionally phone), services I use for my daily life and web development, etc.
+<p class="text-xl">All sorts of things that I use on my computer (and occasionally phone), services I use for my daily life and web development, etc.</p>
 
 Feel free to make any recommendations to me through social media!
 

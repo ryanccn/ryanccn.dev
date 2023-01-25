@@ -141,12 +141,13 @@
   }
 
   .title {
-    @apply mb-10 font-display text-4xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-12 font-display text-6xl font-extrabold tracking-tight text-fg-brighter;
   }
 
   .enhanced-prose {
     @apply break-words prose-headings:font-display;
     @apply prose-a:font-display prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
+    @apply prose-h1:title;
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
@@ -175,6 +176,7 @@
   button {
     @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;
     @apply transition-all hover:brightness-[80%] disabled:opacity-75;
+    @apply font-display;
 
     &.primary {
       @apply bg-accent text-white;
