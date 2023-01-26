@@ -13,6 +13,11 @@
       "featured": true
     },
     {
+      "name": "Blåhaj",
+      "description": "A multipurpose, fun Discord bot.",
+      "link": "https://github.com/ryanccn/blahaj"
+    },
+    {
       "name": "custom-iosevka",
       "description": "Ryan's custom Iosevka Nerd Font build!",
       "link": "https://github.com/ryanccn/custom-iosevka"
@@ -63,6 +68,11 @@
       "description": "Soothing pastel theme for the high-spirited!",
       "link": "https://catppuccin.com/",
       "featured": true
+    },
+    {
+      "name": "Elk",
+      "description": "A nimble Mastodon web client",
+      "link": "https://github.com/elk-zone/elk"
     },
     {
       "name": "Fig",

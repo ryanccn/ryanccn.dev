@@ -7,15 +7,15 @@
 <ol reversed class="{{ listClasses }}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="text-xl font-semibold font-display hover:underline underline-offset-2 transition">
+    <a href="{{ i.url }}" class="text-2xl font-semibold font-display hover:underline underline-offset-2 transition">
       <h2>{{ i.data.title }}</h2>
     </a>
-    <div class="flex flex-wrap gap-x-2 font-medium text-xs">
+    <div class="flex flex-wrap gap-x-2 font-medium text-sm">
       {% for tag in i.data.tags | filterTagsList %}
       <a href="/posts/tags/{{ tag | slugify }}/" class="px-3 py-1 bg-surface hover:bg-surface-hover transition rounded-full">{{ tagEmojis[tag]}} {{ tag }}</a>
       {% endfor %}
     </div>
-    <p class="text-sm text-fg-dimmed">
+    <p class="text-base text-fg-dimmed">
       {% postReads i.url %} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | customDateFormat }}
     </p>
   </li>

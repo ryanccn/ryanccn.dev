@@ -19,7 +19,7 @@
   --fg-less-dimmed: 228 228 231;
   --fg-dimmed: 212 212 216;
   --accent: 96 165 250;
-  --accent-lighter: 147 197 253;
+  --accent-lighter: 59 130 246;
 
   --background: 24 24 27;
   --surface: 39 39 42;
@@ -142,6 +142,10 @@
 
   .title {
     @apply mb-12 font-display text-6xl font-extrabold tracking-tight text-fg-brighter;
+  }
+
+  .subtitle {
+    @apply font-display text-2xl tracking-tight text-fg-less-dimmed;
   }
 
   .enhanced-prose {

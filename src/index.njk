@@ -5,33 +5,28 @@ permalink: '/'
 ---
 
 <article class="prose enhanced-prose">
-{% renderTemplate "md" %}
-# Hello, I'm Ryan!
+  <h1>Hello, I'm Ryan!</h1>
+  <p class="subtitle">I'm a high school student and a hobbyist web/app developer. I'm also learning a bunch of other things like Minecraft modding!</p>
 
-I'm a high school student and a hobbyist web/app developer. I'm also learning how to make mods with [Quilt](https://quiltmc.org) and Fabric!
+  <p>I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
+  <p>In the open source world, I contribute to <a href="https://prismlauncher.org/">Prism Launcher</a>, maintain the community bot, and am a Community Manager in the Discord community. I also contribute to and help translate <a href="https://modrinth.com/">Modrinth</a>. I wrote the <a href="https://fig.io/">Fig</a> `ffmpeg` autocompletion spec. You can check out a variety of other projects on my GitHub and <a href="/projects/">the projects page</a>.</p>
 
-I do some web development in my spare time. I have a website here, and I also made [Moddermore](https://moddermore.dev/?ref=ryanccn.dev), a web app for making mod lists that's becoming pretty popular! I'm well versed with technologies such as [React](https://reactjs.org/), [Next.js](https://nextjs.org/), [Vue](https://vuejs.org/), [Eleventy](https://11ty.dev/), etc.
+  <h2>Blog posts</h2>
 
-In the open source world, I contribute to [Prism Launcher](https://prismlauncher.org/), maintain the community bot, and am a Community Manager in the Discord community. I also contribute to and help translate [Modrinth](https://modrinth.com/). I wrote the [Fig](https://fig.io/) `ffmpeg` autocompletion spec.
-{% endrenderTemplate %}
-
-<h2>Blog posts</h2>
-
-<div class="not-prose">
-{% set postslist = collections.posts | reverse | head(5) %}
-{% set postslistcompact = true %}
-{% include "postslist.njk" %}
-</div>
-
-<h2>Projects</h2>
-
-<div class="not-prose flex flex-col">
-  <div class="projects-grid">
-    {% for project in projects.projects %}
-      {% include "projectCard.njk" %}
-    {% endfor %}
+  <div class="not-prose">
+  {% set postslist = collections.posts | reverse | head(5) %}
+  {% set postslistcompact = true %}
+  {% include "postslist.njk" %}
   </div>
-  <a href="{{ '/projects/' | url }}" class="px-2 py-1 rounded transition font-medium link-colors self-end">See more &rightarrow;</a>
-</div>
 
+  <h2>Projects</h2>
+
+  <div class="not-prose flex flex-col">
+    <div class="projects-grid">
+      {% for project in projects.projects %}
+        {% include "projectCard.njk" %}
+      {% endfor %}
+    </div>
+    <a href="{{ '/projects/' | url }}" class="px-2 py-1 rounded transition font-medium link-colors self-end">See more &rightarrow;</a>
+  </div>
 </article>
