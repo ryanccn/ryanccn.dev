@@ -5,7 +5,10 @@ permalink: '/posts/'
 override:tags:
 ---
 
-<h1 class="title">Blog</h1>
+<h1 class="title flex gap-x-6 items-end">
+  <span>Blog</span>
+  <a href="/feed/rss.xml">{% lucide 'rss', 'block w-6 h-6 transition opacity-75 hover:opacity-90' %}</a>
+</h1>
 
 {% set postslist = collections.posts | reverse %}
 {% include "postslist.njk" %}

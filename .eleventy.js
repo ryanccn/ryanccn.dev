@@ -1,6 +1,8 @@
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
-const readingTime = require('eleventy-plugin-reading-time');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginReadingTime = require('eleventy-plugin-reading-time');
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
+
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
 const { format } = require('date-fns');
@@ -17,8 +19,9 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
-  eleventyConfig.addPlugin(readingTime);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginReadingTime);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
@@ -65,21 +68,6 @@ const config = (eleventyConfig) => {
      * @return {String} a formatted string
      */
     (d) => format(d, 'yyyy-MM-dd')
-  );
-
-  eleventyConfig.addFilter(
-    'scoreToUnicode',
-    /**
-     * @param {number} score an integer score
-     * @return {string} formatted string
-     */
-    (score) => {
-      let ret = '';
-      ret += '●'.repeat(Math.floor(score));
-      ret += score > Math.floor(score) ? '◐' : '';
-      ret = ret.padEnd(10, '○');
-      return ret;
-    }
   );
 
   registerShortcodes(eleventyConfig);
