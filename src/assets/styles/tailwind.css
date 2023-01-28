@@ -5,12 +5,12 @@
   --fg-brighter: 0 0 0;
   --fg-less-dimmed: 51 65 85;
   --fg-dimmed: 100 116 139;
-  --accent: 59 130 246;
-  --accent-lighter: 96 165 250;
+  --accent: 37 99 235;
+  --accent-lighter: 59 130 246;
 
   --background: 255 255 255;
-  --surface: 241 245 249;
-  --surface-hover: 226 232 240;
+  --surface: 248 250 252;
+  --surface-hover: 241 245 249;
 }
 
 .theme-dark {
