@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
-    "target": "ES2020",
-    "jsx": "react",
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
+    "target": "es6",
+    "jsx": "preserve",
+    "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": false
   },
-  "exclude": ["node_modules", "**/node_modules/*"]
+  "exclude": ["node_modules", "**/node_modules/*", "functions/**/*"]
 }
