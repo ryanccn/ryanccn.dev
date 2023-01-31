@@ -115,17 +115,8 @@ const config = (eleventyConfig) => {
   eleventyConfig.ignores.add('README.md');
   eleventyConfig.ignores.add('src/utils/socialTmpl.html');
 
-  eleventyConfig.setBrowserSyncConfig({
-    ui: false,
-    callbacks: {
-      ready: function (_err, bs) {
-        const content_404 = readFileSync('_site/404.html');
-        bs.addMiddleware('*', (_req, res) => {
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
+  eleventyConfig.setServerOptions({
+    domDiff: false,
   });
 
   return {

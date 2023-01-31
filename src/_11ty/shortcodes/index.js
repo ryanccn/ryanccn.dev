@@ -17,6 +17,12 @@ module.exports = (eleventyConfig) => {
     )}`;
   });
 
+  eleventyConfig.addShortcode('mastodonShareLink', function () {
+    return `https://mastoroute.deno.dev/share?text=${encodeURIComponent(
+      absoluteUrl(this.page.url)
+    )}`;
+  });
+
   eleventyConfig.addShortcode('hnShareLink', function (title) {
     return (
       `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
