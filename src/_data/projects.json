@@ -18,6 +18,11 @@
       "link": "https://github.com/ryanccn/blahaj"
     },
     {
+      "name": "Mastoroute",
+      "description": "A small web service to automatically redirect Mastodon users for share links to their instances",
+      "link": "https://github.com/ryanccn/mastoroute"
+    },
+    {
       "name": "custom-iosevka",
       "description": "Ryan's custom Iosevka Nerd Font build!",
       "link": "https://github.com/ryanccn/custom-iosevka"
@@ -115,6 +120,11 @@
       "name": "bookmarklet",
       "description": "A CLI for creating bookmarklets",
       "link": "https://github.com/ryanccn/bookmarklet"
+    },
+    {
+      "name": "ryanccn-sveltekit",
+      "description": "Archived SvelteKit rewrite of ryanccn.dev, with a built-in CMS",
+      "link": "https://codeberg.org/ryanccn/ryanccn-sveltekit"
     }
   ]
 }
