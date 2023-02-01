@@ -89,7 +89,7 @@ const config = (eleventyConfig) => {
   const markdownItAnchor = require('markdown-it-anchor');
   const markdownItTOC = require('markdown-it-toc-done-right');
 
-  const markdownLib = markdownIt({ html: true })
+  const markdownLib = markdownIt({ html: true, typographer: true })
     .use(markdownItEmoji)
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.linkInsideHeader({
