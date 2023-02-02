@@ -17,7 +17,7 @@ One of the most amazing things about Eleventy is that it leaves a lot of things 
 
 For instance, recently I [added static tweet embeds](https://github.com/ryanccn/ryanccn.dev/commit/e62b474c7895b0f71d857b608e0b94b2570d3217) to this website using an [Eleventy shortcode](https://www.11ty.dev/docs/shortcodes/). Eleventy shortcodes simply handle the templating for you, and you are free to do whatever Node.js stuff you want in the shortcode. This particular shortcode calls the Twitter API to fetch tweets and renders them out in static HTML. It includes image optimization with [`eleventy-img`](https://www.11ty.dev/docs/plugins/image/) for avatars (_there's no support for media yet_) and a fully homemade tweet embed layout using [Tailwind CSS](https://tailwindcss.com/), which I already use on my website.
 
-{% tweet '1539851566999805952' %}
+> This static tweet embed has been removed because of Twitter's decision to make the API paid-only. Sorry.
 
 The filesystem routing and ability to break out of it is a breath of fresh air. With `permalink`, you can disregard the file/folder structure and do what you want with routes and things rather than having to use hacky ways to work around the framework that is supposed to be helping you develop and iterate faster.
 
