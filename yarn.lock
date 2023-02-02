@@ -70,10 +70,10 @@
   dependencies:
     normalize-path "^3.0.0"
 
-"@11ty/eleventy@^2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-2.0.0-beta.2.tgz#7f385842864c7f30b28e71559ab9cdceebf7c9e2"
-  integrity sha512-nH9uxixBqvgT7eCT2PcVvbWPlisv/fc2Me4jpAiiu96HsNF1IK/kSRpDhWUXV9HjXfCN5Hi+wcI/ZXm+5bYF6g==
+"@11ty/eleventy@^2.0.0-beta.3":
+  version "2.0.0-canary.35"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-2.0.0-canary.35.tgz#0950c49a3abfe004469c3530d287b6dbda2b53d2"
+  integrity sha512-jaGeLJYkpgwxupZEDMP6HuowtaVhb9qC1XoovkIVYHN5GYOJkydQ6pK79LBXqS7IV81TgzPrHwp4/ukhYyjZzQ==
   dependencies:
     "@11ty/dependency-tree" "^2.0.1"
     "@11ty/eleventy-dev-server" "^1.0.3"
@@ -1693,10 +1693,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-lucide-static@^0.108.0:
-  version "0.108.0"
-  resolved "https://registry.yarnpkg.com/lucide-static/-/lucide-static-0.108.0.tgz#c9cbd6f6b4cba242c1000551817559baf658caf7"
-  integrity sha512-FV6w4+Yu7qw+R21CDdGuHdbTVqa6hyEeJm22wz/gQmImROVyje5s/MAQiblKSr6DwEGDUm1lcafVwIU++s1/kA==
+lucide-static@^0.109.0:
+  version "0.109.0"
+  resolved "https://registry.yarnpkg.com/lucide-static/-/lucide-static-0.109.0.tgz#bd8143c99069ff981731fd39c2fc88cd92e91445"
+  integrity sha512-AbzM3hvELY1dEFkzloLK7j4ajVsMKzIHc1ToNdw2jzdmRmyn2KRpck0xArW08NBBfkalnvUMgHRjrHSsJZ5WCQ==
 
 luxon@^3.2.1:
   version "3.2.1"
@@ -2646,10 +2646,10 @@ safe-buffer@^5.0.1, safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
-satori@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/satori/-/satori-0.1.2.tgz#0842199115a94b6ecf7a979cd99c96a2c9518346"
-  integrity sha512-1P08+PyNUzJ2P0bdI9reSJw+B/Whv9nThvoX4HAiAp9lNNTHtwtN9525TuEtELml7AEEvECpeOvBqMkAxcuQeQ==
+satori@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/satori/-/satori-0.2.0.tgz#c058ab4a0d908a5132bf3b18b974a6373633d8f1"
+  integrity sha512-QSqOYYN0A25qO+smoGMXKlTj/B0F6hcfCjjinP2sXO8r3zrZYIovo+PADFF4aegZTMuQGS1/n/8nKd6h62ohDQ==
   dependencies:
     "@shuding/opentype.js" "1.4.0-beta.0"
     css-background-parser "^0.1.0"
