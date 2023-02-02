@@ -5,8 +5,13 @@ includePrismCSS: true
 
 <article class="prose enhanced-prose font-prose mb-12">
   <h1>{{ title }}</h1>
-  <div class="not-prose -mt-6 mb-10 font-sans">
+  <div class="not-prose -mt-6 mb-10 font-sans flex flex-col gap-y-4">
     <span class="text-lg font-medium text-fg-dimmed">by <span class="font-semibold text-fg-brighter font-display">Ryan Cao</span></span>
+    <div class="flex flex-wrap gap-x-2 font-medium text-sm">
+      {% for tag in tags | filterTagsList %}
+      <a href="/posts/tags/{{ tag | slugify }}/" class="px-3 py-1 bg-surface hover:bg-surface-hover transition rounded-full">{{ tagEmojis[tag]}} {{ tag }}</a>
+      {% endfor %}
+    </div>
   </div>
   {{ content | safe }}
   <p class="mt-16 text-fg-dimmed">{{ date | customDateFormat }}</p>
