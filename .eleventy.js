@@ -52,7 +52,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addFilter('filterTagsList', filterTagsList);
 
   eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
-    return webmentions.children.filter((entry) => entry['wm-target'] === url);
+    return webmentions.filter((entry) => entry['wm-target'] === url);
   });
 
   eleventyConfig.addFilter('webmentionsByType', (mentions, mentionType) => {
@@ -123,7 +123,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addWatchTarget('src/utils/*.js');
 
   eleventyConfig.ignores.add('README.md');
-  eleventyConfig.ignores.add('src/utils/socialTmpl.html');
+  eleventyConfig.ignores.add('src/utils/socialImages/');
 
   eleventyConfig.setServerOptions({
     domDiff: false,

@@ -8,7 +8,7 @@
     {% for webmention in webmentionList %}
       <a href="{{ webmention.author.url }}" class="-mr-[16px] brightness-90 hover:brightness-100 transition-all" style="z-index: {{ loop.index }};">
         {% if webmention.author.photo %}
-        <img src="{{ webmention.author.photo }}" class="rounded-full overflow-hidden" width="32" height="32" loading="lazy" decoding="async" alt="{{ webmention.author.name }}">
+        <img src="{{ webmention.author.photo }}" class="bg-surface rounded-full overflow-hidden" width="32" height="32" loading="lazy" decoding="async" alt="{{ webmention.author.name }}">
         {% else %}
         <div class="bg-surface w-[32px] h-[32px] text-lg grid place-content-center">{{ webmention.author.name[0].toUpperCase() }}</div>
         {% endif %}
