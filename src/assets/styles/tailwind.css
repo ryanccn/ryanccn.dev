@@ -175,10 +175,10 @@
     @apply text-fg hover:text-accent;
   }
 
-  a.buttonish,
+  .buttonish,
   button {
     @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;
-    @apply transition-all hover:brightness-[80%] disabled:opacity-75;
+    @apply bg-surface transition-all hover:bg-surface-hover disabled:opacity-75;
     @apply font-display;
 
     &.primary {

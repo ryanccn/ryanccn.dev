@@ -50,6 +50,15 @@ const config = (eleventyConfig) => {
   const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 
   eleventyConfig.addFilter('filterTagsList', filterTagsList);
+
+  eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
+    return webmentions.children.filter((entry) => entry['wm-target'] === url);
+  });
+
+  eleventyConfig.addFilter('webmentionsByType', (mentions, mentionType) => {
+    return mentions.filter((entry) => !!entry[mentionType]);
+  });
+
   eleventyConfig.addCollection('postsTagList', (collection) => {
     let tagSet = new Set();
 

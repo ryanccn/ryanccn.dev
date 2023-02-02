@@ -1,16 +1,42 @@
-<div class="flex flex-wrap gap-2">
-  <a class="buttonish hover:bg-twitter/10 !ring-twitter/50 hover:!brightness-100" href="{% twitterShareLink %}">
-    {% simpleicon "twitter", "block h-5 w-5 text-twitter" %}
-    <span>Twitter</span>
-  </a>
+{% set webmentionUrl %}{{ page.url | url | absoluteUrl("https://ryanccn.dev/") }}{% endset %}
+{% set mentions = webmentions | getWebmentionsForUrl(webmentionUrl) %}
+{% set reposts = mentions | webmentionsByType('repost-of') | reverse %}
+{% set likes = mentions | webmentionsByType('like-of') | reverse %}
 
-  <a class="buttonish hover:bg-mastodon/10 !ring-mastodon/50 hover:!brightness-100" href="{% mastodonShareLink %}">
-    {% simpleicon "mastodon", "block h-5 w-5 text-mastodon" %}
-    <span>Mastodon</span>
-  </a>
+<div class="flex flex-col gap-y-12">
+  {% set webmentionType = "like" %}
+  {% set webmentionList = likes %}
+  {% include 'webmentionList.njk' %}
 
-  <a class="buttonish hover:bg-hn/10 !ring-hn/50 hover:!brightness-100" href="{% hnShareLink title %}">
-    {% simpleicon "ycombinator", "block h-5 w-5 text-hn" %}
-    <span>Hacker News</span>
-  </a>
+  {% set webmentionType = "repost" %}
+  {% set webmentionList = reposts %}
+  {% include 'webmentionList.njk' %}
+
+  <div class="flex flex-col gap-y-3">
+    <h2 class="text-lg font-display font-medium leading-none">
+      Share
+    </h2>
+
+    <div class="flex flex-wrap gap-2">
+      <a class="buttonish bg-twitter/10 hover:bg-twitter/20 !ring-twitter/50" href="{% twitterShareLink %}">
+        {% simpleicon "twitter", "block h-5 w-5 text-twitter" %}
+        <span>Twitter</span>
+      </a>
+
+      <a class="buttonish bg-mastodon/10 hover:bg-mastodon/20 !ring-mastodon/50" href="{% mastodonShareLink %}">
+        {% simpleicon "mastodon", "block h-5 w-5 text-mastodon" %}
+        <span>Mastodon</span>
+      </a>
+
+      <a class="buttonish bg-hn/10 hover:bg-hn/20 !ring-hn/50" href="{% hnShareLink title %}">
+        {% simpleicon "ycombinator", "block h-5 w-5 text-hn" %}
+        <span>Hacker News</span>
+      </a>
+
+      <button class="buttonish bg-surface hover:bg-surface-hover hidden" data-share-btn>
+        {% lucide "laptop", "block h-5 w-5" %}
+        <span>System share menu</span>
+      </a>
+    </div>
+  </div>
 </div>

@@ -117,6 +117,31 @@ window.addEventListener('load', () => {
   });
 });
 
+window.addEventListener('storage', (e) => {
+  if (DEV) console.log('[theme] storage listener triggered');
+
+  if (e.key !== 'theme') return;
+  theme = getLocalStorageValue();
+});
+
+/* Share button */
+
+window.addEventListener('load', () => {
+  document.querySelectorAll('button[data-share-btn]').forEach((elem) => {
+    if ('share' in navigator)
+      (elem as HTMLButtonElement).classList.remove('hidden');
+
+    elem.addEventListener('click', () => {
+      navigator.share({
+        title: document.querySelector('title')!.innerText,
+        url: location.href,
+      });
+    });
+  });
+});
+
+/* LQIP hider */
+
 document.addEventListener(
   'load',
   (e) => {
@@ -130,29 +155,3 @@ document.addEventListener(
   },
   true
 );
-
-window.addEventListener('storage', (e) => {
-  if (DEV) console.log('[theme] storage listener triggered');
-
-  if (e.key !== 'theme') return;
-  theme = getLocalStorageValue();
-});
-
-/* Fonts */
-
-// if ('fonts' in document) {
-//   let satoshiVar = new FontFace(
-//     'Satoshi',
-//     "url('/assets/fonts/satoshi/Satoshi-Variable.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-Variable.woff?v=20221229') format('woff')"
-//   );
-
-//   let satoshiVarItalic = new FontFace(
-//     'Satoshi',
-//     "url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff2?v=20221229') format('woff2'), url('/assets/fonts/satoshi/Satoshi-VariableItalic.woff?v=20221229') format('woff')",
-//     { style: 'italic' }
-//   );
-
-//   Promise.all([satoshiVar.load(), satoshiVarItalic.load()]).then((fonts) => {
-//     fonts.forEach((font) => document.fonts.add(font));
-//   });
-// }
