@@ -40,15 +40,18 @@ Feel free to make any recommendations to me through social media!
 ### Utilities
 
 - [Raycast](https://raycast.com/) for a powerful, developer-oriented Spotlight alternative
+- [OverSight](https://objective-see.org/products/oversight.html) for microphone and camera permission controls
 - [KnockKnock](https://objective-see.org/products/knockknock.html) for macOS system scans
 - [IINA](https://iina.io/) for video & audio player
 - [CleanShot X](https://cleanshot.com/) for screenshotting
 - [Stats](https://github.com/exelban/stats) for menubar stats
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) for preventing system sleep
 - [Velja](https://sindresorhus.com/velja) for multi-browser link opening
+- [Plash](https://sindresorhus.com/plash) for a web based desktop dashboard
 - [Pure Paste](https://sindresorhus.com/pure-paste) for clipboard sanitization
 - [Upscayl](https://upscayl.github.io/) for occasionally upscaling images
 - [GPG Suite](https://gpgtools.org/) for macOS-integrated GPG tooling
+- [Battery Buddy](https://batterybuddy.app/) for a cute battery indicator •ᴗ•
 
 ### Browser Extensions
 
