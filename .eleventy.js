@@ -6,7 +6,6 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
 const { format } = require('date-fns');
-const { readFileSync } = require('fs');
 
 const htmlmin = require('html-minifier');
 
@@ -67,6 +66,13 @@ const config = (eleventyConfig) => {
     });
 
     return filterTagsList([...tagSet]);
+  });
+
+  eleventyConfig.addFilter('shortCount', (n) => {
+    if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+    if (n >= 1_000) return `${(n / 1_000).toFixed(1)}k`;
+
+    return n;
   });
 
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);

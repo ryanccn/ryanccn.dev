@@ -23,6 +23,7 @@ module.exports = {
       transparent: colors.transparent,
       black: colors.black,
       white: colors.white,
+      current: 'currentColor',
 
       fg: 'rgba(var(--fg) / <alpha-value>)',
       'fg-brighter': 'rgba(var(--fg-brighter) / <alpha-value>)',

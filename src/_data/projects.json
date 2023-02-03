@@ -125,6 +125,11 @@
       "name": "ryanccn-sveltekit",
       "description": "Archived SvelteKit rewrite of ryanccn.dev, with a built-in CMS",
       "link": "https://codeberg.org/ryanccn/ryanccn-sveltekit"
+    },
+    {
+      "name": "NetNewsWire for Chrome",
+      "description": "An extension to detect RSS links from pages and open them in NNW",
+      "link": "https://github.com/ryanccn/netnewswire-for-chrome"
     }
   ]
 }
