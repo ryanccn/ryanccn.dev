@@ -27,7 +27,6 @@ Feel free to make any recommendations to me through social media!
 - [Mimestream](https://mimestream.com/) for Gmail
 - [Discord](https://discord.com/) for community involvement
 - [OBS](https://obsproject.com/) for the occasional stream
-- [NetNewsWire](https://netnewswire.com/) for reading RSS feeds
 
 ### Development
 
@@ -66,7 +65,7 @@ Feel free to make any recommendations to me through social media!
 
 - [Homebrew](https://brew.sh/) for system package management
 - [fnm](https://github.com/Schniz/fnm) for Node.js version management
-- [miniconda](https://docs.conda.io/en/latest/miniconda.html) and [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) for Python environment management
+- [pyenv](https://github.com/pyenv/pyenv) and [poetry](https://python-poetry.org/) for Python environment management & packaging
 
 ### Terminal
 
@@ -114,3 +113,7 @@ Feel free to make any recommendations to me through social media!
 - [MongoDB Atlas](https://www.mongodb.com/atlas) for NoSQL databases
 - [PlanetScale](https://planetscale.com/) for MySQL databases
 - [Upstash](https://upstash.com/) for one free Redis database
+
+### Self hosted
+
+- [Miniflux](https://miniflux.app/) for an RSS reader
