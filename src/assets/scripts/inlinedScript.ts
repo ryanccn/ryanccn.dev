@@ -107,7 +107,7 @@ const updateHTML = (e: Element) => {
 
 updateClass(null, theme);
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   BUTTONS().forEach((e) => {
     updateHTML(e);
 
@@ -126,7 +126,7 @@ window.addEventListener('storage', (e) => {
 
 /* Share button */
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('button[data-share-btn]').forEach((elem) => {
     if ('share' in navigator)
       (elem as HTMLButtonElement).classList.remove('hidden');
