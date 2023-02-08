@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { mkdir, readFile, rm } from 'node:fs/promises';
 
 import { format } from 'date-fns';
-import { bold, green, cyan, dim } from 'kleur/colors';
+import { bold, green, cyan, dim, red } from 'kleur/colors';
 import pLimit from 'p-limit';
 import sharp from 'sharp';
 
@@ -80,96 +80,100 @@ const makeImage = async (data) => {
     `[social] Writing ${dim('_site/previews/')}${cyan(data.slug)}${dim('.png')}`
   );
 
-  const result = await satori(
-    {
-      type: 'div',
-      props: {
-        children: [
-          {
-            type: 'h1',
-            props: {
-              children: data.title,
-              style: {
-                fontFamily: 'Satoshi',
-                fontWeight: 800,
-                fontSize: '80px',
+  try {
+    const result = await satori(
+      {
+        type: 'div',
+        props: {
+          children: [
+            {
+              type: 'h1',
+              props: {
+                children: data.title,
+                style: {
+                  fontFamily: 'Satoshi',
+                  fontWeight: 800,
+                  fontSize: '80px',
+                },
               },
             },
-          },
-          {
-            type: 'div',
-            props: {
-              style: { display: 'flex', flexDirection: 'column' },
-              children: [
-                {
-                  type: 'p',
-                  props: {
-                    children: [
-                      {
-                        type: 'span',
-                        props: {
-                          children: 'Ryan Cao',
-                          style: { fontWeight: 700, marginRight: '0.625rem' },
-                        },
-                      },
-                      {
-                        type: 'span',
-                        props: { children: '· ryanccn.dev' },
-                      },
-                    ],
-                    style: {
-                      fontFamily: 'Inter',
-                      fontWeight: 500,
-                      fontSize: '30px',
-                      display: 'flex',
-                      alignItems: 'baseline',
-                      // ...(data.date ? { marginBottom: '0.625rem' } : {}),
-                    },
-                  },
-                },
-                ...(data.date
-                  ? [
-                      {
-                        type: 'p',
-                        props: {
-                          children: format(new Date(data.date), 'yyyy/MM/dd'),
-                          style: {
-                            fontFamily: 'Inter',
-                            fontWeight: 400,
-                            color: '#a3a3a3',
-                            fontSize: '30px',
+            {
+              type: 'div',
+              props: {
+                style: { display: 'flex', flexDirection: 'column' },
+                children: [
+                  {
+                    type: 'p',
+                    props: {
+                      children: [
+                        {
+                          type: 'span',
+                          props: {
+                            children: 'Ryan Cao',
+                            style: { fontWeight: 700, marginRight: '0.625rem' },
                           },
                         },
+                        {
+                          type: 'span',
+                          props: { children: '· ryanccn.dev' },
+                        },
+                      ],
+                      style: {
+                        fontFamily: 'Inter',
+                        fontWeight: 500,
+                        fontSize: '30px',
+                        display: 'flex',
+                        alignItems: 'baseline',
                       },
-                    ]
-                  : []),
-              ],
+                    },
+                  },
+                  ...(data.date
+                    ? [
+                        {
+                          type: 'p',
+                          props: {
+                            children: format(new Date(data.date), 'yyyy/MM/dd'),
+                            style: {
+                              fontFamily: 'Inter',
+                              fontWeight: 400,
+                              color: '#a3a3a3',
+                              fontSize: '30px',
+                            },
+                          },
+                        },
+                      ]
+                    : []),
+                ],
+              },
             },
+          ],
+          style: {
+            height: '100vh',
+            width: '100vw',
+            padding: '4rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            background: '#111',
+            color: '#fff',
           },
-        ],
-        style: {
-          height: '100vh',
-          width: '100vw',
-          padding: '4rem',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          background: '#111',
-          color: '#fff',
         },
       },
-    },
-    {
-      width: 1200,
-      height: 630,
-      fonts: FONTS,
-    }
-  );
+      {
+        width: 1200,
+        height: 630,
+        fonts: FONTS,
+      }
+    );
 
-  await sharp(Buffer.from(result))
-    .png()
-    .toFile(`_site/previews/${data.slug}.png`);
+    await sharp(Buffer.from(result))
+      .png()
+      .toFile(`_site/previews/${data.slug}.png`);
+  } catch (err) {
+    console.error(red(`Error generating ${JSON.stringify(data)}`));
+    throw err;
+  }
 };
 
 const pagesData = await readFile('./pages.json').then(JSON.parse);
