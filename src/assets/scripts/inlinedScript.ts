@@ -2,7 +2,10 @@ declare const DEV: boolean;
 
 /* Weird theme system */
 
-const BUTTONS = () => document.querySelectorAll('button[data-theme-toggle]');
+const BUTTONS = () =>
+  [
+    ...document.querySelectorAll('button[data-theme-toggle]'),
+  ] as HTMLButtonElement[];
 
 const storageAvailable = () => {
   const storage = window.localStorage;
@@ -72,11 +75,16 @@ const getLocalStorageValue = () => {
 let theme = getLocalStorageValue();
 
 /** Switches into the next theme, updating classes along the way */
-const nextTheme = () => {
+const nextTheme = (type: 'forward' | 'back') => {
   const themeList = Object.keys(THEMES);
 
   const prevTheme = theme;
-  theme = themeList[(themeList.indexOf(theme) + 1) % themeList.length];
+  theme =
+    themeList[
+      (themeList.indexOf(theme) +
+        (type === 'forward' ? 1 : themeList.length - 1)) %
+        themeList.length
+    ];
 
   updateClass(prevTheme, theme);
   BUTTONS().forEach(updateHTML);
@@ -111,8 +119,8 @@ window.addEventListener('DOMContentLoaded', () => {
   BUTTONS().forEach((e) => {
     updateHTML(e);
 
-    e.addEventListener('click', () => {
-      nextTheme();
+    e.addEventListener('click', (e) => {
+      nextTheme(!e.shiftKey ? 'forward' : 'back');
     });
   });
 });
