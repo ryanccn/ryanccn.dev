@@ -5,7 +5,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
-const { format } = require('date-fns');
+const { format, isBefore, subYears } = require('date-fns');
 
 const htmlmin = require('html-minifier');
 
@@ -76,6 +76,10 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
+
+  eleventyConfig.addFilter('couldBeOutdated', (date) => {
+    return isBefore(date, subYears(new Date(), 2));
+  });
 
   eleventyConfig.addFilter(
     'customDateFormat',

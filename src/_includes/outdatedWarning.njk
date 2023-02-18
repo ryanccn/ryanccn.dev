@@ -1,0 +1,8 @@
+{% set shouldShow = page.date | couldBeOutdated %}
+
+{% if shouldShow %}
+<div class="flex flex-col gap-y-1 bg-surface rounded-lg p-6 !mb-10">
+  <span class="text-lg font-bold">Warning!</span>
+  <span>This article may contain outdated information, as it is more than two years old.</span>
+</div>
+{% endif %}

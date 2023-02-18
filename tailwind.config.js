@@ -35,6 +35,8 @@ module.exports = {
       background: 'rgba(var(--background) / <alpha-value>)',
       surface: 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
+
+      warning: 'rgba(var(--warning) / <alpha-value>)',
     },
 
     extend: {
