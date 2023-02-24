@@ -124,6 +124,10 @@
 @tailwind utilities;
 
 @layer components {
+  html {
+    font-size: 15px;
+  }
+
   body {
     @apply flex min-h-screen flex-col;
     @apply mx-auto max-w-[130ch] overflow-y-scroll px-6 pb-32;

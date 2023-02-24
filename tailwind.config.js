@@ -37,6 +37,8 @@ module.exports = {
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
 
       warning: 'rgba(var(--warning) / <alpha-value>)',
+
+      tailwind: colors,
     },
 
     extend: {
