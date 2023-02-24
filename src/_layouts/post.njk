@@ -3,7 +3,7 @@ layout: 'base'
 includePrismCSS: true
 ---
 
-<article class="prose enhanced-prose font-prose mb-12">
+<article class="prose enhanced-prose font-prose mb-16">
   <h1>{{ title }}</h1>
 
   <div class="not-prose -mt-6 mb-10 font-sans flex flex-col gap-y-4">
@@ -17,8 +17,23 @@ includePrismCSS: true
 
   {% include 'outdatedWarning.njk' %}
   {{ content | safe }}
-
-  <p class="mt-16 text-fg-dimmed">{{ date | customDateFormat }}</p>
 </article>
+
+<div class="flex flex-row items-center gap-x-2 mb-3 text-fg-dimmed text-sm">
+  {% simpleicon "creativecommons", "block w-4 h-4 text-fg" %}
+  <p>Licensed under <span class="font-semibold text-fg">CC-BY-SA-4.0</span></p>
+</div>
+
+<div class="flex flex-row items-center gap-x-3 mb-3 text-fg text-sm">
+  {% lucide "tag", "block w-4 h-4 text-fg" %}
+  {% for tag in tags | filterTagsList %}
+    <a href="/posts/tags/{{ tag | slugify }}/">{{ tagEmojis[tag]}} {{ tag }}</a>
+  {% endfor %}
+</div>
+
+<div class="flex flex-row items-center gap-x-2 mb-16 text-fg-dimmed text-sm">
+  {% lucide "calendar", "block w-4 h-4 text-fg" %}
+  <p>Published on <span class="font-semibold text-fg">{{ date | customDateFormat }}</span></p>
+</div>
 
 {% include 'shareLinks.njk' %}
