@@ -35,6 +35,7 @@ Feel free to make any recommendations to me through social media!
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java development
 - [Figma](https://www.figma.com/) for designs, mockups, and logos
 - [Docker](https://www.docker.com/) for containers
+- [MongoDB Compass](https://www.mongodb.com/products/compass) for MongoDB databases
 
 ### Utilities
 
@@ -58,6 +59,7 @@ Feel free to make any recommendations to me through social media!
 - [1Password browser extension](https://1password.com/downloads/browser-extension/)
 - [Stylus](https://github.com/openstyles/stylus) for custom CSS styling & theming
 - [Refined GitHub](https://github.com/refined-github/refined-github) for better GitHub UX
+- [1Blocker](https://1blocker.com/) for (iOS) Safari ad & tracker blocking
 
 ## Developer tooling
 
