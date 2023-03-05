@@ -94,6 +94,8 @@ const makeImage = async (data) => {
                   fontFamily: 'Satoshi',
                   fontWeight: 800,
                   fontSize: '80px',
+                  textWrap: 'balance',
+                  width: '100%',
                 },
               },
             },
