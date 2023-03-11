@@ -8,9 +8,9 @@ includePrismCSS: true
 
   <div class="not-prose -mt-6 mb-10 font-sans flex flex-col gap-y-4">
     <span class="text-lg font-medium text-fg-dimmed">by <span class="font-semibold text-fg-brighter font-display">Ryan Cao</span></span>
-    <div class="flex flex-wrap gap-x-2 font-medium text-sm">
+    <div class="flex flex-wrap gap-1 font-medium text-sm">
       {% for tag in tags | filterTagsList %}
-      <a href="/posts/tags/{{ tag | slugify }}/" class="px-3 py-1 bg-surface hover:bg-surface-hover transition rounded-full">{{ tagEmojis[tag]}} {{ tag }}</a>
+      <a href="/posts/tags/{{ tag | slugify }}/" class="px-2 py-0.5 bg-surface hover:bg-surface-hover transition rounded-full">{{ tag }}</a>
       {% endfor %}
     </div>
   </div>
@@ -27,7 +27,7 @@ includePrismCSS: true
 <div class="flex flex-row items-center gap-x-3 mb-3 text-fg text-sm">
   {% lucide "tag", "block w-4 h-4 text-fg" %}
   {% for tag in tags | filterTagsList %}
-    <a href="/posts/tags/{{ tag | slugify }}/">{{ tagEmojis[tag]}} {{ tag }}</a>
+    <a href="/posts/tags/{{ tag | slugify }}/">{{ tag }}</a>
   {% endfor %}
 </div>
 

@@ -1,7 +1,9 @@
 ---
 title: Why I use Eleventy
 tags:
-  - opinion
+  - web
+  - javascript
+  - eleventy
 date: 2022-11-04
 ---
 

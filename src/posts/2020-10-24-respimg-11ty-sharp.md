@@ -1,7 +1,10 @@
 ---
 title: Responsive Images with Eleventy & Sharp
 tags:
-  - tutorial
+  - web
+  - eleventy
+  - performance
+  - javascript
 date: 2020-10-24
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Reflections on Qt
 tags:
-  - opinion
+  - cpp
+  - qt
 date: 2022-05-07
 ---
 

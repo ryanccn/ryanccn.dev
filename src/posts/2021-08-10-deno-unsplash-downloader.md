@@ -1,7 +1,10 @@
 ---
 title: Building a Unsplash Downloader with Deno
 tags:
-  - tutorial
+  - deno
+  - javascript
+  - typescript
+  - scripting
 date: 2021-08-10
 ---
 

@@ -109,9 +109,9 @@ pre[data-line] {
 @media print {
   .line-highlight {
     /*
-		 * This will prevent browsers from replacing the background color with white.
-		 * It's necessary because the element is layered on top of the displayed code.
-		 */
+     * This will prevent browsers from replacing the background color with white.
+     * It's necessary because the element is layered on top of the displayed code.
+     */
     color-adjust: exact;
   }
 }

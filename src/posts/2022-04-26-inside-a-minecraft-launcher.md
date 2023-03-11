@@ -1,7 +1,7 @@
 ---
 title: Inside a Minecraft Launcher
 tags:
-  - technical
+  - minecraft
 date: 2022-04-26
 ---
 

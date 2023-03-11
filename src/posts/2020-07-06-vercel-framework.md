@@ -1,7 +1,9 @@
 ---
 title: Vercel as a Framework
 tags:
-  - tutorial
+  - web
+  - vercel
+  - javascript
 date: 2020-07-06
 ---
 

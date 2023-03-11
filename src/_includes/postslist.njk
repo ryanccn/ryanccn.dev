@@ -10,9 +10,9 @@
     <a href="{{ i.url }}" class="text-xl font-semibold font-display hover:underline underline-offset-2 transition">
       <h2>{{ i.data.title }}</h2>
     </a>
-    <div class="flex flex-wrap gap-x-2 font-medium text-xs">
+    <div class="flex flex-wrap gap-1 font-medium text-xs">
       {% for tag in i.data.tags | filterTagsList %}
-      <a href="/posts/tags/{{ tag | slugify }}/" class="px-3 py-1 bg-surface hover:bg-surface-hover transition rounded-full">{{ tagEmojis[tag]}} {{ tag }}</a>
+      <a href="/posts/tags/{{ tag | slugify }}/" class="px-2 py-0.5 bg-surface hover:bg-surface-hover transition rounded-full">{{ tag }}</a>
       {% endfor %}
     </div>
     <p class="text-sm text-fg-dimmed">
