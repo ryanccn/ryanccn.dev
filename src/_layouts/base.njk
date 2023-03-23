@@ -75,9 +75,9 @@ eleventyComputed:
     <header
       class="flex flex-col md:flex-row md:justify-between md:items-center md:px-6 py-16 md:mb-12 gap-y-10 md:gap-y-0"
     >
-      <a href="/" class="flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
+      <a href="/" class="h-card flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
         {% include 'pictureOfMe.njk' %}
-        <span class="font-display tracking-tight text-3xl font-black">Ryan Cao</span>
+        <span class="p-name font-display tracking-tight text-3xl font-black">Ryan Cao</span>
       </a>
 
       <div class="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
@@ -103,9 +103,9 @@ eleventyComputed:
     </main>
 
     <footer
-      class="mt-36 flex flex-col items-center gap-y-6 w-full self-center"
+      class="mt-36 flex flex-col items-center gap-y-4 w-full self-center"
     >
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3 mb-4">
         <a rel="me noreferrer" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-mastodon/30">
           {% simpleicon "mastodon", "block h-5 w-5 text-mastodon" %}
         </a>
@@ -124,6 +124,11 @@ eleventyComputed:
         <a rel="me noreferrer" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-kofi/30">
           {% simpleicon "kofi", "block h-5 w-5 text-kofi" %}
         </a>
+      </div>
+      <div class="flex flex-row gap-x-2 text-xs text-fg-dimmed">
+        <a href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
+        <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+        <a href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
       </div>
       <a class="text-xs text-center text-fg-dimmed max-w-[30ch] hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
