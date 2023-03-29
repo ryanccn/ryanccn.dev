@@ -58,7 +58,7 @@ Feel free to make any recommendations to me through social media!
 - [uBlock Origin](https://github.com/gorhill/uBlock/) for ad and tracker blocking
 - [1Password browser extension](https://1password.com/downloads/browser-extension/)
 - [Stylus](https://github.com/openstyles/stylus) for custom CSS styling & theming
-- [Refined GitHub](https://github.com/refined-github/refined-github) for better GitHub UX
+- [Refined GitHub](https://github.com/refined-brand-github/refined-brand-github) for better GitHub UX
 - [1Blocker](https://1blocker.com/) for (iOS) Safari ad & tracker blocking
 
 ## Developer tooling

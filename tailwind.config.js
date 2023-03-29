@@ -12,18 +12,10 @@ module.exports = {
 
   theme: {
     colors: {
-      hn: '#F0652F',
-      twitter: '#1DA1F2',
-      github: '#181717',
-      mastodon: '#6364FF',
-      kofi: '#FF5E5B',
-      discord: '#5865F2',
-      modrinth: '#00AF5C',
-
       transparent: colors.transparent,
       black: colors.black,
       white: colors.white,
-      current: 'currentColor',
+      current: colors.current,
 
       fg: 'rgba(var(--fg) / <alpha-value>)',
       'fg-brighter': 'rgba(var(--fg-brighter) / <alpha-value>)',
@@ -36,9 +28,17 @@ module.exports = {
       surface: 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
 
-      warning: 'rgba(var(--warning) / <alpha-value>)',
-
       tailwind: { yellow: colors.yellow },
+
+      brand: {
+        hn: '#F0652F',
+        twitter: '#1DA1F2',
+        github: '#181717',
+        mastodon: '#6364FF',
+        kofi: '#FF5E5B',
+        discord: '#5865F2',
+        modrinth: '#00AF5C',
+      },
     },
 
     extend: {

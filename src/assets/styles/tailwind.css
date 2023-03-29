@@ -11,8 +11,6 @@
   --background: 255 255 255;
   --surface: 248 250 252;
   --surface-hover: 241 245 249;
-
-  --warning: 234 179 8;
 }
 
 .theme-dark {
@@ -26,8 +24,6 @@
   --background: 24 24 27;
   --surface: 39 39 42;
   --surface-hover: 63 63 70;
-
-  --warning: 250 204 21;
 }
 
 .theme-ctp-latte {
@@ -41,8 +37,6 @@
   --background: 239 241 245;
   --surface: 204 208 218;
   --surface-hover: 188 192 204;
-
-  --warning: 223 142 29;
 }
 
 .theme-ctp-frappe {
@@ -56,8 +50,6 @@
   --background: 48 52 70;
   --surface: 65 69 89;
   --surface-hover: 81 87 109;
-
-  --warning: 229 200 144;
 }
 
 .theme-ctp-macchiato {
@@ -71,8 +63,6 @@
   --background: 36 39 58;
   --surface: 54 58 79;
   --surface-hover: 73 77 100;
-
-  --warning: 238 212 159;
 }
 
 .theme-ctp-mocha {
@@ -86,8 +76,6 @@
   --background: 30 30 46;
   --surface: 49 50 68;
   --surface-hover: 69 71 90;
-
-  --warning: 249 226 175;
 }
 
 .theme-nord-light {
@@ -101,8 +89,6 @@
   --background: 236 239 244;
   --surface: 229 233 240;
   --surface-hover: 216 222 233;
-
-  --warning: 235 203 139;
 }
 
 .theme-nord-dark {
@@ -116,8 +102,6 @@
   --background: 46 52 64;
   --surface: 59 66 82;
   --surface-hover: 67 76 94;
-
-  --warning: 235 203 139;
 }
 
 @tailwind components;
