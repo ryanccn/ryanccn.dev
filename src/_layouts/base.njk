@@ -55,10 +55,6 @@ eleventyComputed:
 
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/switzer/Switzer-Variable.woff2?v=20230118" crossorigin="anonymous" />
 
-    {% if includePrismCSS %}
-    <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}" />
-    {% endif %}
-
     <script>{{ inlinedScript | safe }}</script>
 
     {% if inProduction %}

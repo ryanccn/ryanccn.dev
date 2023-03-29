@@ -2,6 +2,7 @@ const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const pluginShikier = require('./src/_11ty/plugins/shikier');
 
 const registerShortcodes = require('./src/_11ty/shortcodes');
 
@@ -21,6 +22,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginShikier);
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
