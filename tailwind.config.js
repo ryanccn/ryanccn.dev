@@ -38,7 +38,7 @@ module.exports = {
 
       warning: 'rgba(var(--warning) / <alpha-value>)',
 
-      tailwind: colors,
+      tailwind: { yellow: colors.yellow },
     },
 
     extend: {
