@@ -4,13 +4,10 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginShikier = require('./src/_11ty/plugins/shikier');
 
-const registerShortcodes = require('./src/_11ty/shortcodes');
-
-const { format, isBefore, subYears } = require('date-fns');
-
-const htmlmin = require('html-minifier');
-
-const inProduction = process.env.NODE_ENV === 'production';
+const sitePluginShortcodes = require('./src/_11ty/shortcodes');
+const sitePluginFilters = require('./src/_11ty/filters');
+const sitePluginMarkdown = require('./src/_11ty/plugins/markdown');
+const sitePluginHtmlmin = require('./src/_11ty/plugins/htmlmin');
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
@@ -24,6 +21,11 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginShikier);
 
+  eleventyConfig.addPlugin(sitePluginShortcodes);
+  eleventyConfig.addPlugin(sitePluginFilters);
+  eleventyConfig.addPlugin(sitePluginMarkdown);
+  eleventyConfig.addPlugin(sitePluginHtmlmin);
+
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
     './src/assets/fonts': 'assets/fonts',
@@ -31,104 +33,6 @@ const config = (eleventyConfig) => {
     './_headers': '_headers',
     './_redirects': '_redirects',
   });
-
-  eleventyConfig.addFilter(
-    'head',
-    /**
-     * @param {unknown[]} arr array of *stuff*
-     * @param {number} k number of items to return
-     * @returns truncated array
-     */
-    (arr, k) => {
-      return arr.slice(0, k);
-    }
-  );
-
-  /**
-   * @param {String[]} k list of tags
-   * @returns {String[]} list of *filtered* tags
-   */
-  const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
-
-  eleventyConfig.addFilter('filterTagsList', filterTagsList);
-
-  eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
-    return webmentions.filter((entry) => entry['wm-target'] === url);
-  });
-
-  eleventyConfig.addFilter('webmentionsByType', (mentions, mentionType) => {
-    return mentions.filter((entry) => !!entry[mentionType]);
-  });
-
-  eleventyConfig.addCollection('postsTagList', (collection) => {
-    let tagSet = new Set();
-
-    collection.getFilteredByTag('posts').forEach((item) => {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
-    });
-
-    return filterTagsList([...tagSet]);
-  });
-
-  eleventyConfig.addFilter('shortCount', (n) => {
-    if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-    if (n >= 1_000) return `${(n / 1_000).toFixed(1)}k`;
-
-    return n;
-  });
-
-  eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
-
-  eleventyConfig.addFilter('couldBeOutdated', (date) => {
-    return isBefore(date, subYears(new Date(), 2));
-  });
-
-  eleventyConfig.addFilter(
-    'customDateFormat',
-    /**
-     * @param {Date} a a date object
-     * @return {String} a formatted string
-     */
-    (d) => format(d, 'yyyy-MM-dd')
-  );
-
-  registerShortcodes(eleventyConfig);
-
-  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
-    if (inProduction && outputPath.endsWith('.html')) {
-      return htmlmin.minify(content, {
-        collapseWhitespace: true,
-        useShortDoctype: true,
-      });
-    } else {
-      return content;
-    }
-  });
-
-  const markdownIt = require('markdown-it');
-  const markdownItEmoji = require('markdown-it-emoji');
-  const markdownItAnchor = require('markdown-it-anchor');
-  const markdownItTOC = require('markdown-it-toc-done-right');
-
-  const markdownLib = markdownIt({ html: true, typographer: true })
-    .use(markdownItEmoji)
-    .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.linkInsideHeader({
-        placement: 'after',
-        class: 'anchor',
-        symbol: '#',
-        ariaHidden: false,
-      }),
-      slugify: eleventyConfig.getFilter('slugify'),
-      level: [2, 3, 4],
-    })
-    .use(markdownItTOC, {
-      level: 2,
-      listType: 'ul',
-    })
-    .disable('code');
-
-  eleventyConfig.setLibrary('md', markdownLib);
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
