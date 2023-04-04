@@ -163,10 +163,8 @@
   }
 
   .shiki {
-    @apply relative;
-
     .language-id {
-      @apply absolute right-0 top-0 m-3 select-none font-display text-sm font-medium;
+      @apply mb-4 font-display text-sm font-medium;
     }
   }
 
