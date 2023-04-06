@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { mkdir, readFile, rm } from 'node:fs/promises';
 
 import { format } from 'date-fns';
-import { bold, green, cyan, dim, red } from 'kleur/colors';
+import { green, cyan, dim, red } from 'kleur/colors';
 import pLimit from 'p-limit';
 import sharp from 'sharp';
 
@@ -157,8 +157,8 @@ const makeImage = async (data) => {
             flexDirection: 'column',
             justifyContent: 'space-between',
             alignItems: 'flex-start',
-            background: '#111',
-            color: '#fff',
+            backgroundColor: '#171717',
+            color: '#ffffff',
           },
         },
       },
@@ -188,4 +188,4 @@ await Promise.all(pagesData.map((data) => lim(() => makeImage(data))));
 
 const timeB = performance.now();
 
-console.log(bold(green(`[social] Done in ${(timeB - timeA).toFixed(2)}ms!`)));
+console.log(green(`[social] Done in ${(timeB - timeA).toFixed(2)}ms!`));

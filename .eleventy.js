@@ -35,6 +35,7 @@ const config = (eleventyConfig) => {
   });
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
+  eleventyConfig.addWatchTarget('src/_11ty/**/*.js');
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
   eleventyConfig.addWatchTarget('src/utils/*.js');
 
