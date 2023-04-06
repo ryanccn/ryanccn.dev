@@ -7,7 +7,11 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 - **Optimized images**, with different formats, sizes, and low-quality image placeholders (LQIP)
 - **Social image generation** with [satori](https://github.com/vercel/satori) for every page
 - **Build processes** for JavaScript and CSS right in Eleventy through `.11ty.js` templates
-- **Syntax highlighting** for blog posts in Markdown using [`@11ty/eleventy-plugin-syntaxhighlight`](https://npm.im/@11ty/eleventy-plugin-syntaxhighlight)
+- **Syntax highlighting** for blog posts in Markdown using [Shiki](https://github.com/shikijs/shiki)
+- **Webmentions** support and bridges to social media platforms such as Twitter and Mastodon
+- **RSS & Atom feeds** for subscription and syndication
+- **Dynamic icon** that syncs with the [PluralKit](https://pluralkit.me/) API
+- **GitHub contributions listing** using the GitHub GraphQL API
 
 ## Project
 
