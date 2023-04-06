@@ -2,19 +2,19 @@ node_modules/
 
 _site/
 .cache/
-pages.json
+/pages.json
 
 .vscode/
 .obsidian/
 
-**/.DS_Store
-**/.localized
+.DS_Store
+.localized
 
 .env
-.env.local
-.env.production
-.env.development
+.env.*
+!.env.example
 
-.vercel
+.vercel/
 
+npm-*.log
 yarn-*.log
