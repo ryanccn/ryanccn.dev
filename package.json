@@ -7,8 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
-    "social": "node ./src/utils/socialImages/index.mjs",
-    "build": "NODE_ENV=production eleventy && yarn social",
+    "build": "NODE_ENV=production eleventy && node ./src/utils/socialImages/index.mjs",
     "clean": "rm -rf _site/ .cache/ pages.json",
     "format": "prettier --write ."
   },
