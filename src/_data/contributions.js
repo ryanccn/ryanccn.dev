@@ -1,5 +1,4 @@
 const { AssetCache } = require('@11ty/eleventy-fetch');
-const { ofetch } = require('ofetch');
 const { cyan, dim } = require('kleur/colors');
 
 const excludes = [
@@ -62,13 +61,20 @@ module.exports = async () => {
       data: {
         viewer: { repositoriesContributedTo },
       },
-    } = await ofetch('https://api.github.com/graphql', {
+    } = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       body: JSON.stringify({ query: gqlQuery(after) }),
       headers: {
         Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
+    }).then((res) => {
+      if (!res.ok)
+        throw new Error(
+          `Error fetching ${res.url}: ${res.status} ${res.statusText}`
+        );
+
+      return res.json();
     });
 
     data.push(...repositoriesContributedTo.edges.map((k) => k.node));
