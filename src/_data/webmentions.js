@@ -1,5 +1,6 @@
 const { AssetCache } = require('@11ty/eleventy-fetch');
 const { cyan } = require('kleur/colors');
+const { fetchJSON } = require('../utils/fetchJSON');
 
 module.exports = async () => {
   const cache = new AssetCache('webmentions');
@@ -17,14 +18,7 @@ module.exports = async () => {
   while (true) {
     console.log(`${cyan('[data]')} Fetching webmentions (page ${page})`);
 
-    const data = await fetch(getURL(page)).then((res) => {
-      if (!res.ok)
-        throw new Error(
-          `Error fetching ${res.url}: ${res.status} ${res.statusText}`
-        );
-
-      return res.json();
-    });
+    const data = await fetchJSON(getURL(page));
 
     if (!data?.children?.length) break;
     mentions.push(...data.children);

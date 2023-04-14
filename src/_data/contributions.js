@@ -1,5 +1,6 @@
 const { AssetCache } = require('@11ty/eleventy-fetch');
 const { cyan, dim } = require('kleur/colors');
+const { fetchJSON } = require('../utils/fetchJSON');
 
 const excludes = [
   /PolyMC/, // dead project
@@ -61,20 +62,13 @@ module.exports = async () => {
       data: {
         viewer: { repositoriesContributedTo },
       },
-    } = await fetch('https://api.github.com/graphql', {
+    } = await fetchJSON('https://api.github.com/graphql', {
       method: 'POST',
       body: JSON.stringify({ query: gqlQuery(after) }),
       headers: {
         Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
-    }).then((res) => {
-      if (!res.ok)
-        throw new Error(
-          `Error fetching ${res.url}: ${res.status} ${res.statusText}`
-        );
-
-      return res.json();
     });
 
     data.push(...repositoriesContributedTo.edges.map((k) => k.node));
