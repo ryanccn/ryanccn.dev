@@ -1,8 +1,13 @@
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const { cyan, blue } = require('kleur/colors');
 
+const loggedURLs = new Set();
+
 module.exports = async (originalUrl) => {
-  console.log(`${cyan('[data]')} Fetching reads for ${blue(originalUrl)}`);
+  if (!loggedURLs.has(originalUrl)) {
+    console.log(`${cyan('[data]')} Fetching reads for ${blue(originalUrl)}`);
+    loggedURLs.add(originalUrl);
+  }
 
   const url = `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(
     `event:page==${originalUrl}` +
