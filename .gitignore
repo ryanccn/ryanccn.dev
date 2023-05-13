@@ -1,20 +1,42 @@
+# Node.js & Yarn
+
 node_modules/
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+npm-*.log
+yarn-*.log
+pnpm-*.log
+
+# Eleventy
 
 _site/
 .cache/
 /pages.json
 
+# IDEs
+
 .vscode/
+.idea/
 .obsidian/
+
+# macOS
 
 .DS_Store
 .localized
+
+# Environment variables
 
 .env
 .env.*
 !.env.example
 
-.vercel/
+# Vercel
 
-npm-*.log
-yarn-*.log
+.vercel/
