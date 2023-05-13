@@ -23,7 +23,7 @@ permalink: '/'
 
   <div class="not-prose flex flex-col">
     <div class="projects-grid">
-      {% for project in projects.projects %}
+      {% for project in projects.projects | head(6) %}
         {% include "projectCard.njk" %}
       {% endfor %}
     </div>

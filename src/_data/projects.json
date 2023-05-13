@@ -23,11 +23,6 @@
       "link": "https://github.com/ryanccn/mastoroute"
     },
     {
-      "name": "custom-iosevka",
-      "description": "Ryan's custom Iosevka Nerd Font build!",
-      "link": "https://github.com/ryanccn/custom-iosevka"
-    },
-    {
       "name": "Olek",
       "description": "A minimalistic status page for my hosted services.",
       "link": "https://status.ryanccn.dev/"
@@ -41,6 +36,21 @@
       "name": "Modernflux",
       "description": "A modern look and feel for Miniflux",
       "link": "https://github.com/ryanccn/modernflux"
+    },
+    {
+      "name": "Discord CSS Mappings",
+      "description": "Mappings for Discord theme developers",
+      "link": "https://github.com/ryanccn/discord-css-mappings"
+    },
+    {
+      "name": "Ryan Mono",
+      "description": "My custom Iosevka Nerd Font build",
+      "link": "https://github.com/ryanccn/ryan-mono"
+    },
+    {
+      "name": "Dotfiles",
+      "description": "Dotfiles, maintained with Deno scripts",
+      "link": "https://github.com/ryanccn/dotfiles"
     }
   ],
   "mods": [
