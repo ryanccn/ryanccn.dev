@@ -3,7 +3,7 @@ title: How I Deleted a Production Database Cluster
 tags:
   - mongodb
   - reflection
-date: 2023-03-12
+date: 2023-05-13
 ---
 
 On February 26, 2023, I was doing some humdrum server and deployment housekeeping for services I ran. Looking at the [MongoDB Atlas](https://www.mongodb.com/atlas/database) database for [Blåhaj](https://github.com/ryanccn/blahaj), my Discord bot, I noticed that it was hibernating. Which made sense, because I had removed the features that required a MongoDB database and switched to [Railway Redis](https://docs.railway.app/databases/redis) for the simpler features. I went ahead to delete the cluster, but then some unknown supernatural force logged me out. I was slightly annoyed and logged back in. (Note that the logging in process didn’t take any mental effort because [1Password](https://1password.com/) did all the work.) Then, I went ahead to open up the Blåhaj project. I went to the cluster settings page, annoyed and wanting to finish up everything quickly, and clicked **delete cluster**.
