@@ -57,10 +57,20 @@ const systemIsDark = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
+let themeHasOverride = { value: false };
+
 const getLocalStorageValue = () => {
   if (!storageAvailable()) return systemIsDark() ? 'dark' : 'light';
 
   let lsv = window.localStorage.getItem('theme');
+
+  if (location.hash.includes('theme=')) {
+    const hashOverrideMatch = location.hash.match(/theme=([a-z\-]+)/);
+    if (hashOverrideMatch) {
+      lsv = hashOverrideMatch[1];
+      themeHasOverride.value = true;
+    }
+  }
 
   if (!lsv || !checkThemeStr(lsv)) {
     if (DEV)
@@ -110,8 +120,9 @@ const updateClass = (prev: string | null, curr: string) => {
   );
 };
 
-const updateHTML = (e: Element) => {
+const updateHTML = (e: HTMLButtonElement) => {
   e.querySelector('span')!.innerHTML = THEMES[theme].name;
+  if (themeHasOverride.value) e.setAttribute('disabled', '1');
 };
 
 updateClass(null, theme);
