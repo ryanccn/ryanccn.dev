@@ -9,27 +9,20 @@ title: 'Projects'
   The open source projects that I have built myself and some that I've contributed to over the years.
 </p>
 
-<div class="projects-grid">
+<div class="projects-grid" id="projects">
   {% for project in projects.projects %}
     {% include "projectCard.njk" %}
   {% endfor %}
 </div>
 
-<h2 class="projects-page">Notable Contributions</h2>
+<h2 class="projects-page" id="contributions">Notable Contributions</h2>
 <div class="projects-grid">
   {% for project in projects.contributions %}
     {% include "projectCard.njk" %}
   {% endfor %}
 </div>
 
-<h2 class="projects-page">Minecraft Mods</h2>
-<div class="projects-grid">
-  {% for project in projects.mods %}
-    {% include "projectCard.njk" %}
-  {% endfor %}
-</div>
-
-<h2 class="projects-page">Contributions on GitHub</h2>
+<h2 class="projects-page" id="github">Contributions on GitHub</h2>
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-3 mb-12">
   {% for repo in contributions %}
@@ -45,7 +38,14 @@ title: 'Projects'
   {% endfor %}
 </div>
 
-<h2 class="projects-page">Archived Projects</h2>
+<h2 class="projects-page" id="minecraft">Minecraft Mods</h2>
+<div class="projects-grid">
+  {% for project in projects.mods %}
+    {% include "projectCard.njk" %}
+  {% endfor %}
+</div>
+
+<h2 class="projects-page" id="archived">Archived Projects</h2>
 <div class="projects-grid">
   {% for project in projects.archived %}
     {% include "projectCard.njk" %}
