@@ -90,14 +90,12 @@
     {
       "name": "Prism Launcher",
       "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once",
-      "link": "https://prismlauncher.org/",
-      "featured": true
+      "link": "https://prismlauncher.org/"
     },
     {
       "name": "Catppuccin",
       "description": "Soothing pastel theme for the high-spirited!",
-      "link": "https://catppuccin.com/",
-      "featured": true
+      "link": "https://catppuccin.com/"
     },
     {
       "name": "Elk",
@@ -118,6 +116,11 @@
       "name": "Modrinth",
       "description": "Discover, play, and create Minecraft content",
       "link": "https://modrinth.com/"
+    },
+    {
+      "name": "Vencord",
+      "description": "The cutest Discord client mod",
+      "link": "https://vencord.dev/"
     },
     {
       "name": "jet",
