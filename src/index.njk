@@ -6,20 +6,22 @@ permalink: '/'
 
 <article class="prose enhanced-prose">
   <h1>Hello, I'm Ryan!</h1>
-  <p class="subtitle">I'm a high school student and a hobbyist web/app developer. I'm also learning a bunch of other things like Minecraft modding!</p>
+  <p class="subtitle">I'm a high school student and a hobbyist web/app developer. I also mess with DevOps and, in general, do a lot of other stuff.</p>
 
-  <p>I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
-  <p>In the open source world, I contribute to <a href="https://prismlauncher.org/">Prism Launcher</a>, maintain the community bot, and am a Community Manager in the Discord community. I also contribute to and help translate <a href="https://modrinth.com/">Modrinth</a>. I wrote the <a href="https://fig.io/">Fig</a> `ffmpeg` autocompletion spec. You can check out a variety of other projects on my GitHub and <a href="/projects/">the projects page</a>.</p>
+  <p class="text-lg">I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making Minecraft mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
+  <p class="text-lg">In the open source world, I contribute to a wide variety of projects and organizations. Among my highest profile contributions are <a href="https://catppuccin.com/">Catppuccin</a> and <a href="https://prismlauncher.org/">Prism Launcher</a>, but you can see <a href="/projects/#github">a full list of my contributions on GitHub here</a>.</p>
+  <p class="text-lg">I'm active on a variety of platforms, which you can check down below in the footer.</p>
+  <p class="text-lg">Oh, and, I write blog posts about what I do. Feel free to <a href="/posts/">read them</a>! There are {{ collections.posts.length }} of them at the moment.</p>
 
-  <h2>Blog posts</h2>
+  <h2 class="text-3xl">Blog posts</h2>
 
   <div class="not-prose">
-  {% set postslist = collections.posts | reverse | head(5) %}
+  {% set postslist = collections.posts | reverse | head(7) %}
   {% set postslistcompact = true %}
   {% include "postslist.njk" %}
   </div>
 
-  <h2>Projects</h2>
+  <h2 class="text-3xl">Projects</h2>
 
   <div class="not-prose flex flex-col">
     <div class="projects-grid">
