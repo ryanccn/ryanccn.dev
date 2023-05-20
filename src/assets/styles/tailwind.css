@@ -121,7 +121,7 @@
   }
 
   ::selection {
-    @apply bg-accent text-white;
+    @apply bg-accent text-background;
   }
 
   a,
