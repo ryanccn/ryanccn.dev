@@ -153,6 +153,7 @@
     --tw-prose-quotes: rgba(var(--fg) / 1);
     --tw-prose-quote-borders: rgba(var(--surface) / 1);
     --tw-prose-bullets: rgba(var(--surface-hover) / 1);
+    --tw-prose-hr: rgba(var(--fg-dimmed) / 1);
 
     & :is(h2, h3, h4, h5) {
       @apply flex items-center;
