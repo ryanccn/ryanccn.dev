@@ -104,6 +104,32 @@
   --surface-hover: 67 76 94;
 }
 
+.theme-pink-light {
+  --fg: 131 24 67;
+  --fg-brighter: var(--fg);
+  --fg-less-dimmed: 157 23 77;
+  --fg-dimmed: 190 24 93;
+  --accent: 236 72 153;
+  --accent-lighter: 244 114 182;
+
+  --background: 252 231 243;
+  --surface: 251 207 232;
+  --surface-hover: 249 168 212;
+}
+
+.theme-pink-dark {
+  --fg: 249 202 226;
+  --fg-brighter: var(--fg);
+  --fg-less-dimmed: 251 207 232;
+  --fg-dimmed: 249 168 212;
+  --accent: 237 84 160;
+  --accent-lighter: 36 72 153;
+
+  --background: 40 4 22;
+  --surface: 59 6 33;
+  --surface-hover: 79 8 44;
+}
+
 @tailwind components;
 @tailwind utilities;
 
