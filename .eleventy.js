@@ -2,7 +2,6 @@ const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginShikier = require('./src/_11ty/plugins/shikier');
 
 const sitePluginShortcodes = require('./src/_11ty/shortcodes');
 const sitePluginFilters = require('./src/_11ty/filters');
@@ -19,7 +18,6 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginShikier);
 
   eleventyConfig.addPlugin(sitePluginShortcodes);
   eleventyConfig.addPlugin(sitePluginFilters);
