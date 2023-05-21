@@ -82,6 +82,9 @@ devDependencies:
   p-limit:
     specifier: ^4.0.0
     version: 4.0.0
+  p-queue:
+    specifier: ^6.6.2
+    version: 6.6.2
   postcss:
     specifier: ^8.4.23
     version: 8.4.23

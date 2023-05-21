@@ -1,9 +1,15 @@
 const Image = require('@11ty/eleventy-img');
 const imageSize = require('image-size');
+
 const lqip = require('../lqip');
 const { parseHTML } = require('linkedom');
 
-module.exports = async (src, alt, width, height) => {
+const { default: PQueue } = require('p-queue');
+const { blue } = require('kleur/colors');
+
+const queue = new PQueue({ concurrency: 5 });
+
+const imageShortcode = async (src, alt, width, height) => {
   const { document } = parseHTML('');
 
   if (!width || !height) {
@@ -54,5 +60,11 @@ module.exports = async (src, alt, width, height) => {
 
   picElem.appendChild(newImgElem);
 
+  console.log(`${blue('[image]')} ${src} processed and optimized`);
+
   return picElem.toString();
+};
+
+module.exports = (...args) => {
+  return queue.add(() => imageShortcode(...args));
 };
