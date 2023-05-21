@@ -187,11 +187,8 @@
     & :is(h2, h3, h4, h5) .anchor {
       @apply ml-3 text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
     }
-  }
-
-  .shiki {
-    .language-id {
-      @apply mb-4 font-display text-sm font-medium;
+    & :is(h2, h3, h4, h5):target .anchor {
+      @apply text-accent hover:text-accent-lighter;
     }
   }
 
