@@ -31,6 +31,7 @@
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.2",
+    "just-memoize": "^2.2.0",
     "kleur": "^4.1.5",
     "linkedom": "^0.14.26",
     "lucide-static": "^0.220.0",
