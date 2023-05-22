@@ -123,7 +123,7 @@
   --fg-less-dimmed: 251 207 232;
   --fg-dimmed: 249 168 212;
   --accent: 237 84 160;
-  --accent-lighter: 36 72 153;
+  --accent-lighter: 236 72 153;
 
   --background: 40 4 22;
   --surface: 59 6 33;
@@ -167,13 +167,14 @@
 
   .enhanced-prose {
     @apply prose-h1:title break-words prose-headings:font-display;
-    @apply prose-a:font-display prose-a:text-accent prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter;
+    @apply prose-a:font-display prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter dark:hover:prose-a:text-accent-lighter;
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg) / 1);
     --tw-prose-headings: rgba(var(--fg-brighter) / 1);
+    --tw-prose-links: rgba(var(--accent) / 1);
     --tw-prose-code: rgba(var(--fg) / 1);
     --tw-prose-bold: rgba(var(--fg-brighter) / 1);
     --tw-prose-quotes: rgba(var(--fg) / 1);
