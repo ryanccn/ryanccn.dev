@@ -15,19 +15,19 @@ layout: 'base'
 </article>
 
 <div class="flex flex-row items-center gap-x-2 mb-3 text-fg-dimmed text-sm">
-  {% icon "simpleicon:creativecommons", class="block w-4 h-4 text-fg" %}
+  {% simpleicon "creativecommons", "block w-4 h-4 text-fg" %}
   <p>Licensed under <span class="font-semibold text-fg">CC-BY-SA-4.0</span></p>
 </div>
 
 <div class="flex flex-row items-center gap-x-3 mb-3 text-fg text-sm">
-  {% icon "lucide:tag", class="block w-4 h-4 text-fg" %}
+  {% lucide "tag", "block w-4 h-4 text-fg" %}
   {% for tag in tags | filterTagsList %}
     <a href="/posts/tags/{{ tag | slugify }}/">{{ tag }}</a>
   {% endfor %}
 </div>
 
 <div class="flex flex-row items-center gap-x-2 mb-16 text-fg-dimmed text-sm">
-  {% icon "lucide:calendar", class="block w-4 h-4 text-fg" %}
+  {% lucide "calendar", "block w-4 h-4 text-fg" %}
   <p>Published on <span class="font-semibold text-fg">{{ date | customDateFormat }}</span></p>
 </div>
 

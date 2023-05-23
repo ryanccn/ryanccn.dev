@@ -40,9 +40,6 @@ devDependencies:
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
-  eleventy-plugin-icons:
-    specifier: ^2.4.3
-    version: 2.4.3
   eleventy-plugin-reading-time:
     specifier: ^0.0.1
     version: 0.0.1
@@ -1266,15 +1263,6 @@ packages:
 
   /electron-to-chromium@1.4.396:
     resolution: {integrity: sha512-pqKTdqp/c5vsrc0xUPYXTDBo9ixZuGY8es4ZOjjd6HD6bFYbu5QA09VoW3fkY4LF1T0zYk86lN6bZnNlBuOpdQ==}
-    dev: true
-
-  /eleventy-plugin-icons@2.4.3:
-    resolution: {integrity: sha512-804FPvSzhN8r1IEbyc2mmG+ODJXYZhJLe/n2HLGl6VHLlatsYwUF/MiHwswMxQ2r/FPeEJYn3BUCUCm0OQZAbg==}
-    dependencies:
-      chalk: 4.1.2
-      just-memoize: 2.2.0
-      prettier: 2.8.8
-      svgo: 3.0.2
     dev: true
 
   /eleventy-plugin-reading-time@0.0.1:

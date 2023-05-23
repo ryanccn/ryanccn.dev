@@ -2,7 +2,6 @@ const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginIcons = require('eleventy-plugin-icons');
 
 const sitePluginShortcodes = require('./src/_11ty/shortcodes');
 const sitePluginFilters = require('./src/_11ty/filters');
@@ -19,20 +18,6 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginIcons, {
-    mode: 'inline',
-    sources: {
-      lucide: 'node_modules/lucide-static/icons',
-      simpleicon: 'node_modules/simple-icons/icons',
-    },
-    icon: {
-      insertAttributesBySource: {
-        simpleicon: {
-          fill: 'currentColor',
-        },
-      },
-    },
-  });
 
   eleventyConfig.addPlugin(sitePluginShortcodes);
   eleventyConfig.addPlugin(sitePluginFilters);
