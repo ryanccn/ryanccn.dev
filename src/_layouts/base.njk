@@ -2,13 +2,13 @@
 navLinks:
   - title: Projects
     url: /projects/
-    icon: album
+    icon: lucide:album
   - title: Uses
     url: /uses/
-    icon: bookmark
+    icon: lucide:bookmark
   - title: Blog
     url: /posts/
-    icon: pencil
+    icon: lucide:pencil
 
 eleventyComputed:
   socialImg: "{{ domain }}/previews/{{ title | slugify }}.png"
@@ -89,14 +89,14 @@ eleventyComputed:
           href="{{ link.url }}"
           class="flex flex-row gap-x-3 items-center text-lg font-display md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
         >
-          {% lucide link.icon, 'block w-5 h-5' %}
+          {% icon link.icon, class='block w-5 h-5' %}
           <span>{{ link.title }}</span>
         </a>
         {% endfor %}
       </div>
 
       <button type="button" data-theme-toggle aria-label="Change theme" class="fixed bottom-0 right-0 m-2 z-[9999] rounded px-3 py-2 text-fg-brighter bg-surface/70 hover:bg-surface-hover/70 backdrop-blur-lg">
-        {% lucide 'palette', 'block h-4 w-4' %}
+        {% icon 'lucide:palette', class='block h-4 w-4' %}
         <span>&nbsp;</span>
       </button>
     </header>
@@ -110,22 +110,22 @@ eleventyComputed:
     >
       <div class="flex items-center gap-3 mb-4">
         <a rel="me noreferrer" href="https://blobfox.coffee/@RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-mastodon/30">
-          {% simpleicon "mastodon", "block h-5 w-5 text-brand-mastodon" %}
+          {% icon "simpleicon:mastodon", class="block h-5 w-5 text-brand-mastodon" %}
         </a>
         <a rel="me noreferrer" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-github/30 dark:focus:ring-white/30">
-          {% simpleicon "github", "block h-5 w-5 text-brand-github dark:text-white" %}
+          {% icon "simpleicon:github", class="block h-5 w-5 text-brand-github dark:text-white" %}
         </a>
         <a rel="me noreferrer" href="https://twitter.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-twitter/30">
-          {% simpleicon "twitter", "block h-5 w-5 text-brand-twitter" %}
+          {% icon "simpleicon:twitter", class="block h-5 w-5 text-brand-twitter" %}
         </a>
         <a rel="noreferrer" href="https://discord.gg/ty7GCnN87U" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-discord/30">
-          {% simpleicon "discord", "block h-5 w-5 text-brand-discord" %}
+          {% icon "simpleicon:discord", class="block h-5 w-5 text-brand-discord" %}
         </a>
         <a rel="noreferrer" href="https://modrinth.com/user/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-modrinth/30">
-          {% simpleicon "modrinth", "block h-5 w-5 text-brand-modrinth" %}
+          {% icon "simpleicon:modrinth", class="block h-5 w-5 text-brand-modrinth" %}
         </a>
         <a rel="me noreferrer" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-kofi/30">
-          {% simpleicon "kofi", "block h-5 w-5 text-brand-kofi" %}
+          {% icon "simpleicon:kofi", class="block h-5 w-5 text-brand-kofi" %}
         </a>
       </div>
       <div class="flex flex-row gap-x-2 text-xs text-fg-dimmed">

@@ -19,29 +19,29 @@
 
     <div class="flex flex-wrap gap-2">
       <a class="buttonish bg-brand-twitter/10 hover:bg-brand-twitter/20 !ring-brand-twitter/50" href="{% twitterShareLink %}">
-        {% simpleicon "twitter", "block h-5 w-5 text-brand-twitter" %}
+        {% icon "simpleicon:twitter", class="block h-5 w-5 text-brand-twitter" %}
         <span>Twitter</span>
       </a>
 
       <a class="buttonish bg-brand-mastodon/10 hover:bg-brand-mastodon/20 !ring-brand-mastodon/50" href="{% mastodonShareLink %}">
-        {% simpleicon "mastodon", "block h-5 w-5 text-brand-mastodon" %}
+        {% icon "simpleicon:mastodon", class="block h-5 w-5 text-brand-mastodon" %}
         <span>Mastodon</span>
       </a>
 
       <a class="buttonish bg-brand-hn/10 hover:bg-brand-hn/20 !ring-brand-hn/50" href="{% hnShareLink title %}">
-        {% simpleicon "ycombinator", "block h-5 w-5 text-brand-hn" %}
+        {% icon "simpleicon:ycombinator", class="block h-5 w-5 text-brand-hn" %}
         <span>Hacker News</span>
       </a>
 
       <button class="buttonish bg-surface hover:bg-surface-hover hidden" data-share-btn>
-        {% lucide "laptop", "block h-5 w-5" %}
+        {% icon "lucide:laptop", class="block h-5 w-5" %}
         <span>System share menu</span>
       </a>
     </div>
   </div>
 
   <a href="https://ko-fi.com/ryancaodev" class="buttonish bg-brand-kofi hover:bg-brand-kofi/90 text-lg font-semibold self-start text-white">
-    {% simpleicon "kofi", "block h-5 w-5 shrink-0" %}
+    {% icon "simpleicon:kofi", class="block h-5 w-5 shrink-0" %}
     <span>Buy me a coffee</span>
   </a>
 </div>
