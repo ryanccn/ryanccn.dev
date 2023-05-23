@@ -28,7 +28,7 @@ These are all stellar services that provide a great experience, but as a high sc
 For example, Fly provides "up to 3 shared-cpu-1x 256mb VMs
 and 3GB persistent volume storage (total)" on the free plan. This is far from enough for production workloads, and you still can't do everything with the hardware you obtain -- you have to configure your project for their proprietary configuration schema.
 
-In addition, a lot of the cloud platforms had extraneous features that I didn't need but kept paying for. For instance, with Supabase, I used *none* of its features except the built-in Postgres database. Although I appreciate the company for making the product open source, the costs of maintaining your own instance are still considerable, so in terms of affordability and convenience you are effectively locked in to their ecosystem if you use additional features such as Auth or Storage, unable to migrate without a hassle.
+In addition, a lot of the cloud platforms had extraneous features that I didn't need but kept paying for. For instance, with Supabase, I used _none_ of its features except the built-in Postgres database. Although I appreciate the company for making the product open source, the costs of maintaining your own instance are still considerable, so in terms of affordability and convenience you are effectively locked in to their ecosystem if you use additional features such as Auth or Storage, unable to migrate without a hassle.
 
 Therefore, I did some calculations, and decided to obtain my own virtual private server (VPS) to be able to host whatever I want on a cloud server with high network speeds and high availability.
 
@@ -38,7 +38,7 @@ I had heard various good things about [Hetzner](https://www.hetzner.com/) from f
 
 They asked for identity verification; after submitting my PRC government identification, I was blocked from the platform. I continue to find it hard to understand why they made the decision to bar me from using their services based on my nationality, but nonetheless, I decided to move on.
 
-My next thoughts were to use less cheap but still high quality cloud providers like [DigitalOcean](https://digitalocean.com/) or [Vultr](https://www.vultr.com/), until it occurred to me that these providers still relied on *other* providers: Amazon Web Services, Google Cloud Platform, and Microsoft Azure.
+My next thoughts were to use less cheap but still high quality cloud providers like [DigitalOcean](https://digitalocean.com/) or [Vultr](https://www.vultr.com/), until it occurred to me that these providers still relied on _other_ providers: Amazon Web Services, Google Cloud Platform, and Microsoft Azure.
 
 I had heard many horror stories about enormous AWS bills in the past, but I still decided to try AWS. Because after all, I thought, its popularity wouldn't be for no reason.
 
@@ -61,26 +61,28 @@ There are many reverse proxies that I have come into contact with: good old [NGI
 I ran into multiple roadblocks configuring Traefik as it was my first time using it (or, indeed, anything beyond the simplicity that Caddy offered with its Caddyfile). I won't tire you with the details of how I spent five hours getting it working with loads of help from [winston](https://winston.sh/) and [nyx](https://github.com/nyxkrage), so here is how I got it working in the end:
 
 1. Create a Docker network independent from Docker Compose for a shared network between Traefik and the services it's proxying:
-    ```bash
-    $ docker network create traefik_network
-    ```
+   ```bash
+   $ docker network create traefik_network
+   ```
 2. Bind `traefik_network` as an external network to every service and Traefik itself via Docker Compose:
-    ```yaml
-    services:
-      demo_service:
-        networks:
-          - traefik_network
-          - default
-  
-    networks:
-      traefik_network:
-        external: true
-    ```
+
+   ```yaml
+   services:
+     demo_service:
+       networks:
+         - traefik_network
+         - default
+
+   networks:
+     traefik_network:
+       external: true
+   ```
+
 3. Set Traefik to use `traefik_network` as the network to use to connect to the services it's proxying:
-    ```toml
-    [providers.docker]
-    network = "traefik_network"
-    ```
+   ```toml
+   [providers.docker]
+   network = "traefik_network"
+   ```
 
 As to the configuration of Traefik itself, originally I used command line arguments, but it quickly got unwieldy so I moved it to a separate TOML file and used a volume `./traefik.toml:/etc/traefik/traefik.toml` to expose it to Traefik.
 

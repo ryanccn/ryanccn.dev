@@ -24,7 +24,6 @@ Feel free to make any recommendations to me through social media!
 
 ### Social
 
-- [Mimestream](https://mimestream.com/) for Gmail
 - [Discord](https://discord.com/) for community involvement
 - [OBS](https://obsproject.com/) for the occasional stream
 
@@ -47,7 +46,6 @@ Feel free to make any recommendations to me through social media!
 - [Stats](https://github.com/exelban/stats) for menubar stats
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) for preventing system sleep
 - [Velja](https://sindresorhus.com/velja) for multi-browser link opening
-- [Plash](https://sindresorhus.com/plash) for a web based desktop dashboard
 - [Pure Paste](https://sindresorhus.com/pure-paste) for clipboard sanitization
 - [Upscayl](https://upscayl.github.io/) for occasionally upscaling images
 - [GPG Suite](https://gpgtools.org/) for macOS-integrated GPG tooling
@@ -66,12 +64,12 @@ Feel free to make any recommendations to me through social media!
 ### Package management
 
 - [Homebrew](https://brew.sh/) for system package management
-- [fnm](https://github.com/Schniz/fnm) for Node.js version management
-- [pyenv](https://github.com/pyenv/pyenv) and [poetry](https://python-poetry.org/) for Python environment management & packaging
+- [fnm](https://github.com/Schniz/fnm) and [corepack](https://github.com/nodejs/corepack) for Node.js version management
+- [pyenv](https://github.com/pyenv/pyenv) and [pipx](https://pypa.github.io/pipx/) for Python environment management & application installation
 
 ### Terminal
 
-- [Oh My Zsh](https://ohmyz.sh/) for managing zsh plugins and such
+- [antidote](https://github.com/mattmc3/antidote) for managing zsh plugins
 - [Starship](https://starship.rs/) for shell prompt
 - [tealdeer](https://github.com/dbrgn/tealdeer) for command line tl;drs
 - [zoxide](https://github.com/ajeetdsouza/zoxide) for smart directory jumping
@@ -104,18 +102,23 @@ Feel free to make any recommendations to me through social media!
 ### Web Development
 
 - [GitHub](https://github.com/) for project source code hosting
-- [Vercel](https://vercel.com/) for web app hosting
+- [Vercel](https://vercel.com/) for web app & static site hosting
 - [Cloudflare](https://cloudflare.com/) for DNS, static sites, serverless functions, etc.
 - [Netlify](https://www.netlify.com/) for some static site hosting
 - [Plausible](https://plausible.io/) for privacy-respecting analytics
-- [Fly](https://fly.io/) for occasional small free server hosting
-- [Railway](https://railway.app/) for a similar purpose
+- [Fly](https://fly.io/) for occasional server hosting
+- [Railway](https://railway.app/) for occasional server hosting
 - [Deno Deploy](https://deno.com/deploy) for some serverless functions built with [Deno](https://deno.land/)
+- [Amazon Web Services](https://aws.amazon.com/) for a wide variety of cloud services
 - [Porkbun](https://porkbun.com/) for domain purchases and management
-- [MongoDB Atlas](https://www.mongodb.com/atlas) for NoSQL databases
-- [PlanetScale](https://planetscale.com/) for MySQL databases
-- [Upstash](https://upstash.com/) for one free Redis database
+- [MongoDB Atlas](https://www.mongodb.com/atlas) for NoSQL MongoDB databases
+- [Upstash](https://upstash.com/) for Redis databases and queues
 
 ### Self hosted
 
 - [Miniflux](https://miniflux.app/) for an RSS reader
+- [Linkding](https://github.com/sissbruecker/linkding/) for bookmark management
+- [SearXNG](https://github.com/searxng/searxng) for private search
+- [Umami](https://umami.is/) for analytics
+- [Grafana](https://grafana.com/docs/grafana/latest/), [Victoria Metrics](https://github.com/VictoriaMetrics/VictoriaMetrics), [cAdvisor](https://github.com/google/cadvisor), and [Node Exporter](https://github.com/prometheus/node_exporter) for monitoring
+- [Watchtower](https://github.com/containrrr/watchtower) for base image updates
