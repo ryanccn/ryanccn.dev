@@ -25,7 +25,7 @@
     "datauri": "^4.1.0",
     "date-fns": "^2.30.0",
     "dotenv": "^16.0.3",
-    "eleventy-plugin-icons": "^2.4.3",
+    "eleventy-plugin-icons": "3.0.0-2",
     "eleventy-plugin-reading-time": "^0.0.1",
     "esbuild": "^0.17.19",
     "execa": "^7.1.1",
