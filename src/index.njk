@@ -25,9 +25,9 @@ permalink: '/'
 
   <div class="not-prose flex flex-col">
     <div class="projects-grid">
-      {% for project in projects.projects | head(6) %}
+      {% asyncAll project in projects.projects | head(6) %}
         {% include "projectCard.njk" %}
-      {% endfor %}
+      {% endall %}
     </div>
     <a href="{{ '/projects/' | url }}" class="px-2 py-1 rounded transition font-medium link-colors self-end">See more &rightarrow;</a>
   </div>
