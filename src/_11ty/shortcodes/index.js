@@ -2,6 +2,7 @@ const lucide = require('./lucide');
 const postReads = require('./postReads');
 const respimg = require('./respimg');
 const simpleicon = require('./simpleicon');
+const warning = require('./warning');
 
 /**
  * @param {string} path
@@ -34,4 +35,6 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addShortcode('simpleicon', simpleicon);
   eleventyConfig.addAsyncShortcode('respimg', respimg);
   eleventyConfig.addAsyncShortcode('postReads', postReads);
+
+  eleventyConfig.addShortcode('warning', warning);
 };
