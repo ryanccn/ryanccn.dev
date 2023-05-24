@@ -3,6 +3,8 @@ const { cyan, blue } = require('kleur/colors');
 const memoize = require('just-memoize');
 
 module.exports = memoize(async (originalUrl) => {
+  if (!process.env.PLAUSIBLE_TOKEN) return 0;
+
   console.log(`${cyan('[data]')} Fetching reads for ${blue(originalUrl)}`);
 
   const url = `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(

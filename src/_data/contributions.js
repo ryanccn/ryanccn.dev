@@ -1,6 +1,7 @@
 const { AssetCache } = require('@11ty/eleventy-fetch');
+const { createGql } = require('@ryanccn/gql');
+
 const { cyan, dim } = require('kleur/colors');
-const { fetchJSON } = require('../utils/fetchJSON');
 
 const excludes = [
   /PolyMC/, // dead project
@@ -9,8 +10,15 @@ const excludes = [
   /(RyanModDev|91b4dd62)/, // personal organizations
 ];
 
-const gqlQuery = (after) =>
-  `
+const gql = createGql('https://api.github.com/graphql', {
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+  },
+});
+
+const queryContributions = (after) =>
+  gql`
 query NotableContributions {
   viewer {
     repositoriesContributedTo(first: 20, ${
@@ -37,9 +45,11 @@ query NotableContributions {
     }
   }
 }
-`.trim();
+`;
 
 module.exports = async () => {
+  if (!process.env.GITHUB_TOKEN) return [];
+
   const cache = new AssetCache('github_contributions');
 
   if (cache.isCacheValid('1d')) {
@@ -58,18 +68,17 @@ module.exports = async () => {
       )}`
     );
 
+    const response = await queryContributions(after);
+
+    if (!response.success) {
+      throw new Error(
+        `Error fetching GitHub contributions: ${response.response}`
+      );
+    }
+
     const {
-      data: {
-        viewer: { repositoriesContributedTo },
-      },
-    } = await fetchJSON('https://api.github.com/graphql', {
-      method: 'POST',
-      body: JSON.stringify({ query: gqlQuery(after) }),
-      headers: {
-        Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-    });
+      viewer: { repositoriesContributedTo },
+    } = response.data;
 
     data.push(...repositoriesContributedTo.edges.map((k) => k.node));
     after = repositoriesContributedTo.pageInfo.endCursor;

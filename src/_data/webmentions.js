@@ -3,6 +3,8 @@ const { cyan } = require('kleur/colors');
 const { fetchJSON } = require('../utils/fetchJSON');
 
 module.exports = async () => {
+  if (!process.env.WEBMENTION_TOKEN) return [];
+
   const cache = new AssetCache('webmentions');
 
   if (cache.isCacheValid('1d')) {
