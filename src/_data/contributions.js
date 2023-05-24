@@ -77,8 +77,12 @@ module.exports = async () => {
     }
 
     const {
-      viewer: { repositoriesContributedTo },
-    } = response.data;
+      data: {
+        data: {
+          viewer: { repositoriesContributedTo },
+        },
+      },
+    } = response;
 
     data.push(...repositoriesContributedTo.edges.map((k) => k.node));
     after = repositoriesContributedTo.pageInfo.endCursor;
