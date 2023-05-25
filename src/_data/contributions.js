@@ -45,7 +45,7 @@ query NotableContributions {
     }
   }
 }
-`;
+`();
 
 module.exports = async () => {
   if (!process.env.GITHUB_TOKEN) return [];

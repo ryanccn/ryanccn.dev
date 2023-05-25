@@ -17,8 +17,8 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@ryanccn/gql':
-    specifier: ^0.1.2
-    version: 0.1.2
+    specifier: ^0.2.1
+    version: 0.2.1
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.2)
@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^0.14.26
     version: 0.14.26
   lucide-static:
-    specifier: ^0.220.0
-    version: 0.220.0
+    specifier: ^0.221.0
+    version: 0.221.0
   markdown-it:
     specifier: ^13.0.1
     version: 13.0.1
@@ -558,8 +558,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@ryanccn/gql@0.1.2:
-    resolution: {integrity: sha512-/4ZJAVNiZ1htfSkWIfOiZusDmQ4NbCnv8qC/WVgieaGFFbbRqgDKenqx1rFEORrwkbvD4Gmvq2KVOhn/k5FWlw==}
+  /@ryanccn/gql@0.2.1:
+    resolution: {integrity: sha512-RkGX7Opqf/VDliX1zdkJmyIgXqI4z7hjsaH7ijrSNdFiXMaxZCxb942aEp85wwETqlH0WfX9mmq26V4mly8+Lg==}
     dev: true
 
   /@shuding/opentype.js@1.4.0-beta.0:
@@ -1917,8 +1917,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.220.0:
-    resolution: {integrity: sha512-JEtJ5/pafn9bJElDI0/Rt2g5KzzW6VckYtPd7/5uko0MfBKACurXxqX8+jInAmC/cVGOOU4s55sRrClrtzwMkQ==}
+  /lucide-static@0.221.0:
+    resolution: {integrity: sha512-OxmCqUx4N7FkIRzwbYVvmMhCLc7IIA1Ds4F9f810vsGgVo+Qujm7tELPZWtG4YZxlcg6tM6W7kLdMhgBC28WuQ==}
     dev: true
 
   /luxon@3.3.0:
