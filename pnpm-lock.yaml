@@ -17,8 +17,8 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@ryanccn/gql':
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^0.2.2
+    version: 0.2.2
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.2)
@@ -558,8 +558,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@ryanccn/gql@0.2.1:
-    resolution: {integrity: sha512-RkGX7Opqf/VDliX1zdkJmyIgXqI4z7hjsaH7ijrSNdFiXMaxZCxb942aEp85wwETqlH0WfX9mmq26V4mly8+Lg==}
+  /@ryanccn/gql@0.2.2:
+    resolution: {integrity: sha512-2c4Mc6n2JO0BffIsz7FbCYaQk81uk9NbFg+LrR5Q4NXL3qr/rAmLvJVmuFMW7dPy8UBKUkxR7q8VPBizKgZvPQ==}
     dev: true
 
   /@shuding/opentype.js@1.4.0-beta.0:
