@@ -10,7 +10,6 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 - **Syntax highlighting** for blog posts in Markdown using [`@11ty/eleventy-plugin-syntaxhighlight`](https://npm.im/@11ty/eleventy-plugin-syntaxhighlight)
 - **Webmentions** support and bridges to social media platforms such as Twitter and Mastodon
 - **RSS & Atom feeds** for subscription and syndication
-- **Dynamic icon** that syncs with the [PluralKit](https://pluralkit.me/) API
 - **GitHub contributions listing** using the GitHub GraphQL API
 
 ## Project
@@ -23,7 +22,7 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 
 ## Get started
 
-```bash
+```console
 $ pnpm install  # install dependencies
 $ pnpm dev      # start development server
 $ pnpm build    # run production build
