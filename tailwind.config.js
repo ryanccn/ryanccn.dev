@@ -43,7 +43,8 @@ module.exports = {
 
     extend: {
       fontFamily: {
-        display: ['Switzer', ...defaultTheme.fontFamily.sans],
+        sans: ['Public Sans', ...defaultTheme.fontFamily.sans],
+        display: ['Public Sans', ...defaultTheme.fontFamily.sans],
       },
 
       typography: {

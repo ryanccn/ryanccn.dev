@@ -4,19 +4,15 @@ const { readFile } = require('fs/promises');
 const logSize = require('../utils/logSize');
 
 module.exports = async () => {
-  // const satoshi = await readFile(
-  //   './src/assets/fonts/satoshi/satoshi.css',
-  //   'utf-8'
-  // );
-  const switzer = await readFile(
-    './src/assets/fonts/switzer/switzer.css',
+  const publicSans = await readFile(
+    './src/assets/fonts/public-sans/public-sans.css',
     'utf-8'
   );
 
   const { content: css } = await postcss([
     require('autoprefixer'),
     require('cssnano'),
-  ]).process(switzer, {
+  ]).process(publicSans, {
     from: undefined,
     to: undefined,
   });
