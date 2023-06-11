@@ -17,35 +17,41 @@ const gql = createGql('https://api.github.com/graphql', {
   },
 });
 
+/**
+ * @param {string} after
+ */
 const queryContributions = (after) =>
   gql`
-query NotableContributions {
-  viewer {
-    repositoriesContributedTo(first: 20, ${
-      after ? `after: "${after}",` : ''
-    } contributionTypes: [COMMIT, PULL_REQUEST], orderBy: { field: STARGAZERS, direction: DESC }) {
-      edges {
-        node {
-          owner {
-            login
-            avatarUrl
+    query NotableContributions($after: String) {
+      viewer {
+        repositoriesContributedTo(
+          first: 20
+          after: $after
+          contributionTypes: [COMMIT, PULL_REQUEST]
+          orderBy: { field: STARGAZERS, direction: DESC }
+        ) {
+          edges {
+            node {
+              owner {
+                login
+                avatarUrl
+              }
+              nameWithOwner
+              url
+              stargazers {
+                totalCount
+              }
+            }
           }
-          nameWithOwner
-          url
-          stargazers {
-            totalCount
+
+          pageInfo {
+            hasNextPage
+            endCursor
           }
         }
       }
-      
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
     }
-  }
-}
-`();
+  `({ after });
 
 module.exports = async () => {
   if (!process.env.GITHUB_TOKEN) return [];
@@ -59,7 +65,7 @@ module.exports = async () => {
 
   let data = [];
 
-  let after = null;
+  let after = undefined;
 
   while (true) {
     console.log(
