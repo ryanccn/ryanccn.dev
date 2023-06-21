@@ -43,6 +43,36 @@
       "link": "https://github.com/ryanccn/discord-css-mappings"
     },
     {
+      "name": "Ändra",
+      "description": "URL shortener powered by Deno Deploy and KV",
+      "link": "https://github.com/ryanccn/aendra"
+    },
+    {
+      "name": "Choirpack",
+      "description": "A CLI for switching package managers in Node.js",
+      "link": "https://github.com/ryanccn/choirpack"
+    },
+    {
+      "name": "git.ryanccn.dev",
+      "description": "Dead simple Cloudflare Worker for GitHub redirects",
+      "link": "https://github.com/ryanccn/git.ryanccn.dev"
+    },
+    {
+      "name": "Daenerys",
+      "description": "Gain insights from DNS records",
+      "link": "https://daenerys.vercel.app/"
+    },
+    {
+      "name": "Vendflare",
+      "description": "Vencord backend on Cloudflare Workers",
+      "link": "https://github.com/ryanccn/vendflare"
+    },
+    {
+      "name": "@ryanccn/gql",
+      "description": "A tiny GraphQL querying library",
+      "link": "https://github.com/ryanccn/gql"
+    },
+    {
       "name": "Ryan Mono",
       "description": "My custom Iosevka Nerd Font build",
       "link": "https://github.com/ryanccn/ryan-mono"
