@@ -36,6 +36,7 @@ _site/
 .env
 .env.*
 !.env.example
+.dev.vars
 
 # Vercel
 
