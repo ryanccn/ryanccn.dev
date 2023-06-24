@@ -167,14 +167,16 @@
 
   .enhanced-prose {
     @apply prose-h1:title break-words prose-headings:font-display;
-    @apply prose-a:font-display prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter dark:hover:prose-a:text-accent-lighter;
+    @apply prose-a:font-display prose-a:underline-offset-2 prose-a:decoration-fg-dimmed hover:prose-a:decoration-fg-less-dimmed prose-a:transition-all;
+    /* @apply prose-a:transition-colors hover:prose-a:text-accent-lighter dark:hover:prose-a:text-accent-lighter; */
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
     --tw-prose-body: rgba(var(--fg) / 1);
     --tw-prose-headings: rgba(var(--fg-brighter) / 1);
-    --tw-prose-links: rgba(var(--accent) / 1);
+    /* --tw-prose-links: rgba(var(--accent) / 1); */
+    --tw-prose-links: rgba(var(--fg) / 1);
     --tw-prose-code: rgba(var(--fg) / 1);
     --tw-prose-bold: rgba(var(--fg-brighter) / 1);
     --tw-prose-quotes: rgba(var(--fg) / 1);
