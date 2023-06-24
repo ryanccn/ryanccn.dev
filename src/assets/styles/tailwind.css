@@ -181,7 +181,7 @@
     --tw-prose-bold: rgba(var(--fg-brighter) / 1);
     --tw-prose-quotes: rgba(var(--fg) / 1);
     --tw-prose-quote-borders: rgba(var(--surface) / 1);
-    --tw-prose-bullets: rgba(var(--surface-hover) / 1);
+    --tw-prose-bullets: rgba(var(--fg-dimmed) / 1);
     --tw-prose-hr: rgba(var(--fg-dimmed) / 1);
     --tw-prose-captions: rgba(var(--fg-dimmed) / 1);
 
