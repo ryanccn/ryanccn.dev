@@ -32,19 +32,22 @@ permalink: '/'
     <a href="{{ '/projects/' | url }}" class="px-2 py-1 rounded transition font-medium link-colors self-end">See more &rightarrow;</a>
   </div>
 
-  <h2 class="text-3xl">Coding statistics&nbsp;<select
-    name="period"
-    class="text-fg-dimmed inline-block bg-transparent"
-    hx-trigger="change,intersect"
-    hx-get="/api/wakatime"
-    hx-params="period"
-    hx-target="#coding-statistics-data"
-  >
-    <option value="week">this week</option>
-    <option value="month">this month</option>
-    <option value="12_months">this year</option>
-    <option value="all_time">all time</option>
-  </select></h2>
+  <h2 class="text-3xl flex flex-wrap items-baseline gap-x-1">
+    <span>Coding statistics</span>
+    <select
+      name="period"
+      class="text-fg-dimmed inline-block bg-transparent"
+      hx-trigger="change,intersect"
+      hx-get="/api/wakatime"
+      hx-params="period"
+      hx-target="#coding-statistics-data"
+    >
+      <option value="week">this week</option>
+      <option value="month">this month</option>
+      <option value="12_months">this year</option>
+      <option value="all_time">all time</option>
+    </select>
+  </h2>
 
   <div class="not-prose grid grid-cols-1 lg:grid-cols-2 gap-4" id="coding-statistics-data">
     <div class="bg-surface p-6 rounded-lg flex flex-col gap-y-2 lg:col-span-2">
