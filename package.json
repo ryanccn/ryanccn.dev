@@ -6,10 +6,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "eleventy --serve",
+    "dev:eleventy": "eleventy --watch",
+    "dev:wrangler": "wrangler pages dev _site",
+    "dev": "run-p dev:eleventy dev:wrangler",
+    "dev:eleventy-only": "eleventy --serve",
     "build": "NODE_ENV=production eleventy && node ./src/utils/socialImages/index.mjs",
     "clean": "rm -rf _site/ .cache/ pages.json",
     "format": "prettier --write ."
+  },
+  "dependencies": {
+    "htmx.org": "^1.9.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -43,6 +49,7 @@
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-toc-done-right": "^4.2.0",
+    "npm-run-all": "^4.1.5",
     "p-limit": "^4.0.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
@@ -54,8 +61,5 @@
     "typescript": "^5.0.4",
     "wrangler": "^3.0.1"
   },
-  "packageManager": "pnpm@8.6.2",
-  "dependencies": {
-    "htmx.org": "^1.9.2"
-  }
+  "packageManager": "pnpm@8.6.3"
 }
