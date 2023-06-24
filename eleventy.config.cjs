@@ -11,9 +11,7 @@ const sitePluginHtmlmin = require('./src/_11ty/plugins/htmlmin');
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
-  require('dotenv').config({
-    path: '.env.local',
-  });
+  require('dotenv').config();
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
