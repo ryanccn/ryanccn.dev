@@ -33,7 +33,7 @@ module.exports = async (src, alt, width, height) => {
 
   const picElem = document.createElement('picture');
 
-  const sizes = `(min-width: 70ch) 70ch, 100vw`;
+  const sizes = '(min-width: 80ch) 80ch, 100vw';
 
   Object.values(stats).forEach((i) => {
     const srcElem = document.createElement('source');
