@@ -26,7 +26,6 @@ eleventyComputed:
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}">
-    <style>{{ fontStyles | safe }}</style>
 
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/public-sans/PublicSans.woff2?v=20230602" crossorigin="anonymous" />
 
@@ -82,14 +81,14 @@ eleventyComputed:
     >
       <a href="/" class="h-card flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
         {% include 'pictureOfMe.njk' %}
-        <span class="p-name font-display tracking-tight text-3xl font-black">Ryan Cao</span>
+        <span class="p-name tracking-tight text-3xl font-black">Ryan Cao</span>
       </a>
 
       <div class="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
         {% asyncAll link in navLinks %}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-3 items-center text-lg font-display md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
+          class="flex flex-row gap-x-3 items-center text-lg md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
         >
           {% icon link.icon, class='block w-5 h-5' %}
           <span>{{ link.title }}</span>

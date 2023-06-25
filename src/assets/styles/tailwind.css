@@ -158,16 +158,16 @@
   }
 
   .title {
-    @apply mb-12 font-display text-6xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-12 text-6xl font-extrabold tracking-tight text-fg-brighter;
   }
 
   .subtitle {
-    @apply font-display text-2xl tracking-tight text-fg-less-dimmed;
+    @apply text-2xl tracking-tight text-fg-less-dimmed;
   }
 
   .enhanced-prose {
-    @apply prose-h1:title break-words prose-headings:font-display;
-    @apply prose-a:font-display prose-a:underline-offset-2 prose-a:decoration-fg-dimmed hover:prose-a:decoration-fg-less-dimmed prose-a:transition-all;
+    @apply prose-h1:title break-words;
+    @apply prose-a:underline-offset-2 prose-a:decoration-fg-dimmed hover:prose-a:decoration-fg-less-dimmed prose-a:transition-all;
     /* @apply prose-a:transition-colors hover:prose-a:text-accent-lighter dark:hover:prose-a:text-accent-lighter; */
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
@@ -204,7 +204,6 @@
   button {
     @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;
     @apply bg-surface transition-all hover:bg-surface-hover disabled:opacity-75;
-    @apply font-display;
 
     &.primary {
       @apply bg-accent text-white;
@@ -212,7 +211,7 @@
   }
 
   h2.projects-page {
-    @apply mb-6 font-display text-2xl font-bold;
+    @apply mb-6 text-2xl font-bold;
   }
 
   div.projects-grid {

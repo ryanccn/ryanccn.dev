@@ -9,7 +9,7 @@ title: 'Reading'
 {% for book in reading %}
   <li class="flex flex-col lg:flex-row lg:justify-between gap-3">
     <div class="flex flex-col gap-y-1">
-      <a class="text-lg font-bold font-display hover:underline underline-offset-2" href="{{ book.link }}">{{ book.title }}</a>
+      <a class="text-lg font-bold hover:underline underline-offset-2" href="{{ book.link }}">{{ book.title }}</a>
       <p class="text-sm font-semibold text-fg-dimmed">{{ book.author }}</p>
     </div>
 

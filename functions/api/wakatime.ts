@@ -66,21 +66,17 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
         class="bg-surface p-6 rounded-lg flex flex-col gap-y-2 lg:col-span-2"
       >
         <p class="font-semibold text-lg">Time spent</p>
-        <p class="font-bold font-display text-4xl">
+        <p class="font-bold text-4xl">
           ${escapeHtml(formatTime(data.total_seconds))}
         </p>
       </div>
       <div class="bg-surface p-6 rounded-lg flex flex-col gap-y-2">
         <p class="font-semibold text-sm">Top project</p>
-        <p class="font-bold font-display text-xl">
-          ${escapeHtml(data.projects[0].name)}
-        </p>
+        <p class="font-bold text-xl">${escapeHtml(data.projects[0].name)}</p>
       </div>
       <div class="bg-surface p-6 rounded-lg flex flex-col gap-y-2">
         <p class="font-semibold text-sm">Top language</p>
-        <p class="font-bold font-display text-xl">
-          ${escapeHtml(data.languages[0].name)}
-        </p>
+        <p class="font-bold text-xl">${escapeHtml(data.languages[0].name)}</p>
       </div>
     `.trim(),
     { headers: { 'Content-Type': 'text/html; charset=utf-8' } }

@@ -52,11 +52,6 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.ignores.add('README.md');
   eleventyConfig.ignores.add('src/utils/socialImages/');
-
-  eleventyConfig.setServerOptions({
-    domDiff: false,
-  });
-
   return {
     markdownTemplateEngine: 'njk',
     dir: {
