@@ -8,6 +8,10 @@ const { cpus } = require('node:os');
 
 Image.concurrency = cpus().length;
 
+const DISABLE_IMAGE_OPTIMIZATION =
+  process.env.DISABLE_IMAGE_OPTIMIZATION === '1' ||
+  process.env.DISABLE_IMAGE_OPTIMIZATION === 'true';
+
 module.exports = async (src, alt, width, height) => {
   const { document } = parseHTML('');
 
@@ -19,10 +23,12 @@ module.exports = async (src, alt, width, height) => {
   }
 
   const stats = await Image(src, {
-    widths: [640, 750, 828, 1080, 1200, 1920, 2048, 3840, width]
-      .filter((a) => a <= width)
-      .sort((a, b) => a - b),
-    formats: ['avif', 'webp', 'png'],
+    widths: !DISABLE_IMAGE_OPTIMIZATION
+      ? [640, 750, 828, 1080, 1200, 1920, 2048, 3840, width]
+          .filter((a) => a <= width)
+          .sort((a, b) => a - b)
+      : [width],
+    formats: !DISABLE_IMAGE_OPTIMIZATION ? ['avif', 'webp', 'png'] : ['png'],
     outputDir: './_site/images',
     urlPath: '/images/',
   });

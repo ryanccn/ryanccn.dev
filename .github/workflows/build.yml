@@ -26,3 +26,5 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm run build
+        env:
+          DISABLE_IMAGE_OPTIMIZATION: 1
