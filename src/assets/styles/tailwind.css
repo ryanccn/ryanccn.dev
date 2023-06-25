@@ -140,8 +140,8 @@
   }
 
   body {
-    @apply flex min-h-screen flex-col;
-    @apply mx-auto max-w-[130ch] overflow-y-scroll px-6 pb-32;
+    @apply flex flex-col md:flex-row min-h-screen items-start justify-center;
+    @apply mx-auto overflow-y-scroll px-6 py-32 gap-y-16 md:gap-x-16;
     @apply bg-background text-fg;
     scrollbar-color: rgb(var(--surface-hover)) rgb(var(--surface));
   }
