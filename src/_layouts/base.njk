@@ -88,7 +88,7 @@ eleventyComputed:
         {% endall %}
       </div>
 
-      <div class="flex flex-row gap-x-2 items-center fixed bottom-0 right-0 m-2 px-3 py-2 text-sm font-medium bg-surface rounded" data-theme-toggle>
+      <div class="flex flex-row gap-x-2 items-center fixed bottom-0 right-0 m-2 px-3 py-2 text-sm font-medium bg-surface hover:bg-surface-hover transition-colors rounded" data-theme-toggle>
         {% icon 'lucide:palette', class='block h-4 w-4' %}
         <span>&nbsp;</span>
 
@@ -140,10 +140,10 @@ eleventyComputed:
           {% icon "simpleicon:kofi", class="block h-5 w-5 text-brand-kofi" %}
         </a>
       </div>
-      <div class="flex flex-row gap-x-2 text-xs text-fg-dimmed">
-        <a href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
-        <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-        <a href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
+      <div class="flex flex-row gap-x-2 text-xs">
+        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
+        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
       </div>
       <a class="text-xs text-center block text-fg-dimmed max-w-[30ch] hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0

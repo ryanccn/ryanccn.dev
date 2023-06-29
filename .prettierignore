@@ -1,7 +1,8 @@
-/_site
-/.vercel
+/_site/
+/.vercel/
 
-node_modules
+node_modules/
+pnpm-lock.yaml
 
 .env.local
 /pages.json
