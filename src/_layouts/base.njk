@@ -26,22 +26,20 @@ eleventyComputed:
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}">
-    <style>{{ fontStyles | safe }}</style>
 
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/public-sans/PublicSans.woff2?v=20230602" crossorigin="anonymous" />
 
     <script>{{ inlinedScript | safe }}</script>
-    <script defer async src="/assets/script.js"></script>
 
     {% if inProduction %}
     <script
-      defer async
+      defer
       data-domain="ryanccn.dev"
       data-api="/sus/event"
       src="/sus/script.js"
     ></script>
     <script
-      defer async
+      defer
       src="https://aggregator.ryanccn.dev/"
       data-website-id="44094ebb-8570-4673-bf0e-ae6ec11f1237"
     ></script>
@@ -82,14 +80,14 @@ eleventyComputed:
     >
       <a href="/" class="h-card flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
         {% include 'pictureOfMe.njk' %}
-        <span class="p-name font-display tracking-tight text-3xl font-black">Ryan Cao</span>
+        <span class="p-name tracking-tight leading-none text-2xl font-bold">Ryan Cao</span>
       </a>
 
       <div class="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
         {% asyncAll link in navLinks %}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-3 items-center text-lg font-display md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
+          class="flex flex-row gap-x-3 items-center text-lg md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
         >
           {% icon link.icon, class='block w-5 h-5' %}
           <span>{{ link.title }}</span>
@@ -97,10 +95,26 @@ eleventyComputed:
         {% endall %}
       </div>
 
-      <button type="button" data-theme-toggle aria-label="Change theme" class="fixed bottom-0 right-0 m-2 z-[9999] rounded px-3 py-2 text-fg-brighter bg-surface/70 hover:bg-surface-hover/70 backdrop-blur-lg">
+      <div class="flex flex-row gap-x-2 items-center fixed bottom-0 right-0 m-2 px-3 py-2 text-sm font-medium bg-surface rounded" data-theme-toggle>
         {% icon 'lucide:palette', class='block h-4 w-4' %}
         <span>&nbsp;</span>
-      </button>
+
+        <select class="absolute inset-0 opacity-0 cursor-default hover:cursor-pointer">
+          <option value="light">Default Light</option>
+          <option value="dark">Default Dark</option>
+          <option value="ctp-latte">Catppuccin Latte</option>
+          <option value="ctp-frappe">Catppuccin Frappé</option>
+          <option value="ctp-macchiato">Catppuccin Macchiato</option>
+          <option value="ctp-mocha">Catppuccin Mocha</option>
+          <option value="nord-light">Nord Light</option>
+          <option value="nord-dark">Nord Dark</option>
+          <option value="pink-light">Pink Light</option>
+          <option value="pink-dark">Pink Dark</option>
+          <option value="rose-pine">Rosé Pine</option>
+          <option value="rose-pine-moon">Rosé Pine Moon</option>
+          <option value="rose-pine-dawn">Rosé Pine Dawn</option>
+        </select>
+      </div>
     </header>
 
     <main class="flex flex-col w-full max-w-[80ch] mx-auto">

@@ -61,18 +61,6 @@ const FONTS = [
     style: 'italic',
     data: await readFile(join(FONTS_DIR, 'Inter-BoldItalic.otf')),
   },
-  {
-    name: 'Satoshi',
-    weight: 800,
-    style: 'normal',
-    data: await readFile(join(FONTS_DIR, 'Satoshi-Black.otf')),
-  },
-  {
-    name: 'Satoshi',
-    weight: 800,
-    style: 'italic',
-    data: await readFile(join(FONTS_DIR, 'Satoshi-Black.otf')),
-  },
 ];
 
 const makeImage = async (data) => {
@@ -91,9 +79,9 @@ const makeImage = async (data) => {
               props: {
                 children: data.title,
                 style: {
-                  fontFamily: 'Satoshi',
+                  fontFamily: 'Inter',
                   fontWeight: 800,
-                  fontSize: '80px',
+                  fontSize: '2.5em',
                   textWrap: 'balance',
                   width: '100%',
                 },
@@ -102,7 +90,10 @@ const makeImage = async (data) => {
             {
               type: 'div',
               props: {
-                style: { display: 'flex', flexDirection: 'column' },
+                style: {
+                  display: 'flex',
+                  flexDirection: 'column',
+                },
                 children: [
                   {
                     type: 'p',
@@ -112,7 +103,7 @@ const makeImage = async (data) => {
                           type: 'span',
                           props: {
                             children: 'Ryan Cao',
-                            style: { fontWeight: 700, marginRight: '0.625rem' },
+                            style: { fontWeight: 700, marginRight: '0.625em' },
                           },
                         },
                         {
@@ -123,7 +114,7 @@ const makeImage = async (data) => {
                       style: {
                         fontFamily: 'Inter',
                         fontWeight: 500,
-                        fontSize: '30px',
+                        fontSize: '1em',
                         display: 'flex',
                         alignItems: 'baseline',
                       },
@@ -139,7 +130,7 @@ const makeImage = async (data) => {
                               fontFamily: 'Inter',
                               fontWeight: 400,
                               color: '#a3a3a3',
-                              fontSize: '30px',
+                              fontSize: '1em',
                             },
                           },
                         },
@@ -152,7 +143,8 @@ const makeImage = async (data) => {
           style: {
             height: '100vh',
             width: '100vw',
-            padding: '4rem',
+            fontSize: '48px',
+            padding: '2em',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -163,8 +155,8 @@ const makeImage = async (data) => {
         },
       },
       {
-        width: 1200,
-        height: 630,
+        width: 1200 * 2,
+        height: 630 * 2,
         fonts: FONTS,
       }
     );
