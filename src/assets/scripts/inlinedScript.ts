@@ -45,6 +45,9 @@ const THEMES: { [id: string]: { name: string; dark: boolean } } = {
   'nord-dark': { name: 'Nord Dark', dark: true },
   'pink-light': { name: 'Pink Light', dark: false },
   'pink-dark': { name: 'Pink Dark', dark: true },
+  'rose-pine': { name: 'Rosé Pine', dark: true },
+  'rose-pine-moon': { name: 'Rosé Pine Moon', dark: true },
+  'rose-pine-dawn': { name: 'Rosé Pine Dawn', dark: false },
 };
 
 const checkThemeStr = (str: string): boolean => {
