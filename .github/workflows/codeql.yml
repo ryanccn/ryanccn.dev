@@ -1,8 +1,8 @@
-name: 'CodeQL'
+name: CodeQL
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   analyze:
