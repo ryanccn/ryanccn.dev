@@ -2,10 +2,8 @@ declare const DEV: boolean;
 
 /* Weird theme system */
 
-const BUTTONS = () =>
-  [
-    ...document.querySelectorAll('button[data-theme-toggle]'),
-  ] as HTMLButtonElement[];
+const THEME_SWITCHER = () =>
+  document.querySelector('[data-theme-toggle] > select') as HTMLSelectElement;
 
 const storageAvailable = () => {
   const storage = window.localStorage;
@@ -86,21 +84,15 @@ const getLocalStorageValue = () => {
 let theme = getLocalStorageValue();
 
 /** Switches into the next theme, updating classes along the way */
-const nextTheme = (type: 'forward' | 'back') => {
-  const themeList = Object.keys(THEMES);
-
+const switchTheme = (newTheme: string) => {
   const prevTheme = theme;
-  theme =
-    themeList[
-      (themeList.indexOf(theme) +
-        (type === 'forward' ? 1 : themeList.length - 1)) %
-        themeList.length
-    ];
 
-  updateClass(prevTheme, theme);
-  BUTTONS().forEach(updateHTML);
+  updateClass(prevTheme, newTheme);
+  updateHTML(newTheme);
 
-  if (storageAvailable()) window.localStorage.setItem('theme', theme);
+  theme = newTheme;
+
+  if (storageAvailable()) window.localStorage.setItem('theme', newTheme);
 };
 
 const updateClass = (prev: string | null, curr: string) => {
@@ -120,20 +112,20 @@ const updateClass = (prev: string | null, curr: string) => {
   );
 };
 
-const updateHTML = (e: HTMLButtonElement) => {
-  e.querySelector('span')!.innerHTML = THEMES[theme].name;
-  if (themeHasOverride.value) e.setAttribute('disabled', '1');
+const updateHTML = (theme: string) => {
+  document.querySelector('[data-theme-toggle] > span')!.innerHTML =
+    THEMES[theme].name;
+  if (themeHasOverride.value) THEME_SWITCHER().setAttribute('disabled', '1');
 };
 
 updateClass(null, theme);
 
 window.addEventListener('DOMContentLoaded', () => {
-  BUTTONS().forEach((e) => {
-    updateHTML(e);
+  updateHTML(theme);
+  THEME_SWITCHER().value = theme;
 
-    e.addEventListener('click', (e) => {
-      nextTheme(!e.shiftKey ? 'forward' : 'back');
-    });
+  THEME_SWITCHER().addEventListener('change', (e) => {
+    switchTheme(THEME_SWITCHER().value);
   });
 });
 
@@ -142,6 +134,9 @@ window.addEventListener('storage', (e) => {
 
   if (e.key !== 'theme') return;
   theme = getLocalStorageValue();
+
+  updateClass(null, theme);
+  updateHTML(theme);
 });
 
 /* Share button */

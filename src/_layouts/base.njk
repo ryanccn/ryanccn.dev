@@ -95,10 +95,23 @@ eleventyComputed:
         {% endall %}
       </div>
 
-      <button type="button" data-theme-toggle aria-label="Change theme" class="fixed bottom-0 right-0 m-2 z-[9999] rounded px-3 py-2 text-fg-brighter bg-surface/70 hover:bg-surface-hover/70 backdrop-blur-lg">
+      <div class="flex flex-row gap-x-2 items-center fixed bottom-0 right-0 m-2 px-3 py-2 text-sm font-medium bg-surface rounded" data-theme-toggle>
         {% icon 'lucide:palette', class='block h-4 w-4' %}
         <span>&nbsp;</span>
-      </button>
+
+        <select class="absolute inset-0 opacity-0 cursor-default hover:cursor-pointer">
+          <option value="light">Default Light</option>
+          <option value="dark">Default Dark</option>
+          <option value="ctp-latte">Catppuccin Latte</option>
+          <option value="ctp-frappe">Catppuccin Frappé</option>
+          <option value="ctp-macchiato">Catppuccin Macchiato</option>
+          <option value="ctp-mocha">Catppuccin Mocha</option>
+          <option value="nord-light">Nord Light</option>
+          <option value="nord-dark">Nord Dark</option>
+          <option value="pink-light">Pink Light</option>
+          <option value="pink-dark">Pink Dark</option>
+        </select>
+      </div>
     </header>
 
     <main class="flex flex-col w-full max-w-[80ch] mx-auto">
