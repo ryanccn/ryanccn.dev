@@ -253,7 +253,11 @@
     @apply mb-6 text-2xl font-bold;
   }
 
-  div.projects-grid {
+  .projects-grid {
     @apply mb-12 grid grid-cols-1 gap-4 md:grid-cols-2;
+
+    & li a {
+      @apply h-full;
+    }
   }
 }

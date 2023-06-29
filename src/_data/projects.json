@@ -3,14 +3,12 @@
     {
       "name": "Moddermore",
       "description": "Share the mods you use with anyone.",
-      "link": "https://moddermore.net/",
-      "featured": true
+      "link": "https://moddermore.net/"
     },
     {
       "name": "ryanccn.dev",
       "description": "My personal website, made with Eleventy and Tailwind CSS!",
-      "link": "https://github.com/ryanccn/ryanccn.dev",
-      "featured": true
+      "link": "https://github.com/ryanccn/ryanccn.dev"
     },
     {
       "name": "Blåhaj",
@@ -66,6 +64,26 @@
       "name": "Vendflare",
       "description": "Vencord backend on Cloudflare Workers",
       "link": "https://github.com/ryanccn/vendflare"
+    },
+    {
+      "name": "What the DMARC",
+      "description": "Explains your DMARC and SPF records",
+      "link": "https://whatthedmarc.ryanccn.dev/"
+    },
+    {
+      "name": "Snippetcord",
+      "description": "Collection of easily importable Discord custom CSS snippets",
+      "link": "https://github.com/ryanccn/snippetcord"
+    },
+    {
+      "name": "GitHub Webhook Proxy",
+      "description": "GitHub webhook proxy on Cloudflare Workers",
+      "link": "https://github.com/ryanccn/github-webhook-proxy"
+    },
+    {
+      "name": "Yakitori",
+      "description": "A simple Docker status page",
+      "link": "https://github.com/ryanccn/yakitori"
     },
     {
       "name": "@ryanccn/gql",
