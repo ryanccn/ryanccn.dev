@@ -3,7 +3,7 @@ declare const DEV: boolean;
 /* Weird theme system */
 
 const THEME_SWITCHER = () =>
-  document.querySelector('[data-theme-toggle] > select') as HTMLSelectElement;
+  document.querySelector('[data-theme-select] > select') as HTMLSelectElement;
 
 const storageAvailable = () => {
   const storage = window.localStorage;
@@ -58,20 +58,25 @@ const systemIsDark = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
+const getHashOverride = () => {
+  if (location.hash.includes('theme=')) {
+    const hashOverrideMatch = location.hash.match(/theme=([a-z\-]+)/);
+    if (hashOverrideMatch) {
+      themeHasOverride.value = true;
+      return hashOverrideMatch[1];
+    }
+  }
+
+  themeHasOverride.value = false;
+  return null;
+};
+
 let themeHasOverride = { value: false };
 
 const getLocalStorageValue = () => {
   if (!storageAvailable()) return systemIsDark() ? 'dark' : 'light';
 
   let lsv = window.localStorage.getItem('theme');
-
-  if (location.hash.includes('theme=')) {
-    const hashOverrideMatch = location.hash.match(/theme=([a-z\-]+)/);
-    if (hashOverrideMatch) {
-      lsv = hashOverrideMatch[1];
-      themeHasOverride.value = true;
-    }
-  }
 
   if (!lsv || !checkThemeStr(lsv)) {
     if (DEV)
@@ -81,54 +86,51 @@ const getLocalStorageValue = () => {
     lsv = systemIsDark() ? 'dark' : 'light';
   }
 
+  const hashOverride = getHashOverride();
+  if (hashOverride) return hashOverride;
+
   return lsv;
 };
 
 let theme = getLocalStorageValue();
 
-/** Switches into the next theme, updating classes along the way */
-const switchTheme = (newTheme: string) => {
-  const prevTheme = theme;
-
-  updateClass(prevTheme, newTheme);
-  updateHTML(newTheme);
-
-  theme = newTheme;
-
-  if (storageAvailable()) window.localStorage.setItem('theme', newTheme);
-};
-
-const updateClass = (prev: string | null, curr: string) => {
+const updateClass = () => {
   if (DEV) console.log(`[theme] updating classes for theme ${theme}`);
 
-  if (prev) {
-    document.documentElement.classList.remove(`theme-${prev}`);
-    if (THEMES[prev].dark) document.documentElement.classList.remove(`dark`);
+  for (const oldClass of document.documentElement.classList.values()) {
+    if (oldClass.startsWith('theme-'))
+      document.documentElement.classList.remove(oldClass);
   }
 
-  document.documentElement.classList.add(`theme-${curr}`);
-  if (THEMES[curr].dark) document.documentElement.classList.add(`dark`);
+  document.documentElement.classList.add(`theme-${theme}`);
+  document.documentElement.classList.toggle('dark', THEMES[theme].dark);
 
   document.documentElement.style.setProperty(
     'color-scheme',
-    THEMES[curr].dark ? 'dark' : 'light'
+    THEMES[theme].dark ? 'dark' : 'light'
   );
 };
 
-const updateHTML = (theme: string) => {
-  document.querySelector('[data-theme-toggle] > span')!.innerHTML =
-    THEMES[theme].name;
+const updateSelect = () => {
+  document.querySelector('[data-theme-select] > span')!.innerHTML =
+    THEMES[theme].name + (themeHasOverride.value ? ' (override)' : '');
+
   if (themeHasOverride.value) THEME_SWITCHER().setAttribute('disabled', '1');
 };
 
-updateClass(null, theme);
+updateClass();
 
 window.addEventListener('DOMContentLoaded', () => {
-  updateHTML(theme);
-  THEME_SWITCHER().value = theme;
+  const themeSwitcherElem = THEME_SWITCHER();
+  updateSelect();
+  themeSwitcherElem.value = theme;
 
-  THEME_SWITCHER().addEventListener('change', (e) => {
-    switchTheme(THEME_SWITCHER().value);
+  themeSwitcherElem.addEventListener('change', () => {
+    theme = themeSwitcherElem.value;
+    updateClass();
+    updateSelect();
+
+    if (storageAvailable()) window.localStorage.setItem('theme', theme);
   });
 });
 
@@ -136,10 +138,21 @@ window.addEventListener('storage', (e) => {
   if (DEV) console.log('[theme] storage listener triggered');
 
   if (e.key !== 'theme') return;
-  theme = getLocalStorageValue();
 
-  updateClass(null, theme);
-  updateHTML(theme);
+  theme = getLocalStorageValue();
+  updateClass();
+  updateSelect();
+});
+
+window.addEventListener('hashchange', () => {
+  if (DEV) console.log('[theme] hashchange listener triggered');
+
+  const newOverride = getHashOverride();
+  if (newOverride) {
+    theme = newOverride;
+    updateClass();
+    updateSelect();
+  }
 });
 
 /* Share button */
