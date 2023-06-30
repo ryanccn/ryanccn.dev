@@ -83,7 +83,7 @@ const getLocalStorageValue = () => {
   }
 
   const hashOverride = getHashOverride();
-  if (hashOverride) return hashOverride;
+  if (hashOverride && checkThemeStr(hashOverride)) return hashOverride;
 
   return lsv;
 };
@@ -144,7 +144,7 @@ window.addEventListener('hashchange', () => {
   if (DEV) console.log('[theme] hashchange listener triggered');
 
   const newOverride = getHashOverride();
-  if (newOverride) {
+  if (newOverride && checkThemeStr(newOverride)) {
     theme = newOverride;
     updateClass();
     updateSelect();
