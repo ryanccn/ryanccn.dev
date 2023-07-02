@@ -35,6 +35,7 @@ Feel free to make any recommendations to me through social media!
 - [Figma](https://www.figma.com/) for designs, mockups, and logos
 - [Docker](https://www.docker.com/) for containers
 - [MongoDB Compass](https://www.mongodb.com/products/compass) for MongoDB databases
+- [DBngin](https://dbngin.com/) for PostgreSQL/MySQL/Redis local prototyping
 
 ### Utilities
 
@@ -51,7 +52,6 @@ Feel free to make any recommendations to me through social media!
 - [System Color Picker](https://sindresorhus.com/system-color-picker) for choosing and manipulating colors
 - [Upscayl](https://upscayl.github.io/) for occasionally upscaling images
 - [GPG Suite](https://gpgtools.org/) for macOS-integrated GPG tooling
-- [Battery Buddy](https://batterybuddy.app/) for a cute battery indicator •ᴗ•
 
 ### Browser Extensions
 
