@@ -17,6 +17,8 @@ module.exports = async () => {
 
   let mentions = [];
   let page = 0;
+
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     console.log(`${cyan('[data]')} Fetching webmentions (page ${page})`);
 

@@ -10,7 +10,7 @@ module.exports = memoize(async (originalUrl) => {
   const url = `https://plausible.io/api/v1/stats/aggregate?site_id=ryanccn.dev&period=12mo&metrics=pageviews&filters=${encodeURIComponent(
     `event:page==${originalUrl}` +
       (originalUrl.endsWith('/')
-        ? `\|${originalUrl.substring(0, originalUrl.length - 1)}`
+        ? `|${originalUrl.substring(0, originalUrl.length - 1)}`
         : '')
   )}`;
 

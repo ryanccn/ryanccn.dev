@@ -56,7 +56,7 @@ const systemIsDark = () => {
 
 const getHashOverride = () => {
   if (location.hash.includes('theme=')) {
-    const hashOverrideMatch = location.hash.match(/theme=([a-z\-]+)/);
+    const hashOverrideMatch = location.hash.match(/theme=([a-z-]+)/);
     if (hashOverrideMatch) {
       themeHasOverride.value = true;
       return hashOverrideMatch[1];
@@ -67,7 +67,7 @@ const getHashOverride = () => {
   return null;
 };
 
-let themeHasOverride = { value: false };
+const themeHasOverride = { value: false };
 
 const getLocalStorageValue = () => {
   if (!storageAvailable()) return systemIsDark() ? 'dark' : 'light';
@@ -108,8 +108,11 @@ const updateClass = () => {
 };
 
 const updateSelect = () => {
-  document.querySelector('[data-theme-select] > span')!.innerHTML =
-    THEMES[theme].name + (themeHasOverride.value ? ' (override)' : '');
+  const textElem = document.querySelector('[data-theme-select] > span');
+
+  if (textElem)
+    textElem.innerHTML =
+      THEMES[theme].name + (themeHasOverride.value ? ' (override)' : '');
 
   if (themeHasOverride.value) THEME_SWITCHER().setAttribute('disabled', '1');
 };

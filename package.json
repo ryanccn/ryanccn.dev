@@ -10,7 +10,8 @@
     "build": "NODE_ENV=production eleventy && node ./src/utils/socialImages/index.mjs",
     "preview": "sirv _site",
     "clean": "rm -rf _site .cache pages.json",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -22,6 +23,8 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "datauri": "^4.1.0",
@@ -30,6 +33,7 @@
     "eleventy-plugin-icons": "3.0.0",
     "eleventy-plugin-reading-time": "^0.0.1",
     "esbuild": "^0.18.7",
+    "eslint": "^8.44.0",
     "execa": "^7.1.1",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",

@@ -14,7 +14,7 @@ const escapeHtml = (string) => {
     return string.value;
   }
 
-  return String(string).replace(/[&<>"'`=\/]/g, (s) => {
+  return String(string).replace(/[&<>"'`=/]/g, (s) => {
     return entityMap[s];
   });
 };

@@ -67,6 +67,7 @@ module.exports = async () => {
 
   let after = undefined;
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     console.log(
       `${cyan('[data]')} Fetching GitHub contributions ${dim(
