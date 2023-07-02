@@ -22,10 +22,10 @@ eleventyComputed:
 
     <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
 
+    <script>{{ inlinedScript | safe }}</script>
+
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
     <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}">
-
-    <script>{{ inlinedScript | safe }}</script>
 
     {% if inProduction %}
     <script
@@ -54,15 +54,17 @@ eleventyComputed:
     <link rel="pingback" href="https://webmention.io/ryanccn.dev/xmlrpc">
 
     <meta name="title" content="{{ title }}">
-    <meta name="description" content="A blog on web development, etc.">
+    <meta name="description" content="High school student and open source developer.">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ryan Cao">
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="A blog on web development, etc.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@RyanCaoDev">
+    <meta property="og:description" content="High school student and open source developer.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@RyanCaoDev">
     <meta name="twitter:title" content="{{ title }}">
-    <meta property="og:image" content="{{ socialImg }}">
-    <meta name="twitter:image" content="{{ socialImg }}">
+    <meta name="twitter:description" content="High school student and open source developer.">
+    <meta property="og:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
+    <meta name="twitter:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
   </head>
 
   <body>
