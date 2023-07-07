@@ -33,6 +33,7 @@ module.exports = {
         hn: '#F0652F',
         twitter: '#1DA1F2',
         github: '#181717',
+        calckey: '#31748f',
         mastodon: '#6364FF',
         kofi: '#FF5E5B',
         discord: '#5865F2',

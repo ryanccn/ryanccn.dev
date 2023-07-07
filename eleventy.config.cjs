@@ -22,6 +22,7 @@ const config = (eleventyConfig) => {
     sources: {
       lucide: 'node_modules/lucide-static/icons',
       simpleicon: 'node_modules/simple-icons/icons',
+      custom: 'src/_icons',
     },
     icon: {
       insertAttributesBySource: {
