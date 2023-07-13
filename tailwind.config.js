@@ -34,7 +34,7 @@ module.exports = {
         twitter: '#1DA1F2',
         github: '#181717',
         calckey: '#31748f',
-        mastodon: '#6364FF',
+        threads: '#000000',
         kofi: '#FF5E5B',
         discord: '#5865F2',
         modrinth: '#00AF5C',

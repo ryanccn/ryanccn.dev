@@ -126,8 +126,8 @@ devDependencies:
     specifier: ^0.32.1
     version: 0.32.1
   simple-icons:
-    specifier: ^9.4.0
-    version: 9.4.0
+    specifier: ^9.5.0
+    version: 9.5.0
   sirv-cli:
     specifier: ^2.0.2
     version: 2.0.2
@@ -3720,8 +3720,8 @@ packages:
       simple-concat: 1.0.1
     dev: true
 
-  /simple-icons@9.4.0:
-    resolution: {integrity: sha512-rpDJGJN7txOtlP2q1eXqti8oIHR6/qCkDl+Vf+bxfCT6qVJmkb7D4ctW932eNVejn6JL2NcNQF84/PqEgXCvXQ==}
+  /simple-icons@9.5.0:
+    resolution: {integrity: sha512-FEtVYBJgsQb+Oz2f6DBbPipOl/9QVAEPvxZj1bllsoRsYL2LfufvhPDSLUdmpClUUDW5UjphBoEwBQvqJ1p3lg==}
     engines: {node: '>=0.12.18'}
     dev: true
 
