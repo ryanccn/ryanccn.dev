@@ -110,7 +110,7 @@ eleventyComputed:
       </div>
     </header>
 
-    <main class="flex flex-col w-full max-w-[80ch] mx-auto">
+    <main class="flex flex-col w-full {% if wide %}md:px-9{% else %}max-w-[80ch]{% endif %} mx-auto">
       {{ content | safe }}
     </main>
 

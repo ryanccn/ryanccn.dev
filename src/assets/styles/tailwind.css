@@ -197,7 +197,7 @@
   }
 
   .title {
-    @apply mb-12 text-6xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-8 text-6xl font-extrabold tracking-tight text-fg-brighter;
   }
 
   .subtitle {
@@ -254,7 +254,7 @@
   }
 
   .projects-grid {
-    @apply mb-12 grid grid-cols-1 gap-4 md:grid-cols-2;
+    @apply mb-12 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4;
 
     & li a {
       @apply h-full;
