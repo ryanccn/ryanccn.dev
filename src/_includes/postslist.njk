@@ -16,7 +16,7 @@
       {% endfor %}
     </div>
     <p class="text-sm text-fg-dimmed">
-      {% postReads i.url %} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | customDateFormat }}
+      {{ views[i.url] | numberFormat }} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | customDateFormat }}
     </p>
   </li>
   {% endfor %}

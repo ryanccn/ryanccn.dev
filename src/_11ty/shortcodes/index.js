@@ -1,4 +1,3 @@
-const postReads = require('./postReads');
 const respimg = require('./respimg');
 const warning = require('./warning');
 
@@ -11,26 +10,25 @@ const absoluteUrl = (path) => new URL(path, 'https://ryanccn.dev').toString();
 module.exports = (eleventyConfig) => {
   eleventyConfig.addShortcode('twitterShareLink', function () {
     return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      absoluteUrl(this.page.url)
+      absoluteUrl(this.page.url),
     )}`;
   });
 
   eleventyConfig.addShortcode('mastodonShareLink', function () {
     return `https://mastoroute.deno.dev/share?text=${encodeURIComponent(
-      absoluteUrl(this.page.url)
+      absoluteUrl(this.page.url),
     )}`;
   });
 
   eleventyConfig.addShortcode('hnShareLink', function (title) {
     return (
       `https://news.ycombinator.com/submitlink?u=${encodeURIComponent(
-        absoluteUrl(this.page.url)
+        absoluteUrl(this.page.url),
       )}` + (title ? `&t=${encodeURIComponent(title)}` : '')
     );
   });
 
   eleventyConfig.addAsyncShortcode('respimg', respimg);
-  eleventyConfig.addAsyncShortcode('postReads', postReads);
 
   eleventyConfig.addShortcode('warning', warning);
 };

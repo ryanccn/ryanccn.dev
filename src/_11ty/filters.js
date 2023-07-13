@@ -38,6 +38,10 @@ module.exports = (eleventyConfig) => {
     return n;
   });
 
+  eleventyConfig.addFilter('numberFormat', (n) => {
+    return Intl.NumberFormat('en-US').format(n);
+  });
+
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
 
   eleventyConfig.addFilter('couldBeOutdated', (date) => {
