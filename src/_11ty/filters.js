@@ -10,7 +10,7 @@ module.exports = (eleventyConfig) => {
      */
     (arr, k) => {
       return arr.slice(0, k);
-    }
+    },
   );
 
   /**
@@ -20,14 +20,6 @@ module.exports = (eleventyConfig) => {
   const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 
   eleventyConfig.addFilter('filterTagsList', filterTagsList);
-
-  eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
-    return webmentions.filter((entry) => entry['wm-target'] === url);
-  });
-
-  eleventyConfig.addFilter('webmentionsByType', (mentions, mentionType) => {
-    return mentions.filter((entry) => !!entry[mentionType]);
-  });
 
   eleventyConfig.addCollection('postsTagList', (collection) => {
     let tagSet = new Set();
@@ -58,6 +50,6 @@ module.exports = (eleventyConfig) => {
      * @param {Date} a a date object
      * @return {String} a formatted string
      */
-    (d) => format(d, 'yyyy-MM-dd')
+    (d) => format(d, 'yyyy-MM-dd'),
   );
 };

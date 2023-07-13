@@ -1,17 +1,4 @@
-{% set webmentionUrl %}{{ page.url | url | absoluteUrl("https://ryanccn.dev/") }}{% endset %}
-{% set mentions = webmentions | getWebmentionsForUrl(webmentionUrl) %}
-{% set reposts = mentions | webmentionsByType('repost-of') | reverse %}
-{% set likes = mentions | webmentionsByType('like-of') | reverse %}
-
 <div class="flex flex-col gap-y-12">
-  {% set webmentionType = "like" %}
-  {% set webmentionList = likes %}
-  {% include 'webmentionList.njk' %}
-
-  {% set webmentionType = "repost" %}
-  {% set webmentionList = reposts %}
-  {% include 'webmentionList.njk' %}
-
   <div class="flex flex-col gap-y-3">
     <h2 class="text-lg font-medium leading-none">
       Share
