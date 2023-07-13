@@ -17,18 +17,13 @@
     },
     {
       "name": "Mastoroute",
-      "description": "A small web service to automatically redirect Mastodon users for share links to their instances",
+      "description": "Unified share links for Mastodon",
       "link": "https://github.com/ryanccn/mastoroute"
     },
     {
       "name": "Olek",
       "description": "A minimalistic status page for my hosted services.",
       "link": "https://status.ryanccn.dev/"
-    },
-    {
-      "name": "Osmosis",
-      "description": "An experimental Stable Diffusion frontend",
-      "link": "https://github.com/ryanccn/osmosis"
     },
     {
       "name": "Modernflux",
@@ -71,14 +66,14 @@
       "link": "https://whatthedmarc.ryanccn.dev/"
     },
     {
-      "name": "Snippetcord",
-      "description": "Collection of easily importable Discord custom CSS snippets",
-      "link": "https://github.com/ryanccn/snippetcord"
-    },
-    {
       "name": "GitHub Webhook Proxy",
       "description": "GitHub webhook proxy on Cloudflare Workers",
       "link": "https://github.com/ryanccn/github-webhook-proxy"
+    },
+    {
+      "name": "Nyoom",
+      "description": "Firefox userchrome manager CLI",
+      "link": "https://github.com/ryanccn/nyoom"
     },
     {
       "name": "Yakitori",
@@ -94,6 +89,11 @@
       "name": "Ryan Mono",
       "description": "My custom Iosevka Nerd Font build",
       "link": "https://github.com/ryanccn/ryan-mono"
+    },
+    {
+      "name": "sarif-strip-suppressed",
+      "description": "CLI tool to strip suppressed results from SARIF files",
+      "link": "https://github.com/ryanccn/sarif-strip-suppressed"
     },
     {
       "name": "Dotfiles",
@@ -137,8 +137,13 @@
   "contributions": [
     {
       "name": "Prism Launcher",
-      "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once",
+      "description": "Advanced Minecraft launcher",
       "link": "https://prismlauncher.org/"
+    },
+    {
+      "name": "Vencord",
+      "description": "The cutest Discord client mod",
+      "link": "https://vencord.dev/"
     },
     {
       "name": "Catppuccin",
@@ -152,27 +157,17 @@
     },
     {
       "name": "Fig",
-      "description": "The next-generation command line.",
+      "description": "Autocomplete for terminals",
       "link": "https://github.com/withfig/autocomplete"
     },
     {
       "name": "InvokeAI",
-      "description": "A leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies.",
+      "description": "Stable Diffusion web interface",
       "link": "https://invoke-ai.github.io/InvokeAI/"
     },
     {
-      "name": "Modrinth",
-      "description": "Discover, play, and create Minecraft content",
-      "link": "https://modrinth.com/"
-    },
-    {
-      "name": "Vencord",
-      "description": "The cutest Discord client mod",
-      "link": "https://vencord.dev/"
-    },
-    {
       "name": "jet",
-      "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
+      "description": "Eleventy & Tailwind site template",
       "link": "https://github.com/marcamos/jet"
     }
   ],
@@ -206,6 +201,11 @@
       "name": "NetNewsWire for Chrome",
       "description": "An extension to detect RSS links from pages and open them in NNW",
       "link": "https://github.com/ryanccn/netnewswire-for-chrome"
+    },
+    {
+      "name": "Osmosis",
+      "description": "An experimental Stable Diffusion frontend",
+      "link": "https://github.com/ryanccn/osmosis"
     }
   ]
 }
