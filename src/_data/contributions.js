@@ -41,6 +41,7 @@ const queryContributions = (after) =>
               stargazers {
                 totalCount
               }
+              isPrivate
             }
           }
 
