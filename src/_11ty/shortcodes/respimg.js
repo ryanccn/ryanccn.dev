@@ -6,7 +6,7 @@ const { parseHTML } = require('linkedom');
 
 const { cpus } = require('node:os');
 
-Image.concurrency = cpus().length;
+Image.concurrency = cpus().length / 2;
 
 const DISABLE_IMAGE_OPTIMIZATION =
   process.env.DISABLE_IMAGE_OPTIMIZATION === '1' ||
@@ -60,7 +60,7 @@ module.exports = async (src, alt, width, height) => {
   newImgElem.setAttribute('sizes', sizes);
   newImgElem.setAttribute(
     'style',
-    `content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`
+    `content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`,
   );
 
   picElem.appendChild(newImgElem);
