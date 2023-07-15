@@ -5,8 +5,10 @@ document.addEventListener(
       return;
     }
 
-    if (DEV) console.log(`[lqip] removed for`, e.target);
-    e.target.style.backgroundImage = 'none';
+    if (e.target.style.backgroundImage) {
+      if (DEV) console.log(`[lqip] removed for`, e.target);
+      e.target.style.backgroundImage = 'none';
+    }
   },
   true,
 );
