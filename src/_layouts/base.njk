@@ -25,11 +25,12 @@ eleventyComputed:
     <script>{{ inlinedScript | safe }}</script>
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
-    <link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}">
+    <link rel="stylesheet" media="print" href="/assets/prism.css?v={{ gitRev }}" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}"></noscript>
 
     {% if inProduction %}
     <script
-      defer
+      async defer
       data-domain="ryanccn.dev"
       data-api="/sus/event"
       src="/sus/script.js"
