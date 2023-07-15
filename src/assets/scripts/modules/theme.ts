@@ -1,36 +1,7 @@
-const THEME_SWITCHER = () =>
-  document.querySelector('[data-theme-select] > select') as HTMLSelectElement;
+const getThemeSelect = () =>
+  document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
 
-const storageAvailable = () => {
-  const storage = window.localStorage;
-  try {
-    const x = '__storage_test__';
-
-    storage.setItem(x, x);
-    storage.removeItem(x);
-
-    if (DEV) console.log('[theme] storage available');
-    return true;
-  } catch (e) {
-    return (
-      e instanceof DOMException &&
-      // everything except Firefox
-      (e.code === 22 ||
-        // Firefox
-        e.code === 1014 ||
-        // test name field too, because code might not be present
-        // everything except Firefox
-        e.name === 'QuotaExceededError' ||
-        // Firefox
-        e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-      // acknowledge QuotaExceededError only if there's something already stored
-      storage &&
-      storage.length !== 0
-    );
-  }
-};
-
-const THEMES: { [id: string]: { name: string; dark: boolean } } = {
+const THEMES = {
   light: { name: 'Default Light', dark: false },
   dark: { name: 'Default Dark', dark: true },
   'ctp-latte': { name: 'Catppuccin Latte', dark: false },
@@ -44,23 +15,23 @@ const THEMES: { [id: string]: { name: string; dark: boolean } } = {
   'rose-pine': { name: 'Rosé Pine', dark: true },
   'rose-pine-moon': { name: 'Rosé Pine Moon', dark: true },
   'rose-pine-dawn': { name: 'Rosé Pine Dawn', dark: false },
-};
+} as const satisfies { [id: string]: { name: string; dark: boolean } };
 
-const checkThemeStr = (str: string): boolean => {
-  return Object.keys(THEMES).indexOf(str) !== -1;
+type ThemeId = keyof typeof THEMES;
+
+const checkThemeStr = (str: string | undefined): str is ThemeId => {
+  return str !== undefined && Object.keys(THEMES).indexOf(str) !== -1;
 };
 
 const systemIsDark = () => {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
 const getHashOverride = () => {
-  if (location.hash.includes('theme=')) {
-    const hashOverrideMatch = location.hash.match(/theme=([a-z-]+)/);
-    if (hashOverrideMatch) {
-      themeHasOverride.value = true;
-      return hashOverrideMatch[1];
-    }
+  const hashOverrideMatch = location.hash.match(/theme=([a-z-]+)/);
+  if (hashOverrideMatch) {
+    themeHasOverride.value = true;
+    return hashOverrideMatch[1];
   }
 
   themeHasOverride.value = false;
@@ -70,20 +41,23 @@ const getHashOverride = () => {
 const themeHasOverride = { value: false };
 
 const getLocalStorageValue = () => {
-  if (!storageAvailable()) return systemIsDark() ? 'dark' : 'light';
-
-  let lsv = window.localStorage.getItem('theme');
+  let lsv = localStorage.getItem('theme');
 
   if (!lsv || !checkThemeStr(lsv)) {
-    if (DEV)
+    if (DEV) {
       console.log('[theme] set localStorage to system (original is invalid)');
+    }
 
-    window.localStorage.setItem('theme', systemIsDark() ? 'dark' : 'light');
+    localStorage.setItem('theme', systemIsDark() ? 'dark' : 'light');
     lsv = systemIsDark() ? 'dark' : 'light';
   }
 
   const hashOverride = getHashOverride();
   if (hashOverride && checkThemeStr(hashOverride)) return hashOverride;
+
+  if (!checkThemeStr(lsv)) {
+    throw new Error(`Theme "${lsv}" is invalid despite checks`);
+  }
 
   return lsv;
 };
@@ -91,11 +65,13 @@ const getLocalStorageValue = () => {
 let theme = getLocalStorageValue();
 
 const updateClass = () => {
+  if (!checkThemeStr(theme)) return;
   if (DEV) console.log(`[theme] updating classes for theme ${theme}`);
 
   for (const oldClass of document.documentElement.classList.values()) {
-    if (oldClass.startsWith('theme-'))
+    if (oldClass.startsWith('theme-')) {
       document.documentElement.classList.remove(oldClass);
+    }
   }
 
   document.documentElement.classList.add(`theme-${theme}`);
@@ -103,37 +79,56 @@ const updateClass = () => {
 
   document.documentElement.style.setProperty(
     'color-scheme',
-    THEMES[theme].dark ? 'dark' : 'light'
+    THEMES[theme].dark ? 'dark' : 'light',
   );
 };
 
-const updateSelect = () => {
+const updateFauxSelect = () => {
+  if (!checkThemeStr(theme)) return;
+  if (DEV)
+    console.log(`[theme] updating faux select content for theme ${theme}`);
+
   const textElem = document.querySelector('[data-theme-select] > span');
 
-  if (textElem)
+  if (textElem) {
     textElem.innerHTML =
       THEMES[theme].name + (themeHasOverride.value ? ' (override)' : '');
+  }
 
-  if (themeHasOverride.value) THEME_SWITCHER().setAttribute('disabled', '1');
+  if (themeHasOverride.value) getThemeSelect()?.setAttribute('disabled', '1');
+};
+
+const updateSelect = () => {
+  if (!checkThemeStr(theme)) return;
+  if (DEV) console.log(`[theme] updating select content for theme ${theme}`);
+
+  const select = getThemeSelect();
+  if (!select) return;
+
+  select.value = theme;
 };
 
 updateClass();
 
-window.addEventListener('DOMContentLoaded', () => {
-  const themeSwitcherElem = THEME_SWITCHER();
+addEventListener('DOMContentLoaded', () => {
+  const themeSwitcherElem = getThemeSelect();
+  updateFauxSelect();
   updateSelect();
-  themeSwitcherElem.value = theme;
 
-  themeSwitcherElem.addEventListener('change', () => {
-    theme = themeSwitcherElem.value;
-    updateClass();
-    updateSelect();
+  if (themeSwitcherElem) {
+    themeSwitcherElem.addEventListener('change', () => {
+      if (!checkThemeStr(themeSwitcherElem.value)) return;
 
-    if (storageAvailable()) window.localStorage.setItem('theme', theme);
-  });
+      theme = themeSwitcherElem.value;
+
+      updateClass();
+      updateFauxSelect();
+      localStorage.setItem('theme', theme);
+    });
+  }
 });
 
-window.addEventListener('storage', (e) => {
+addEventListener('storage', (e) => {
   if (DEV) console.log('[theme] storage listener triggered');
 
   if (e.key !== 'theme') return;
@@ -141,15 +136,18 @@ window.addEventListener('storage', (e) => {
   theme = getLocalStorageValue();
   updateClass();
   updateSelect();
+  updateFauxSelect();
 });
 
-window.addEventListener('hashchange', () => {
+addEventListener('hashchange', () => {
   if (DEV) console.log('[theme] hashchange listener triggered');
 
   const newOverride = getHashOverride();
   if (newOverride && checkThemeStr(newOverride)) {
     theme = newOverride;
+
     updateClass();
     updateSelect();
+    updateFauxSelect();
   }
 });

@@ -1,13 +1,12 @@
 document.addEventListener(
   'load',
   (e) => {
-    // @ts-expect-error bah
-    if (!e.target || e.target.tagName != 'IMG') {
+    if (!(e.target instanceof HTMLImageElement)) {
       return;
     }
 
-    // @ts-expect-error humbug
+    if (DEV) console.log(`[lqip] removed for`, e.target);
     e.target.style.backgroundImage = 'none';
   },
-  true
+  true,
 );
