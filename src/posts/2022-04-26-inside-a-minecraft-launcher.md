@@ -53,17 +53,17 @@ After selecting the version, the JSON data from `"url"` would be downloaded to `
    This contains the arguments to run the main JAR with. The `"jvm"` flags are to be provided _before_ the main JAR, while the `"game"` flags are provided _after_ the main JAR. So a launch script would look something like this:
 
    ```bash
-   java -jar [jvm flags] [main class] [game flags]
+   java [jvm flags] [main class] [game flags]
    ```
 
    The flags provided can either be a string or an object with the type
 
    ```tsx
    interface Rule {
-     action: 'allow' | 'disallow';
+     action: "allow" | "disallow";
      features?: { [feature: string]: boolean };
      os?: {
-       name?: 'osx' | 'windows' | 'linux';
+       name?: "osx" | "windows" | "linux";
        version?: string;
        arch?: string;
      };
@@ -139,7 +139,7 @@ After selecting the version, the JSON data from `"url"` would be downloaded to `
          url: string;
        }
 
-       type: 'log4j2-xml';
+       type: "log4j2-xml";
      }
    }
    ```
@@ -197,7 +197,7 @@ This directory is what you substitute `${natives_directory}` for. This is necess
 When you launch, simply run the substitutions on the JVM and game arguments previously mentioned. Then execute `java` like this:
 
 ```bash
-java -jar [JVM args] [main class] [game args]
+java [JVM args] [main class] [game args]
 ```
 
 And there you have it! Downloading and launching vanilla Minecraft.
