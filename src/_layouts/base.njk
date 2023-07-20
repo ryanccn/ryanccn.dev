@@ -117,8 +117,9 @@ eleventyComputed:
       class="mt-36 flex flex-col items-center gap-y-4 w-full self-center"
     >
       <div class="flex items-center flex-wrap gap-3 mb-4">
-        <a rel="me noreferrer" href="https://c.ryanccn.dev/@ryan" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-mastodon/30" title="Calckey">
-          {% icon "custom:calckey", class="block h-5 w-5 text-brand-calckey" %}
+        <a rel="me noreferrer" href="https://c.ryanccn.dev/@ryan" class="group flex flex-row rounded p-1 hover:brightness-90 transition-all focus:ring-brand-firefish/30" title="Firefish">
+          {% icon "custom:firefish", class="block h-5 w-5 z-20" %}
+          {% icon "simpleicon:mastodon", class="block h-5 w-5 text-brand-mastodon z-10 -ml-2 group-hover:ml-2 opacity-20 group-hover:opacity-100 transition-all" %}
         </a>
         <a rel="me noreferrer" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-github/30 dark:focus:ring-white/30" title="GitHub">
           {% icon "simpleicon:github", class="block h-5 w-5 text-brand-github dark:text-white" %}

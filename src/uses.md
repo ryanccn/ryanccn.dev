@@ -126,7 +126,7 @@ Feel free to make any recommendations to me through social media!
 - [Linkding](https://github.com/sissbruecker/linkding/) for bookmark management
 - [SearXNG](https://github.com/searxng/searxng) for search
 - [Umami](https://umami.is/) for analytics
-- [Calckey](https://calckey.org/) for ActivityPub
+- [Firefish](https://joinfirefish.org/) for ActivityPub
 - [Traefik](https://doc.traefik.io/traefik/) for reverse proxy
 - [Grafana](https://grafana.com/docs/grafana/latest/), [Victoria Metrics](https://github.com/VictoriaMetrics/VictoriaMetrics), [cAdvisor](https://github.com/google/cadvisor), and [Node Exporter](https://github.com/prometheus/node_exporter) for monitoring
 - [Watchtower](https://github.com/containrrr/watchtower) for base image updates

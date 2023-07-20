@@ -30,15 +30,15 @@ module.exports = {
       tailwind: { yellow: colors.yellow },
 
       brand: {
-        hn: '#F0652F',
-        twitter: '#1DA1F2',
+        hn: '#f0652f',
+        twitter: '#1da1f2',
         github: '#181717',
-        calckey: '#31748f',
-        mastodon: '#6364FF',
+        firefish: '#eb6f92',
+        mastodon: '#6364ff',
         threads: '#000000',
-        kofi: '#FF5E5B',
-        discord: '#5865F2',
-        modrinth: '#00AF5C',
+        kofi: '#ff5e5b',
+        discord: '#5865f2',
+        modrinth: '#00af5c',
       },
     },
 
