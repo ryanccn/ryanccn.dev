@@ -31,9 +31,44 @@
       "link": "https://github.com/ryanccn/modernflux"
     },
     {
+      "name": "nyoom",
+      "description": "Firefox userchrome manager CLI",
+      "link": "https://github.com/ryanccn/nyoom"
+    },
+    {
+      "name": "Vendflare",
+      "description": "Vencord backend on Cloudflare Workers",
+      "link": "https://github.com/ryanccn/vendflare"
+    },
+    {
+      "name": "Daenerys",
+      "description": "Gain insights from DNS records",
+      "link": "https://daenerys.vercel.app/"
+    },
+    {
+      "name": "What the DMARC",
+      "description": "Explains your DMARC and SPF records",
+      "link": "https://whatthedmarc.ryanccn.dev/"
+    },
+    {
       "name": "Discord CSS Mappings",
       "description": "Mappings for Discord theme developers",
       "link": "https://github.com/ryanccn/discord-css-mappings"
+    },
+    {
+      "name": "attic-action",
+      "description": "Cache Nix derivations on GitHub Actions with Attic",
+      "link": "https://github.com/ryanccn/attic-action"
+    },
+    {
+      "name": "flake",
+      "description": "System configuration with Nix and nix-darwin",
+      "link": "https://github.com/ryanccn/flake"
+    },
+    {
+      "name": "Ryan Mono",
+      "description": "My custom Iosevka Nerd Font build",
+      "link": "https://github.com/ryanccn/ryan-mono"
     },
     {
       "name": "Ändra",
@@ -46,34 +81,14 @@
       "link": "https://github.com/ryanccn/choirpack"
     },
     {
-      "name": "git.ryanccn.dev",
-      "description": "Dead simple Cloudflare Worker for GitHub redirects",
-      "link": "https://github.com/ryanccn/git.ryanccn.dev"
-    },
-    {
-      "name": "Daenerys",
-      "description": "Gain insights from DNS records",
-      "link": "https://daenerys.vercel.app/"
-    },
-    {
-      "name": "Vendflare",
-      "description": "Vencord backend on Cloudflare Workers",
-      "link": "https://github.com/ryanccn/vendflare"
-    },
-    {
-      "name": "What the DMARC",
-      "description": "Explains your DMARC and SPF records",
-      "link": "https://whatthedmarc.ryanccn.dev/"
-    },
-    {
       "name": "GitHub Webhook Proxy",
       "description": "GitHub webhook proxy on Cloudflare Workers",
       "link": "https://github.com/ryanccn/github-webhook-proxy"
     },
     {
-      "name": "Nyoom",
-      "description": "Firefox userchrome manager CLI",
-      "link": "https://github.com/ryanccn/nyoom"
+      "name": "git.ryanccn.dev",
+      "description": "Dead simple Cloudflare Worker for GitHub redirects",
+      "link": "https://github.com/ryanccn/git.ryanccn.dev"
     },
     {
       "name": "Yakitori",
@@ -81,24 +96,14 @@
       "link": "https://github.com/ryanccn/yakitori"
     },
     {
-      "name": "@ryanccn/gql",
-      "description": "A tiny GraphQL querying library",
-      "link": "https://github.com/ryanccn/gql"
-    },
-    {
-      "name": "Ryan Mono",
-      "description": "My custom Iosevka Nerd Font build",
-      "link": "https://github.com/ryanccn/ryan-mono"
-    },
-    {
       "name": "sarif-strip-suppressed",
       "description": "CLI tool to strip suppressed results from SARIF files",
       "link": "https://github.com/ryanccn/sarif-strip-suppressed"
     },
     {
-      "name": "Dotfiles",
-      "description": "Dotfiles, maintained with Deno scripts",
-      "link": "https://github.com/ryanccn/dotfiles"
+      "name": "@ryanccn/gql",
+      "description": "A tiny GraphQL querying library",
+      "link": "https://github.com/ryanccn/gql"
     }
   ],
   "mods": [
@@ -206,6 +211,11 @@
       "name": "Osmosis",
       "description": "An experimental Stable Diffusion frontend",
       "link": "https://github.com/ryanccn/osmosis"
+    },
+    {
+      "name": "Dotfiles",
+      "description": "Dotfiles, maintained with Deno scripts",
+      "link": "https://github.com/ryanccn/dotfiles"
     }
   ]
 }
