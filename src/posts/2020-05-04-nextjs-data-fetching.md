@@ -56,10 +56,10 @@ SWR first returns the data from cache (stale), then sends the fetch request (rev
 The basic API looks like this:
 
 ```jsx
-import useSWR from 'swr';
+import useSWR from "swr";
 
 function Profile() {
-  const { data, error } = useSWR('/api/user', fetcher);
+  const { data, error } = useSWR("/api/user", fetcher);
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
@@ -72,9 +72,9 @@ Here the `fetcher` object is an asynchronous function that accepts the URL/query
 ```jsx
 // example of fetchers.js
 
-import fetch from 'unfetch';
-import { request } from 'graphql-request';
-const API = 'https://api.graph.cool/simple/v1/movies';
+import fetch from "unfetch";
+import { request } from "graphql-request";
+const API = "https://api.graph.cool/simple/v1/movies";
 
 const GraphQLFetcher = (query) => request(API, query);
 
@@ -93,13 +93,13 @@ An example here:
 
 ```jsx
 function Todos() {
-  const { status, data, error } = useQuery('todos', fetchTodoList);
+  const { status, data, error } = useQuery("todos", fetchTodoList);
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return <span>Loading...</span>;
   }
 
-  if (status === 'error') {
+  if (status === "error") {
     return <span>Error: {error.message}</span>;
   }
 

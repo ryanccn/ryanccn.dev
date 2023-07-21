@@ -39,7 +39,7 @@ My friend provided me with a `data.json` that contained a list of all the Unspla
 So first of all in the script, we have to read the JSON file and parse it.
 
 ```ts
-const imgList: string[] = JSON.parse(await Deno.readTextFile('./data.json'));
+const imgList: string[] = JSON.parse(await Deno.readTextFile("./data.json"));
 ```
 
 We define `imgList`'s type to be `string[]` explicitly for better type inferences, since by default `JSON.parse` returns an object with type `any`.
@@ -67,7 +67,7 @@ Then, we have to actually _download_ the image.
 This required the `writeAll` function, so add this to the top of the script:
 
 ```ts
-import { writeAll } from 'https://deno.land/std@0.103.0/io/util.ts';
+import { writeAll } from "https://deno.land/std@0.103.0/io/util.ts";
 ```
 
 ```ts
@@ -78,7 +78,7 @@ const download = async (img: string) => {
   if (!res.ok || !res.body) {
     const percentage = ((count / 25000) * 100).toFixed(2);
     console.log(
-      `[${percentage}%] ${img} download error: ${res.status} ${res.statusText}`
+      `[${percentage}%] ${img} download error: ${res.status} ${res.statusText}`,
     );
 
     count++;
@@ -144,7 +144,7 @@ const exists = async (imgId: string) => {
 Then, we filter our `imgList` for only the ones that _actually need downloading_, so edit your original definition of `imgList` to add a filter. `Array.prototype.filter` doesn't support using async functions yet, however, our `exists` function is an async function, so we'll have to use this workaround:
 
 ```ts
-const imgList: string[] = JSON.parse(await Deno.readTextFile('./data.json'));
+const imgList: string[] = JSON.parse(await Deno.readTextFile("./data.json"));
 let filteredImgList: string[] = [];
 
 for (const img of imgList) {
@@ -163,7 +163,7 @@ We would like to download these images with concurrency, since that would be fas
 We can limit concurrency via the [`p-limit`](https://github.com/sindresorhus/p-limit) library. We import it at the top of our script, from [Skypack](https://skypack.dev):
 
 ```ts
-import pLimit from 'https://cdn.skypack.dev/p-limit?dts';
+import pLimit from "https://cdn.skypack.dev/p-limit?dts";
 ```
 
 `?dts` adds type information for Deno.
@@ -176,7 +176,7 @@ const limit = pLimit(5);
 await Promise.all(
   filteredImgList.map((i) => {
     return limit(() => download(i));
-  })
+  }),
 );
 ```
 

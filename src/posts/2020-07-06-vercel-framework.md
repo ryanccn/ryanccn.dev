@@ -190,7 +190,7 @@ To give you an example of what serverless functions look like in Vercel:
 // Returns "Hello [name]!" or "Hello World!" if no name is provided in the query.
 
 module.exports = (req, res) => {
-  const { name = 'World' } = req.query;
+  const { name = "World" } = req.query;
   res.status(200).send(`Hello ${name}!`);
 };
 ```
@@ -258,8 +258,8 @@ As an example, you can set the `Cache-Control` header in your Node.js Serverl
 // A Node.js Serverless Function that sends a string response and caches that response for a day.
 
 module.exports = (request, response) => {
-  response.setHeader('Cache-Control', 's-maxage=86400');
-  response.send('Hello world!');
+  response.setHeader("Cache-Control", "s-maxage=86400");
+  response.send("Hello world!");
 };
 ```
 

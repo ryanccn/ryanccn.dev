@@ -72,15 +72,15 @@ module.exports = async () => {
   while (true) {
     console.log(
       `${cyan('[data]')} Fetching GitHub contributions ${dim(
-        `(after ${after})`
-      )}`
+        `(after ${after})`,
+      )}`,
     );
 
     const response = await queryContributions(after);
 
     if (!response.success) {
       throw new Error(
-        `Error fetching GitHub contributions: ${response.response}`
+        `Error fetching GitHub contributions: ${response.response}`,
       );
     }
 

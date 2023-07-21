@@ -19,7 +19,7 @@ class Page {
         }),
       ],
       undefined,
-      2
+      2,
     );
   }
 }

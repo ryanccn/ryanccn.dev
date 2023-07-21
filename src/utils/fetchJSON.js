@@ -23,11 +23,11 @@ const fetchJSON = async (url, opts) => {
   if (!res.ok) {
     throw new FetchError(
       `Fetching ${cyan(res.url)} returned ${red(res.status)} ${red(
-        res.statusText
+        res.statusText,
       )}` +
         '\n' +
         'Response text: ' +
-        magenta(await res.text())
+        magenta(await res.text()),
     );
   }
 

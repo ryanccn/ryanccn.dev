@@ -37,7 +37,7 @@ For ended subscriptions, there is a checkbox property right in front that you ch
 The first formula is one for calculating the effective annual cost of each subscription. It’s very simple:
 
 ```typescript
-prop('Price') * (prop('Billing cycle') == 'Monthly' ? 12 : 1);
+prop("Price") * (prop("Billing cycle") == "Monthly" ? 12 : 1);
 ```
 
 It simply converts monthly pricing to yearly pricing when the yearly pricing is not provided.
@@ -50,29 +50,29 @@ This formula is, for me, the most important one — it allows you to check how m
 
 ```typescript
 max(
-  prop('Effective Annual Cost') *
-    (prop('Billing cycle') == 'Yearly'
+  prop("Effective Annual Cost") *
+    (prop("Billing cycle") == "Yearly"
       ? ceil(
           dateBetween(
-            end(prop('Since')) != start(prop('Since'))
-              ? end(prop('Since'))
+            end(prop("Since")) != start(prop("Since"))
+              ? end(prop("Since"))
               : now(),
-            start(prop('Since')),
-            'years'
-          )
+            start(prop("Since")),
+            "years",
+          ),
         ) + 1
       : (ceil(
           dateBetween(
-            end(prop('Since')) != start(prop('Since'))
-              ? end(prop('Since'))
+            end(prop("Since")) != start(prop("Since"))
+              ? end(prop("Since"))
               : now(),
-            start(prop('Since')),
-            'months'
-          )
+            start(prop("Since")),
+            "months",
+          ),
         ) +
           1) /
         12),
-  0
+  0,
 );
 ```
 
@@ -90,8 +90,8 @@ Here’s the type definitions that I wrote for this specific formula:
 
 ```typescript
 declare interface Props {
-  'Billing cycle': 'Yearly' | 'Monthly';
-  'Effective Annual Cost': number;
+  "Billing cycle": "Yearly" | "Monthly";
+  "Effective Annual Cost": number;
   Since: number;
 }
 
@@ -108,7 +108,7 @@ declare function prop<T extends keyof Props>(key: T): Props[T];
 declare function dateBetween(
   a: number,
   b: number,
-  c: 'years' | 'months' | 'days'
+  c: "years" | "months" | "days",
 ): number;
 ```
 

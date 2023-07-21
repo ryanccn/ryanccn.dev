@@ -16,7 +16,7 @@ class Page {
   <url>
     <loc>${data.domain}${page.url}</loc>
     <lastmod>${page.date.toISOString()}</lastmod>
-  </url>`
+  </url>`,
     )
     .join('\n')}
 </urlset>

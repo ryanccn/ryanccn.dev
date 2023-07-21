@@ -31,10 +31,10 @@ This will resize all the images to a percentage of the original width that you c
 > I like to paste the code all in one go and put comments for analysis and explanations (for now).
 
 ```jsx
-const fs = require('fs');
-const glob = require('glob');
-const path = require('path');
-const sharp = require('sharp');
+const fs = require("fs");
+const glob = require("glob");
+const path = require("path");
+const sharp = require("sharp");
 
 // Define all of the resizes that will be done to these images.
 // `src` is the source of these files, a glob pattern
@@ -43,23 +43,23 @@ const sharp = require('sharp');
 
 const resizes = [
   {
-    src: './src/images/*.png',
-    dist: './src/images/80',
+    src: "./src/images/*.png",
+    dist: "./src/images/80",
     percent: 80,
   },
   {
-    src: './src/images/*.png',
-    dist: './src/images/60',
+    src: "./src/images/*.png",
+    dist: "./src/images/60",
     percent: 60,
   },
   {
-    src: './src/images/*.png',
-    dist: './src/images/40',
+    src: "./src/images/*.png",
+    dist: "./src/images/40",
     percent: 40,
   },
   {
-    src: './src/images/*.png',
-    dist: './src/images/20',
+    src: "./src/images/*.png",
+    dist: "./src/images/20",
     percent: 20,
   },
 ];
@@ -68,9 +68,9 @@ const resizes = [
 
 const formats = [
   {
-    src: './src/images/*.png',
-    dist: './src/images/webp',
-    format: 'webp',
+    src: "./src/images/*.png",
+    dist: "./src/images/webp",
+    format: "webp",
   },
 ];
 
@@ -134,7 +134,7 @@ formats.forEach((format) => {
     const image = sharp(file);
     // Convert to WebP via Sharp's inferencing automatically of extensions
     image
-      .toFile(`${format.dist}/${filename.replace('png', format.format)}`)
+      .toFile(`${format.dist}/${filename.replace("png", format.format)}`)
       .catch((err) => {
         console.log(err);
       });
@@ -161,15 +161,15 @@ The thing is, it will be a better authoring experience in Markdown, since you ca
 ```jsx
 // Add the Eleventy transform via `eleventyConfig`
 
-eleventyConfig.addTransform('responsiveimg', async (content, outputPath) => {
+eleventyConfig.addTransform("responsiveimg", async (content, outputPath) => {
   // Only apply transforms if the output is HTML (not XML or CSS or something)
-  if (outputPath.endsWith('.html')) {
+  if (outputPath.endsWith(".html")) {
     // Feed the content into JSDOM
     const dom = new JSDOM(content);
     const document = dom.window.document;
 
     // Find the image elements via `querySelectorAll`, replace this selector with your own custom one
-    const imageElems = document.querySelectorAll('main article img');
+    const imageElems = document.querySelectorAll("main article img");
 
     // If there are no matching elements, just return the original content :)
 
@@ -179,66 +179,66 @@ eleventyConfig.addTransform('responsiveimg', async (content, outputPath) => {
 
     for (const imgElem of imageElems) {
       // Get the `src` of the image element
-      const imgSrc = imgElem.getAttribute('src');
+      const imgSrc = imgElem.getAttribute("src");
 
       // Only add this transform for internal images
-      if (imgSrc.startsWith('/images/')) {
+      if (imgSrc.startsWith("/images/")) {
         let srcSet = [];
 
         // Replace all of the image sources with a new one that matches the results of the Sharp build
 
-        const imgSrc80 = imgSrc.replace('/images/', '/images/80/');
-        const imgSrc60 = imgSrc.replace('/images/', '/images/60/');
-        const imgSrc40 = imgSrc.replace('/images/', '/images/40/');
-        const imgSrc20 = imgSrc.replace('/images/', '/images/20/');
+        const imgSrc80 = imgSrc.replace("/images/", "/images/80/");
+        const imgSrc60 = imgSrc.replace("/images/", "/images/60/");
+        const imgSrc40 = imgSrc.replace("/images/", "/images/40/");
+        const imgSrc20 = imgSrc.replace("/images/", "/images/20/");
 
         // Get the metadata for the file and add it as the `${width}w` needed in defining a `srcset` in HTML for `<img>`
 
-        const img80 = await sharp('./src' + imgSrc80);
+        const img80 = await sharp("./src" + imgSrc80);
         const md80 = await img80.metadata();
         srcSet.push(`${imgSrc80} ${md80.width}w`);
 
         // Repeat
 
-        const img60 = await sharp('./src' + imgSrc60);
+        const img60 = await sharp("./src" + imgSrc60);
         const md60 = await img60.metadata();
         srcSet.push(`${imgSrc60} ${md60.width}w`);
 
         // Repeat
 
-        const img40 = await sharp('./src' + imgSrc40);
+        const img40 = await sharp("./src" + imgSrc40);
         const md40 = await img40.metadata();
         srcSet.push(`${imgSrc40} ${md40.width}w`);
 
         // Repeat
 
-        const img20 = await sharp('./src' + imgSrc20);
+        const img20 = await sharp("./src" + imgSrc20);
         const md20 = await img20.metadata();
         srcSet.push(`${imgSrc20} ${md20.width}w`);
 
         // Join the `srcset` into a string. that can be added to the `<img>` tag
 
-        srcSet = srcSet.join(', ');
+        srcSet = srcSet.join(", ");
 
         // Set the `srcset` attribute
 
-        imgElem.setAttribute('srcset', srcSet);
+        imgElem.setAttribute("srcset", srcSet);
 
         // Find the new `src` for the WebP image
 
         const webpSrc = imgSrc
-          .replace('/images/', '/images/webp/')
-          .replace('.png', '.webp');
+          .replace("/images/", "/images/webp/")
+          .replace(".png", ".webp");
 
         // Create a separate `source` element for the WebP with feature detection via `type`
 
-        const webpElement = document.createElement('source');
-        webpElement.setAttribute('srcset', webpSrc);
-        webpElement.setAttribute('type', 'image/webp');
+        const webpElement = document.createElement("source");
+        webpElement.setAttribute("srcset", webpSrc);
+        webpElement.setAttribute("type", "image/webp");
 
         // Wrap the `<img>` and the `<source>` into one `<picture>` tag in order for it to work
 
-        const pictureElement = document.createElement('picture');
+        const pictureElement = document.createElement("picture");
         pictureElement.appendChild(webpElement);
         pictureElement.appendChild(imgElem.cloneNode());
 
@@ -248,7 +248,7 @@ eleventyConfig.addTransform('responsiveimg', async (content, outputPath) => {
       }
     }
 
-    return '<!doctype html>' + document.documentElement.outerHTML;
+    return "<!doctype html>" + document.documentElement.outerHTML;
   }
 
   return content;

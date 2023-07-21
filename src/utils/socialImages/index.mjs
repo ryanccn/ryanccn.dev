@@ -65,7 +65,9 @@ const FONTS = [
 
 const makeImage = async (data) => {
   console.log(
-    `[social] Writing ${dim('_site/previews/')}${cyan(data.slug)}${dim('.png')}`
+    `[social] Writing ${dim('_site/previews/')}${cyan(data.slug)}${dim(
+      '.png',
+    )}`,
   );
 
   try {
@@ -158,7 +160,7 @@ const makeImage = async (data) => {
         width: 1200 * 2,
         height: 630 * 2,
         fonts: FONTS,
-      }
+      },
     );
 
     await sharp(Buffer.from(result))
