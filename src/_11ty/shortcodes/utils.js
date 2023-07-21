@@ -14,4 +14,4 @@ const escapeHTML = (str) => {
 
 const html = String.raw;
 
-exports = { html, escapeHTML };
+module.exports = { html, escapeHTML };
