@@ -1,4 +1,4 @@
-const html = String.raw;
+const { html, escapeHTML } = require('./utils');
 
 module.exports = (content) => {
   return html`
@@ -10,7 +10,7 @@ module.exports = (content) => {
       >
         Warning!
       </p>
-      <p>${content}</p>
+      <p>${escapeHTML(content)}</p>
     </div>
   `.trim();
 };
