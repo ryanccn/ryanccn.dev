@@ -86,9 +86,7 @@ module.exports = async () => {
 
     const {
       data: {
-        data: {
-          viewer: { repositoriesContributedTo },
-        },
+        viewer: { repositoriesContributedTo },
       },
     } = response;
 
