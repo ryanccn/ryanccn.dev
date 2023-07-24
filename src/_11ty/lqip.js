@@ -35,8 +35,8 @@ const { html } = require('../utils/htmlTag');
 const PIXEL_TARGET = 60;
 
 const ESCAPE_TABLE = {
-  '#': '%23',
   '%': '%25',
+  '#': '%23',
   ':': '%3A',
   '<': '%3C',
   '>': '%3E',
