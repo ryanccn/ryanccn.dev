@@ -1,4 +1,4 @@
-const { html, escapeHTML } = require('./utils');
+const { html } = require('../../utils/htmlTag');
 
 module.exports = (content) => {
   return html`
@@ -10,7 +10,7 @@ module.exports = (content) => {
       >
         Warning!
       </p>
-      <p>${escapeHTML(content)}</p>
+      <p>${content}</p>
     </div>
   `.trim();
 };

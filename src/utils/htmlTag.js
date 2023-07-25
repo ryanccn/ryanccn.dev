@@ -1,3 +1,5 @@
+const SECURE_RANDOM_SAFE = `${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}`;
+
 const entityMap = {
   '&': '&amp;',
   '<': '&lt;',
@@ -10,7 +12,7 @@ const entityMap = {
 };
 
 const escapeHtml = (string) => {
-  if (typeof string === 'object' && string.safe === true) {
+  if (typeof string === 'object' && string.safe === SECURE_RANDOM_SAFE) {
     return string.value;
   }
 
@@ -23,7 +25,7 @@ const html = (s, ...f) => {
   return String.raw(s, ...f.map(escapeHtml));
 };
 
-const safe = (a) => ({ value: a, safe: true });
+const safe = (a) => ({ value: a, safe: SECURE_RANDOM_SAFE });
 
 exports.html = html;
 exports.safe = safe;
