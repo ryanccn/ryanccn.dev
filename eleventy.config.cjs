@@ -1,7 +1,7 @@
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
+const pluginRss = require('@ryanccn/eleventy-plugin-rss');
 const pluginIcons = require('eleventy-plugin-icons');
 
 const sitePluginShortcodes = require('./src/_11ty/shortcodes');
