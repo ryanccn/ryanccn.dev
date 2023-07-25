@@ -197,7 +197,7 @@
   }
 
   .title {
-    @apply mb-8 text-6xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-8 text-6xl font-extrabold tracking-tight text-fg-brighter text-wrap-balance;
   }
 
   .subtitle {
@@ -259,5 +259,11 @@
     & li a {
       @apply h-full;
     }
+  }
+}
+
+@layer utilities {
+  .text-wrap-balance {
+    text-wrap: balance;
   }
 }

@@ -7,7 +7,7 @@
 <ol reversed class="{{ listClasses }}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="text-xl font-semibold hover:underline underline-offset-2 transition">
+    <a href="{{ i.url }}" class="text-xl font-semibold hover:underline underline-offset-2 transition text-wrap-balance">
       <h2>{{ i.data.title }}</h2>
     </a>
     <div class="flex flex-wrap gap-1 text-sm">
