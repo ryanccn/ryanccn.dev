@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uses
-date: 2023-06-24
+date: 2023-07-25
 ---
 
 # Uses
@@ -14,7 +14,7 @@ Feel free to make any recommendations to me through social media!
 
 ### General
 
-- [Firefox](https://www.mozilla.org/en-US/firefox/) with [arkenfox](https://github.com/arkenfox/user.js/) and [Edge-Frfox](https://github.com/bmFtZQ/edge-frfox) for most browsing
+- [Firefox](https://www.mozilla.org/en-US/firefox/) with [arkenfox](https://github.com/arkenfox/user.js/), [nyoom](https://github.com/ryanccn/nyoom), and [Edge-Frfox](https://github.com/bmFtZQ/edge-frfox) for most browsing
 - [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium) for when Firefox doesn't work
 - [1Password](https://1password.com/) for password management
 - [Things](https://culturedcode.com/things/) for lists and todos
@@ -65,13 +65,12 @@ Feel free to make any recommendations to me through social media!
 
 ### Package management
 
-- [Homebrew](https://brew.sh/) for system package management
+- [Nix](https://nixos.org/), [nix-darwin](https://github.com/LnL7/nix-darwin), and [Homebrew](https://brew.sh/) for system package management
 - [fnm](https://github.com/Schniz/fnm) and [corepack](https://github.com/nodejs/corepack) for Node.js version management
 - [pyenv](https://github.com/pyenv/pyenv) and [pipx](https://pypa.github.io/pipx/) for Python environment management & application installation
 
 ### Terminal
 
-- [antidote](https://github.com/mattmc3/antidote) for managing zsh plugins
 - [Starship](https://starship.rs/) for shell prompt
 - [tealdeer](https://github.com/dbrgn/tealdeer) for command line tl;drs
 - [zoxide](https://github.com/ajeetdsouza/zoxide) for smart directory jumping
@@ -125,7 +124,6 @@ Feel free to make any recommendations to me through social media!
 - [Miniflux](https://miniflux.app/) for an RSS reader
 - [Linkding](https://github.com/sissbruecker/linkding/) for bookmark management
 - [SearXNG](https://github.com/searxng/searxng) for search
-- [Umami](https://umami.is/) for analytics
 - [Firefish](https://joinfirefish.org/) for ActivityPub
 - [Traefik](https://doc.traefik.io/traefik/) for reverse proxy
 - [Grafana](https://grafana.com/docs/grafana/latest/), [Victoria Metrics](https://github.com/VictoriaMetrics/VictoriaMetrics), [cAdvisor](https://github.com/google/cadvisor), and [Node Exporter](https://github.com/prometheus/node_exporter) for monitoring
