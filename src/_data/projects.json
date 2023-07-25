@@ -76,11 +76,6 @@
       "link": "https://github.com/ryanccn/aendra"
     },
     {
-      "name": "Choirpack",
-      "description": "A CLI for switching package managers in Node.js",
-      "link": "https://github.com/ryanccn/choirpack"
-    },
-    {
       "name": "GitHub Webhook Proxy",
       "description": "GitHub webhook proxy on Cloudflare Workers",
       "link": "https://github.com/ryanccn/github-webhook-proxy"
@@ -141,24 +136,9 @@
   ],
   "contributions": [
     {
-      "name": "Prism Launcher",
-      "description": "Advanced Minecraft launcher",
-      "link": "https://prismlauncher.org/"
-    },
-    {
       "name": "Vencord",
       "description": "The cutest Discord client mod",
       "link": "https://vencord.dev/"
-    },
-    {
-      "name": "Catppuccin",
-      "description": "Soothing pastel theme for the high-spirited!",
-      "link": "https://catppuccin.com/"
-    },
-    {
-      "name": "Elk",
-      "description": "A nimble Mastodon web client",
-      "link": "https://github.com/elk-zone/elk"
     },
     {
       "name": "Fig",
@@ -216,6 +196,11 @@
       "name": "Dotfiles",
       "description": "Dotfiles, maintained with Deno scripts",
       "link": "https://github.com/ryanccn/dotfiles"
+    },
+    {
+      "name": "Choirpack",
+      "description": "A CLI for switching package managers in Node.js",
+      "link": "https://github.com/ryanccn/choirpack"
     }
   ]
 }
