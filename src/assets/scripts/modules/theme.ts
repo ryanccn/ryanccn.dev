@@ -139,6 +139,17 @@ addEventListener('storage', (e) => {
   updateFauxSelect();
 });
 
+addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    if (DEV) console.log('[theme] pageshow listener triggered');
+
+    theme = getLocalStorageValue();
+    updateClass();
+    updateSelect();
+    updateFauxSelect();
+  }
+});
+
 addEventListener('hashchange', () => {
   if (DEV) console.log('[theme] hashchange listener triggered');
 
