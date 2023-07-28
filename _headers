@@ -4,7 +4,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' aggregator.ryanccn.dev; style-src 'self' 'unsafe-inline'; child-src 'none'; img-src * blob: data:; media-src 'none'; connect-src *;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none'; img-src * blob: data:; media-src 'none'; connect-src *;
 
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
