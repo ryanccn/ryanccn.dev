@@ -52,16 +52,18 @@ eleventyComputed:
       href="https://ryanccn.dev/feed/atom.xml"
     >
 
+    {% set description_ = description or "High school student and open source developer." %}
+
     <meta name="title" content="{{ title }}">
-    <meta name="description" content="High school student and open source developer.">
+    <meta name="description" content="{{ description_ }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ryan Cao">
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="High school student and open source developer.">
+    <meta property="og:description" content="{{ description_ }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@RyanCaoDev">
     <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="High school student and open source developer.">
+    <meta name="twitter:description" content="{{ description_ }}">
     <meta property="og:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
     <meta name="twitter:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
   </head>

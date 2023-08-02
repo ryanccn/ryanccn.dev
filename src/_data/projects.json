@@ -99,6 +99,46 @@
       "name": "@ryanccn/gql",
       "description": "A tiny GraphQL querying library",
       "link": "https://github.com/ryanccn/gql"
+    },
+    {
+      "name": "nish",
+      "description": "ni, implemented in bash",
+      "link": "https://github.com/ryanccn/nish"
+    },
+    {
+      "name": "vivid-zsh",
+      "description": "zsh plugins for vivid",
+      "link": "https://github.com/ryanccn/vivid-zsh"
+    },
+    {
+      "name": "mindustry-docker",
+      "description": "A Mindustry server as a Docker image",
+      "link": "https://github.com/ryanccn/mindustry-docker"
+    },
+    {
+      "name": "Choirpack",
+      "description": "A user-friendly corepack wrapper",
+      "link": "https://github.com/ryanccn/choirpack"
+    },
+    {
+      "name": "firefish",
+      "description": "Personal fork of Firefish",
+      "link": "https://github.com/ryanccn/firefish"
+    },
+    {
+      "name": "discord-applemusic-rich-presence",
+      "description": "Apple Music as your Discord presence",
+      "link": "https://github.com/ryanccn/discord-applemusic-rich-presence"
+    },
+    {
+      "name": "Tenable",
+      "description": "An alternative, smaller script and associated proxy for Plausible Analytics",
+      "link": "https://github.com/ryanccn/tenable"
+    },
+    {
+      "name": "GitHub Language Stats",
+      "description": "GitHub language stats in an SVG",
+      "link": "https://github.com/ryanccn/github-language-stats"
     }
   ],
   "mods": [
@@ -196,11 +236,6 @@
       "name": "Dotfiles",
       "description": "Dotfiles, maintained with Deno scripts",
       "link": "https://github.com/ryanccn/dotfiles"
-    },
-    {
-      "name": "Choirpack",
-      "description": "A CLI for switching package managers in Node.js",
-      "link": "https://github.com/ryanccn/choirpack"
     }
   ]
 }
