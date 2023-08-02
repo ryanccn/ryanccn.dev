@@ -35,8 +35,8 @@
   --accent-lighter: 34 190 252; /* not part of the default palette, lightened via HSL */
 
   --background: 239 241 245;
-  --surface: 204 208 218;
-  --surface-hover: 188 192 204;
+  --surface: 230 233 239;
+  --surface-hover: 204 208 218;
 }
 
 .theme-ctp-frappe {
@@ -48,8 +48,8 @@
   --accent-lighter: 166 189 242; /* same as above */
 
   --background: 48 52 70;
-  --surface: 65 69 89;
-  --surface-hover: 81 87 109;
+  --surface: 41 44 60;
+  --surface-hover: 65 69 89;
 }
 
 .theme-ctp-macchiato {
@@ -61,8 +61,8 @@
   --accent-lighter: 162 190 246; /* same as above */
 
   --background: 36 39 58;
-  --surface: 54 58 79;
-  --surface-hover: 73 77 100;
+  --surface: 30 32 48;
+  --surface-hover: 54 58 79;
 }
 
 .theme-ctp-mocha {
@@ -74,8 +74,8 @@
   --accent-lighter: 162 196 251; /* same as above */
 
   --background: 30 30 46;
-  --surface: 49 50 68;
-  --surface-hover: 69 71 90;
+  --surface: 24 24 37;
+  --surface-hover: 49 50 68;
 }
 
 .theme-nord-light {
