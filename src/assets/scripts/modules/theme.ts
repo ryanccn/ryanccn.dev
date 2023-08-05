@@ -2,8 +2,8 @@ const getThemeSelect = () =>
   document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
 
 const THEMES = {
-  light: { name: 'Default Light', dark: false },
-  dark: { name: 'Default Dark', dark: true },
+  'light': { name: 'Default Light', dark: false },
+  'dark': { name: 'Default Dark', dark: true },
   'ctp-latte': { name: 'Catppuccin Latte', dark: false },
   'ctp-frappe': { name: 'Catppuccin Frappé', dark: true },
   'ctp-macchiato': { name: 'Catppuccin Macchiato', dark: true },

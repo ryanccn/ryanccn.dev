@@ -11,25 +11,25 @@ module.exports = {
 
   theme: {
     colors: {
-      transparent: colors.transparent,
-      black: colors.black,
-      white: colors.white,
-      current: colors.current,
+      'transparent': colors.transparent,
+      'black': colors.black,
+      'white': colors.white,
+      'current': colors.current,
 
-      fg: 'rgba(var(--fg) / <alpha-value>)',
+      'fg': 'rgba(var(--fg) / <alpha-value>)',
       'fg-brighter': 'rgba(var(--fg-brighter) / <alpha-value>)',
       'fg-less-dimmed': 'rgba(var(--fg-less-dimmed) / <alpha-value>)',
       'fg-dimmed': 'rgba(var(--fg-dimmed) / <alpha-value>)',
-      accent: 'rgba(var(--accent) / <alpha-value>)',
+      'accent': 'rgba(var(--accent) / <alpha-value>)',
       'accent-lighter': 'rgba(var(--accent-lighter) / <alpha-value>)',
 
-      background: 'rgba(var(--background) / <alpha-value>)',
-      surface: 'rgba(var(--surface) / <alpha-value>)',
+      'background': 'rgba(var(--background) / <alpha-value>)',
+      'surface': 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
 
-      tailwind: { yellow: colors.yellow },
+      'tailwind': { yellow: colors.yellow },
 
-      brand: {
+      'brand': {
         hn: '#f0652f',
         twitter: '#1da1f2',
         github: '#181717',
@@ -46,7 +46,7 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            blockquote: {
+            'blockquote': {
               'font-style': 'normal',
             },
             'blockquote p:first-of-type::before': {

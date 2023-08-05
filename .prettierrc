@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
+  "quoteProps": "consistent",
   "overrides": [
     {
       "files": "**/*.md",

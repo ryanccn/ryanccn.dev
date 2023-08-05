@@ -206,8 +206,7 @@
 
   .enhanced-prose {
     @apply prose-h1:title break-words;
-    @apply prose-a:underline-offset-2 prose-a:decoration-fg-dimmed hover:prose-a:decoration-fg-less-dimmed prose-a:transition-all;
-    /* @apply prose-a:transition-colors hover:prose-a:text-accent-lighter dark:hover:prose-a:text-accent-lighter; */
+    @apply prose-a:text-accent hover:prose-a:text-accent-lighter prose-a:underline-offset-2 prose-a:decoration-2 prose-a:decoration-accent/50 hover:prose-a:decoration-accent-lighter/50 prose-a:transition-all;
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;

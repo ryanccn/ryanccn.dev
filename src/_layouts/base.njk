@@ -73,7 +73,12 @@ eleventyComputed:
       class="flex flex-col md:flex-row md:justify-between md:items-center md:px-6 py-16 md:mb-12 gap-y-10 md:gap-y-0"
     >
       <a href="/" class="h-card flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
-        {% include 'pictureOfMe.njk' %}
+        <img
+          src="/icons/v2-square.png?v={{ gitRev }}"
+          class="u-photo rounded-full"
+          width="32" height="32"
+          alt="Profile picture"
+        />
         <span class="p-name tracking-tight leading-none text-2xl font-bold">Ryan Cao</span>
       </a>
 
@@ -142,11 +147,13 @@ eleventyComputed:
           {% icon "simpleicon:kofi", class="block h-5 w-5 text-brand-kofi" %}
         </a>
       </div>
+
       <div class="flex flex-row gap-x-2 text-xs">
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
       </div>
+
       <a class="text-xs text-center block text-fg-dimmed max-w-[30ch] hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
       </a>

@@ -92,7 +92,7 @@ Here’s the type definitions that I wrote for this specific formula:
 declare interface Props {
   "Billing cycle": "Yearly" | "Monthly";
   "Effective Annual Cost": number;
-  Since: number;
+  "Since": number;
 }
 
 declare function max(...a: number[]): number;
