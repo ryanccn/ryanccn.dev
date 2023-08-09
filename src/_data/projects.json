@@ -41,24 +41,14 @@
       "link": "https://github.com/ryanccn/vendflare"
     },
     {
-      "name": "Daenerys",
-      "description": "Gain insights from DNS records",
-      "link": "https://daenerys.vercel.app/"
-    },
-    {
       "name": "What the DMARC",
       "description": "Explains your DMARC and SPF records",
       "link": "https://whatthedmarc.ryanccn.dev/"
     },
     {
-      "name": "Discord CSS Mappings",
-      "description": "Mappings for Discord theme developers",
-      "link": "https://github.com/ryanccn/discord-css-mappings"
-    },
-    {
-      "name": "attic-action",
-      "description": "Cache Nix derivations on GitHub Actions with Attic",
-      "link": "https://github.com/ryanccn/attic-action"
+      "name": "Daenerys",
+      "description": "Gain insights from DNS records",
+      "link": "https://daenerys.vercel.app/"
     },
     {
       "name": "flake",
@@ -76,14 +66,24 @@
       "link": "https://github.com/ryanccn/aendra"
     },
     {
+      "name": "Tenable",
+      "description": "An alternative, smaller script and associated proxy for Plausible Analytics",
+      "link": "https://github.com/ryanccn/tenable"
+    },
+    {
+      "name": "Discord CSS Mappings",
+      "description": "Mappings for Discord theme developers",
+      "link": "https://github.com/ryanccn/discord-css-mappings"
+    },
+    {
+      "name": "attic-action",
+      "description": "Cache Nix derivations on GitHub Actions with Attic",
+      "link": "https://github.com/ryanccn/attic-action"
+    },
+    {
       "name": "GitHub Webhook Proxy",
       "description": "GitHub webhook proxy on Cloudflare Workers",
       "link": "https://github.com/ryanccn/github-webhook-proxy"
-    },
-    {
-      "name": "git.ryanccn.dev",
-      "description": "Dead simple Cloudflare Worker for GitHub redirects",
-      "link": "https://github.com/ryanccn/git.ryanccn.dev"
     },
     {
       "name": "Yakitori",
@@ -111,19 +111,9 @@
       "link": "https://github.com/ryanccn/vivid-zsh"
     },
     {
-      "name": "mindustry-docker",
-      "description": "A Mindustry server as a Docker image",
-      "link": "https://github.com/ryanccn/mindustry-docker"
-    },
-    {
       "name": "Choirpack",
       "description": "A user-friendly corepack wrapper",
       "link": "https://github.com/ryanccn/choirpack"
-    },
-    {
-      "name": "firefish",
-      "description": "Personal fork of Firefish",
-      "link": "https://github.com/ryanccn/firefish"
     },
     {
       "name": "discord-applemusic-rich-presence",
@@ -131,14 +121,14 @@
       "link": "https://github.com/ryanccn/discord-applemusic-rich-presence"
     },
     {
-      "name": "Tenable",
-      "description": "An alternative, smaller script and associated proxy for Plausible Analytics",
-      "link": "https://github.com/ryanccn/tenable"
-    },
-    {
       "name": "GitHub Language Stats",
       "description": "GitHub language stats in an SVG",
       "link": "https://github.com/ryanccn/github-language-stats"
+    },
+    {
+      "name": "firefish",
+      "description": "Personal fork of Firefish",
+      "link": "https://github.com/ryanccn/firefish"
     }
   ],
   "mods": [
@@ -231,6 +221,11 @@
       "name": "Osmosis",
       "description": "An experimental Stable Diffusion frontend",
       "link": "https://github.com/ryanccn/osmosis"
+    },
+    {
+      "name": "git.ryanccn.dev",
+      "description": "Dead simple Cloudflare Worker for GitHub redirects",
+      "link": "https://github.com/ryanccn/git.ryanccn.dev"
     },
     {
       "name": "Dotfiles",
