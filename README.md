@@ -6,11 +6,11 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 
 - **Optimized images**, with different formats, sizes, and low-quality image placeholders (LQIP)
 - **Build processes** for JavaScript and CSS right in Eleventy through `.11ty.js` templates
-- **Syntax highlighting** for blog posts in Markdown using [`@11ty/eleventy-plugin-syntaxhighlight`](https://npm.im/@11ty/eleventy-plugin-syntaxhighlight)
+- **Syntax highlighting** for blog posts in Markdown using [shiki](https://github.com/shikijs/shiki)
 - **RSS & Atom feeds** for subscription and syndication
 - **GitHub contributions listing** using the GitHub GraphQL API
-- **13 themes** available via CSS variables and accessible through a select
-- **Read data** fetched from [Plausible](https://plausible.io/)'s API
+- **11 themes** available via CSS variables and accessible through a select
+- **Pageview data** fetched from [Plausible](https://plausible.io/)'s API
 
 ## Get started
 

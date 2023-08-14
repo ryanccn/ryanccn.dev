@@ -17,7 +17,6 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@ryanccn/eleventy-plugin-rss": "^1.2.2",
     "@ryanccn/gql": "^1.0.0",
@@ -54,10 +53,11 @@
     "prettier-plugin-tailwindcss": "^0.4.1",
     "satori": "^0.10.2",
     "sharp": "^0.32.4",
+    "shiki": "^0.14.3",
     "simple-icons": "^9.9.0",
     "sirv-cli": "^2.0.2",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6"
   },
-  "packageManager": "pnpm@8.6.10"
+  "packageManager": "pnpm@8.6.12"
 }

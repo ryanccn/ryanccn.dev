@@ -25,8 +25,6 @@ eleventyComputed:
     <script>{{ inlinedScript | safe }}</script>
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
-    <link rel="stylesheet" media="print" href="/assets/prism.css?v={{ gitRev }}" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/prism.css?v={{ gitRev }}"></noscript>
 
     {% if inProduction %}
     <script
@@ -107,8 +105,6 @@ eleventyComputed:
           <option value="ctp-mocha">Catppuccin Mocha</option>
           <option value="nord-light">Nord Light</option>
           <option value="nord-dark">Nord Dark</option>
-          <option value="pink-light">Pink Light</option>
-          <option value="pink-dark">Pink Dark</option>
           <option value="rose-pine">Rosé Pine</option>
           <option value="rose-pine-moon">Rosé Pine Moon</option>
           <option value="rose-pine-dawn">Rosé Pine Dawn</option>

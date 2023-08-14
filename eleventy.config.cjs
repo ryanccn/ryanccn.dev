@@ -1,12 +1,12 @@
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginReadingTime = require('eleventy-plugin-reading-time');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@ryanccn/eleventy-plugin-rss');
 const pluginIcons = require('eleventy-plugin-icons');
 
 const sitePluginShortcodes = require('./src/_11ty/shortcodes');
 const sitePluginFilters = require('./src/_11ty/filters');
 const sitePluginMarkdown = require('./src/_11ty/plugins/markdown');
+const sitePluginShiki = require('./src/_11ty/plugins/shiki');
 const sitePluginHtmlmin = require('./src/_11ty/plugins/htmlmin');
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
@@ -15,7 +15,6 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginIcons, {
     mode: 'inline',
@@ -36,6 +35,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(sitePluginShortcodes);
   eleventyConfig.addPlugin(sitePluginFilters);
   eleventyConfig.addPlugin(sitePluginMarkdown);
+  eleventyConfig.addPlugin(sitePluginShiki);
   eleventyConfig.addPlugin(sitePluginHtmlmin);
 
   eleventyConfig.addPassthroughCopy({
