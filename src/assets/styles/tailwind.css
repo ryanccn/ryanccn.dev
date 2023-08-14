@@ -18,12 +18,12 @@
   --fg-brighter: 255 255 255;
   --fg-less-dimmed: 228 228 231;
   --fg-dimmed: 212 212 216;
-  --accent: 96 165 250;
-  --accent-lighter: 59 130 246;
+  --accent: 147 197 253;
+  --accent-lighter: 191 219 254;
 
-  --background: 24 24 27;
-  --surface: 39 39 42;
-  --surface-hover: 63 63 70;
+  --background: 39 39 42;
+  --surface: 63 63 70;
+  --surface-hover: 82 82 91;
 }
 
 .theme-ctp-latte {
