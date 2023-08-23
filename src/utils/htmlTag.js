@@ -11,21 +11,21 @@ const entityMap = {
   '=': '&#x3D;',
 };
 
-const escapeHtml = (string) => {
-  if (typeof string === 'object' && string.safe === SECURE_RANDOM_SAFE) {
-    return string.value;
+const escapeHtml = (value) => {
+  if (typeof value === 'object' && value.safe === SECURE_RANDOM_SAFE) {
+    return value.value;
   }
 
-  return String(string).replace(/[&<>"'`=/]/g, (s) => {
-    return entityMap[s];
-  });
+  return String(value).replace(/[&<>"'`=/]/g, (s) => entityMap[s]);
 };
 
 const html = (s, ...f) => {
-  return String.raw(s, ...f.map(escapeHtml));
+  return String.raw({ raw: s }, ...f.map(escapeHtml));
 };
 
-const safe = (a) => ({ value: a, safe: SECURE_RANDOM_SAFE });
+const safe = (value) => {
+  return { value, safe: SECURE_RANDOM_SAFE };
+};
 
 exports.html = html;
 exports.safe = safe;
