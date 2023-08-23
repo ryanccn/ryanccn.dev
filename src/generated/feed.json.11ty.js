@@ -9,7 +9,7 @@ class Page {
   async render(data) {
     return JSON.stringify(
       {
-        version: 'https://jsonfeed.org/version/1',
+        version: 'https://www.jsonfeed.org/version/1.1/',
         title: 'Ryan Cao',
         home_page_url: 'https://ryanccn.dev/',
         feed_url: 'https://ryanccn.dev/feed/feed.json',
