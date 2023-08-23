@@ -15,7 +15,7 @@ class Page {
         feed_url: 'https://ryanccn.dev/feed/feed.json',
         items: await Promise.all(
           [...data.collections.posts].reverse().map(async (post) => ({
-            id: post.data.slug,
+            id: post.url,
             url: this.absoluteUrl(post.url),
             title: post.data.title,
             content_html: await this.htmlToAbsoluteUrls(
