@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         elem.addEventListener('click', () => {
           navigator.share({
-            title: document.querySelector('title')!.innerText,
+            title: document.title,
             url: location.href,
           });
         });
