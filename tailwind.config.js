@@ -31,7 +31,6 @@ module.exports = {
 
       'brand': {
         hn: '#f0652f',
-        twitter: '#1da1f2',
         github: '#181717',
         firefish: '#eb6f92',
         mastodon: '#6364ff',

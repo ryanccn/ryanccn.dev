@@ -18,15 +18,17 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginIcons, {
     mode: 'inline',
-    sources: {
-      lucide: 'node_modules/lucide-static/icons',
-      simpleicon: 'node_modules/simple-icons/icons',
-      custom: 'src/_icons',
-    },
+    sources: [
+      { name: 'lucide', path: './node_modules/lucide-static/icons' },
+      { name: 'simpleicon', path: './node_modules/simple-icons/icons' },
+      { name: 'custom', path: './src/_icons' },
+    ],
     icon: {
-      insertAttributesBySource: {
+      class: () => '',
+      attributesBySource: {
         simpleicon: {
           fill: 'currentColor',
+          stroke: 'none',
         },
       },
     },
@@ -56,9 +58,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.ignores.add('README.md');
   eleventyConfig.ignores.add('src/utils/socialImages/');
 
-  eleventyConfig.setServerOptions({
-    domDiff: false,
-  });
+  eleventyConfig.setServerOptions({ domDiff: false });
 
   return {
     markdownTemplateEngine: 'njk',
