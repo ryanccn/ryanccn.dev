@@ -43,7 +43,6 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
     './src/assets/fonts': 'assets/fonts',
-    './src/.well-known': '.well-known',
     './_headers': '_headers',
     './_redirects': '_redirects',
   });
