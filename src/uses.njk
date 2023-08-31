@@ -1,0 +1,41 @@
+---
+layout: base
+title: Uses
+date: 2023-09-01
+---
+
+<h1 class="title">Uses</h1>
+
+<p class="subtitle mb-16">All sorts of things that I use on my computer (and phone), services I use for my daily life and web development, etc.</p>
+
+<h2 class="text-3xl font-bold mb-6">Apps</h2>
+
+<h3 class="text-xl font-semibold mb-4">General</h3>
+{% set usesListKey = "apps.general" %}
+{% include "usesList.njk" %}
+
+<h3 class="text-xl font-semibold mt-6 mb-4">Development</h3>
+{% set usesListKey = "apps.dev" %}
+{% include "usesList.njk" %}
+
+<h3 class="text-xl font-semibold mt-6 mb-4">Utilities</h3>
+{% set usesListKey = "apps.utilities" %}
+{% include "usesList.njk" %}
+
+<h3 class="text-xl font-semibold mt-6 mb-4">Browser Extensions</h3>
+{% set usesListKey = "apps.browserExtensions" %}
+{% include "usesList.njk" %}
+
+<h2 class="text-3xl font-bold mt-12 mb-6">Services</h2>
+<h3 class="text-xl font-semibold mb-4">General</h3>
+{% set usesListKey = "services.general" %}
+{% include "usesList.njk" %}
+
+<h3 class="text-xl font-semibold mt-6 mb-4">Web development</h3>
+{% set usesListKey = "services.webDev" %}
+{% include "usesList.njk" %}
+
+<h2 class="text-3xl font-bold mt-12 mb-6">Developer tools</h2>
+<p class="mb-24">Refer to my <a class="prose-link" href="https://github.com/ryanccn/flake">Nix flake</a> for packages and configurations.</p>
+
+{% include 'shareLinks.njk' %}

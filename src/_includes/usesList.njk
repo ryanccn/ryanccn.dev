@@ -1,0 +1,45 @@
+<div class="not-prose contents">
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    {% for item in uses[usesListKey] %}
+    <li>
+      <div class="relative flex flex-col gap-y-2 p-6 h-full rounded-lg border border-surface hover:border-surface-hover transition-colors">
+        <a href="{{ item.url }}" class="absolute inset-0 z-10 rounded-lg transition-shadow"></a>
+
+        <div class="flex flex-row gap-1 flex-wrap items-center">
+          <span class="font-bold text-xl tracking-tight mr-2">{{ item.name }}</span>
+          {% if item.openSource === true %}
+            <span class="text-xs font-medium bg-tailwind-green-500 text-white px-1.5 py-0.5 rounded-sm">Open source</span>
+          {% endif %}
+          {% if item.paid === true %}
+            <span class="text-xs font-medium bg-tailwind-amber-500 text-white px-1.5 py-0.5 rounded-sm">Paid</span>
+          {% endif %}
+          {% if item.freemium === true %}
+            <span class="text-xs font-medium bg-tailwind-amber-500 text-white px-1.5 py-0.5 rounded-sm">Freemium</span>
+          {% endif %}
+          {% if item.macos === true %}
+            <span class="text-xs font-medium bg-tailwind-sky-500 text-white px-1.5 py-0.5 rounded-sm">macOS</span>
+          {% endif %}
+          {% if item.ios === true %}
+            <span class="text-xs font-medium bg-tailwind-sky-500 text-white px-1.5 py-0.5 rounded-sm">iOS</span>
+          {% endif %}
+        </div>
+
+        {% if "description" in item %}
+          <span class="text-fg-dimmed font-medium leading-snug">{{ item.description }}</span>
+        {% endif %}
+
+        {% if "accessories" in item %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          {% for accessory in item.accessories %}
+          <a href="{{ accessory.url }}" class="flex flex-col gap-y-1 z-20">
+            <span class="font-semibold tracking-tight leading-snug">{{ accessory.name }}</span>
+            {% if "description" in accessory %}<span class="text-fg-dimmed text-sm leading-snug">{{ accessory.description }}</span>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

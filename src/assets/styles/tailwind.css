@@ -320,6 +320,10 @@
     @apply text-fg hover:text-accent;
   }
 
+  .prose-link {
+    @apply font-medium text-accent hover:text-accent-lighter underline underline-offset-2 decoration-2 decoration-accent/50 hover:decoration-accent-lighter/50 transition-all;
+  }
+
   .buttonish,
   button {
     @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;

@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{11ty.js,njk,liquid}',
+    './src/**/*.{11ty.js,njk,liquid,md}',
     './src/_11ty/shortcodes/*.js',
     './src/assets/scripts/theme.ts',
   ],
@@ -27,7 +27,12 @@ module.exports = {
       'surface': 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
 
-      'tailwind': { yellow: colors.yellow },
+      'tailwind': {
+        yellow: colors.yellow,
+        amber: colors.amber,
+        sky: colors.sky,
+        green: colors.green,
+      },
 
       'brand': {
         hn: '#f0652f',
