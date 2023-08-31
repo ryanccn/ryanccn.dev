@@ -15,16 +15,17 @@ Feel free to make any recommendations to me through social media!
 ### General
 
 - [Firefox](https://www.mozilla.org/en-US/firefox/) with [arkenfox](https://github.com/arkenfox/user.js/), [nyoom](https://github.com/ryanccn/nyoom), and [Edge-Frfox](https://github.com/bmFtZQ/edge-frfox) for most browsing
-- [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium) for when Firefox doesn't work
+- [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium) for Chromium-based browser
+- [Orion](https://browser.kagi.com/) for WebKit-based browser
 - [1Password](https://1password.com/) for password management
 - [Things](https://culturedcode.com/things/) for lists and todos
 - [Notion](https://notion.so/) for personal documents and databases
-- [Spotify](https://spotify.com/) with [Spicetify](https://spicetify.app/) for music
-- [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/) for documents, presentations, etc.
+- [Apple Music](https://www.apple.com/apple-music/) for music
+- [Dato](https://sindresorhus.com/dato) for menu bar calendar and better notifications
 
 ### Social
 
-- [Discord](https://discord.com/) for community involvement
+- [Vesktop](https://github.com/Vencord/Vesktop)/[Discord](https://discord.com/) for community involvement
 - [OBS](https://obsproject.com/) for the occasional stream
 
 ### Development
@@ -33,7 +34,7 @@ Feel free to make any recommendations to me through social media!
 - [VS Code](https://code.visualstudio.com/) for general development
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java development
 - [Figma](https://www.figma.com/) for designs, mockups, and logos
-- [Docker](https://www.docker.com/) for containers
+- [Orbstack](https://orbstack.dev/) for containers
 - [MongoDB Compass](https://www.mongodb.com/products/compass) for MongoDB databases
 - [DBngin](https://dbngin.com/) for PostgreSQL/MySQL/Redis local prototyping
 
@@ -48,7 +49,7 @@ Feel free to make any recommendations to me through social media!
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704) for preventing system sleep
 - [Velja](https://sindresorhus.com/velja) for multi-browser link opening
 - [Pure Paste](https://sindresorhus.com/pure-paste) for clipboard sanitization
-- [Day Progress](https://sindresorhus.com/day-progress) to track progress in a day
+- [Sleeve](https://replay.software/sleeve) for a music accessory
 - [System Color Picker](https://sindresorhus.com/system-color-picker) for choosing and manipulating colors
 - [Upscayl](https://upscayl.github.io/) for occasionally upscaling images
 - [GPG Suite](https://gpgtools.org/) for macOS-integrated GPG tooling
@@ -59,6 +60,7 @@ Feel free to make any recommendations to me through social media!
 - [1Password](https://1password.com/downloads/browser-extension/)
 - [Stylus](https://github.com/openstyles/stylus) for custom CSS styling & theming
 - [Refined GitHub](https://github.com/refined-brand-github/refined-brand-github) for better GitHub UX
+- [Tabliss](https://tabliss.io/) for a beautiful New Tab page
 - [1Blocker](https://1blocker.com/) for (iOS) Safari ad & tracker blocking
 
 ## Developer tooling
@@ -67,7 +69,6 @@ Feel free to make any recommendations to me through social media!
 
 - [Nix](https://nixos.org/), [nix-darwin](https://github.com/LnL7/nix-darwin), and [Homebrew](https://brew.sh/) for system package management
 - [fnm](https://github.com/Schniz/fnm) and [corepack](https://github.com/nodejs/corepack) for Node.js version management
-- [pyenv](https://github.com/pyenv/pyenv) and [pipx](https://pypa.github.io/pipx/) for Python environment management & application installation
 
 ### Terminal
 
@@ -101,7 +102,7 @@ Feel free to make any recommendations to me through social media!
 - [1Password](https://1password.com/) for password management
 - [Tutanota](https://tutanota.com/) for privacy-friendly custom domain email
 - [Notion](https://notion.so/) for personal documents and databases
-- [Spotify](https://spotify.com/) for music
+- [Apple Music](https://www.apple.com/apple-music/) for music
 
 ### Web Development
 
