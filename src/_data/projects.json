@@ -26,19 +26,24 @@
       "link": "https://status.ryanccn.dev/"
     },
     {
-      "name": "Modernflux",
-      "description": "A modern look and feel for Miniflux",
-      "link": "https://github.com/ryanccn/modernflux"
-    },
-    {
       "name": "nyoom",
       "description": "Firefox userchrome manager CLI",
       "link": "https://github.com/ryanccn/nyoom"
     },
     {
+      "name": "am",
+      "description": "A beautiful and feature-packed Apple Music CLI ",
+      "link": "https://github.com/ryanccn/am"
+    },
+    {
       "name": "Vendflare",
       "description": "Vencord backend on Cloudflare Workers",
       "link": "https://github.com/ryanccn/vendflare"
+    },
+    {
+      "name": "Modernflux",
+      "description": "A modern look and feel for Miniflux",
+      "link": "https://github.com/ryanccn/modernflux"
     },
     {
       "name": "What the DMARC",
@@ -86,11 +91,6 @@
       "link": "https://github.com/ryanccn/github-webhook-proxy"
     },
     {
-      "name": "Yakitori",
-      "description": "A simple Docker status page",
-      "link": "https://github.com/ryanccn/yakitori"
-    },
-    {
       "name": "sarif-strip-suppressed",
       "description": "CLI tool to strip suppressed results from SARIF files",
       "link": "https://github.com/ryanccn/sarif-strip-suppressed"
@@ -114,11 +114,6 @@
       "name": "Choirpack",
       "description": "A user-friendly corepack wrapper",
       "link": "https://github.com/ryanccn/choirpack"
-    },
-    {
-      "name": "discord-applemusic-rich-presence",
-      "description": "Apple Music as your Discord presence",
-      "link": "https://github.com/ryanccn/discord-applemusic-rich-presence"
     },
     {
       "name": "GitHub Language Stats",
