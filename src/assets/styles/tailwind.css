@@ -295,7 +295,6 @@
 
     --tw-prose-body: rgba(var(--fg) / 1);
     --tw-prose-headings: rgba(var(--fg-brighter) / 1);
-    /* --tw-prose-links: rgba(var(--accent) / 1); */
     --tw-prose-links: rgba(var(--fg) / 1);
     --tw-prose-code: rgba(var(--fg) / 1);
     --tw-prose-bold: rgba(var(--fg-brighter) / 1);
@@ -304,13 +303,17 @@
     --tw-prose-bullets: rgba(var(--fg-dimmed) / 1);
     --tw-prose-hr: rgba(var(--fg-dimmed) / 1);
     --tw-prose-captions: rgba(var(--fg-dimmed) / 1);
+    --tw-prose-th-borders: rgba(var(--surface-hover) / 1);
+    --tw-prose-td-borders: rgba(var(--surface) / 1);
 
     & :is(h2, h3, h4, h5) {
       @apply flex items-center;
     }
+
     & :is(h2, h3, h4, h5) .anchor {
       @apply ml-3 text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
     }
+
     & :is(h2, h3, h4, h5):target .anchor {
       @apply text-accent hover:text-accent-lighter;
     }
