@@ -8,7 +8,7 @@ const { join } = require('path');
 const getViews = async (originalUrl) => {
   if (!process.env.PLAUSIBLE_TOKEN) return 0;
 
-  console.log(`${cyan('[data]')} Fetching reads for ${blue(originalUrl)}`);
+  console.log(`${cyan('[data]')} Fetching views for ${blue(originalUrl)}`);
 
   const now = format(new Date(), 'yyyy-MM-dd');
 
@@ -27,7 +27,9 @@ const getViews = async (originalUrl) => {
 
   const res = await EleventyFetch(url.toString(), {
     fetchOptions: {
-      headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}` },
+      headers: {
+        Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}`,
+      },
     },
     duration: '1d',
     type: 'json',
@@ -38,6 +40,7 @@ const getViews = async (originalUrl) => {
 
 module.exports = async () => {
   const ret = {};
+
   const urlList = await readdir(join(process.cwd(), 'src', 'posts')).then(
     (files) =>
       files
@@ -47,7 +50,7 @@ module.exports = async () => {
   );
 
   const { default: pLimit } = await import('p-limit');
-  const lim = pLimit(10);
+  const lim = pLimit(8);
 
   await Promise.all(
     urlList.map((url) =>
