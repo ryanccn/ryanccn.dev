@@ -2,7 +2,7 @@
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
     {% for item in uses[usesListKey] %}
     <li>
-      <div class="relative flex flex-col gap-y-2 p-6 h-full rounded-lg border border-surface hover:border-surface-hover transition-colors">
+      <div class="relative flex flex-col gap-y-2 h-full rounded-lg p-6 border border-surface hover:border-surface-hover transition-colors">
         <a href="{{ item.url }}" class="absolute inset-0 z-10 rounded-lg transition-shadow"></a>
 
         <div class="flex flex-row gap-1 flex-wrap items-center">
@@ -25,7 +25,7 @@
         </div>
 
         {% if "description" in item %}
-          <span class="text-fg-dimmed font-medium leading-snug">{{ item.description }}</span>
+          <span class="text-fg-dimmed font-normal leading-snug">{{ item.description }}</span>
         {% endif %}
 
         {% if "accessories" in item %}

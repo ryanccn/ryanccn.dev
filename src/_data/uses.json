@@ -60,7 +60,7 @@
     },
     {
       "name": "Apple Music",
-      "description": "Collaborative documents and databases",
+      "description": "Music with a large library, local music sync, and Dolby Atmos",
       "url": "https://www.apple.com/apple-music/",
       "paid": true,
       "macos": true
@@ -101,17 +101,19 @@
     {
       "name": "Orbstack",
       "url": "https://orbstack.dev/",
-      "description": "Faster, native Docker engine"
+      "description": "Faster, native Docker engine",
+      "macos": true
     },
     {
       "name": "MongoDB Compass",
       "url": "https://www.mongodb.com/products/compass",
-      "description": "MongoDB database viewer & editor"
+      "description": "MongoDB database viewer and editor"
     },
     {
       "name": "DBngin",
       "url": "https://dbngin.com/",
-      "description": "PostgreSQL/MySQL/Redis local server management"
+      "description": "PostgreSQL/MySQL/Redis local server management",
+      "macos": true
     }
   ],
   "apps.utilities": [
@@ -123,23 +125,9 @@
       "freemium": true
     },
     {
-      "name": "OverSight",
-      "url": "https://objective-see.org/products/oversight.html",
-      "description": "Microphone and camera permission controls",
-      "openSource": true,
-      "macos": true
-    },
-    {
-      "name": "KnockKnock",
-      "url": "https://objective-see.org/products/knockknock.html",
-      "description": "macOS system scans",
-      "openSource": true,
-      "macos": true
-    },
-    {
       "name": "IINA",
       "url": "https://iina.io/",
-      "description": "Video & audio player",
+      "description": "Video and audio player",
       "macos": true,
       "openSource": true
     },
@@ -171,6 +159,20 @@
       ]
     },
     {
+      "name": "AlDente",
+      "url": "https://apphousekitchen.com/",
+      "description": "Battery charging control and optimization",
+      "macos": true,
+      "freemium": true
+    },
+    {
+      "name": "KnockKnock",
+      "url": "https://objective-see.org/products/knockknock.html",
+      "description": "macOS system scans",
+      "openSource": true,
+      "macos": true
+    },
+    {
       "name": "Velja",
       "url": "https://sindresorhus.com/velja",
       "description": "Multi-browser link opening",
@@ -200,12 +202,6 @@
       "url": "https://upscayl.github.io/",
       "description": "Occasionally upscaling images",
       "openSource": true
-    },
-    {
-      "name": "GPG Suite",
-      "url": "https://gpgtools.org/",
-      "description": "macOS-integrated GPG tooling",
-      "macos": true
     }
   ],
   "apps.browserExtensions": [
@@ -224,7 +220,7 @@
     {
       "name": "Stylus",
       "url": "https://github.com/openstyles/stylus",
-      "description": "Custom CSS styling & theming",
+      "description": "Custom CSS styling and theming",
       "openSource": true
     },
     {
@@ -241,7 +237,7 @@
     {
       "name": "1Blocker",
       "url": "https://1blocker.com/",
-      "description": "Safari ad & tracker blocking",
+      "description": "Safari ad and tracker blocking",
       "paid": true,
       "ios": true
     }
@@ -250,7 +246,7 @@
     {
       "name": "1Password",
       "url": "https://1password.com/",
-      "description": "Password manager",
+      "description": "Secure and reliable cross-platform password manager",
       "paid": true
     },
     {
@@ -262,13 +258,13 @@
     {
       "name": "Notion",
       "url": "https://notion.so/",
-      "description": "Personal documents and databases",
+      "description": "Collaborative documents and databases",
       "freemium": true
     },
     {
       "name": "Apple Music",
       "url": "https://www.apple.com/apple-music/",
-      "description": "Music",
+      "description": "Music with a large library, local music sync, and Dolby Atmos",
       "paid": true
     }
   ],
@@ -318,7 +314,7 @@
     {
       "name": "Amazon Web Services",
       "url": "https://aws.amazon.com/",
-      "description": "a wide variety of cloud services",
+      "description": "A wide variety of cloud services",
       "paid": true
     },
     {
