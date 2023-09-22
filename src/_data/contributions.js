@@ -42,6 +42,7 @@ const queryContributions = (after) =>
                 totalCount
               }
               isPrivate
+              isFork
             }
           }
 
@@ -97,7 +98,7 @@ module.exports = async () => {
   }
 
   data = data
-    .filter((repo) => !repo.isPrivate)
+    .filter((repo) => !repo.isPrivate && !repo.isFork)
     .filter((repo) => {
       for (const exclude of excludes)
         if (exclude.exec(repo.nameWithOwner)) return false;
