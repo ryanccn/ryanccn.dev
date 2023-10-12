@@ -66,11 +66,6 @@
       "link": "https://github.com/ryanccn/ryan-mono"
     },
     {
-      "name": "Ändra",
-      "description": "URL shortener powered by Deno Deploy and KV",
-      "link": "https://github.com/ryanccn/aendra"
-    },
-    {
       "name": "Tenable",
       "description": "An alternative, smaller script and associated proxy for Plausible Analytics",
       "link": "https://github.com/ryanccn/tenable"
@@ -112,7 +107,7 @@
     },
     {
       "name": "Choirpack",
-      "description": "A user-friendly corepack wrapper",
+      "description": "Simple and powerful Node.js package manager utilities built around Corepack",
       "link": "https://github.com/ryanccn/choirpack"
     },
     {
@@ -124,6 +119,11 @@
       "name": "firefish",
       "description": "Personal fork of Firefish",
       "link": "https://github.com/ryanccn/firefish"
+    },
+    {
+      "name": "Ändra",
+      "description": "URL shortener powered by Deno Deploy and KV",
+      "link": "https://github.com/ryanccn/aendra"
     }
   ],
   "mods": [
@@ -134,24 +134,15 @@
       "featured": true
     },
     {
-      "name": "Postmortal Inventory",
-      "description": "Totems work in your inventory. Period.",
-      "link": "https://github.com/RyanModDev/postmortal-inventory"
+      "name": "EmuNO",
+      "description": "Disables various macOS-specific behaviors, making your life better",
+      "link": "https://github.com/RyanModDev/EmuNO",
+      "featured": true
     },
     {
       "name": "uwuify chat",
       "description": "uwuify the chat messages owo",
       "link": "https://github.com/RyanModDev/uwuify-chat"
-    },
-    {
-      "name": "Myriad Bows",
-      "description": "A Myriad enchantment for bows that consumes arrows depending on your luck",
-      "link": "https://github.com/RyanModDev/MyriadBows"
-    },
-    {
-      "name": "EmuNO",
-      "description": "Disables various macOS-specific behaviors, making your life better",
-      "link": "https://github.com/RyanModDev/EmuNO"
     },
     {
       "name": "quilted-dependabot",
@@ -226,6 +217,11 @@
       "name": "Dotfiles",
       "description": "Dotfiles, maintained with Deno scripts",
       "link": "https://github.com/ryanccn/dotfiles"
+    },
+    {
+      "name": "Myriad Bows",
+      "description": "A Myriad enchantment for bows that consumes arrows depending on your luck",
+      "link": "https://github.com/RyanModDev/MyriadBows"
     }
   ]
 }
