@@ -279,11 +279,11 @@
   button,
   input,
   textarea {
-    @apply outline-none focus:ring-2 ring-offset-background ring-offset-2 ring-accent;
+    @apply outline-none ring-accent ring-offset-2 ring-offset-background focus:ring-2;
   }
 
   .title {
-    @apply mb-8 text-6xl font-extrabold tracking-tight text-fg-brighter text-wrap-balance;
+    @apply text-wrap-balance mb-8 text-6xl font-extrabold tracking-tight text-fg-brighter;
   }
 
   .subtitle {
@@ -292,7 +292,7 @@
 
   .enhanced-prose {
     @apply prose-h1:title break-words;
-    @apply prose-a:text-accent hover:prose-a:text-accent-lighter prose-a:underline-offset-2 prose-a:decoration-2 prose-a:decoration-accent/50 hover:prose-a:decoration-accent-lighter/50 prose-a:transition-all;
+    @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-2 prose-a:underline-offset-2 prose-a:transition-all hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
     @apply dark:prose-pre:bg-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
@@ -328,7 +328,7 @@
   }
 
   .prose-link {
-    @apply font-medium text-accent hover:text-accent-lighter underline underline-offset-2 decoration-2 decoration-accent/50 hover:decoration-accent-lighter/50 transition-all;
+    @apply font-medium text-accent underline decoration-accent/50 decoration-2 underline-offset-2 transition-all hover:text-accent-lighter hover:decoration-accent-lighter/50;
   }
 
   .buttonish,
