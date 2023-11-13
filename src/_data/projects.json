@@ -174,16 +174,6 @@
   ],
   "archived": [
     {
-      "name": "WarmerDistance",
-      "description": "Social distancing maintenance system based on computer vision",
-      "link": "https://github.com/ryanccn/warmerdistance"
-    },
-    {
-      "name": "sieve-of-eratosthenes",
-      "description": "A demo of the Sieve of Eratosthenes, made with Vue 3 & Vite",
-      "link": "https://github.com/ryanccn/sieve-of-eratosthenes"
-    },
-    {
       "name": "clank",
       "description": "A simple CLI that runs your C++ code JIT",
       "link": "https://github.com/ryanccn/clank"
@@ -212,11 +202,6 @@
       "name": "git.ryanccn.dev",
       "description": "Dead simple Cloudflare Worker for GitHub redirects",
       "link": "https://github.com/ryanccn/git.ryanccn.dev"
-    },
-    {
-      "name": "Dotfiles",
-      "description": "Dotfiles, maintained with Deno scripts",
-      "link": "https://github.com/ryanccn/dotfiles"
     },
     {
       "name": "Myriad Bows",
