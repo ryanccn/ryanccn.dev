@@ -18,7 +18,7 @@
     {
       "name": "Mastoroute",
       "description": "Unified share links for Mastodon",
-      "link": "https://github.com/ryanccn/mastoroute"
+      "link": "https://mastoroute.deno.dev/"
     },
     {
       "name": "Olek",
@@ -26,14 +26,14 @@
       "link": "https://status.ryanccn.dev/"
     },
     {
-      "name": "nyoom",
-      "description": "Firefox userchrome manager CLI",
-      "link": "https://github.com/ryanccn/nyoom"
+      "name": "am",
+      "description": "A beautiful and feature-packed Apple Music CLI",
+      "link": "https://github.com/ryanccn/am"
     },
     {
-      "name": "am",
-      "description": "A beautiful and feature-packed Apple Music CLI ",
-      "link": "https://github.com/ryanccn/am"
+      "name": "nyoom",
+      "description": "A CLI Firefox userchrome manager",
+      "link": "https://github.com/ryanccn/nyoom"
     },
     {
       "name": "Vendflare",
@@ -44,6 +44,11 @@
       "name": "Modernflux",
       "description": "A modern look and feel for Miniflux",
       "link": "https://github.com/ryanccn/modernflux"
+    },
+    {
+      "name": "nrr",
+      "description": "Minimal, blazing fast Node.js script runner",
+      "link": "https://github.com/ryanccn/nrr"
     },
     {
       "name": "What the DMARC",
@@ -71,9 +76,9 @@
       "link": "https://github.com/ryanccn/tenable"
     },
     {
-      "name": "Discord CSS Mappings",
-      "description": "Mappings for Discord theme developers",
-      "link": "https://github.com/ryanccn/discord-css-mappings"
+      "name": "Choirpack",
+      "description": "Simple and powerful Node.js package manager utilities built around Corepack",
+      "link": "https://github.com/ryanccn/choirpack"
     },
     {
       "name": "attic-action",
@@ -106,11 +111,6 @@
       "link": "https://github.com/ryanccn/vivid-zsh"
     },
     {
-      "name": "Choirpack",
-      "description": "Simple and powerful Node.js package manager utilities built around Corepack",
-      "link": "https://github.com/ryanccn/choirpack"
-    },
-    {
       "name": "GitHub Language Stats",
       "description": "GitHub language stats in an SVG",
       "link": "https://github.com/ryanccn/github-language-stats"
@@ -130,19 +130,19 @@
     {
       "name": "Vanillish",
       "description": "A lightweight and beautiful vanilla experience",
-      "link": "https://github.com/RyanModDev/vanillish",
+      "link": "https://modrinth.com/modpack/vanillish",
       "featured": true
     },
     {
       "name": "EmuNO",
       "description": "Disables various macOS-specific behaviors, making your life better",
-      "link": "https://github.com/RyanModDev/EmuNO",
+      "link": "https://modrinth.com/mod/emuno",
       "featured": true
     },
     {
       "name": "uwuify chat",
       "description": "uwuify the chat messages owo",
-      "link": "https://github.com/RyanModDev/uwuify-chat"
+      "link": "https://modrinth.com/mod/uwuify-chat"
     },
     {
       "name": "quilted-dependabot",
@@ -182,11 +182,6 @@
       "name": "bookmarklet",
       "description": "A CLI for creating bookmarklets",
       "link": "https://github.com/ryanccn/bookmarklet"
-    },
-    {
-      "name": "ryanccn-sveltekit",
-      "description": "Archived SvelteKit rewrite of ryanccn.dev, with a built-in CMS",
-      "link": "https://codeberg.org/ryanccn/ryanccn-sveltekit"
     },
     {
       "name": "NetNewsWire for Chrome",

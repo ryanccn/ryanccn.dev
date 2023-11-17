@@ -6,8 +6,9 @@ const { cyan, dim } = require('kleur/colors');
 const excludes = [
   /PolyMC/, // dead project
   /JayantGoel001/, // joke repo
+  /Ampflower\/nocode/, // joke repo
   /\.github/, // configuration stuff
-  /(RyanModDev|91b4dd62)/, // personal organizations
+  /(RyanModDev)/, // personal organizations
 ];
 
 const gql = createGql('https://api.github.com/graphql', {

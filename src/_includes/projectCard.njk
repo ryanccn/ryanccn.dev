@@ -12,6 +12,8 @@
     {% icon 'simpleicon:github', class='block w-4 h-4 mt-8 self-end text-current' %}
   {% elif project.link.startsWith("https://codeberg.org") %}
     {% icon 'simpleicon:codeberg', class='block w-4 h-4 mt-8 self-end text-current' %}
+  {% elif project.link.startsWith("https://modrinth.com") %}
+    {% icon 'simpleicon:modrinth', class='block w-4 h-4 mt-8 self-end text-current' %}
   {% else %}
     {% icon 'lucide:arrow-up-right', class='block w-4 h-4 mt-8 self-end text-current' %}
   {% endif %}
