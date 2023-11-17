@@ -1,8 +1,11 @@
 /*
+  Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin
+  X-Permitted-Cross-Domain-Policies: none
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none'; img-src * blob: data:; media-src 'none'; connect-src *;
 
