@@ -1,5 +1,16 @@
 const SECURE_RANDOM_SAFE = `${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}`;
 
+class SafeValue {
+  constructor(inner) {
+    this.inner = inner;
+    this.secret = SECURE_RANDOM_SAFE;
+  }
+
+  verify(secret) {
+    return this.secret === secret;
+  }
+}
+
 const entityMap = {
   '&': '&amp;',
   '<': '&lt;',
@@ -12,9 +23,8 @@ const entityMap = {
 };
 
 const escapeHtml = (value) => {
-  if (typeof value === 'object' && value.safe === SECURE_RANDOM_SAFE) {
-    return value.value;
-  }
+  if (value instanceof SafeValue && value.verify(SECURE_RANDOM_SAFE))
+    return String(value.inner);
 
   return String(value).replace(/[&<>"'`=/]/g, (s) => entityMap[s]);
 };
@@ -24,7 +34,7 @@ const html = (s, ...f) => {
 };
 
 const safe = (value) => {
-  return { value, safe: SECURE_RANDOM_SAFE };
+  return new SafeValue(value);
 };
 
 exports.html = html;
