@@ -1,7 +1,8 @@
-const { AssetCache } = require('@11ty/eleventy-fetch');
-const { createGql } = require('@ryanccn/gql');
+import { AssetCache } from '@11ty/eleventy-fetch';
+import { createGql } from '@ryanccn/gql';
 
-const { cyan, dim } = require('kleur/colors');
+import { logData } from '../utils/log.js';
+import { dim } from 'kleur/colors';
 
 const excludes = [
   /PolyMC/, // dead project
@@ -56,13 +57,14 @@ const queryContributions = (after) =>
     }
   `({ after });
 
-module.exports = async () => {
+export default async () => {
   if (!process.env.GITHUB_TOKEN) return [];
 
   const cache = new AssetCache('github_contributions');
 
   if (cache.isCacheValid('1d')) {
-    console.log(`${cyan('[data]')} Using cached contributions data`);
+    logData('contributions', 'Using cached data');
+
     return await cache.getCachedValue();
   }
 
@@ -72,11 +74,7 @@ module.exports = async () => {
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
-    console.log(
-      `${cyan('[data]')} Fetching GitHub contributions ${dim(
-        `(after ${after})`,
-      )}`,
-    );
+    logData('contributions', `Fetching ${dim(`(after ${after})`)}`);
 
     const response = await queryContributions(after);
 
@@ -100,11 +98,7 @@ module.exports = async () => {
 
   data = data
     .filter((repo) => !repo.isPrivate && !repo.isFork)
-    .filter((repo) => {
-      for (const exclude of excludes)
-        if (exclude.exec(repo.nameWithOwner)) return false;
-      return true;
-    });
+    .filter((repo) => !excludes.some((e) => e.test(repo.nameWithOwner)));
 
   await cache.save(data, 'json');
 

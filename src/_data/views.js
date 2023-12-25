@@ -1,14 +1,16 @@
-const EleventyFetch = require('@11ty/eleventy-fetch');
-const { format } = require('date-fns');
+import EleventyFetch from '@11ty/eleventy-fetch';
+import { format } from 'date-fns';
 
-const { cyan, blue } = require('kleur/colors');
-const { readdir } = require('fs/promises');
-const { join } = require('path');
+import { logData } from '../utils/log.js';
+import { bold } from 'kleur/colors';
 
-const getViews = async (originalUrl) => {
+import { readdir } from 'fs/promises';
+import { join } from 'path';
+
+const getViews = async ({ slug, originalUrl }) => {
   if (!process.env.PLAUSIBLE_TOKEN) return 0;
 
-  console.log(`${cyan('[data]')} Fetching views for ${blue(originalUrl)}`);
+  logData('views', `Fetching for ${bold(slug)}`);
 
   const now = format(new Date(), 'yyyy-MM-dd');
 
@@ -38,24 +40,24 @@ const getViews = async (originalUrl) => {
   return res.results.pageviews.value;
 };
 
-module.exports = async () => {
+export default async () => {
   const ret = {};
 
-  const urlList = await readdir(join(process.cwd(), 'src', 'posts')).then(
+  const postData = await readdir(join(process.cwd(), 'src', 'posts')).then(
     (files) =>
       files
         .filter((f) => f.endsWith('.md'))
         .map((f) => f.slice(11, f.length - 3))
-        .map((s) => `/posts/${s}/`),
+        .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
   );
 
   const { default: pLimit } = await import('p-limit');
   const lim = pLimit(8);
 
   await Promise.all(
-    urlList.map((url) =>
+    postData.map((p) =>
       lim(async () => {
-        ret[url] = await getViews(url);
+        ret[p.slug] = await getViews(p);
       }),
     ),
   );

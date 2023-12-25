@@ -1,10 +1,10 @@
-const shiki = require('shiki');
+import { getHighlighter } from 'shiki';
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   eleventyConfig.amendLibrary('md', () => {});
 
   eleventyConfig.on('eleventy.before', async () => {
-    const highlighter = await shiki.getHighlighter({ theme: 'css-variables' });
+    const highlighter = await getHighlighter({ theme: 'css-variables' });
 
     eleventyConfig.amendLibrary('md', (mdLib) => {
       return mdLib.set({

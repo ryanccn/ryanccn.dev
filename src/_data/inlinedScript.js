@@ -1,9 +1,9 @@
-const { build: esbuild } = require('esbuild');
+import { build as esbuild } from 'esbuild';
 
-const { join } = require('path');
-const logSize = require('../utils/logSize');
+import { join } from 'path';
+import { logSize } from '../utils/log.js';
 
-module.exports = async () => {
+export default async () => {
   const result = await esbuild({
     entryPoints: [join(process.cwd(), './src/assets/scripts/inlinedScript.ts')],
     define: {
@@ -19,7 +19,7 @@ module.exports = async () => {
   });
 
   const output = result.outputFiles[0].text;
-  logSize(output.length, 'inlinedScript');
+  await logSize(output, 'inlinedScript');
 
   return output;
 };

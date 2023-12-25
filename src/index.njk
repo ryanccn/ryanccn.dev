@@ -9,27 +9,30 @@ wide: true
   <h1>Hello, I'm Ryan!</h1>
   <p class="subtitle">High school student, open source developer, and privacy enthusiast.</p>
 
-  <p class="text-lg">I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making Minecraft mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
-  <p class="text-lg">In the open source world, I contribute to a wide variety of projects and organizations. Among my highest profile contributions are <a href="https://catppuccin.com/">Catppuccin</a> and <a href="https://prismlauncher.org/">Prism Launcher</a>, but you can see <a href="/projects/#github">a full list of my contributions on GitHub here</a>.</p>
-  <p class="text-lg">I'm active on a variety of social platforms, which you can check down below in the footer.</p>
-  <p class="text-lg">Oh, and, I write blog posts about what I do. Feel free to <a href="/posts/">read them</a>! There are {{ collections.posts.length }} of them at the moment.</p>
+  <p>I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making Minecraft mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
+  <p>In the open source world, I contribute to a wide variety of projects and organizations. Among my highest profile contributions are <a href="https://catppuccin.com/">Catppuccin</a> and <a href="https://prismlauncher.org/">Prism Launcher</a>, but you can see <a href="/projects/#github">a full list of my contributions on GitHub here</a>.</p>
+  <p>I'm active on a variety of social platforms, which you can check down below in the footer.</p>
+  <p>Oh, and, I write blog posts about what I do. Feel free to <a href="/posts/">read them</a>! There are {{ collections.posts.length }} of them at the moment.</p>
 
-  <h2 class="text-3xl">Blog posts</h2>
+
+  <h2 class="text-2xl">Projects</h2>
+
+  <ul class="not-prose projects-grid">
+    {% asyncAll project in projects.projects | head(7) %}
+      <li>{% include "projectCard.njk" %}</li>
+    {% endall %}
+    <li class="place-self-stretch">
+      <a class="grid place-content-center w-full h-full py-4 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/posts/' | url }}">
+        <span class="text-fg-less-dimmed font-medium">See more &rightarrow;</span>
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="text-2xl">Blog posts</h2>
 
   <div class="not-prose">
-  {% set postslist = collections.posts | reverse | head(7) %}
+  {% set postslist = collections.posts | reverse | head(5) %}
   {% set postslistcompact = true %}
   {% include "postslist.njk" %}
-  </div>
-
-  <h2 class="text-3xl">Projects</h2>
-
-  <div class="not-prose flex flex-col">
-    <div class="projects-grid">
-      {% asyncAll project in projects.projects | head(8) %}
-        {% include "projectCard.njk" %}
-      {% endall %}
-    </div>
-    <a href="{{ '/projects/' | url }}" class="px-2 py-1 rounded transition font-medium link-colors self-end">See more &rightarrow;</a>
   </div>
 </article>

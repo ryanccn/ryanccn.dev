@@ -1,18 +1,19 @@
-const { EleventyRenderPlugin } = require('@11ty/eleventy');
-const pluginReadingTime = require('eleventy-plugin-reading-time');
-const pluginRss = require('@ryanccn/eleventy-plugin-rss');
-const pluginIcons = require('eleventy-plugin-icons');
+import 'dotenv/config.js';
 
-const sitePluginShortcodes = require('./src/_11ty/shortcodes');
-const sitePluginFilters = require('./src/_11ty/filters');
-const sitePluginMarkdown = require('./src/_11ty/plugins/markdown');
-const sitePluginShiki = require('./src/_11ty/plugins/shiki');
-const sitePluginHtmlmin = require('./src/_11ty/plugins/htmlmin');
+import { EleventyRenderPlugin } from '@11ty/eleventy';
+import pluginReadingTime from 'eleventy-plugin-reading-time';
+import pluginRss from '@ryanccn/eleventy-plugin-rss';
+import pluginIcons from 'eleventy-plugin-icons';
+import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
+
+import sitePluginShortcodes from './src/_11ty/shortcodes/index.js';
+import sitePluginFilters from './src/_11ty/filters.js';
+import sitePluginMarkdown from './src/_11ty/plugins/markdown.js';
+import sitePluginShiki from './src/_11ty/plugins/shiki.js';
+import sitePluginHtmlmin from './src/_11ty/plugins/htmlmin.js';
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
-  require('dotenv').config();
-
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
@@ -34,6 +35,9 @@ const config = (eleventyConfig) => {
     },
   });
 
+  eleventyConfig.setQuietMode(true);
+  eleventyConfig.addPlugin(pluginDirectoryOutput);
+
   eleventyConfig.addPlugin(sitePluginShortcodes);
   eleventyConfig.addPlugin(sitePluginFilters);
   eleventyConfig.addPlugin(sitePluginMarkdown);
@@ -42,20 +46,15 @@ const config = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
-    './src/assets/fonts': 'assets/fonts',
-    './_headers': '_headers',
-    './_redirects': '_redirects',
+    './src/assets/fonts': 'fonts',
   });
 
   eleventyConfig.addWatchTarget('tailwind.config.js');
-  eleventyConfig.addWatchTarget('src/_11ty/**/*.js');
-  eleventyConfig.addWatchTarget('src/_icons/**/*.js');
+  eleventyConfig.addWatchTarget('src/_icons/*');
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
-  eleventyConfig.addWatchTarget('src/utils/*.js');
   eleventyConfig.addWatchTarget('.env');
 
   eleventyConfig.ignores.add('README.md');
-  eleventyConfig.ignores.add('src/utils/socialImages/');
 
   eleventyConfig.setServerOptions({ domDiff: false });
 
@@ -68,4 +67,4 @@ const config = (eleventyConfig) => {
   };
 };
 
-module.exports = config;
+export default config;

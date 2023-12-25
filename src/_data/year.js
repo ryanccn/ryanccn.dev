@@ -1,1 +1,1 @@
-module.exports = new Date().getFullYear();
+export default new Date().getFullYear();

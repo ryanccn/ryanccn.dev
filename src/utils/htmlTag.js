@@ -37,6 +37,4 @@ const safe = (value) => {
   return new SafeValue(value);
 };
 
-exports.html = html;
-exports.safe = safe;
-exports.escapeHtml = escapeHtml;
+export { html, safe, escapeHtml };

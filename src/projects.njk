@@ -17,10 +17,10 @@ wide: true
 </ul>
 
 <h2 class="projects-page" id="minecraft">Organizations</h2>
-<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-12">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
   {% asyncEach org in organizations %}
     <li>
-      <a href="{{ org.url }}" class="p-6 flex flex-col bg-surface hover:bg-surface-hover transition-all rounded h-full">
+      <a href="{{ org.url }}" class="p-6 flex flex-col bg-surface hover:bg-surface-hover transition-colors rounded h-full">
         <div class="flex flex-row gap-2 items-center mb-3">
           <div class="flex flex-col gap-y-0.5">
             <span class="text-xl font-bold leading-snug">{{ org.name }}</span>
@@ -43,14 +43,14 @@ wide: true
 
 <h2 class="projects-page" id="github">GitHub Contributions</h2>
 
-<ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-3 mb-12">
+<ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-12">
   {% asyncEach repo in contributions %}
   <li class="flex gap-x-2 justify-between w-full">
-    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-transparent hover:decoration-fg-less-dimmed transition-all" href="{{ repo.url }}">
-      <span class="text-fg-less-dimmed">{{ repo.nameWithOwner.split('/')[0] }}/</span><span>{{ repo.nameWithOwner.split('/')[1] }}</span>
+    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-transparent hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
+      <span class="text-fg-dimmed">{{ repo.nameWithOwner.split('/')[0] }}/</span><span>{{ repo.nameWithOwner.split('/')[1] }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
-      {% icon 'lucide:star', class='block w-3 h-3 fill-current stroke-none' %}
+      {% icon 'lucide:star', class='block size-3 fill-current stroke-none' %}
       <span class="text-xs font-medium">{{ repo.stargazers.totalCount | shortCount }}</span>
     </div>
   </li>

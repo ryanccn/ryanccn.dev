@@ -1,10 +1,10 @@
-const Image = require('@11ty/eleventy-img');
-const imageSize = require('image-size');
-const lqip = require('../lqip');
+import Image from '@11ty/eleventy-img';
+import { imageSize as _imageSize } from 'image-size';
+import lqip from '../lqip.js';
 
-const { parseHTML } = require('linkedom');
+import { parseHTML } from 'linkedom';
 
-const { cpus } = require('node:os');
+import { cpus } from 'node:os';
 
 Image.concurrency = cpus().length / 2;
 
@@ -12,11 +12,11 @@ const DISABLE_IMAGE_OPTIMIZATION =
   process.env.DISABLE_IMAGE_OPTIMIZATION === '1' ||
   process.env.DISABLE_IMAGE_OPTIMIZATION === 'true';
 
-module.exports = async (src, alt, width, height) => {
+export default async (src, alt, width, height) => {
   const { document } = parseHTML('');
 
   if (!width || !height) {
-    const originalDimensions = imageSize.imageSize(src);
+    const originalDimensions = _imageSize(src);
 
     width = originalDimensions.width;
     height = originalDimensions.height;

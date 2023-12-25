@@ -1,6 +1,6 @@
-const { html } = require('../../utils/htmlTag');
+import { html } from '../../utils/htmlTag.js';
 
-module.exports = (content) => {
+export default (content) => {
   return html`
     <div
       class="not-prose !mb-10 flex flex-col gap-y-1 border-l-2 border-tailwind-yellow-500 px-6 py-2"

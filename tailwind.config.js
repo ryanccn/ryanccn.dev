@@ -1,7 +1,10 @@
-const colors = require('tailwindcss/colors');
+import typographyPlugin from '@tailwindcss/typography';
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     './src/**/*.{11ty.js,njk,liquid,md}',
     './src/_11ty/shortcodes/*.js',
@@ -47,6 +50,10 @@ module.exports = {
     },
 
     extend: {
+      fontFamily: {
+        sans: ['Inter', '"Inter fallback"', ...defaultTheme.fontFamily.sans],
+        display: ['Inter', '"Inter fallback"', ...defaultTheme.fontFamily.sans],
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -65,5 +72,5 @@ module.exports = {
     },
   },
 
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typographyPlugin({ target: 'modern' })],
 };

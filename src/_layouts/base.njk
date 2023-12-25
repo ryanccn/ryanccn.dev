@@ -22,9 +22,13 @@ eleventyComputed:
 
     <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
 
-    <script>{{ inlinedScript | safe }}</script>
+    <script nonce="{{ nonces.script }}">{{ inlinedScript | safe }}</script>
+    <style>{{ inlinedStyles.fonts | safe }}</style>
+    <style>{{ inlinedStyles.variables | safe }}</style>
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-rest-2.woff2?v=2a440841">
 
     {% if inProduction %}
     <script
@@ -67,36 +71,58 @@ eleventyComputed:
   </head>
 
   <body>
-    <header
-      class="flex flex-col md:flex-row md:justify-between md:items-center md:px-6 py-16 md:mb-12 gap-y-10 md:gap-y-0"
-    >
-      <a href="/" class="h-card flex gap-x-3 items-center md:px-3 py-2 my-1 transition rounded-sm">
+    <header class="flex flex-col gap-y-10 md:w-72 shrink-0">
+      <a href="/" class="h-card group flex gap-x-4 items-center rounded-sm mb-1">
         <img
           src="/icons/v2-square.png?v={{ gitRev }}"
-          class="u-photo rounded-full"
+          class="u-photo shrink-0 rounded-full transition ring-2 ring-offset-2 ring-offset-background ring-accent group-hover:ring-accent-lighter"
           width="32" height="32"
           alt="Profile picture"
-        />
-        <span class="p-name tracking-tight leading-none text-2xl font-bold">Ryan Cao</span>
+          fetchpriority="high"
+        >
+        <span class="p-name tracking-tight leading-none text-lg font-extrabold">Ryan Cao</span>
       </a>
 
-      <div class="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4 md:gap-y-0">
+      <div class="flex flex-col gap-y-4">
         {% asyncAll link in navLinks %}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-3 items-center text-lg md:px-3 py-1 rounded-sm font-semibold transition {% if link.url === page.url -%} text-accent {%- else -%} link {%- endif %}"
+          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
         >
-          {% icon link.icon, class='block w-5 h-5' %}
+          {% icon link.icon, class='block size-4 shrink-0' %}
           <span>{{ link.title }}</span>
         </a>
         {% endall %}
       </div>
 
-      <div class="flex flex-row gap-x-2 items-center fixed bottom-0 right-0 z-[9999] m-2 px-3 py-2 text-sm font-medium bg-surface hover:bg-surface-hover transition-colors rounded" data-theme-select>
-        {% icon 'lucide:palette', class='block h-4 w-4', 'aria-hidden'='true' %}
-        <span aria-hidden="true">&nbsp;</span>
+      <div class="flex items-center flex-wrap gap-1.5">
+        <a rel="me noreferrer" href="https://c.ryanccn.dev/@ryan" class="rounded p-1.5 hover:brightness-90" title="Firefish">
+          {% icon "custom:firefish", class="block size-5 z-20" %}
+        </a>
+        <a rel="me noreferrer" href="https://github.com/ryanccn" class="rounded p-1.5 hover:brightness-90" title="GitHub">
+          {% icon "simpleicon:github", class="block size-5 text-brand-github dark:text-white" %}
+        </a>
+        <a rel="me noreferrer" href="https://x.com/RyanCaoDev" class="rounded p-1.5 hover:brightness-90" title="Twitter">
+          {% icon "simpleicon:x", class="block size-5 scale-90 text-black dark:text-white" %}
+        </a>
+        <a rel="noreferrer" href="https://www.threads.net/@ryanccn.dev" class="rounded p-1.5 hover:brightness-90" title="Threads">
+          {% icon "simpleicon:threads", class="block size-5 text-brand-threads dark:text-white" %}
+        </a>
+        <a rel="noreferrer" href="https://discord.gg/ty7GCnN87U" class="rounded p-1.5 hover:brightness-90" title="Discord">
+          {% icon "simpleicon:discord", class="block size-5 text-brand-discord" %}
+        </a>
+        <a rel="noreferrer" href="https://modrinth.com/user/ryanccn" class="rounded p-1.5 hover:brightness-90" title="Modrinth">
+          {% icon "simpleicon:modrinth", class="block size-5 text-brand-modrinth" %}
+        </a>
+        <a rel="me noreferrer" href="https://ko-fi.com/ryancaodev" class="rounded p-1.5 hover:brightness-90" title="Ko-fi">
+          {% icon "simpleicon:kofi", class="block size-5 text-brand-kofi" %}
+        </a>
+      </div>
 
-        <select aria-label="Select a theme" class="absolute inset-0 opacity-0 cursor-default hover:cursor-pointer hover:disabled:cursor-default">
+      <div class="relative flex flex-row self-start items-center -mt-4 text-sm font-medium bg-surface hover:bg-surface-hover transition-all rounded" data-theme-select>
+        {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0', 'aria-hidden'='true' %}
+
+        <select aria-label="Select a theme" class="-ml-7 py-2 pl-9 pr-3 appearance-none bg-transparent">
           <option value="light">Default Light</option>
           <option value="dark">Default Dark</option>
           <option value="ctp-latte">Catppuccin Latte</option>
@@ -110,47 +136,32 @@ eleventyComputed:
           <option value="rose-pine-dawn">Rosé Pine Dawn</option>
         </select>
       </div>
+
+      <div class="flex-col gap-y-2 hidden md:flex">
+        <div class="flex flex-row gap-x-1 text-xs">
+          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
+          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
+        </div>
+
+        <a class="text-xs text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+          Code licensed under MIT, content licensed under CC BY-SA 4.0
+        </a>
+      </div>
     </header>
 
-    <main class="flex flex-col w-full {% if wide %}md:px-9{% else %}max-w-[80ch]{% endif %} mx-auto">
+    <main class="flex flex-col">
       {{ content | safe }}
     </main>
 
-    <footer
-      class="mt-36 flex flex-col items-center gap-y-4 w-full self-center"
-    >
-      <div class="flex items-center flex-wrap gap-3 mb-4">
-        <a rel="me noreferrer" href="https://c.ryanccn.dev/@ryan" class="group flex flex-row rounded p-1 hover:brightness-90 transition-all focus:ring-brand-firefish/30" title="Firefish">
-          {% icon "custom:firefish", class="block h-5 w-5 z-20" %}
-          {% icon "simpleicon:mastodon", class="block h-5 w-5 text-brand-mastodon z-10 -ml-2 group-hover:ml-2 opacity-20 group-hover:opacity-100 transition-all" %}
-        </a>
-        <a rel="me noreferrer" href="https://github.com/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-github/30 dark:focus:ring-white/30" title="GitHub">
-          {% icon "simpleicon:github", class="block h-5 w-5 text-brand-github dark:text-white" %}
-        </a>
-        <a rel="me noreferrer" href="https://x.com/RyanCaoDev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-black/30 dark:focus:ring-white/30" title="Twitter">
-          {% icon "simpleicon:x", class="block h-5 w-5 scale-90 text-black dark:text-white" %}
-        </a>
-        <a rel="noreferrer" href="https://www.threads.net/@ryanccn.dev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-threads/30 dark:focus:ring-white/30" title="Threads">
-          {% icon "simpleicon:threads", class="block h-5 w-5 text-brand-threads dark:text-white" %}
-        </a>
-        <a rel="noreferrer" href="https://discord.gg/ty7GCnN87U" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-discord/30" title="Discord">
-          {% icon "simpleicon:discord", class="block h-5 w-5 text-brand-discord" %}
-        </a>
-        <a rel="noreferrer" href="https://modrinth.com/user/ryanccn" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-modrinth/30" title="Modrinth">
-          {% icon "simpleicon:modrinth", class="block h-5 w-5 text-brand-modrinth" %}
-        </a>
-        <a rel="me noreferrer" href="https://ko-fi.com/ryancaodev" class="rounded p-1 hover:brightness-90 transition-all focus:ring-brand-kofi/30" title="Ko-fi">
-          {% icon "simpleicon:kofi", class="block h-5 w-5 text-brand-kofi" %}
-        </a>
-      </div>
-
-      <div class="flex flex-row gap-x-2 text-xs">
+    <footer class="flex flex-col gap-y-2 md:hidden mt-20">
+      <div class="flex flex-row gap-x-1 text-xs">
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
       </div>
 
-      <a class="text-xs text-center block text-fg-dimmed max-w-[30ch] hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+      <a class="text-xs text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
       </a>
     </footer>

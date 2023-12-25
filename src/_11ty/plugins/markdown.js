@@ -1,9 +1,9 @@
-const markdownIt = require('markdown-it');
-const markdownItEmoji = require('markdown-it-emoji');
-const markdownItAnchor = require('markdown-it-anchor');
-const markdownItTOC = require('markdown-it-toc-done-right');
+import markdownIt from 'markdown-it';
+import { full as markdownItEmoji } from 'markdown-it-emoji';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItTOC from 'markdown-it-toc-done-right';
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   const markdownLib = markdownIt({ html: true, typographer: true })
     .use(markdownItEmoji)
     .use(markdownItAnchor, {

@@ -1,6 +1,6 @@
-const { format, isBefore, subYears } = require('date-fns');
+import { format, isBefore, subYears } from 'date-fns';
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   eleventyConfig.addFilter(
     'head',
     /**
@@ -19,13 +19,13 @@ module.exports = (eleventyConfig) => {
    */
   const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 
-  eleventyConfig.addFilter('filterTagsList', filterTagsList);
+  eleventyConfig.addFilter('filterTagsList', (k) => filterTagsList(k));
 
   eleventyConfig.addCollection('postsTagList', (collection) => {
     let tagSet = new Set();
 
     collection.getFilteredByTag('posts').forEach((item) => {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+      (item?.data?.tags || []).forEach((tag) => tagSet.add(tag));
     });
 
     return filterTagsList([...tagSet]);

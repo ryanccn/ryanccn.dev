@@ -1,4 +1,4 @@
-const { cyan, red, magenta } = require('kleur/colors');
+import { cyan, red, magenta } from 'kleur/colors';
 
 class FetchError extends Error {
   /**
@@ -34,4 +34,4 @@ const fetchJSON = async (url, opts) => {
   return res.json();
 };
 
-module.exports = { fetchJSON };
+export { fetchJSON };

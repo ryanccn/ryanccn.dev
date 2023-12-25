@@ -9,12 +9,6 @@ tags:
 date: 2023-05-21
 ---
 
-## Table of contents
-
-This article is so long it probably warrants a table of contents.
-
-[[toc]]
-
 The first few sections of this blog post explain my reasonings for obtaining a VPS and the logic behind my choice of AWS EC2. You can [skip to where I start actually configuring the server](#docker-compose).
 
 ## Why obtain a VPS?

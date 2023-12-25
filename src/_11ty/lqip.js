@@ -22,15 +22,13 @@
 // Adopted from
 // https://github.com/ampproject/amp-toolbox/blob/0c8755016ae825b11b63b98be83271fd14cc0486/packages/optimizer/lib/transformers/AddBlurryImagePlaceholders.js
 
-const { promisify } = require('util');
-const sharp = require('sharp');
+import sizeOf from 'image-size';
+import sharp from 'sharp';
 
-const sizeOf = promisify(require('image-size'));
+import DataUriParser from 'datauri/parser.js';
+const datauri = new DataUriParser();
 
-const DatauriParser = require('datauri/parser');
-const parser = new DatauriParser();
-
-const { html } = require('../utils/htmlTag');
+import { html } from '../utils/htmlTag.js';
 
 const PIXEL_TARGET = 60;
 
@@ -49,7 +47,7 @@ function escaper(match) {
 }
 
 async function getDataURI(src) {
-  const info = await sizeOf(src);
+  const info = sizeOf(src);
   const imgDimension = getBitmapDimensions_(info.width, info.height);
   const buffer = await sharp(src)
     .rotate() // Manifest rotation from metadata
@@ -58,7 +56,7 @@ async function getDataURI(src) {
     .toBuffer();
 
   const result = {
-    src: parser.format('.png', buffer).content,
+    src: datauri.format('.png', buffer),
     width: info.width,
     height: info.height,
   };
@@ -90,7 +88,7 @@ function getBitmapDimensions_(imgWidth, imgHeight) {
   return { width: Math.round(bitmapWidth), height: Math.round(bitmapHeight) };
 }
 
-module.exports = async (src) => {
+export default async (src) => {
   // We wrap the blurred image in a SVG to avoid rasterizing the filter on each layout.
   const dataURI = await getDataURI(src);
   let svg = html`<svg

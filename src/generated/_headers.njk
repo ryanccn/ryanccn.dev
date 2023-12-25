@@ -1,0 +1,33 @@
+---
+permalink: '/_headers'
+eleventyExcludeFromCollections: true
+---
+
+/*
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-Permitted-Cross-Domain-Policies: none
+  Cross-Origin-Embedder-Policy: credentialless
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-{{ nonces.script }}'; style-src 'self' 'unsafe-inline'; font-src 'self'; child-src 'none'; frame-ancestors 'none'; base-uri 'none'; img-src * blob: data:; media-src * blob: data:; connect-src 'self'; form-action 'self';
+
+/fonts/*.woff2
+  Cache-Control: public, max-age=2592000
+
+/icons/*.png
+  Cache-Control: public, max-age=604800
+
+/images/*.png
+  Cache-Control: public, immutable, max-age=2592000
+
+/images/*.webp
+  Cache-Control: public, immutable, max-age=2592000
+
+/images/*.avif
+  Cache-Control: public, immutable, max-age=2592000
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

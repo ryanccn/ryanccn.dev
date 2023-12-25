@@ -1,10 +1,10 @@
-const htmlmin = require('html-minifier');
+import { minify } from 'html-minifier';
 const inProduction = process.env.NODE_ENV === 'production';
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
     if (inProduction && outputPath.endsWith('.html')) {
-      return htmlmin.minify(content, {
+      return minify(content, {
         collapseWhitespace: true,
         useShortDoctype: true,
       });

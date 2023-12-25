@@ -1,5 +1,5 @@
-const respimg = require('./respimg');
-const warning = require('./warning');
+import respimg from './respimg.js';
+import warning from './warning.js';
 
 /**
  * @param {string} path
@@ -7,7 +7,7 @@ const warning = require('./warning');
 const absoluteUrl = (path) => new URL(path, 'https://ryanccn.dev').toString();
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   eleventyConfig.addShortcode('twitterShareLink', function () {
     return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       absoluteUrl(this.page.url),
