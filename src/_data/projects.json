@@ -119,11 +119,6 @@
       "name": "firefish",
       "description": "Personal fork of Firefish",
       "link": "https://github.com/ryanccn/firefish"
-    },
-    {
-      "name": "Ändra",
-      "description": "URL shortener powered by Deno Deploy and KV",
-      "link": "https://github.com/ryanccn/aendra"
     }
   ],
   "mods": [
@@ -192,11 +187,6 @@
       "name": "Osmosis",
       "description": "An experimental Stable Diffusion frontend",
       "link": "https://github.com/ryanccn/osmosis"
-    },
-    {
-      "name": "git.ryanccn.dev",
-      "description": "Dead simple Cloudflare Worker for GitHub redirects",
-      "link": "https://github.com/ryanccn/git.ryanccn.dev"
     },
     {
       "name": "Myriad Bows",

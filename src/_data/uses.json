@@ -84,7 +84,8 @@
       "name": "iTerm2",
       "url": "https://iterm2.com/",
       "description": "macOS Terminal replacement",
-      "openSource": true
+      "openSource": true,
+      "macos": true
     },
     {
       "name": "Visual Studio Code",
@@ -102,7 +103,8 @@
       "name": "Orbstack",
       "url": "https://orbstack.dev/",
       "description": "Faster, native Docker engine",
-      "macos": true
+      "macos": true,
+      "freemium": true
     },
     {
       "name": "MongoDB Compass",
@@ -139,6 +141,14 @@
       "paid": true
     },
     {
+      "name": "Clop",
+      "url": "https://lowtechguys.com/clop/",
+      "description": "Image, video, PDF and clipboard optimizer",
+      "macos": true,
+      "freemium": true,
+      "openSource": true
+    },
+    {
       "name": "Stats",
       "url": "https://github.com/exelban/stats",
       "description": "Menu bar system statistics",
@@ -159,16 +169,22 @@
       ]
     },
     {
-      "name": "AlDente",
-      "url": "https://apphousekitchen.com/",
-      "description": "Battery charging control and optimization",
-      "macos": true,
-      "freemium": true
+      "name": "BatFi",
+      "url": "https://micropixels.software/batfi",
+      "description": "macOS battery performance optimization",
+      "macos": true
     },
     {
       "name": "KnockKnock",
       "url": "https://objective-see.org/products/knockknock.html",
-      "description": "macOS system scans",
+      "description": "macOS persistent software scans",
+      "openSource": true,
+      "macos": true
+    },
+    {
+      "name": "RansomWhere?",
+      "url": "https://objective-see.org/products/ransomwhere.html",
+      "description": "macOS ransomware detection",
       "openSource": true,
       "macos": true
     },
@@ -250,8 +266,8 @@
       "paid": true
     },
     {
-      "name": "Tutanota",
-      "url": "https://tutanota.com/",
+      "name": "Tuta",
+      "url": "https://tuta.com/",
       "description": "Privacy-friendly custom domain email",
       "freemium": true
     },
@@ -293,12 +309,7 @@
       "paid": true,
       "openSource": true
     },
-    {
-      "name": "Fly",
-      "url": "https://fly.io/",
-      "description": "Occasional server hosting",
-      "freemium": true
-    },
+
     {
       "name": "Railway",
       "url": "https://railway.app/",
