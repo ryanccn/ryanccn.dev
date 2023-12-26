@@ -3,7 +3,7 @@ import { full as markdownItEmoji } from 'markdown-it-emoji';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItTOC from 'markdown-it-toc-done-right';
 
-export default (eleventyConfig) => {
+export const sitePluginMarkdown = (eleventyConfig) => {
   const markdownLib = markdownIt({ html: true, typographer: true })
     .use(markdownItEmoji)
     .use(markdownItAnchor, {

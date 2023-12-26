@@ -1,6 +1,6 @@
 import { format, isBefore, subYears } from 'date-fns';
 
-export default (eleventyConfig) => {
+export const sitePluginFilters = (eleventyConfig) => {
   eleventyConfig.addFilter(
     'head',
     /**

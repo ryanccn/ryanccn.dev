@@ -7,7 +7,7 @@ import warning from './warning.js';
 const absoluteUrl = (path) => new URL(path, 'https://ryanccn.dev').toString();
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
-export default (eleventyConfig) => {
+export const sitePluginShortcodes = (eleventyConfig) => {
   eleventyConfig.addShortcode('twitterShareLink', function () {
     return `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       absoluteUrl(this.page.url),

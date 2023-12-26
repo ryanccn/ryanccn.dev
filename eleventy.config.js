@@ -6,11 +6,11 @@ import pluginRss from '@ryanccn/eleventy-plugin-rss';
 import pluginIcons from 'eleventy-plugin-icons';
 import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
 
-import sitePluginShortcodes from './src/_11ty/shortcodes/index.js';
-import sitePluginFilters from './src/_11ty/filters.js';
-import sitePluginMarkdown from './src/_11ty/plugins/markdown.js';
-import sitePluginShiki from './src/_11ty/plugins/shiki.js';
-import sitePluginHtmlmin from './src/_11ty/plugins/htmlmin.js';
+import { sitePluginShortcodes } from './src/_11ty/shortcodes/index.js';
+import { sitePluginFilters } from './src/_11ty/filters.js';
+import { sitePluginMarkdown } from './src/_11ty/plugins/markdown.js';
+import { sitePluginShiki } from './src/_11ty/plugins/shiki.js';
+import { sitePluginHtmlmin } from './src/_11ty/plugins/htmlmin.js';
 
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
