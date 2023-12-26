@@ -2,12 +2,18 @@
 layout: 'base'
 ---
 
-<article class="prose enhanced-prose font-prose mb-16">
+<article class="prose enhanced-prose mb-16">
   <h1>{{ title }}</h1>
 
-  <div class="not-prose mb-10 font-sans flex flex-col gap-y-1">
-    <p class="text-lg font-medium text-fg-dimmed">By <span class="font-semibold text-fg-brighter ">Ryan Cao</span></p>
-    <p class="text-lg font-medium text-fg-dimmed">Published on <span class="font-semibold text-fg-brighter ">{{ date | customDateFormat }}</span></p>
+  <div class="not-prose mb-10 flex flex-col gap-1">
+    <div class="flex flex-row items-center flex-wrap gap-2">
+      {% icon "lucide:calendar", class="block size-4 text-fg-dimmed shrink-0" %}
+      <span class="font-semibold text-fg">{{ date | customDateFormat }}</span>
+    </div>
+    <div class="flex flex-row items-center flex-wrap gap-2">
+      {% icon "lucide:clock", class="block size-4 text-fg-dimmed shrink-0" %}
+      <span class="font-semibold text-fg">~{{ content | readingTime }}</span>
+    </div>
   </div>
 
   {% include 'outdatedWarning.njk' %}
