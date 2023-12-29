@@ -46,7 +46,7 @@
     "lucide-static": "^0.260.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7",
-    "markdown-it-emoji": "^2.0.2",
+    "markdown-it-emoji": "^3.0.0",
     "markdown-it-toc-done-right": "^4.2.0",
     "p-limit": "^4.0.0",
     "postcss": "^8.4.26",

@@ -102,8 +102,8 @@ devDependencies:
     specifier: ^8.6.7
     version: 8.6.7(@types/markdown-it@12.2.3)(markdown-it@13.0.1)
   markdown-it-emoji:
-    specifier: ^2.0.2
-    version: 2.0.2
+    specifier: ^3.0.0
+    version: 3.0.0
   markdown-it-toc-done-right:
     specifier: ^4.2.0
     version: 4.2.0
@@ -2493,8 +2493,8 @@ packages:
       markdown-it: 13.0.1
     dev: true
 
-  /markdown-it-emoji@2.0.2:
-    resolution: {integrity: sha512-zLftSaNrKuYl0kR5zm4gxXjHaOI3FAOEaloKmRA5hijmJZvSjmxcokOLlzycb/HXlUFWzXqpIEoyEMCE4i9MvQ==}
+  /markdown-it-emoji@3.0.0:
+    resolution: {integrity: sha512-+rUD93bXHubA4arpEZO3q80so0qgoFJEKRkRbjKX8RTdca89v2kfyF+xR3i2sQTwql9tpPZPOQN5B+PunspXRg==}
     dev: true
 
   /markdown-it-toc-done-right@4.2.0:
