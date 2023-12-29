@@ -51,7 +51,7 @@
     "p-limit": "^4.0.0",
     "postcss": "^8.4.26",
     "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.1",
+    "prettier-plugin-tailwindcss": "^0.5.10",
     "satori": "^0.10.1",
     "sharp": "^0.32.3",
     "simple-icons": "^9.5.0",
