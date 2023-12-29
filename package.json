@@ -29,7 +29,7 @@
     "cssnano": "^5.1.13",
     "datauri": "^4.1.0",
     "dotenv": "^16.0.3",
-    "esbuild": "^0.15.10",
+    "esbuild": "^0.19.10",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.2",
