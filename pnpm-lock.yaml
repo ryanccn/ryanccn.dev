@@ -81,8 +81,8 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0
   image-size:
-    specifier: ^1.0.2
-    version: 1.0.2
+    specifier: ^1.1.0
+    version: 1.1.0
   just-memoize:
     specifier: ^2.2.0
     version: 2.2.0
@@ -199,7 +199,7 @@ packages:
       '@11ty/eleventy-fetch': 3.0.0
       debug: 4.3.4
       entities: 4.5.0
-      image-size: 1.0.2
+      image-size: 1.1.0
       p-queue: 6.6.2
       sharp: 0.32.3
     transitivePeerDependencies:
@@ -2165,9 +2165,9 @@ packages:
       queue: 6.0.2
     dev: true
 
-  /image-size@1.0.2:
-    resolution: {integrity: sha512-xfOoWjceHntRb3qFCrh5ZFORYH8XCdYpASltMhZ/Q0KZiOwjdE/Yl2QCiWdwD+lygV5bMCvauzgu5PxBX/Yerg==}
-    engines: {node: '>=14.0.0'}
+  /image-size@1.1.0:
+    resolution: {integrity: sha512-asnTHw2K8OlqT5kVnQwX+AGKQqpvLo95LbNzQ/C0ln3yzentZmAdd0ygoD004VC4Kkd4PV7J2iaPQkqwp9yuTw==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
       queue: 6.0.2
