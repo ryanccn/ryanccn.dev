@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "cross-env NODE_ENV=production eleventy",
+    "build": "cross-env NODE_ENV=production eleventy && node src/utils/ogImage/index.js",
     "preview": "sirv _site",
     "clean": "rm -rf _site .cache pages.json",
     "format": "prettier --write .",

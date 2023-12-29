@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 
 import pLimit from 'p-limit';
 import { mkdir, readFile, writeFile } from 'fs/promises';
+import { cpus } from 'os';
 import { blue, dim } from 'kleur/colors';
 
 await mkdir('_site/og', { recursive: true });
@@ -159,7 +160,7 @@ const svg = async ({ title, date }) =>
 
 const pageData = JSON.parse(await readFile('pages.json'));
 
-const lim = pLimit(8);
+const lim = pLimit(cpus().length);
 
 await Promise.all(
   pageData.map(({ title, slug, date }) =>
