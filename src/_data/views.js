@@ -1,7 +1,6 @@
 import EleventyFetch from '@11ty/eleventy-fetch';
 import { format } from 'date-fns';
 
-import pLimit from 'p-limit';
 import { logData } from '../utils/log.js';
 import { bold } from 'kleur/colors';
 
@@ -53,7 +52,7 @@ export default async () => {
   );
 
   await Promise.all(
-    postData.map((p) => async () => {
+    postData.map(async (p) => {
       ret[p.slug] = await getViews(p);
     }),
   );
