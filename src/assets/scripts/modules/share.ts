@@ -6,10 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
         elem.classList.remove('hidden');
 
         elem.addEventListener('click', () => {
-          navigator.share({
-            title: document.title,
-            url: location.href,
-          });
+          navigator.share({ title: document.title, url: location.href });
         });
       }
     });

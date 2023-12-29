@@ -1,6 +1,7 @@
 import EleventyFetch from '@11ty/eleventy-fetch';
 import { format } from 'date-fns';
 
+import pLimit from 'p-limit';
 import { logData } from '../utils/log.js';
 import { bold } from 'kleur/colors';
 
@@ -51,15 +52,10 @@ export default async () => {
         .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
   );
 
-  const { default: pLimit } = await import('p-limit');
-  const lim = pLimit(8);
-
   await Promise.all(
-    postData.map((p) =>
-      lim(async () => {
-        ret[p.slug] = await getViews(p);
-      }),
-    ),
+    postData.map((p) => async () => {
+      ret[p.slug] = await getViews(p);
+    }),
   );
 
   return ret;

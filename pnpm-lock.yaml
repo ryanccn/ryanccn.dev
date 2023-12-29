@@ -84,8 +84,8 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0
   image-size:
-    specifier: ^1.0.2
-    version: 1.0.2
+    specifier: ^1.1.0
+    version: 1.1.0
   just-memoize:
     specifier: ^2.2.0
     version: 2.2.0
@@ -96,8 +96,8 @@ devDependencies:
     specifier: ^0.16.5
     version: 0.16.5
   lucide-static:
-    specifier: ^0.302.0
-    version: 0.302.0
+    specifier: ^0.303.0
+    version: 0.303.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -120,8 +120,8 @@ devDependencies:
     specifier: ^3.1.1
     version: 3.1.1
   prettier-plugin-tailwindcss:
-    specifier: ^0.5.9
-    version: 0.5.9(prettier@3.1.1)
+    specifier: ^0.5.10
+    version: 0.5.10(prettier@3.1.1)
   satori:
     specifier: ^0.10.11
     version: 0.10.11
@@ -204,7 +204,7 @@ packages:
       brotli-size: 4.0.0
       debug: 4.3.4
       entities: 4.5.0
-      image-size: 1.0.2
+      image-size: 1.1.0
       p-queue: 6.6.2
       sharp: 0.32.6
     transitivePeerDependencies:
@@ -2378,9 +2378,9 @@ packages:
       queue: 6.0.2
     dev: true
 
-  /image-size@1.0.2:
-    resolution: {integrity: sha512-xfOoWjceHntRb3qFCrh5ZFORYH8XCdYpASltMhZ/Q0KZiOwjdE/Yl2QCiWdwD+lygV5bMCvauzgu5PxBX/Yerg==}
-    engines: {node: '>=14.0.0'}
+  /image-size@1.1.0:
+    resolution: {integrity: sha512-asnTHw2K8OlqT5kVnQwX+AGKQqpvLo95LbNzQ/C0ln3yzentZmAdd0ygoD004VC4Kkd4PV7J2iaPQkqwp9yuTw==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
       queue: 6.0.2
@@ -2669,8 +2669,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.302.0:
-    resolution: {integrity: sha512-+1YeiD18Vdg1Wd2iu/3Vt5giQtdoOE3BnAOyiLf29E7vBU/pApQO2eg7m/A26pidt3P++b+Hu3mjBCImxtGPEA==}
+  /lucide-static@0.303.0:
+    resolution: {integrity: sha512-uXHewtx99MqbMHCaQzhPqc+k36kRZ6UDPIwQY8YuYae5MgW82Zpng7rwA3xL7SnFl6xUpGE4ZKNKPgyAuErJrQ==}
     dev: true
 
   /luxon@3.4.4:
@@ -3527,8 +3527,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.9(prettier@3.1.1):
-    resolution: {integrity: sha512-9x3t1s2Cjbut2QiP+O0mDqV3gLXTe2CgRlQDgucopVkUdw26sQi53p/q4qvGxMLBDfk/dcTV57Aa/zYwz9l8Ew==}
+  /prettier-plugin-tailwindcss@0.5.10(prettier@3.1.1):
+    resolution: {integrity: sha512-9UGSejqFxGG6brYjFfTYlJ8zs4L/lvZg1AngFfaC5Fs1otSskASv5IWKmjPu5MlABQUtTKtMArKyYr/hWpXSUg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
