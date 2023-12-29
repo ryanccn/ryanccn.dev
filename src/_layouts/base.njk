@@ -39,8 +39,8 @@ eleventyComputed:
     ></script>
     {% endif %}
 
-    <link rel="icon" href="/icons/v2-rounded.png?v={{ gitRev }}">
-    <link rel="apple-touch-icon" href="/icons/v2-180w.png?v={{ gitRev }}">
+    <link rel="icon" href="/icons/favicon.svg?v={{ gitRev }}">
+    <link rel="apple-touch-icon" href="/icons/background.png?v={{ gitRev }}">
     <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
 
     <link
@@ -58,29 +58,28 @@ eleventyComputed:
 
     <meta name="title" content="{{ title }}">
     <meta name="description" content="{{ description_ }}">
+
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ryan Cao">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description_ }}">
-    <meta name="twitter:card" content="summary">
+
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@RyanCaoDev">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description_ }}">
-    <meta property="og:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
-    <meta name="twitter:image" content="https://ryanccn.dev/icons/v2-1024w.png?v={{ gitRev }}">
+
+    <meta property="og:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ gitRev }}">
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta name="twitter:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ gitRev }}">
   </head>
 
   <body>
     <header class="flex flex-col gap-y-10 md:w-72 shrink-0">
-      <a href="/" class="h-card group flex gap-x-4 items-center rounded-sm mb-1">
-        <img
-          src="/icons/v2-square.png?v={{ gitRev }}"
-          class="u-photo shrink-0 rounded-full transition ring-2 ring-offset-2 ring-offset-background ring-accent group-hover:ring-accent-lighter"
-          width="32" height="32"
-          alt="Profile picture"
-          fetchpriority="high"
-        >
-        <span class="p-name tracking-tight leading-none text-lg font-extrabold">Ryan Cao</span>
+      <a href="/" class="h-card relative group flex self-start mb-1" title="Ryan Cao">
+        {% icon "custom:me", class="absolute top-0 left-0 w-8 h-auto text-surface group-hover:text-surface-hover transition-colors z-10", "aria-hidden"="true" %}
+        {% icon "custom:me", class="w-8 h-auto animate-me-icon text-fg hover:text-accent transition-colors z-20" %}
       </a>
 
       <div class="flex flex-col gap-y-4">

@@ -1,3 +1,4 @@
 import './modules/theme';
-import './modules/share';
 import './modules/lqip';
+import './modules/animateIcon';
+import './modules/share';
