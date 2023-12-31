@@ -27,44 +27,52 @@ const systemIsDark = () => {
 
 const getHashOverride = () => {
   const hashOverrideMatch = location.hash.match(/theme=([a-z-]+)/);
-  if (hashOverrideMatch) {
-    themeHasOverride.value = true;
+
+  if (hashOverrideMatch && checkThemeStr(hashOverrideMatch[1])) {
     return hashOverrideMatch[1];
   }
 
-  themeHasOverride.value = false;
   return null;
 };
 
-const themeHasOverride = { value: false };
-
-const getLocalStorageValue = () => {
+const getLocalStorageValue = (): ThemeId => {
   let lsv = localStorage.getItem('theme');
 
   if (!lsv || !checkThemeStr(lsv)) {
-    if (DEV) {
-      console.log('[theme] set localStorage to system (original is invalid)');
-    }
+    if (DEV)
+      console.log(
+        `[theme] set localStorage to system (original ${lsv} is invalid)`,
+      );
 
     localStorage.setItem('theme', systemIsDark() ? 'dark' : 'light');
     lsv = systemIsDark() ? 'dark' : 'light';
   }
 
   const hashOverride = getHashOverride();
-  if (hashOverride && checkThemeStr(hashOverride)) return hashOverride;
+  if (hashOverride) return hashOverride;
 
-  if (!checkThemeStr(lsv)) {
-    throw new Error(`Theme "${lsv}" is invalid despite checks`);
-  }
-
-  return lsv;
+  return lsv as ThemeId;
 };
 
-let theme = getLocalStorageValue();
+const theme = new Proxy(
+  { value: getLocalStorageValue() },
+  {
+    set(target, p, newValue) {
+      if (p !== 'value') return false;
+      if (!checkThemeStr(newValue)) return false;
 
-const updateClass = () => {
-  if (!checkThemeStr(theme)) return;
-  if (DEV) console.log(`[theme] updating classes for theme ${theme}`);
+      target.value = newValue;
+      updateClass(newValue);
+      updateSelect(newValue);
+      localStorage.setItem('theme', newValue);
+
+      return true;
+    },
+  },
+);
+
+const updateClass = (value: ThemeId) => {
+  if (DEV) console.log(`[theme] updating classes for theme ${value}`);
 
   for (const oldClass of document.documentElement.classList.values()) {
     if (oldClass.startsWith('theme-')) {
@@ -72,56 +80,34 @@ const updateClass = () => {
     }
   }
 
-  document.documentElement.classList.add(`theme-${theme}`);
-  document.documentElement.classList.toggle('dark', THEMES[theme].dark);
+  document.documentElement.classList.add(`theme-${value}`);
+  document.documentElement.classList.toggle('dark', THEMES[value].dark);
 
   document.documentElement.style.setProperty(
     'color-scheme',
-    THEMES[theme].dark ? 'dark' : 'light',
+    THEMES[value].dark ? 'dark' : 'light',
   );
 };
 
-const updateFauxSelect = () => {
-  if (!checkThemeStr(theme)) return;
-  if (DEV)
-    console.log(`[theme] updating faux select content for theme ${theme}`);
-
-  const textElem = document.querySelector('[data-theme-select] > span');
-
-  if (textElem) {
-    textElem.innerHTML =
-      THEMES[theme].name + (themeHasOverride.value ? ' (override)' : '');
-  }
-
-  if (themeHasOverride.value) getThemeSelect()?.setAttribute('disabled', '1');
-};
-
-const updateSelect = () => {
-  if (!checkThemeStr(theme)) return;
-  if (DEV) console.log(`[theme] updating select content for theme ${theme}`);
+const updateSelect = (value: ThemeId) => {
+  if (DEV) console.log(`[theme] updating select content for theme ${value}`);
 
   const select = getThemeSelect();
   if (!select) return;
 
-  select.value = theme;
+  select.value = value;
 };
 
-updateClass();
+updateClass(theme.value);
 
 addEventListener('DOMContentLoaded', () => {
   const themeSwitcherElem = getThemeSelect();
-  updateFauxSelect();
-  updateSelect();
+  updateSelect(theme.value);
 
   if (themeSwitcherElem) {
     themeSwitcherElem.addEventListener('change', () => {
       if (!checkThemeStr(themeSwitcherElem.value)) return;
-
-      theme = themeSwitcherElem.value;
-
-      updateClass();
-      updateFauxSelect();
-      localStorage.setItem('theme', theme);
+      theme.value = themeSwitcherElem.value;
     });
   }
 });
@@ -130,21 +116,14 @@ addEventListener('storage', (e) => {
   if (DEV) console.log('[theme] storage listener triggered');
 
   if (e.key !== 'theme') return;
-
-  theme = getLocalStorageValue();
-  updateClass();
-  updateSelect();
-  updateFauxSelect();
+  theme.value = getLocalStorageValue();
 });
 
 addEventListener('pageshow', (event) => {
   if (event.persisted) {
     if (DEV) console.log('[theme] pageshow listener triggered');
 
-    theme = getLocalStorageValue();
-    updateClass();
-    updateSelect();
-    updateFauxSelect();
+    theme.value = getLocalStorageValue();
   }
 });
 
@@ -152,11 +131,5 @@ addEventListener('hashchange', () => {
   if (DEV) console.log('[theme] hashchange listener triggered');
 
   const newOverride = getHashOverride();
-  if (newOverride && checkThemeStr(newOverride)) {
-    theme = newOverride;
-
-    updateClass();
-    updateSelect();
-    updateFauxSelect();
-  }
+  if (newOverride) theme.value = newOverride;
 });
