@@ -11,8 +11,10 @@
 
   body {
     @apply flex min-h-screen flex-col gap-y-20 md:flex-row md:gap-x-16 md:gap-y-0;
-    @apply mx-auto max-w-[80rem] overflow-y-scroll px-8 py-24 md:px-20 md:py-28;
+    @apply mx-auto max-w-[80rem] px-8 py-24 md:px-20 md:py-28;
     @apply bg-background text-fg;
+
+    @apply overflow-x-hidden overflow-y-scroll;
 
     @apply antialiased;
     text-rendering: optimizeLegibility;
@@ -55,8 +57,7 @@
     }
 
     & :is(h2, h3, h4, h5) .anchor {
-      @apply text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
-      @apply absolute -left-4;
+      @apply ml-1 inline-block text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
     }
 
     & :is(h2, h3, h4, h5):target .anchor {

@@ -46,7 +46,7 @@ for (const weight of weights) {
 
 /**
  * @param {{ title: string, date: string }} data data for generating the SVG
- * @returns {string} the rendered SVG
+ * @returns {Promise<string>} the rendered SVG
  */
 const svg = async ({ title, date }) =>
   await satori(
