@@ -22,38 +22,22 @@ eleventyComputed:
 
     <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
 
+    {% if inProduction %}
+    <script async defer data-domain="ryanccn.dev" data-api="/sus/event" src="/sus/script.js"></script>
+    {% endif %}
     <script nonce="{{ nonces.script }}">{{ inlinedScript | safe }}</script>
     <style>{{ inlinedStyles.fonts | safe }}</style>
-    <style>{{ inlinedStyles.variables | safe }}</style>
 
     <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
     <link rel="preload" as="style" href="/assets/tailwind.css?v={{ gitRev }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
-    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-rest-2.woff2?v=2a440841">
-
-    {% if inProduction %}
-    <script
-      async defer
-      data-domain="ryanccn.dev"
-      data-api="/sus/event"
-      src="/sus/script.js"
-    ></script>
-    {% endif %}
 
     <link rel="icon" href="/icons/favicon.svg?v={{ gitRev }}">
     <link rel="apple-touch-icon" href="/icons/background.png?v={{ gitRev }}">
     <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
 
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      href="https://ryanccn.dev/feed/rss.xml"
-    >
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      href="https://ryanccn.dev/feed/atom.xml"
-    >
+    <link rel="alternate" type="application/rss+xml" href="https://ryanccn.dev/feed/rss.xml">
+    <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml">
 
     {% set description_ = description or "High school student and open source developer." %}
 

@@ -28,8 +28,4 @@ module.exports = async () => ({
     `${__dirname}/../assets/fonts/inter/inter.css`,
     'inlineStyles/fonts',
   ),
-  variables: await buildStyle(
-    `${__dirname}/../assets/styles/variables.css`,
-    'inlineStyles/variables',
-  ),
 });
