@@ -34,7 +34,7 @@
   --fg-less-dimmed: 212 212 212;
   --fg-dimmed: 163 163 163;
   --accent: 147 197 253;
-  --accent-lighter: 191 219 254;
+  --accent-lighter: 96 165 250;
 
   --background: 20 20 20;
   --surface: 25 25 25;
@@ -251,6 +251,50 @@
   --shiki-token-function: #d7827e;
   --shiki-token-string-expression: #ea9d34;
   --shiki-token-punctuation: #797593;
+}
+
+.theme-flexoki-light {
+  --fg: 16 15 15;
+  --fg-brighter: var(--fg);
+  --fg-less-dimmed: 111 110 105;
+  --fg-dimmed: 183 181 172;
+  --accent: 36 131 123;
+  --accent-lighter: 58 169 159;
+
+  --background: 255 252 240;
+  --surface: 242 240 229;
+  --surface-hover: 230 228 217;
+
+  --shiki-token-constant: rgb(173, 131, 1);
+  --shiki-token-string: rgb(36, 131, 123);
+  --shiki-token-comment: rgb(183, 181, 172);
+  --shiki-token-keyword: rgb(102, 128, 11);
+  --shiki-token-parameter: rgb(111, 110, 105);
+  --shiki-token-function: rgb(188, 82, 21);
+  --shiki-token-string-expression: rgb(160, 47, 111);
+  --shiki-token-punctuation: rgb(32, 94, 166);
+}
+
+.theme-flexoki-dark {
+  --fg: 206 205 195;
+  --fg-brighter: var(--fg);
+  --fg-less-dimmed: 135 133 128;
+  --fg-dimmed: 87 86 83;
+  --accent: 58 169 159;
+  --accent-lighter: 36 131 123;
+
+  --background: 16 15 15;
+  --surface: 28 27 26;
+  --surface-hover: 40 39 38;
+
+  --shiki-token-constant: rgb(208, 162, 21);
+  --shiki-token-string: rgb(58, 169, 159);
+  --shiki-token-comment: rgb(87, 86, 83);
+  --shiki-token-keyword: rgb(135, 154, 57);
+  --shiki-token-parameter: rgb(135, 133, 128);
+  --shiki-token-function: rgb(218, 112, 44);
+  --shiki-token-string-expression: rgb(209, 77, 65);
+  --shiki-token-punctuation: rgb(67, 133, 190);
 }
 
 @tailwind base;

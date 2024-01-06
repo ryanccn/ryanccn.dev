@@ -13,6 +13,8 @@ const isThemeDark = {
   'rose-pine': true,
   'rose-pine-moon': true,
   'rose-pine-dawn': false,
+  'flexoki-light': false,
+  'flexoki-dark': true,
 } satisfies Record<string, boolean>;
 
 type ThemeId = keyof typeof isThemeDark;
