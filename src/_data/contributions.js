@@ -5,11 +5,11 @@ import { logData } from '../utils/log.js';
 import { dim } from 'kleur/colors';
 
 const excludes = [
-  /PolyMC/, // dead project
-  /JayantGoel001/, // joke repo
-  /Ampflower\/nocode/, // joke repo
-  /\.github/, // configuration stuff
-  /(RyanModDev)/, // personal organizations
+  /^PolyMC\//, // dead project
+  /^JayantGoel001\//, // joke repository
+  /^Ampflower\/nocode$/, // joke repository
+  /\.github$/, // configuration repositories
+  /^RyanModDev\//, // personal organization
 ];
 
 const gql = createGql('https://api.github.com/graphql', {
