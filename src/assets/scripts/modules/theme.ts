@@ -136,3 +136,5 @@ addEventListener('hashchange', () => {
   const newOverride = getHashOverride();
   if (newOverride) theme.value = newOverride;
 });
+
+export {};

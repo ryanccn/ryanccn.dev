@@ -6,3 +6,5 @@ if (existing === 'true') {
 } else {
   sessionStorage.setItem(storageKey, 'true');
 }
+
+export {};

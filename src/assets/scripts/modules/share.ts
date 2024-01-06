@@ -11,3 +11,5 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 });
+
+export {};
