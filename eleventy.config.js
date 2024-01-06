@@ -6,6 +6,9 @@ import pluginRss from '@ryanccn/eleventy-plugin-rss';
 import pluginIcons from 'eleventy-plugin-icons';
 import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
 
+import { plugin as pluginValidate } from 'eleventy-plugin-validate';
+import { z } from 'zod';
+
 import { sitePluginShortcodes } from './src/_11ty/shortcodes/index.js';
 import { sitePluginFilters } from './src/_11ty/filters.js';
 import { sitePluginMarkdown } from './src/_11ty/plugins/markdown.js';
@@ -33,6 +36,22 @@ const config = (eleventyConfig) => {
         },
       },
     },
+  });
+
+  eleventyConfig.addPlugin(pluginValidate, {
+    schemas: [
+      {
+        collections: ['posts'],
+        schema: z
+          .object({
+            title: z.string().min(1),
+            description: z.string().optional(),
+            tags: z.array(z.string()),
+            date: z.date(),
+          })
+          .strict(),
+      },
+    ],
   });
 
   eleventyConfig.setQuietMode(true);

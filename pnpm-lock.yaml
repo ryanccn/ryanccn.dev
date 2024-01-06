@@ -68,6 +68,9 @@ devDependencies:
   eleventy-plugin-reading-time:
     specifier: ^0.0.1
     version: 0.0.1
+  eleventy-plugin-validate:
+    specifier: ^0.0.4
+    version: 0.0.4
   esbuild:
     specifier: ^0.19.11
     version: 0.19.11
@@ -143,6 +146,9 @@ devDependencies:
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 packages:
 
@@ -1852,6 +1858,14 @@ packages:
 
   /eleventy-plugin-reading-time@0.0.1:
     resolution: {integrity: sha512-6MRHwrWMYm/u9lJK4/mnyS+6SyQxJSQcTfa1DqQS9fpQRPsZ9mdO9rZ/6DAhZpX2/cXxrbc6qxgcv6Qj90im1g==}
+    dev: true
+
+  /eleventy-plugin-validate@0.0.4:
+    resolution: {integrity: sha512-IsrMnsNBV9bQ0z608FLBFU4VdWLiYzt586/4Bksr/rcB2BqJVrr46eYP2anzMoDCysCIi7LAsuYALwMBpAImJw==}
+    dependencies:
+      just-extend: 6.2.0
+      kleur: 4.1.5
+      zod: 3.22.4
     dev: true
 
   /emoji-regex@10.3.0:
@@ -4321,4 +4335,8 @@ packages:
 
   /yoga-wasm-web@0.3.3:
     resolution: {integrity: sha512-N+d4UJSJbt/R3wqY7Coqs5pcV0aUj2j9IaQ3rNj9bVCLld8tTGKRa2USARjnvZJWVx1NDmQev8EknoczaOQDOA==}
+    dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
