@@ -69,8 +69,8 @@ devDependencies:
     specifier: ^0.0.1
     version: 0.0.1
   eleventy-plugin-validate:
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.1.1
+    version: 0.1.1
   esbuild:
     specifier: ^0.19.11
     version: 0.19.11
@@ -1860,8 +1860,8 @@ packages:
     resolution: {integrity: sha512-6MRHwrWMYm/u9lJK4/mnyS+6SyQxJSQcTfa1DqQS9fpQRPsZ9mdO9rZ/6DAhZpX2/cXxrbc6qxgcv6Qj90im1g==}
     dev: true
 
-  /eleventy-plugin-validate@0.0.4:
-    resolution: {integrity: sha512-IsrMnsNBV9bQ0z608FLBFU4VdWLiYzt586/4Bksr/rcB2BqJVrr46eYP2anzMoDCysCIi7LAsuYALwMBpAImJw==}
+  /eleventy-plugin-validate@0.1.1:
+    resolution: {integrity: sha512-8SvVVaE4/K1OlSHPtY7+/OibkQ3NKXeXbFuX8jtz+pQnxYVCezShVD5te0vdE2UBPCdVk1W0ymZpGHvwgx+7gQ==}
     dependencies:
       just-extend: 6.2.0
       kleur: 4.1.5
