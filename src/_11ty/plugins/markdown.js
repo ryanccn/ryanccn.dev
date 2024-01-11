@@ -1,10 +1,11 @@
-import markdownIt from 'markdown-it';
+import MarkdownIt from 'markdown-it';
+
 import { full as markdownItEmoji } from 'markdown-it-emoji';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItTOC from 'markdown-it-toc-done-right';
 
 export const sitePluginMarkdown = (eleventyConfig) => {
-  const markdownLib = markdownIt({ html: true, typographer: true })
+  const markdownLib = MarkdownIt({ html: true, typographer: true })
     .use(markdownItEmoji)
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.linkInsideHeader({

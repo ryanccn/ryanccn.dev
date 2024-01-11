@@ -1,11 +1,15 @@
-import { getHighlighter } from 'shiki';
+import { createCssVariablesTheme } from 'shikiji';
+import Shikiji from 'markdown-it-shikiji';
 
 export const sitePluginShiki = async (eleventyConfig) => {
-  const highlighter = await getHighlighter({ theme: 'css-variables' });
+  const plugin = await Shikiji({
+    theme: createCssVariablesTheme({
+      name: 'css-variables',
+      variableDefaults: {},
+    }),
+  });
 
   eleventyConfig.amendLibrary('md', (mdLib) => {
-    return mdLib.set({
-      highlight: (code, lang) => highlighter.codeToHtml(code, { lang }),
-    });
+    mdLib.use(plugin);
   });
 };

@@ -6,7 +6,7 @@ import pluginRss from '@ryanccn/eleventy-plugin-rss';
 import pluginIcons from 'eleventy-plugin-icons';
 import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
 
-import { plugin as pluginValidate } from 'eleventy-plugin-validate';
+import pluginValidate from 'eleventy-plugin-validate';
 import { z } from 'zod';
 
 import { sitePluginShortcodes } from './src/_11ty/shortcodes/index.js';
