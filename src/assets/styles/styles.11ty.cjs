@@ -4,7 +4,7 @@ const { readFile } = require('fs/promises');
 class Page {
   data() {
     return {
-      permalink: '/assets/tailwind.css',
+      permalink: '/assets/styles.css',
       eleventyExcludeFromCollections: true,
     };
   }
@@ -12,15 +12,17 @@ class Page {
   async render() {
     const { logSize } = await import('../../utils/log.js');
 
-    const sourceFile = `${__dirname}/tailwind.css`;
+    const sourceFile = `${__dirname}/styles.css`;
     const source = await readFile(sourceFile);
 
-    let plugins = [
-      require('tailwindcss/nesting/index.js'),
+    const plugins = [
+      require('postcss-import'),
+      require('tailwindcss/nesting'),
       require('tailwindcss'),
       require('autoprefixer'),
-      require('cssnano'),
     ];
+
+    if (process.env.NODE_ENV === 'production') plugins.push(require('cssnano'));
 
     const css = await postcss(plugins).process(source, {
       from: sourceFile,

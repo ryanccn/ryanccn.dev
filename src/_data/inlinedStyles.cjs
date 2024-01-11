@@ -11,7 +11,8 @@ const buildStyle = async (file, label) => {
 
   const source = await readFile(file);
 
-  let plugins = [require('autoprefixer'), require('cssnano')];
+  const plugins = [require('autoprefixer')];
+  if (process.env.NODE_ENV === 'production') plugins.push(require('cssnano'));
 
   const css = await postcss(plugins).process(source, {
     from: file,

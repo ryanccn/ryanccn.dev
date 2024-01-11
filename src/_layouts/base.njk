@@ -28,8 +28,8 @@ eleventyComputed:
     <script nonce="{{ nonces.script }}">{{ inlinedScript | safe }}</script>
     <style>{{ inlinedStyles.fonts | safe }}</style>
 
-    <link rel="stylesheet" href="/assets/tailwind.css?v={{ gitRev }}">
-    <link rel="preload" as="style" href="/assets/tailwind.css?v={{ gitRev }}">
+    <link rel="stylesheet" href="/assets/styles.css?v={{ gitRev }}">
+    <link rel="preload" as="style" href="/assets/styles.css?v={{ gitRev }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
 
     <link rel="icon" href="/icons/favicon.svg?v={{ gitRev }}">

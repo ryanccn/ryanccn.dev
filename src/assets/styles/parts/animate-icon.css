@@ -1,0 +1,30 @@
+@media (prefers-reduced-motion) {
+  .animate-me-icon path {
+    animation: none !important;
+    stroke-dasharray: unset !important;
+  }
+}
+
+@keyframes animate-me-icon-forward {
+  0% {
+    stroke-dasharray: 0 350px;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dasharray: 350px 0;
+  }
+}
+
+html:not(.no-animate-me-icon) .animate-me-icon path {
+  transform-origin: center;
+  stroke-dashoffset: 1px;
+  stroke-dasharray: 350px 0;
+  animation-name: animate-me-icon-forward;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in;
+}

@@ -1,0 +1,9 @@
+.shiki:has(.highlighted) .line:not(.highlighted) {
+  transition-property: filter;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+.shiki:has(.highlighted):not(:hover) .line:not(.highlighted) {
+  filter: blur(2px) opacity(0.75);
+}
