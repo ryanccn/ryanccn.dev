@@ -29,7 +29,7 @@ class Page {
       to: undefined,
     });
 
-    await logSize(css.content, 'tailwind.css');
+    await logSize(css.content, 'styles.css');
 
     return css.content;
   }
