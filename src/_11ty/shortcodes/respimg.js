@@ -1,10 +1,9 @@
 import Image from '@11ty/eleventy-img';
-import { imageSize as _imageSize } from 'image-size';
+import { imageSize } from 'image-size';
 import lqip from '../lqip.js';
 
-import { parseHTML } from 'linkedom';
-
 import { cpus } from 'node:os';
+import { html, safe } from '../../utils/htmlTag.js';
 
 Image.concurrency = cpus().length / 2;
 
@@ -13,13 +12,11 @@ const DISABLE_IMAGE_OPTIMIZATION =
   process.env.DISABLE_IMAGE_OPTIMIZATION === 'true';
 
 export default async (src, alt, width, height) => {
-  const { document } = parseHTML('');
-
   if (!width || !height) {
-    const originalDimensions = _imageSize(src);
+    const originalDimensions = imageSize(src);
 
-    width = originalDimensions.width;
-    height = originalDimensions.height;
+    width ||= originalDimensions.width;
+    height ||= originalDimensions.height;
   }
 
   const stats = await Image(src, {
@@ -33,37 +30,33 @@ export default async (src, alt, width, height) => {
     urlPath: '/images/',
   });
 
-  const lowsrc = stats.png[stats.png.length - 1];
+  const bestSrc = stats.png[stats.png.length - 1];
+  const lqipURI = await lqip(bestSrc.outputPath);
 
-  const lqipURI = await lqip(lowsrc.outputPath);
+  const sources = Object.values(stats)
+    .map(
+      (i) =>
+        html`<source
+          type="${safe(i[0].sourceType)}"
+          srcset="${i.map((entry) => entry.srcset).join(', ')}"
+          sizes="100vw"
+        >`,
+    )
+    .join('')
+    .trim();
 
-  const picElem = document.createElement('picture');
+  const imgElem = html`
+    <img
+      src="${bestSrc.url}"
+      width="${width}"
+      height="${height}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async"
+      sizes="100vw"
+      style="${`content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`}"
+    >
+  `.trim();
 
-  const sizes = '(min-width: 80ch) 80ch, 100vw';
-
-  Object.values(stats).forEach((i) => {
-    const srcElem = document.createElement('source');
-    srcElem.setAttribute('type', i[0].sourceType);
-    srcElem.setAttribute('srcset', i.map((entry) => entry.srcset).join(', '));
-    srcElem.setAttribute('sizes', sizes);
-
-    picElem.appendChild(srcElem);
-  });
-
-  const newImgElem = document.createElement('img');
-  newImgElem.setAttribute('src', lowsrc.url);
-  newImgElem.setAttribute('width', width);
-  newImgElem.setAttribute('height', height);
-  newImgElem.setAttribute('alt', alt);
-  newImgElem.setAttribute('loading', 'lazy');
-  newImgElem.setAttribute('decoding', 'async');
-  newImgElem.setAttribute('sizes', sizes);
-  newImgElem.setAttribute(
-    'style',
-    `content-visibility: auto; background-size: cover; background-image: url("${lqipURI}")`,
-  );
-
-  picElem.appendChild(newImgElem);
-
-  return picElem.toString();
+  return html`<picture>${safe(sources)}${safe(imgElem)}</picture>`.trim();
 };

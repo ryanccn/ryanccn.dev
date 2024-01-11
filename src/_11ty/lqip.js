@@ -22,15 +22,16 @@
 // Adopted from
 // https://github.com/ampproject/amp-toolbox/blob/0c8755016ae825b11b63b98be83271fd14cc0486/packages/optimizer/lib/transformers/AddBlurryImagePlaceholders.js
 
-import sizeOf from 'image-size';
 import sharp from 'sharp';
+import sizeOf from 'image-size';
+import { optimize } from 'svgo';
 
 import DataUriParser from 'datauri/parser.js';
 const datauri = new DataUriParser();
 
 import { html } from '../utils/htmlTag.js';
 
-const PIXEL_TARGET = 60;
+const PIXEL_TARGET = 128;
 
 const ESCAPE_TABLE = {
   '%': '%25',
@@ -56,7 +57,7 @@ async function getDataURI(src) {
     .toBuffer();
 
   const result = {
-    src: datauri.format('.png', buffer),
+    src: datauri.format('.png', buffer).content,
     width: info.width,
     height: info.height,
   };
@@ -111,12 +112,8 @@ export default async (src) => {
     ></image>
   </svg>`;
 
-  // Optimizes dataURI length by deleting line breaks, and
-  // removing unnecessary spaces.
-  svg = svg.replace(/\s+/g, ' ');
-  svg = svg.replace(/> </g, '><');
-  svg = svg.replace(ESCAPE_REGEX, escaper);
+  const optimizedSvg = optimize(svg).data.replace(ESCAPE_REGEX, escaper);
 
-  const uri = `data:image/svg+xml;charset=utf-8,${svg}`;
+  const uri = `data:image/svg+xml;charset=utf-8,${optimizedSvg}`;
   return uri;
 };

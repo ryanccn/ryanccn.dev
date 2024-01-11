@@ -17,6 +17,9 @@ devDependencies:
   '@11ty/eleventy-plugin-directory-output':
     specifier: ^1.0.1
     version: 1.0.1
+  '@awmottaz/prettier-plugin-void-html':
+    specifier: ^1.2.0
+    version: 1.2.0(prettier@3.1.1)
   '@microsoft/eslint-formatter-sarif':
     specifier: ^3.0.0
     version: 3.0.0
@@ -95,9 +98,6 @@ devDependencies:
   kleur:
     specifier: ^4.1.5
     version: 4.1.5
-  linkedom:
-    specifier: ^0.16.6
-    version: 0.16.6
   lucide-static:
     specifier: ^0.309.0
     version: 0.309.0
@@ -146,6 +146,9 @@ devDependencies:
   sirv-cli:
     specifier: ^2.0.2
     version: 2.0.2
+  svgo:
+    specifier: ^3.2.0
+    version: 3.2.0
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -295,6 +298,15 @@ packages:
   /@alloc/quick-lru@5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+    dev: true
+
+  /@awmottaz/prettier-plugin-void-html@1.2.0(prettier@3.1.1):
+    resolution: {integrity: sha512-I9V8UUm88KlVz9oDWZknhP3I5O2103kpBkpyqURbD5wkqXd0YVhdrH2HUYaxP1fV21DWYbpG3xIEe46gmDvZIw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      prettier: 3.0.0 - 3.1.1
+    dependencies:
+      prettier: 3.1.1
     dev: true
 
   /@emnapi/runtime@0.44.0:
@@ -1716,10 +1728,6 @@ packages:
       css-tree: 2.2.1
     dev: true
 
-  /cssom@0.5.0:
-    resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
-    dev: true
-
   /datauri@4.1.0:
     resolution: {integrity: sha512-y17kh32+I82G+ED9MNWFkZiP/Cq/vO1hN9+tSZsT9C9qn3NrvcBnh7crSepg0AQPge1hXx2Ca44s1FRdv0gFWA==}
     engines: {node: '>= 10'}
@@ -2381,10 +2389,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /html-escaper@3.0.3:
-    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
-    dev: true
-
   /html-minifier@4.0.0:
     resolution: {integrity: sha512-aoGxanpFPLg7MkIl/DDFYtb0iWz7jMFGqFhvEDZga6/4QTjneiD8I/NXL1x5aaoCp7FSIT6h/OhykDdPsbtMig==}
     engines: {node: '>=6'}
@@ -2406,15 +2410,6 @@ packages:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 3.0.1
-    dev: true
-
-  /htmlparser2@9.0.0:
-    resolution: {integrity: sha512-uxbSI98wmFT/G4P2zXx4OVx04qWUmyFPrD2/CNepa2Zo3GPNaCaaxElDgwUrwYWkK1nr9fft0Ya8dws8coDLLQ==}
-    dependencies:
-      domelementtype: 2.3.0
-      domhandler: 5.0.3
-      domutils: 3.1.0
-      entities: 4.5.0
     dev: true
 
   /http-equiv-refresh@1.0.0:
@@ -2668,16 +2663,6 @@ packages:
 
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
-    dev: true
-
-  /linkedom@0.16.6:
-    resolution: {integrity: sha512-vJ8oadtJe3DM4FNW15Fj5NLIJlJk+AOypoRxzq9prLx+gAKvHYcTfV98pzOoRkwx4ZvvYzqT1bcDKluHH72apg==}
-    dependencies:
-      css-select: 5.1.0
-      cssom: 0.5.0
-      html-escaper: 3.0.3
-      htmlparser2: 9.0.0
-      uhyphen: 0.2.0
     dev: true
 
   /linkify-it@5.0.0:
@@ -4336,10 +4321,6 @@ packages:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
     engines: {node: '>=0.8.0'}
     hasBin: true
-    dev: true
-
-  /uhyphen@0.2.0:
-    resolution: {integrity: sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA==}
     dev: true
 
   /undici-types@5.26.5:

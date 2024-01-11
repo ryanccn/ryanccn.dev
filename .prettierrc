@@ -1,7 +1,10 @@
 {
   "singleQuote": true,
   "quoteProps": "consistent",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@awmottaz/prettier-plugin-void-html"
+  ],
   "overrides": [
     {
       "files": "**/*.md",

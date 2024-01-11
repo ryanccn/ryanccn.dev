@@ -19,6 +19,7 @@
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
+    "@awmottaz/prettier-plugin-void-html": "^1.2.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@resvg/resvg-js": "^2.6.0",
     "@ryanccn/eleventy-plugin-rss": "^1.2.2",
@@ -45,7 +46,6 @@
     "image-size": "^1.1.1",
     "just-memoize": "^2.2.0",
     "kleur": "^4.1.5",
-    "linkedom": "^0.16.6",
     "lucide-static": "^0.309.0",
     "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
@@ -62,6 +62,7 @@
     "shikiji": "^0.9.18",
     "simple-icons": "^11.0.0",
     "sirv-cli": "^2.0.2",
+    "svgo": "^3.2.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
     "zod": "^3.22.4"

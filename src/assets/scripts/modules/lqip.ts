@@ -10,7 +10,7 @@ document.addEventListener(
       e.target.style.backgroundImage = 'none';
     }
   },
-  true,
+  { capture: true, passive: true },
 );
 
 export {};
