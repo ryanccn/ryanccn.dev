@@ -27,7 +27,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.10.8",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.18.1",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
