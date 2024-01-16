@@ -5,7 +5,8 @@ import lqip from '../lqip.js';
 import { cpus } from 'node:os';
 import { html, safe } from '../../utils/htmlTag.js';
 
-Image.concurrency = cpus().length / 2;
+const prod = process.env.NODE_ENV === 'production';
+Image.concurrency = Math.max(Math.floor(cpus().length / (prod ? 4 : 2)), 1);
 
 const DISABLE_IMAGE_OPTIMIZATION =
   process.env.DISABLE_IMAGE_OPTIMIZATION === '1' ||
