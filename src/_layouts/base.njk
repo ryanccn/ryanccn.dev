@@ -41,7 +41,7 @@ eleventyComputed:
 
     <link rel="alternate" type="application/rss+xml" href="https://ryanccn.dev/feed/rss.xml">
     <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml">
-    <link rel="authorization_endpoint" href="https://indielogin.com/auth">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 
     {% set description_ = description or "High school student and open source developer." %}
 
@@ -88,7 +88,7 @@ eleventyComputed:
         <a rel="me noreferrer" href="https://c.ryanccn.dev/@ryan" class="rounded p-1.5 hover:brightness-90" title="Firefish">
           {% icon "custom:firefish", class="block size-5 z-20" %}
         </a>
-        <a rel="me noreferrer authn" href="https://github.com/ryanccn" class="rounded p-1.5 hover:brightness-90" title="GitHub">
+        <a rel="me authn" href="https://github.com/ryanccn" class="rounded p-1.5 hover:brightness-90" title="GitHub">
           {% icon "simpleicon:github", class="block size-5 text-brand-github dark:text-white" %}
         </a>
         <a rel="me noreferrer" href="https://x.com/RyanCaoDev" class="rounded p-1.5 hover:brightness-90" title="Twitter">
