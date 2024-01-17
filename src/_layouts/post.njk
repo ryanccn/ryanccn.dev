@@ -2,13 +2,13 @@
 layout: 'base'
 ---
 
-<article class="prose enhanced-prose mb-16">
-  <h1>{{ title }}</h1>
+<article class="prose enhanced-prose mb-16 h-entry">
+  <h1 class="p-name">{{ title }}</h1>
 
   <div class="not-prose mb-10 flex flex-col gap-1">
     <div class="flex flex-row items-center flex-wrap gap-2">
       {% icon "lucide:calendar", class="block size-4 text-fg-dimmed shrink-0" %}
-      <span class="font-semibold text-fg">{{ date | customDateFormat }}</span>
+      <time datetime="{{ date | customDateFormat }}" class="font-semibold text-fg dt-published">{{ date | customDateFormat }}</span>
     </div>
     <div class="flex flex-row items-center flex-wrap gap-2">
       {% icon "lucide:clock", class="block size-4 text-fg-dimmed shrink-0" %}

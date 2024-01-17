@@ -66,10 +66,17 @@ eleventyComputed:
 
   <body>
     <header class="flex flex-col gap-y-10 md:w-72 shrink-0">
-      <a href="/" class="h-card relative group flex self-start mb-1" title="Ryan Cao">
+      <a href="/" class="relative group flex self-start mb-1">
         {% icon "custom:me", class="absolute top-0 left-0 w-8 h-auto text-surface group-hover:text-surface-hover transition-colors z-10", "aria-hidden"="true" %}
         {% icon "custom:me", class="w-8 h-auto animate-me-icon text-fg hover:text-accent transition-colors z-20" %}
+        <span class="sr-only">Ryan Cao</span>
       </a>
+
+      <div class="h-card" hidden style="display: none;">
+        <a href="/" class="p-name u-url">Ryan Cao</a>
+        <a class="u-photo" href="/icons/background.png">Profile photo</a>
+        <p class="p-note">High school student and open source developer.</p>
+      </div>
 
       <div class="flex flex-col gap-y-4">
         {% asyncAll link in navLinks %}
@@ -130,9 +137,9 @@ eleventyComputed:
 
       <div class="flex-col gap-y-2 hidden md:flex">
         <div class="flex flex-row gap-x-1 text-xs">
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
+          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
           <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
+          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
         </div>
 
         <a class="text-xs text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
