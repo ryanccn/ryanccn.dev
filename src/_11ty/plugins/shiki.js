@@ -1,5 +1,9 @@
-import { createCssVariablesTheme } from 'shikiji';
 import Shikiji from 'markdown-it-shikiji';
+import { createCssVariablesTheme } from 'shikiji';
+import {
+  transformerMetaHighlight,
+  transformerMetaWordHighlight,
+} from 'shikiji-transformers';
 
 export const sitePluginShiki = async (eleventyConfig) => {
   const plugin = await Shikiji({
@@ -7,6 +11,7 @@ export const sitePluginShiki = async (eleventyConfig) => {
       name: 'css-variables',
       variableDefaults: {},
     }),
+    transformers: [transformerMetaHighlight(), transformerMetaWordHighlight()],
   });
 
   eleventyConfig.amendLibrary('md', (mdLib) => {

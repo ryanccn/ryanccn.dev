@@ -5,5 +5,13 @@
 }
 
 .shiki:has(.highlighted):not(:hover) .line:not(.highlighted) {
-  filter: blur(2px) opacity(0.75);
+  filter: opacity(0.35);
+}
+
+.shiki span.highlighted-word {
+  outline-color: rgba(var(--fg) / 0.15);
+  outline-offset: 0.1rem;
+  outline-width: 1px;
+  outline-style: solid;
+  border-radius: 0.25rem;
 }
