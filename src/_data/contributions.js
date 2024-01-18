@@ -80,7 +80,7 @@ export default async () => {
 
     if (!response.success) {
       throw new Error(
-        `Error fetching GitHub contributions: ${response.response}`,
+        `Error fetching GitHub contributions: ${response.response.status} ${response.response.statusText}`,
       );
     }
 

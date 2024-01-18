@@ -42,6 +42,7 @@ title: 'Projects'
 
 <h2 class="projects-page" id="github">GitHub Contributions</h2>
 
+{% if contributions.length > 0 %}
 <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-12">
   {% asyncEach repo in contributions %}
   <li class="flex gap-x-2 justify-between w-full">
@@ -55,6 +56,12 @@ title: 'Projects'
   </li>
   {% endeach %}
 </ol>
+{% else %}
+<div class="px-4 py-16 bg-surface text-fg/50 rounded-lg flex flex-col gap-y-2 items-center mb-12">
+  {% icon 'lucide:alert-triangle', class='block size-8' %}
+  <span class="font-semibold">No data found!</span>
+</div>
+{% endif %}
 
 <h2 class="projects-page">Minecraft Mods</h2>
 <ul class="projects-grid">
