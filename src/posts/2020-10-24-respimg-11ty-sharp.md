@@ -8,7 +8,7 @@ tags:
 date: 2020-10-24
 ---
 
-**Responsive** and **multi-format** images have become incredibly important for (especially mobile) performance of content-based websites. In this article, we'll explore how to add responsive images to an **[Eleventy](https://www.11ty.dev/)** site using **[Sharp](https://sharp.pixelplumbing.com/)** as then image-processing library.
+**Responsive** and **multi-format** images have become incredibly important for (especially mobile) performance of content-based websites. In this article, we'll explore how to add responsive images to an [**Eleventy**](https://www.11ty.dev/) site using [**Sharp**](https://sharp.pixelplumbing.com/) as then image-processing library.
 
 > This method resulted from the development of responsive images on my own site: ryanccn.dev. Check it out!
 
@@ -267,7 +267,7 @@ You will have the result in the HTML as
 
 ```html
 <picture>
-  <source srcset="/images/webp/swr-cover.webp" type="image/webp" />
+  <source srcset="/images/webp/swr-cover.webp" type="image/webp">
   <img
     src="/images/swr-cover.png"
     alt="SWR Cover"
@@ -282,7 +282,7 @@ You will have the result in the HTML as
       /images/20/swr-cover.png  410w,
       /images/10/swr-cover.png  205w
     "
-  />
+  >
 </picture>
 ```
 
@@ -292,5 +292,5 @@ Wonderful!
 
 Some blog posts really helped me with this whole development process:
 
-1. **[Responsive Images 101](https://cloudfour.com/thinks/responsive-images-101-definitions/)** by **Jason Grigsby** at Cloud Four (I learned all of the responsive images spec from this series, and understood why I shouldn't be using `media` attributes on the `source`s :wink:)
-2. **[Blazing fast image transforms with Sharp and Gulp](https://www.webstoemp.com/blog/blazing-fast-image-transforms-with-sharp-gulp/)** by **Jérôme Coupé** (I derived the little Node.js script above from the script that Jérôme wrote in that post :smile:)
+1. [**Responsive Images 101**](https://cloudfour.com/thinks/responsive-images-101-definitions/) by **Jason Grigsby** at Cloud Four (I learned all of the responsive images spec from this series, and understood why I shouldn't be using `media` attributes on the `source`s :wink:)
+2. [**Blazing fast image transforms with Sharp and Gulp**](https://www.webstoemp.com/blog/blazing-fast-image-transforms-with-sharp-gulp/) by **Jérôme Coupé** (I derived the little Node.js script above from the script that Jérôme wrote in that post :smile:)

@@ -40,7 +40,7 @@ The widgets also **behave natively**. Buttons get that lighter background when p
 
 ## Qt Creator
 
-**[Qt Creator](https://www.qt.io/product/development-tools)** is the official IDE for Qt, made with Qt. At first I rejected it because it, well, didn’t look so good, but after using it for a while it seems very intuitive to work with.
+[**Qt Creator**](https://www.qt.io/product/development-tools) is the official IDE for Qt, made with Qt. At first I rejected it because it, well, didn’t look so good, but after using it for a while it seems very intuitive to work with.
 
 Different versions of Qt are easily configurable through **kits**. Different kits can have different [CMake](https://cmake.org/) paths, different Qt versions, different compilers (I specify [`ccache`](https://ccache.dev/) for compilers), and all of this is highly configurable while providing sensible defaults.
 

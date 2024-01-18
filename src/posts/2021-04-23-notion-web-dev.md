@@ -24,7 +24,7 @@ An example of how a Notion database of articles would look like. (This is the da
 
 Another benefit is that Notion is a rich text editor rather than a plain text one, meaning that the process of writing the content feels much better and is much more fluid. In addition, **components** like the callout above can augment the experience for writer and reader alike.
 
-Projects such as `[notion-api-worker](https://github.com/splitbee/notion-api-worker)` and `[react-notion](https://github.com/splitbee/react-notion)` make it incredibly easy to use your Notion content in your applications and websites. In addition, Notion's **[Content API](https://www.notion.so/api-beta)** is currently in private beta, and we can expect to have a much better experience managing content with it later on!
+Projects such as `[notion-api-worker](https://github.com/splitbee/notion-api-worker)` and `[react-notion](https://github.com/splitbee/react-notion)` make it incredibly easy to use your Notion content in your applications and websites. In addition, Notion's [**Content API**](https://www.notion.so/api-beta) is currently in private beta, and we can expect to have a much better experience managing content with it later on!
 
 ## 2. To-do list / Kanban
 
@@ -36,7 +36,7 @@ This can be used wonderfully, with custom attributes being tailored to your own 
 
 ## 3. Database
 
-Just like **[Airtable](https://airtable.com/)**, Notion can be used as a no-code solution for a database. Just create a new table and use whatever you want, and then use the unofficial Notion private API or the Content API (if you're a member of the lucky few) to fetch that data and funnel it into your static site generator or server-rendered templates.
+Just like [**Airtable**](https://airtable.com/), Notion can be used as a no-code solution for a database. Just create a new table and use whatever you want, and then use the unofficial Notion private API or the Content API (if you're a member of the lucky few) to fetch that data and funnel it into your static site generator or server-rendered templates.
 
 For instance, you can manage the projects listed on your personal website in a Notion table with attributes like `href` or `category` or `date`. Then, you can fetch that data and run it through your Eleventy or Next.js or something else.
 
