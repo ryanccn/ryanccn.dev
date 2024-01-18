@@ -24,6 +24,11 @@
     @apply bg-accent text-background;
   }
 
+  * {
+    min-width: 0;
+    outline-color: rgba(var(--accent) / 1);
+  }
+
   .title {
     @apply mb-6 text-balance text-4xl font-extrabold tracking-tight text-fg-brighter;
   }
@@ -33,9 +38,9 @@
   }
 
   .enhanced-prose {
-    @apply prose-h1:title break-words;
+    @apply prose-h1:title break-words prose-headings:tracking-tight;
     @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-2 prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
-    @apply dark:prose-pre:bg-surface;
+    @apply prose-p:text-pretty;
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
@@ -53,11 +58,12 @@
     --tw-prose-td-borders: rgba(var(--surface) / 1);
 
     & :is(h2, h3, h4, h5) {
-      @apply relative tracking-tight;
+      @apply relative;
     }
 
     & :is(h2, h3, h4, h5) .anchor {
-      @apply ml-1 inline-block text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
+      @apply absolute left-0 top-0 -ml-4 inline-block;
+      @apply text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
     }
 
     & :is(h2, h3, h4, h5):target .anchor {

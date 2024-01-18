@@ -1,11 +1,12 @@
 .shiki:has(.highlighted) .line:not(.highlighted) {
-  transition-property: filter;
+  opacity: 0.75;
+  transition-property: opacity;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
 }
 
 .shiki:has(.highlighted):not(:hover) .line:not(.highlighted) {
-  filter: opacity(0.35);
+  opacity: 0.35;
 }
 
 .shiki span.highlighted-word {
