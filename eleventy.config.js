@@ -4,7 +4,7 @@ import { EleventyRenderPlugin } from '@11ty/eleventy';
 import pluginReadingTime from 'eleventy-plugin-reading-time';
 import pluginRss from '@ryanccn/eleventy-plugin-rss';
 import pluginIcons from 'eleventy-plugin-icons';
-import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
+// import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
 
 import pluginValidate from 'eleventy-plugin-validate';
 import { z } from 'zod';
@@ -54,8 +54,8 @@ const config = (eleventyConfig) => {
     ],
   });
 
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(pluginDirectoryOutput);
+  // eleventyConfig.setQuietMode(true);
+  // eleventyConfig.addPlugin(pluginDirectoryOutput);
 
   eleventyConfig.addPlugin(sitePluginShortcodes);
   eleventyConfig.addPlugin(sitePluginFilters);

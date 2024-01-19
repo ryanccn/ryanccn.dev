@@ -20,14 +20,14 @@ const gql = createGql('https://api.github.com/graphql', {
 });
 
 /**
- * @param {string} after
+ * @param {string | null} after
  */
 const queryContributions = (after) =>
   gql`
     query NotableContributions($after: String) {
       viewer {
         repositoriesContributedTo(
-          first: 20
+          first: 15
           after: $after
           contributionTypes: [COMMIT, PULL_REQUEST]
           orderBy: { field: STARGAZERS, direction: DESC }
@@ -40,9 +40,7 @@ const queryContributions = (after) =>
               }
               nameWithOwner
               url
-              stargazers {
-                totalCount
-              }
+              stargazerCount
               isPrivate
               isFork
             }
@@ -70,7 +68,7 @@ export default async () => {
 
   let data = [];
 
-  let after = undefined;
+  let after = null;
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
