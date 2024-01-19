@@ -6,7 +6,7 @@ import { cpus } from 'node:os';
 import { html, safe } from '../../utils/htmlTag.js';
 
 const prod = process.env.NODE_ENV === 'production';
-Image.concurrency = Math.max(Math.floor(cpus().length / (prod ? 4 : 2)), 1);
+Image.concurrency = prod ? 1 : cpus().length;
 
 const DISABLE_IMAGE_OPTIMIZATION =
   process.env.DISABLE_IMAGE_OPTIMIZATION === '1' ||
@@ -29,6 +29,7 @@ export default async (src, alt, width, height) => {
     formats: !DISABLE_IMAGE_OPTIMIZATION ? ['avif', 'webp', 'png'] : ['png'],
     outputDir: './_site/images',
     urlPath: '/images/',
+    useCache: !prod,
   });
 
   const bestSrc = stats.png[stats.png.length - 1];
