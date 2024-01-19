@@ -66,5 +66,10 @@
     "typescript": "^5.3.3",
     "zod": "^3.22.4"
   },
+  "pnpm": {
+    "patchedDependencies": {
+      "@11ty/eleventy-img@3.1.8": "patches/@11ty__eleventy-img@3.1.8.patch"
+    }
+  },
   "packageManager": "pnpm@8.14.1"
 }

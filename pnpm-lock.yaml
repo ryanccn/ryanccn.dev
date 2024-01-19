@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@11ty/eleventy-img@3.1.8':
+    hash: bsyouzevshcb4y7v22y5ba5cta
+    path: patches/@11ty__eleventy-img@3.1.8.patch
+
 devDependencies:
   '@11ty/eleventy':
     specifier: 3.0.0-alpha.4
@@ -13,7 +18,7 @@ devDependencies:
     version: 4.0.0
   '@11ty/eleventy-img':
     specifier: ^3.1.8
-    version: 3.1.8
+    version: 3.1.8(patch_hash=bsyouzevshcb4y7v22y5ba5cta)
   '@11ty/eleventy-plugin-directory-output':
     specifier: ^1.0.1
     version: 1.0.1
@@ -208,7 +213,7 @@ packages:
       - supports-color
     dev: true
 
-  /@11ty/eleventy-img@3.1.8:
+  /@11ty/eleventy-img@3.1.8(patch_hash=bsyouzevshcb4y7v22y5ba5cta):
     resolution: {integrity: sha512-9xVqbykggQAHTSiZEo6nUayS8l8nkM7RU8dCjGzikCc8FXSW/E17ytq7SaDngo24D3LZdD+3Gheh4zSeidrImA==}
     engines: {node: '>=14.15.0'}
     dependencies:
@@ -223,6 +228,7 @@ packages:
       - encoding
       - supports-color
     dev: true
+    patched: true
 
   /@11ty/eleventy-plugin-directory-output@1.0.1:
     resolution: {integrity: sha512-CPBiAOOu5pCIuQW10mURGMK/zBA6gwhzqZmzBBbUeqRsmb3gDk0jcQh/H+2D538Az6NVRSOfjXOzZWorjpG6nw==}
