@@ -132,8 +132,8 @@ devDependencies:
     specifier: ^0.33.2
     version: 0.33.2
   shikiji:
-    specifier: 0.10.0-beta.5
-    version: 0.10.0-beta.5
+    specifier: 0.10.0-beta.8
+    version: 0.10.0-beta.8
   shikiji-transformers:
     specifier: 0.10.0-beta.5
     version: 0.10.0-beta.5
@@ -3931,6 +3931,10 @@ packages:
     resolution: {integrity: sha512-1CdDW6yPekx0ocTdP4ePOlCKN+6byhBs/CX3TOEL+FSd8ZKIbwgMGuh9kNViRObZFZwvUDvWzS//BbrIefl6sA==}
     dev: true
 
+  /shikiji-core@0.10.0-beta.8:
+    resolution: {integrity: sha512-GKkzQwE5WhzI4RsDZAs9QsvYmem3YPF4BvEuKMTrTi2OYbhHwUWmplwMcz7nqMwK4mbUyHeJYKhL9ZS+/jUIcg==}
+    dev: true
+
   /shikiji-transformers@0.10.0-beta.5:
     resolution: {integrity: sha512-NMZ6tM5XbSeUek5XuKg3Y7qTzInGeqWhfe3AN4VDEmsajOzEdy3mTIH8/3v+jD+JiE8pSLAWcGerJ41Iku24Fw==}
     dependencies:
@@ -3941,6 +3945,12 @@ packages:
     resolution: {integrity: sha512-eSYWEq6408pY20BrIOBfL8dFXK9I6eJ3TzavZ+hefgWPCbgFxo7WzhMhxS0MBH9tOlqv3RFW3SljIjr0AXws7Q==}
     dependencies:
       shikiji-core: 0.10.0-beta.5
+    dev: true
+
+  /shikiji@0.10.0-beta.8:
+    resolution: {integrity: sha512-yuaUyXmbeGqK6GLMDJVOZKnmdcVppw5iHJsgP77N9XH6RAM5ojjzJBbx5ROV3DjhQGLKFOAOBiCpf6xgh8o3tw==}
+    dependencies:
+      shikiji-core: 0.10.0-beta.8
     dev: true
 
   /signal-exit@4.1.0:
