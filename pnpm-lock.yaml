@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0
   markdown-it-shikiji:
-    specifier: 0.10.0-beta.5
-    version: 0.10.0-beta.5
+    specifier: 0.10.0
+    version: 0.10.0
   markdown-it-toc-done-right:
     specifier: ^4.2.0
     version: 4.2.0
@@ -2761,12 +2761,12 @@ packages:
     resolution: {integrity: sha512-+rUD93bXHubA4arpEZO3q80so0qgoFJEKRkRbjKX8RTdca89v2kfyF+xR3i2sQTwql9tpPZPOQN5B+PunspXRg==}
     dev: true
 
-  /markdown-it-shikiji@0.10.0-beta.5:
-    resolution: {integrity: sha512-65kmNuYHOV3AbuONyP8svB/dUCrKNt1dvxUbh2ACzpNxN0hgtugnq4tfqWCv03DNGrHlyEi/VgAI1Oy5zB2f2w==}
+  /markdown-it-shikiji@0.10.0:
+    resolution: {integrity: sha512-d0sL2zLythdBLjERBUaMZspsolzs++cFPUCHCgiNlktPCmsLNZloczf8Zs0UHKGvVuYGQnEWByU9l6Zgui1czw==}
     dependencies:
       markdown-it: 14.0.0
-      shikiji: 0.10.0-beta.5
-      shikiji-transformers: 0.10.0-beta.5
+      shikiji: 0.10.0
+      shikiji-transformers: 0.10.0
     dev: true
 
   /markdown-it-toc-done-right@4.2.0:
@@ -3933,14 +3933,30 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /shikiji-core@0.10.0:
+    resolution: {integrity: sha512-imG+bvRkuNlZUi2q9tMVfegRRouTpDxMFejpfF/6J+bFX3NDKtlW9T9iIAkBYnw4pcCtSwirW0AvkwlQR4wyxg==}
+    dev: true
+
   /shikiji-core@0.10.0-beta.5:
     resolution: {integrity: sha512-1CdDW6yPekx0ocTdP4ePOlCKN+6byhBs/CX3TOEL+FSd8ZKIbwgMGuh9kNViRObZFZwvUDvWzS//BbrIefl6sA==}
+    dev: true
+
+  /shikiji-transformers@0.10.0:
+    resolution: {integrity: sha512-x9oYybeF/XOrIc6Mm8G1gU5ezunMxdgD4WwBTKrZ5tAmFFaNIWCjwZENgRt1uR4iMi0+pGH0g9bmrbraSC41nA==}
+    dependencies:
+      shikiji: 0.10.0
     dev: true
 
   /shikiji-transformers@0.10.0-beta.5:
     resolution: {integrity: sha512-NMZ6tM5XbSeUek5XuKg3Y7qTzInGeqWhfe3AN4VDEmsajOzEdy3mTIH8/3v+jD+JiE8pSLAWcGerJ41Iku24Fw==}
     dependencies:
       shikiji: 0.10.0-beta.5
+    dev: true
+
+  /shikiji@0.10.0:
+    resolution: {integrity: sha512-1dAzIOWbtM7B4Sem5BvE+CEdsebDsRA34SfCxM4qJ4PLgR73ZD92VEtNfbcoZ3xOLSqvtV0J9i4WpCgVsmQteg==}
+    dependencies:
+      shikiji-core: 0.10.0
     dev: true
 
   /shikiji@0.10.0-beta.5:

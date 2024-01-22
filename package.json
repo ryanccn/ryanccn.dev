@@ -48,7 +48,7 @@
     "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-emoji": "^3.0.0",
-    "markdown-it-shikiji": "0.10.0-beta.5",
+    "markdown-it-shikiji": "0.10.0",
     "markdown-it-toc-done-right": "^4.2.0",
     "p-limit": "^5.0.0",
     "postcss": "^8.4.33",
