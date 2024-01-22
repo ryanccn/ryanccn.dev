@@ -137,8 +137,8 @@ devDependencies:
     specifier: ^0.33.2
     version: 0.33.2
   shikiji:
-    specifier: 0.10.0-beta.5
-    version: 0.10.0-beta.5
+    specifier: 0.10.0
+    version: 0.10.0
   shikiji-transformers:
     specifier: 0.10.0-beta.5
     version: 0.10.0-beta.5
@@ -3933,6 +3933,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /shikiji-core@0.10.0:
+    resolution: {integrity: sha512-imG+bvRkuNlZUi2q9tMVfegRRouTpDxMFejpfF/6J+bFX3NDKtlW9T9iIAkBYnw4pcCtSwirW0AvkwlQR4wyxg==}
+    dev: true
+
   /shikiji-core@0.10.0-beta.5:
     resolution: {integrity: sha512-1CdDW6yPekx0ocTdP4ePOlCKN+6byhBs/CX3TOEL+FSd8ZKIbwgMGuh9kNViRObZFZwvUDvWzS//BbrIefl6sA==}
     dev: true
@@ -3941,6 +3945,12 @@ packages:
     resolution: {integrity: sha512-NMZ6tM5XbSeUek5XuKg3Y7qTzInGeqWhfe3AN4VDEmsajOzEdy3mTIH8/3v+jD+JiE8pSLAWcGerJ41Iku24Fw==}
     dependencies:
       shikiji: 0.10.0-beta.5
+    dev: true
+
+  /shikiji@0.10.0:
+    resolution: {integrity: sha512-1dAzIOWbtM7B4Sem5BvE+CEdsebDsRA34SfCxM4qJ4PLgR73ZD92VEtNfbcoZ3xOLSqvtV0J9i4WpCgVsmQteg==}
+    dependencies:
+      shikiji-core: 0.10.0
     dev: true
 
   /shikiji@0.10.0-beta.5:

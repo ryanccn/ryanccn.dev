@@ -57,7 +57,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "satori": "^0.10.11",
     "sharp": "^0.33.2",
-    "shikiji": "0.10.0-beta.5",
+    "shikiji": "0.10.0",
     "shikiji-transformers": "0.10.0-beta.5",
     "simple-icons": "^11.1.0",
     "sirv-cli": "^2.0.2",
