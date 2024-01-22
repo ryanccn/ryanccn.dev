@@ -136,7 +136,7 @@ ACME here is configured to use the HTTP challenge for convenience.
 Originally, I had planned to use Cloudflare's [Origin CA certificates](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/) since I was planning on proxying mostly everything through Cloudflare, but it required a custom certificate authority to be installed into Traefik, couldn't be accessed from anywhere other than Cloudflare, and didn't work for services that weren't proxied through Cloudflare (e.g. Postgres).
 
 <figure>
-{% respimg "images/vps-docker-compose-traefik/full-strict.png" , "Cloudflare on Full (Strict) setting" %}
+{% respimg "/images/vps-docker-compose-traefik/full-strict.png" , "Cloudflare on Full (Strict) setting" %}
 <figcaption>With a trusted TLS certificate, the traffic between the origin server and Cloudflare is fully secured.</figcaption>
 </figure>
 
@@ -551,7 +551,7 @@ volumes:
 
 Prometheus communicates with Node Exporter and cAdvisor, and Grafana communicates with Prometheus. With this setup, I could ~~look at fun graphs~~ monitor my server and gain insight into performance metrics.
 
-{% respimg "images/vps-docker-compose-traefik/grafana.png" , "System statistics being displayed on Grafana" %}
+{% respimg "/images/vps-docker-compose-traefik/grafana.png" , "System statistics being displayed on Grafana" %}
 
 If you want to refer to my full configuration or follow my setup, the configuration files are [fully open source](https://github.com/ryanccn/yuuka-config) (with the exception of the env files, of course).
 

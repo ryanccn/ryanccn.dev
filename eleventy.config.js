@@ -66,6 +66,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     './src/assets/icons': 'icons',
     './src/assets/fonts': 'fonts',
+    './src/images': 'images',
   });
 
   eleventyConfig.addWatchTarget('tailwind.config.js');

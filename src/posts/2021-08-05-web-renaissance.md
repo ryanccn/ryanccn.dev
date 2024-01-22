@@ -17,7 +17,7 @@ However, as time passed, SDKs were developed for advanced capabilities such as p
 
 More recently, Web APIs for these different capabilities have emerged into the new web standards, and websites have become more powerful at achieving such goals. Here is the list of Web APIs, experimental and deprecated, on MDN:
 
-{% respimg 'images/web-apis.png', 'List of Web APIs from MDN' %}
+{% respimg '/images/web-apis.png', 'List of Web APIs from MDN' %}
 
 [https://developer.mozilla.org/en-US/docs/Web/API](https://developer.mozilla.org/en-US/docs/Web/API)
 

@@ -16,7 +16,7 @@ No, I haven’t built my own app for it ~~yet~~, but I have created an neat litt
 
 In a Notion database, [formulas](https://www.notion.so/help/formulas) are properties that you could, basically, write code in to derive and calculate a value from other properties.
 
-{% respimg 'images/tracking-subscriptions-with-notion/ffc12b75.png', 'A screenshot of the Notion formula editing interface' %}
+{% respimg '/images/tracking-subscriptions-with-notion/formula-editing.png', 'A screenshot of the Notion formula editing interface' %}
 
 It uses a JavaScript-like syntax and provides basic constants and functions that you can use to do all sorts of fun things such as custom progress bars and star displays, but in this particular case we’re going to use it to do some _pretty cursed_ calculations to provide insight on how much our subscriptions are costing.
 
@@ -24,11 +24,11 @@ It uses a JavaScript-like syntax and provides basic constants and functions that
 
 First off, some basic information needs to entered manually into the database. There’s the name, tags, price, billing cycle, and start date.
 
-{% respimg 'images/tracking-subscriptions-with-notion/10388c43.png', 'The basic information on subscriptions in the database' %}
+{% respimg '/images/tracking-subscriptions-with-notion/basic-information.png', 'The basic information on subscriptions in the database' %}
 
 Here, I also have an additional EUR field for when the original price is in euros instead of dollars. (The conversion to USD is not automatic.)
 
-{% respimg 'images/tracking-subscriptions-with-notion/58a157e6.png', 'An example of an archived (ended) subscription' %}
+{% respimg '/images/tracking-subscriptions-with-notion/archived.png', 'An example of an archived (ended) subscription' %}
 
 For ended subscriptions, there is a checkbox property right in front that you check when the subscription has ended, and you also put an end date into the Since field. This information will be used later on.
 
@@ -42,7 +42,7 @@ prop("Price") * (prop("Billing cycle") == "Monthly" ? 12 : 1);
 
 It simply converts monthly pricing to yearly pricing when the yearly pricing is not provided.
 
-{% respimg 'images/tracking-subscriptions-with-notion/65561df2.png', 'Calculated Effective Annual Costs in the database' %}
+{% respimg '/images/tracking-subscriptions-with-notion/effective-annual-costs.png', 'Calculated Effective Annual Costs in the database' %}
 
 ## Accumulated Cost
 
@@ -80,7 +80,7 @@ Let’s break it down. We already have the effective annual cost from the last f
 
 Thus, `dateBetween(end(prop('Since')) != start(prop('Since')) ? end(prop('Since')) : now(), start(prop('Since'), 'years [or months]')` returns the entire timeframe of the subscription in years or in months. If the billing cycle is in years, we just take the timeframe in years and multiply it by the Effective Annual Cost; if it’s in months, we multiply it by the Effective Annual Cost divided by 12.
 
-{% respimg 'images/tracking-subscriptions-with-notion/e2d13c2a.png', 'Calculated Accumulated Costs in the database' %}
+{% respimg '/images/tracking-subscriptions-with-notion/accumulated-costs.png', 'Calculated Accumulated Costs in the database' %}
 
 ## Working on these formulas are horrific!
 

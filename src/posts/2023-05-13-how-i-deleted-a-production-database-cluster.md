@@ -8,11 +8,11 @@ date: 2023-05-13
 
 On February 26, 2023, I was doing some humdrum server and deployment housekeeping for services I ran. Looking at the [MongoDB Atlas](https://www.mongodb.com/atlas/database) database for [Blåhaj](https://github.com/ryanccn/blahaj), my Discord bot, I noticed that it was hibernating. Which made sense, because I had removed the features that required a MongoDB database and switched to [Railway Redis](https://docs.railway.app/databases/redis) for the simpler features. I went ahead to delete the cluster, but then some unknown supernatural force logged me out. I was slightly annoyed and logged back in. (Note that the logging in process didn’t take any mental effort because [1Password](https://1password.com/) did all the work.) Then, I went ahead to open up the Blåhaj project. I went to the cluster settings page, annoyed and wanting to finish up everything quickly, and clicked **delete cluster**.
 
-{% respimg 'images/delete-production-database/3dde9e97.png', 'Dialog saying "Unable to terminate this cluster"' %}
+{% respimg '/images/delete-production-database/unable-to-terminate.png', 'Dialog saying "Unable to terminate this cluster"' %}
 
 MongoDB Atlas’s [Termination Protection](https://www.mongodb.com/docs/atlas/cluster-additional-settings/#termination-protection) promptly kicked in. So I went to Edit Configuration, turned off termination protection, and deleted the cluster.
 
-{% respimg 'images/delete-production-database/f42222ba.png', 'Termination Protection, turned off' %}
+{% respimg '/images/delete-production-database/termination-protection.png', 'Termination Protection, turned off' %}
 
 Then I turned off my computer and went to do something else.
 
@@ -36,7 +36,7 @@ I searched desperately for a way to recover any backups, but the M0 free cluster
 
 When I named the cluster at first, I just went with the default name of Cluster0, because, well, there was only one cluster on the project after all and I thought it would do no harm.
 
-{% respimg 'images/delete-production-database/d9af9621.png', 'Dialog prompting confirmation to terminate Cluster0' %}
+{% respimg '/images/delete-production-database/terminate-cluster.png', 'Dialog prompting confirmation to terminate Cluster0' %}
 
 As it turns out, this probably was the only safeguard against deletion that would have required at least some amount of conscious mental effort, but by naming the cluster in such a generic way, I voided this safeguard as well.
 
