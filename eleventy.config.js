@@ -3,8 +3,9 @@ import 'dotenv/config.js';
 import { EleventyRenderPlugin } from '@11ty/eleventy';
 import pluginReadingTime from 'eleventy-plugin-reading-time';
 import pluginRss from '@ryanccn/eleventy-plugin-rss';
+
 import pluginIcons from 'eleventy-plugin-icons';
-// import pluginDirectoryOutput from '@11ty/eleventy-plugin-directory-output';
+import { optimize as svgo } from 'svgo';
 
 import pluginValidate from 'eleventy-plugin-validate';
 import { z } from 'zod';
@@ -20,6 +21,7 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
+
   eleventyConfig.addPlugin(pluginIcons, {
     mode: 'inline',
     sources: [
@@ -29,6 +31,23 @@ const config = (eleventyConfig) => {
     ],
     icon: {
       class: () => '',
+      transform: async (svg) => {
+        const optimized = svgo(svg, {
+          multipass: true,
+          plugins: [
+            {
+              name: 'preset-default',
+              params: {
+                overrides: {
+                  removeViewBox: false,
+                },
+              },
+            },
+          ],
+        }).data;
+
+        return optimized;
+      },
       attributesBySource: {
         simpleicon: {
           fill: 'currentColor',

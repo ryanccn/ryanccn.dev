@@ -17,10 +17,7 @@ export const sitePluginFilters = (eleventyConfig) => {
    * @param {String[]} k list of tags
    * @returns {String[]} list of *filtered* tags
    */
-  const filterTagsList = (k) =>
-    k.filter(
-      (a) => !['all', 'posts', '__eleventy-plugin-validate'].includes(a),
-    );
+  const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 
   eleventyConfig.addFilter('filterTagsList', (k) => filterTagsList(k));
 
