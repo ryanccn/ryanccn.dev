@@ -12,8 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "noUncheckedIndexedAccess": true,
-    "composite": true
+    "composite": true,
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "**/node_modules/*"]
+  "exclude": ["node_modules", "**/node_modules/*"],
 }

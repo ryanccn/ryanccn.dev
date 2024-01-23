@@ -8,11 +8,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "cross-env NODE_ENV=production eleventy && node src/utils/ogImage/index.js",
+    "build:eleventy": "cross-env NODE_ENV=production eleventy",
+    "build:opengraph": "node src/utils/ogImage/index.js",
+    "build": "run-s clean build:eleventy build:opengraph",
+    "clean": "rimraf _site .cache pages.json",
     "preview": "sirv _site",
-    "clean": "rm -rf _site .cache pages.json",
-    "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.4",
@@ -49,11 +51,13 @@
     "markdown-it-emoji": "^3.0.0",
     "markdown-it-shikiji": "0.10.0",
     "markdown-it-toc-done-right": "^4.2.0",
+    "npm-run-all2": "^6.1.1",
     "p-limit": "^5.0.0",
     "postcss": "^8.4.33",
     "postcss-import": "^16.0.0",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "rimraf": "^5.0.5",
     "satori": "^0.10.11",
     "sharp": "^0.33.2",
     "shikiji": "0.10.0",
