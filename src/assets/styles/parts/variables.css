@@ -3,16 +3,16 @@
 }
 
 :root {
-  --fg: 15 23 42;
+  --fg: 25 25 25;
   --fg-brighter: 0 0 0;
-  --fg-less-dimmed: 51 65 85;
-  --fg-dimmed: 100 116 139;
+  --fg-less-dimmed: 50 50 50;
+  --fg-dimmed: 75 75 75;
   --accent: 37 99 235;
   --accent-lighter: 59 130 246;
 
   --background: 255 255 255;
   --surface: 245 245 245;
-  --surface-hover: 229 229 229;
+  --surface-hover: 235 235 235;
 
   --shiki-foreground: rgba(var(--fg) / 1);
   --shiki-background: rgba(var(--surface) / 1);
@@ -29,10 +29,10 @@
 }
 
 .theme-dark {
-  --fg: 212 212 212;
+  --fg: 235 235 235;
   --fg-brighter: 245 245 245;
-  --fg-less-dimmed: 163 163 163;
-  --fg-dimmed: 115 115 115;
+  --fg-less-dimmed: 215 215 215;
+  --fg-dimmed: 195 195 195;
   --accent: 147 197 253;
   --accent-lighter: 96 165 250;
 
