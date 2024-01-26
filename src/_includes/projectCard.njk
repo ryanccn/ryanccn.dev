@@ -3,18 +3,18 @@
     <h3 class="font-bold text-base">
       {{ project.name }}
     </h3>
-    <p class="text-fg-dimmed text-sm leading-snug">
+    <p class="text-fg-dimmed text-sm leading-snug text-pretty">
       {{ project.description }}
     </p>
   </div>
 
   {% if project.link.startsWith("https://github.com") %}
-    {% icon 'simpleicon:github', class='block size-4 mt-8 self-end text-current' %}
+  {% icon 'simpleicon:github', class='block size-4 mt-8 self-end text-current' %}
   {% elif project.link.startsWith("https://codeberg.org") %}
-    {% icon 'simpleicon:codeberg', class='block size-4 mt-8 self-end text-current' %}
+  {% icon 'simpleicon:codeberg', class='block size-4 mt-8 self-end text-current' %}
   {% elif project.link.startsWith("https://modrinth.com") %}
-    {% icon 'simpleicon:modrinth', class='block size-4 mt-8 self-end text-current' %}
+  {% icon 'simpleicon:modrinth', class='block size-4 mt-8 self-end text-current' %}
   {% else %}
-    {% icon 'lucide:arrow-up-right', class='block size-4 mt-8 self-end text-current' %}
+  {% icon 'lucide:arrow-up-right', class='block size-4 mt-8 self-end text-current' %}
   {% endif %}
 </a>

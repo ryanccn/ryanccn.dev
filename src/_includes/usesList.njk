@@ -6,25 +6,25 @@
       <div class="flex flex-row gap-1 flex-wrap items-center">
         <a href="{{ item.url }}" class="font-bold text-lg tracking-tight mr-2">{{ item.name }}</a>
 
-        {% if item.openSource === true %}
-          <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Open source</span>
+        {% if item.openSource %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Open source</span>
         {% endif %}
-        {% if item.paid === true %}
-          <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Paid</span>
+        {% if item.paid %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Paid</span>
         {% endif %}
-        {% if item.freemium === true %}
-          <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Freemium</span>
+        {% if item.freemium %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Freemium</span>
         {% endif %}
-        {% if item.macos === true %}
-          <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">macOS</span>
+        {% if item.macos %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">macOS</span>
         {% endif %}
-        {% if item.ios === true %}
-          <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">iOS</span>
+        {% if item.ios %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">iOS</span>
         {% endif %}
       </div>
 
       {% if "description" in item %}
-        <span class="text-fg-dimmed text-sm font-normal leading-snug">{{ item.description }}</span>
+      <span class="text-fg-dimmed text-sm leading-snug text-pretty">{{ item.description }}</span>
       {% endif %}
 
       {% if "accessories" in item %}
@@ -32,7 +32,9 @@
         {% for accessory in item.accessories %}
         <div class="flex flex-col gap-y-1">
           <a href="{{ accessory.url }}" class="font-semibold text-sm text-fg-less-dimmed hover:text-fg transition-colors tracking-tight leading-snug">{{ accessory.name }}</a>
-          {% if "description" in accessory %}<span class="text-fg-dimmed text-xs text-balance leading-snug">{{ accessory.description }}</span>{% endif %}
+          {% if "description" in accessory %}
+          <span class="text-fg-dimmed text-xs leading-snug text-pretty">{{ accessory.description }}</span>
+          {% endif %}
         </div>
         {% endfor %}
       </div>
