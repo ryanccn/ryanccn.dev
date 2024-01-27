@@ -86,8 +86,8 @@
   }
 
   .buttonish,
-  button {
-    @apply flex items-center space-x-3 rounded px-4 py-2 text-sm font-medium;
+  button:not(.no-default) {
+    @apply flex items-center gap-x-3 rounded px-4 py-2 text-sm font-medium;
     @apply bg-surface transition-[color,background-color,border-color,text-decoration-color,fill,stroke,opacity,brightness] hover:bg-surface-hover disabled:opacity-75;
 
     &.primary {

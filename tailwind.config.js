@@ -36,17 +36,6 @@ export default {
         sky: colors.sky,
         green: colors.green,
       },
-
-      'brand': {
-        hn: '#f0652f',
-        github: '#181717',
-        firefish: '#eb6f92',
-        mastodon: '#6364ff',
-        threads: '#000000',
-        kofi: '#ff5e5b',
-        discord: '#5865f2',
-        modrinth: '#00af5c',
-      },
     },
 
     extend: {
