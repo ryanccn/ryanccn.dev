@@ -64,6 +64,7 @@ const theme = new Proxy(
     set(target, p, newValue) {
       if (p !== 'value') return false;
       if (!checkThemeStr(newValue)) return false;
+      if (target.value === newValue) return true;
 
       target.value = newValue;
       updateClass(newValue);
