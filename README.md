@@ -9,7 +9,7 @@ My personal website, made with [Eleventy](https://www.11ty.dev/) and [Tailwind C
 - **Syntax highlighting** for blog posts in Markdown using [shiki](https://github.com/shikijs/shiki)
 - **RSS & Atom feeds** for subscription and syndication
 - **GitHub contributions listing** using the GitHub GraphQL API
-- **11 themes** available via CSS variables and accessible through a select
+- **13 themes** available via CSS variables and accessible through a select
 - **Pageview data** fetched from [Plausible](https://plausible.io/)'s API
 
 ## Get started

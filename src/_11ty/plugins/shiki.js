@@ -1,12 +1,12 @@
-import Shikiji from 'markdown-it-shikiji';
-import { createCssVariablesTheme } from 'shikiji';
+import Shiki from '@shikijs/markdown-it';
+import { createCssVariablesTheme } from 'shiki';
 import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
-} from 'shikiji-transformers';
+} from '@shikijs/transformers';
 
 export const sitePluginShiki = async (eleventyConfig) => {
-  const plugin = await Shikiji({
+  const plugin = await Shiki({
     theme: createCssVariablesTheme({
       name: 'css-variables',
       variableDefaults: {},

@@ -34,6 +34,12 @@ devDependencies:
   '@ryanccn/gql':
     specifier: ^1.0.0
     version: 1.0.0
+  '@shikijs/markdown-it':
+    specifier: 1.0.0-beta.0
+    version: 1.0.0-beta.0
+  '@shikijs/transformers':
+    specifier: 1.0.0-beta.0
+    version: 1.0.0-beta.0
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.1)
@@ -106,9 +112,6 @@ devDependencies:
   markdown-it-emoji:
     specifier: ^3.0.0
     version: 3.0.0
-  markdown-it-shikiji:
-    specifier: 0.10.1
-    version: 0.10.1
   markdown-it-toc-done-right:
     specifier: ^4.2.0
     version: 4.2.0
@@ -139,12 +142,9 @@ devDependencies:
   sharp:
     specifier: ^0.33.2
     version: 0.33.2
-  shikiji:
-    specifier: 0.10.1
-    version: 0.10.1
-  shikiji-transformers:
-    specifier: 0.10.1
-    version: 0.10.1
+  shiki:
+    specifier: 1.0.0-beta.0
+    version: 1.0.0-beta.0
   simple-icons:
     specifier: ^11.2.0
     version: 11.2.0
@@ -1014,6 +1014,24 @@ packages:
 
   /@ryanccn/gql@1.0.0:
     resolution: {integrity: sha512-HKs1a2G1UVzjclNIclH+bghACwtO72MIEPT98vdVGJA8nvV0ADaVkLg+lDwm9qqHDszN8b1UsF3S5J9hwXXHQg==}
+    dev: true
+
+  /@shikijs/core@1.0.0-beta.0:
+    resolution: {integrity: sha512-uicyrkx379Q5sxQuGV3kduHPWIAkjxmeA5A4J6syscx8wiEyIV06i/Q6s9GeKLCb857Hi90H8e/FoFSbcjnZsw==}
+    dev: true
+
+  /@shikijs/markdown-it@1.0.0-beta.0:
+    resolution: {integrity: sha512-muMbqciAcbcFK4NLWNkVHLkWg+EoJfwwZ61+pqz50/6mgcpTLTWRDtaVOUqeVMy2uotkktveR0ifrLS5xPrWYQ==}
+    dependencies:
+      '@shikijs/transformers': 1.0.0-beta.0
+      markdown-it: 14.0.0
+      shiki: 1.0.0-beta.0
+    dev: true
+
+  /@shikijs/transformers@1.0.0-beta.0:
+    resolution: {integrity: sha512-OvIO6RxQ7YaQhp34uXVKUPZDRdTcGwBgX3zn26haSvqPwrTQcxdPgT47sr4u3sz1+RwN3RO9AGxCJFRKNpB+Qw==}
+    dependencies:
+      shiki: 1.0.0-beta.0
     dev: true
 
   /@shuding/opentype.js@1.4.0-beta.0:
@@ -2830,14 +2848,6 @@ packages:
     resolution: {integrity: sha512-+rUD93bXHubA4arpEZO3q80so0qgoFJEKRkRbjKX8RTdca89v2kfyF+xR3i2sQTwql9tpPZPOQN5B+PunspXRg==}
     dev: true
 
-  /markdown-it-shikiji@0.10.1:
-    resolution: {integrity: sha512-c8zQneeDe38Y+s2qYWl6gymqN6tzME29yvmUiDMnWx3dtUjRfbKjJU1PtG/S4paMgHKEZFJZ0Qg/3R9AolrMpA==}
-    dependencies:
-      markdown-it: 14.0.0
-      shikiji: 0.10.1
-      shikiji-transformers: 0.10.1
-    dev: true
-
   /markdown-it-toc-done-right@4.2.0:
     resolution: {integrity: sha512-UB/IbzjWazwTlNAX0pvWNlJS8NKsOQ4syrXZQ/C72j+jirrsjVRT627lCaylrKJFBQWfRsPmIVQie8x38DEhAQ==}
     dev: true
@@ -4070,20 +4080,10 @@ packages:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
     dev: true
 
-  /shikiji-core@0.10.1:
-    resolution: {integrity: sha512-MEHLfrdT/oc5gobeHwKXZsKB5M5l6YKDaNjK3NtdjWqgZ4GD2vvXQqyYJFsbhkBCkmFIAbE5G8Xg+QOvNbo3Tg==}
-    dev: true
-
-  /shikiji-transformers@0.10.1:
-    resolution: {integrity: sha512-C7m6CuH09Vp1ATm+tObVm5UkFSOuJZoJu2fhDLa3RyQd4rpInVNiCvcJl2g365tpqKw04nXrr6z1pjsB0W7Dog==}
+  /shiki@1.0.0-beta.0:
+    resolution: {integrity: sha512-CcP0IhEDQ3LWfJC44cfxfId9pjJi9Nephl8DxgrL4tKWprI/oz6deZyL0vB+XWxhTx/1uonzWQKaSQPwKx5dTA==}
     dependencies:
-      shikiji: 0.10.1
-    dev: true
-
-  /shikiji@0.10.1:
-    resolution: {integrity: sha512-fUWWEOYD0JaDkXcQCWqpcO3S3SwvHO+olak9sRcXrlriX2hqNYCkgCGxB2fomlk4pe09F1DqHkw09ccKeZJTOg==}
-    dependencies:
-      shikiji-core: 0.10.1
+      '@shikijs/core': 1.0.0-beta.0
     dev: true
 
   /signal-exit@4.1.0:
