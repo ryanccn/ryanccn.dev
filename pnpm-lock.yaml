@@ -101,8 +101,8 @@ devDependencies:
     specifier: ^4.1.5
     version: 4.1.5
   lucide-static:
-    specifier: ^0.315.0
-    version: 0.315.0
+    specifier: ^0.316.0
+    version: 0.316.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -2825,8 +2825,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.315.0:
-    resolution: {integrity: sha512-hdvGNziG8f9RTJWdn9t1UkLfiu/dZEF1czFhNjaa9qIOtKKo0A0AzgaHnhV2A7x5bNbJeC2e0QksCj9m1rYpFA==}
+  /lucide-static@0.316.0:
+    resolution: {integrity: sha512-0z1UKEAiP0KXKfyK7swCdY4jqsnxsrxJ+hIS8EGyDVHe5VaiGWeyCBKg4+Vsh3S17l7xyaVdQu5jh181fgEQSA==}
     dev: true
 
   /luxon@3.4.4:
