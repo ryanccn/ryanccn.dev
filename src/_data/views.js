@@ -4,8 +4,8 @@ import { format } from 'date-fns';
 import { logData } from '../utils/log.js';
 import { bold } from 'kleur/colors';
 
-import { readdir } from 'fs/promises';
-import { join } from 'path';
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
 
 const getViews = async ({ slug, originalUrl }) => {
   if (!process.env.PLAUSIBLE_TOKEN) return 0;
@@ -21,10 +21,8 @@ const getViews = async ({ slug, originalUrl }) => {
   url.searchParams.set('metrics', 'pageviews');
   url.searchParams.set(
     'filters',
-    `event:page==${originalUrl}` +
-      (originalUrl.endsWith('/')
-        ? `|${originalUrl.substring(0, originalUrl.length - 1)}`
-        : ''),
+    `event:page==${originalUrl}`
+    + (originalUrl.endsWith('/') ? `|${originalUrl.slice(0, -1)}` : ''),
   );
 
   const res = await EleventyFetch(url.toString(), {
@@ -47,7 +45,7 @@ export default async () => {
     (files) =>
       files
         .filter((f) => f.endsWith('.md'))
-        .map((f) => f.slice(11, f.length - 3))
+        .map((f) => f.slice(11, -3))
         .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
   );
 

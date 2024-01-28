@@ -1,5 +1,11 @@
 import { format, isBefore, subYears } from 'date-fns';
 
+/**
+ * @param {String[]} k list of tags
+ * @returns {String[]} list of *filtered* tags
+ */
+const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
+
 export const sitePluginFilters = (eleventyConfig) => {
   eleventyConfig.addFilter(
     'head',
@@ -13,20 +19,14 @@ export const sitePluginFilters = (eleventyConfig) => {
     },
   );
 
-  /**
-   * @param {String[]} k list of tags
-   * @returns {String[]} list of *filtered* tags
-   */
-  const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
-
   eleventyConfig.addFilter('filterTagsList', (k) => filterTagsList(k));
 
   eleventyConfig.addCollection('postsTagList', (collection) => {
     let tagSet = new Set();
 
-    collection.getFilteredByTag('posts').forEach((item) => {
-      (item?.data?.tags || []).forEach((tag) => tagSet.add(tag));
-    });
+    for (const item of collection.getFilteredByTag('posts')) {
+      for (const tag of item?.data?.tags || []) tagSet.add(tag);
+    }
 
     return filterTagsList([...tagSet]);
   });

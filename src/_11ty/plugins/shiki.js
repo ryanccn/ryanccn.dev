@@ -11,7 +11,10 @@ export const sitePluginShiki = async (eleventyConfig) => {
       name: 'css-variables',
       variableDefaults: {},
     }),
-    transformers: [transformerMetaHighlight(), transformerMetaWordHighlight()],
+    transformers: [
+      transformerMetaHighlight(),
+      transformerMetaWordHighlight(),
+    ],
   });
 
   eleventyConfig.amendLibrary('md', (mdLib) => {

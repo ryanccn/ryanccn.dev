@@ -3,8 +3,8 @@ import { renderAsync } from '@resvg/resvg-js';
 import { format } from 'date-fns';
 
 import pLimit from 'p-limit';
-import { mkdir, readFile, writeFile } from 'fs/promises';
-import { cpus } from 'os';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { cpus } from 'node:os';
 import { blue, dim } from 'kleur/colors';
 
 await mkdir('_site/og', { recursive: true });
@@ -29,19 +29,20 @@ for (const weight of weights) {
     readFile(`./src/utils/ogImage/fonts/Inter-${weight.italic}-frozen.ttf`),
   ]);
 
-  fonts.push({
-    name: 'Inter Frozen',
-    data: roman,
-    weight: weight.weight,
-    style: 'normal',
-  });
-
-  fonts.push({
-    name: 'Inter Frozen',
-    data: italic,
-    weight: weight.weight,
-    style: 'italic',
-  });
+  fonts.push(
+    {
+      name: 'Inter Frozen',
+      data: roman,
+      weight: weight.weight,
+      style: 'normal',
+    },
+    {
+      name: 'Inter Frozen',
+      data: italic,
+      weight: weight.weight,
+      style: 'italic',
+    },
+  );
 }
 
 /**

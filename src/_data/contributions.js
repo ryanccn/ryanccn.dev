@@ -62,7 +62,6 @@ export default async () => {
 
   if (cache.isCacheValid('1d')) {
     logData('contributions', 'Using cached data');
-
     return await cache.getCachedValue();
   }
 
@@ -77,9 +76,7 @@ export default async () => {
     const response = await queryContributions(after);
 
     if (!response.success) {
-      throw new Error(
-        `Error fetching GitHub contributions: ${response.response.status} ${response.response.statusText}`,
-      );
+      throw new Error(`Error fetching GitHub contributions: ${response.response.status} ${response.response.statusText}`);
     }
 
     const {

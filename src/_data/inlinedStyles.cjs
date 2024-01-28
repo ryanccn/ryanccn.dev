@@ -1,5 +1,5 @@
 const postcss = require('postcss');
-const { readFile } = require('fs/promises');
+const { readFile } = require('node:fs/promises');
 
 /**
  * @param {string} file
@@ -14,13 +14,10 @@ const buildStyle = async (file, label) => {
   const plugins = [require('autoprefixer')];
   if (process.env.NODE_ENV === 'production') plugins.push(require('cssnano'));
 
-  const css = await postcss(plugins).process(source, {
-    from: file,
-    to: undefined,
-  });
+  const css = await postcss(plugins).process(source,
+    { from: file, to: undefined });
 
   await logSize(css.content, label);
-
   return css.content;
 };
 

@@ -16,7 +16,7 @@ const entityMap = {
   '<': '&lt;',
   '>': '&gt;',
   '"': '&quot;',
-  "'": '&#39;',
+  '\'': '&#39;',
   '/': '&#x2F;',
   '`': '&#x60;',
   '=': '&#x3D;',
@@ -26,11 +26,11 @@ const escapeHtml = (value) => {
   if (value instanceof SafeValue && value.verify(SECURE_RANDOM_SAFE))
     return String(value.inner);
 
-  return String(value).replace(/[&<>"'`=/]/g, (s) => entityMap[s]);
+  return String(value).replaceAll(/["&'/<=>`]/g, (s) => entityMap[s]);
 };
 
 const html = (s, ...f) => {
-  return String.raw({ raw: s }, ...f.map(escapeHtml));
+  return String.raw({ raw: s }, ...f.map((e) => escapeHtml(e)));
 };
 
 const safe = (value) => {

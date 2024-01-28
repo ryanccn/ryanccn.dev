@@ -39,7 +39,7 @@ const ESCAPE_TABLE = {
   ':': '%3A',
   '<': '%3C',
   '>': '%3E',
-  '"': "'",
+  '"': '\'',
 };
 
 const ESCAPE_REGEX = new RegExp(Object.keys(ESCAPE_TABLE).join('|'), 'g');
@@ -92,27 +92,29 @@ function getBitmapDimensions_(imgWidth, imgHeight) {
 export default async (src) => {
   // We wrap the blurred image in a SVG to avoid rasterizing the filter on each layout.
   const dataURI = await getDataURI(src);
-  let svg = html`<svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 ${dataURI.width} ${dataURI.height}"
-  >
-    <filter id="b" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
-      <feComponentTransfer>
-        <feFuncA type="discrete" tableValues="1 1"></feFuncA>
-      </feComponentTransfer>
-    </filter>
-    <image
-      filter="url(#b)"
-      preserveAspectRatio="none"
-      height="100%"
-      width="100%"
-      xlink:href="${dataURI.src}"
-    ></image>
-  </svg>`;
+  let svg = html`
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 ${dataURI.width} ${dataURI.height}"
+    >
+      <filter id="b" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
+        <feComponentTransfer>
+          <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+        </feComponentTransfer>
+      </filter>
+      <image
+        filter="url(#b)"
+        preserveAspectRatio="none"
+        height="100%"
+        width="100%"
+        xlink:href="${dataURI.src}"
+      ></image>
+    </svg>
+  `;
 
-  const optimizedSvg = optimize(svg).data.replace(ESCAPE_REGEX, escaper);
+  const optimizedSvg = optimize(svg).data.replaceAll(ESCAPE_REGEX, escaper);
 
   const uri = `data:image/svg+xml;charset=utf-8,${optimizedSvg}`;
   return uri;

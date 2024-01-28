@@ -40,9 +40,7 @@ const logSize = async (str, name) => {
     brStr = red(brStr);
   }
 
-  console.log(
-    `${magenta('[assets]')} Built ${bold(name)}  ${sizeStr}  ${brStr}`,
-  );
+  console.log(`${magenta('[assets]')} Built ${bold(name)}  ${sizeStr}  ${brStr}`);
 };
 
 /**

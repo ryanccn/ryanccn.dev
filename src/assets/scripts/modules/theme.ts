@@ -1,5 +1,4 @@
-const getThemeSelect = () =>
-  document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
+const getThemeSelect = () => document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
 
 const isThemeDark = {
   'light': false,
@@ -41,10 +40,7 @@ const getLocalStorageValue = (): ThemeId => {
   let lsv = localStorage.getItem('theme');
 
   if (!checkThemeStr(lsv)) {
-    if (DEV)
-      console.log(
-        `[theme] set localStorage to system (original ${lsv} is invalid)`,
-      );
+    if (DEV) console.log(`[theme] set localStorage to system (original ${lsv} is invalid)`);
 
     const defaultTheme: ThemeId = systemIsDark() ? 'dark' : 'light';
 
@@ -89,10 +85,7 @@ const updateClass = (value: ThemeId) => {
   documentElement.classList.add(`theme-${value}`);
   documentElement.classList.toggle('dark', isThemeDark[value]);
 
-  documentElement.style.setProperty(
-    'color-scheme',
-    isThemeDark[value] ? 'dark' : 'light',
-  );
+  documentElement.style.setProperty('color-scheme', isThemeDark[value] ? 'dark' : 'light');
 };
 
 const updateSelect = (value: ThemeId) => {

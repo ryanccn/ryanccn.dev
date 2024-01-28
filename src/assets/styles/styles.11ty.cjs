@@ -1,5 +1,5 @@
 const postcss = require('postcss');
-const { readFile } = require('fs/promises');
+const { readFile } = require('node:fs/promises');
 
 class Page {
   data() {

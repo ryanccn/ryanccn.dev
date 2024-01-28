@@ -6,3 +6,10 @@ pnpm-lock.yaml
 
 .env.local
 /pages.json
+
+**/*.js
+**/*.mjs
+**/*.cjs
+**/*.ts
+**/*.mts
+**/*.cts

@@ -1,15 +1,13 @@
 import { build as esbuild } from 'esbuild';
 
-import { join } from 'path';
+import { join } from 'node:path';
 import { logSize } from '../utils/log.js';
 
 export default async () => {
   const result = await esbuild({
     entryPoints: [join(process.cwd(), './src/assets/scripts/inlinedScript.ts')],
     define: {
-      DEV: JSON.stringify(
-        process.env.NODE_ENV ? process.env.NODE_ENV !== 'production' : true,
-      ),
+      DEV: JSON.stringify(process.env.NODE_ENV !== 'production'),
     },
     format: 'iife',
     platform: 'browser',

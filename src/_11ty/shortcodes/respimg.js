@@ -61,11 +61,9 @@ export default async (src, alt, width, height) => {
         .map((w) => `/cdn-cgi/image/f=${format},w=${w}${src} ${w}w`)
         .join(', ');
 
-      return html`<source
-        type="image/${format}"
-        srcset="${srcset}"
-        sizes="100vw"
-      >`;
+      return html`
+        <source type="image/${format}" srcset="${srcset}" sizes="100vw">
+      `.trim();
     })
     .join('')
     .trim();

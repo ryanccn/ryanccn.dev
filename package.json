@@ -21,12 +21,14 @@
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.8",
     "@awmottaz/prettier-plugin-void-html": "^1.5.0",
+    "@eslint/js": "^8.56.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@resvg/resvg-js": "^2.6.0",
     "@ryanccn/eleventy-plugin-rss": "^1.2.2",
     "@ryanccn/gql": "^1.0.0",
     "@shikijs/markdown-it": "1.0.0-beta.0",
     "@shikijs/transformers": "1.0.0-beta.0",
+    "@stylistic/eslint-plugin": "^1.5.4",
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.7",
@@ -43,7 +45,9 @@
     "eleventy-plugin-validate": "^0.1.2",
     "esbuild": "^0.19.12",
     "eslint": "^8.56.0",
+    "eslint-plugin-unicorn": "^50.0.1",
     "execa": "^8.0.1",
+    "globals": "^13.24.0",
     "html-minifier": "^4.0.0",
     "image-size": "^1.1.1",
     "kleur": "^4.1.5",
@@ -74,5 +78,5 @@
       "@11ty/eleventy-img@3.1.8": "patches/@11ty__eleventy-img@3.1.8.patch"
     }
   },
-  "packageManager": "pnpm@8.14.3"
+  "packageManager": "pnpm@8.15.0"
 }

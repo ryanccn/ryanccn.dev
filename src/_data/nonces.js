@@ -1,4 +1,4 @@
-const makeNonce = () => crypto.randomUUID().replace(/-/g, '');
+const makeNonce = () => crypto.randomUUID().replaceAll('-', '');
 
 export default () => ({
   script: makeNonce(),
