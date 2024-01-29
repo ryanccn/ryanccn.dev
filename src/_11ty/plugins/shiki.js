@@ -5,11 +5,12 @@ import {
 } from '@shikijs/transformers';
 
 import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const readJSON = async (path) =>
-  readFile(join(import.meta.dirname, path), { encoding: 'utf8' })
-    .then((r) => JSON.parse(r));
+  readFile(join(__dirname, path), { encoding: 'utf8' }).then((r) => JSON.parse(r));
 
 export const sitePluginShiki = async (eleventyConfig) => {
   const [flexokiLight, flexokiDark] = await Promise.all([
