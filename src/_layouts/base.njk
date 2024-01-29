@@ -134,10 +134,10 @@ eleventyComputed:
         </button>
       </div>
 
-      <div class="relative flex flex-row self-start items-center text-sm font-medium bg-surface hover:bg-surface-hover transition-all rounded" data-theme-select>
-        {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0', 'aria-hidden'='true' %}
+      <div class="flex flex-row self-start items-center" data-theme-select>
+        {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden'='true' %}
 
-        <select aria-label="Select a theme" class="-ml-7 py-2 pl-9 pr-3 appearance-none bg-transparent" accesskey="t">
+        <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
           <option value="light">Default Light</option>
           <option value="dark">Default Dark</option>
           <option value="flexoki-light">Flexoki Light</option>
@@ -173,9 +173,9 @@ eleventyComputed:
 
     <footer class="flex flex-col gap-y-2 md:hidden mt-20">
       <div class="flex flex-row gap-x-1 text-xs">
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/previous">←</a>
+        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
         <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/%F0%9F%8C%86%C2%A9%EF%B8%8F%F0%9F%99%89/next">→</a>
+        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
       </div>
 
       <a class="text-xs text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">

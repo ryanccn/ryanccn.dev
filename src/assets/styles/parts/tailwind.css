@@ -47,6 +47,7 @@
     @apply prose-h1:title break-words prose-headings:tracking-tight;
     @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-2 prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
     @apply prose-p:text-pretty;
+    @apply prose-pre:rounded-lg prose-pre:border-[1.5px] prose-pre:border-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
 
