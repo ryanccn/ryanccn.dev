@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "composite": true,
+  },
+  "include": ["./**/*.js", "./**/*.mjs", "./**/*.cjs", "./**/*.ts"],
+  "exclude": ["node_modules", "**/node_modules/*"],
+}

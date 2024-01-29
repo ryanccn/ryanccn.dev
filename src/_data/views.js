@@ -27,9 +27,7 @@ const getViews = async ({ slug, originalUrl }) => {
 
   const res = await EleventyFetch(url.toString(), {
     fetchOptions: {
-      headers: {
-        Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}`,
-      },
+      headers: { Authorization: `Bearer ${process.env.PLAUSIBLE_TOKEN}` },
     },
     duration: '1d',
     type: 'json',
@@ -41,13 +39,12 @@ const getViews = async ({ slug, originalUrl }) => {
 export default async () => {
   const ret = {};
 
-  const postData = await readdir(join(process.cwd(), 'src', 'posts')).then(
-    (files) =>
-      files
-        .filter((f) => f.endsWith('.md'))
-        .map((f) => f.slice(11, -3))
-        .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
-  );
+  const postData = await readdir(join(process.cwd(), 'src', 'posts'))
+    .then((files) => files
+      .filter((f) => f.endsWith('.md'))
+      .map((f) => f.slice(11, -3))
+      .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
+    );
 
   await Promise.all(
     postData.map(async (p) => {
