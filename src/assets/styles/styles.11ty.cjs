@@ -19,17 +19,16 @@ class Page {
 
     const plugins = [
       require('postcss-import'),
-      require('tailwindcss/nesting'),
+      require('postcss-mixins'),
       require('tailwindcss'),
-      require('autoprefixer'),
+      require('postcss-preset-env'),
     ];
 
-    if (process.env.NODE_ENV === 'production') plugins.push(require('cssnano'));
+    if (process.env.NODE_ENV === 'production')
+      plugins.push(require('cssnano'));
 
-    const css = await postcss(plugins).process(source, {
-      from: sourceFile,
-      to: undefined,
-    });
+    const css = await postcss(plugins)
+      .process(source, { from: sourceFile, to: undefined });
 
     await logSize(css.content, 'styles.css');
 

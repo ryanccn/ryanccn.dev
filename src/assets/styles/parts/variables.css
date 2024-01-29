@@ -2,6 +2,17 @@
   font-feature-settings: 'zero', 'ss01', 'cv01', 'cv10';
 }
 
+@define-mixin shiki-variables $theme {
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-$(theme));
+    background-color: var(--shiki-$(theme)-bg);
+    font-style: var(--shiki-$(theme)-font-style);
+    font-weight: var(--shiki-$(theme)-font-weight);
+    text-decoration: var(--shiki-$(theme)-text-decoration);
+  }
+}
+
 :root {
   --fg: 25 25 25;
   --fg-brighter: 0 0 0;
@@ -14,14 +25,7 @@
   --surface: 245 245 245;
   --surface-hover: 235 235 235;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-light);
-    background-color: var(--shiki-light-bg);
-    font-style: var(--shiki-light-font-style);
-    font-weight: var(--shiki-light-font-weight);
-    text-decoration: var(--shiki-light-text-decoration);
-  }
+  @mixin shiki-variables light;
 }
 
 .theme-dark {
@@ -36,14 +40,7 @@
   --surface: 30 30 30;
   --surface-hover: 40 40 40;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-dark);
-    background-color: var(--shiki-dark-bg);
-    font-style: var(--shiki-dark-font-style);
-    font-weight: var(--shiki-dark-font-weight);
-    text-decoration: var(--shiki-dark-text-decoration);
-  }
+  @mixin shiki-variables dark;
 }
 
 .theme-ctp-latte {
@@ -58,14 +55,7 @@
   --surface: 239 241 245;
   --surface-hover: 204 208 218;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-ctp-latte);
-    background-color: var(--shiki-ctp-latte-bg);
-    font-style: var(--shiki-ctp-latte-font-style);
-    font-weight: var(--shiki-ctp-latte-font-weight);
-    text-decoration: var(--shiki-ctp-latte-text-decoration);
-  }
+  @mixin shiki-variables ctp-latte;
 }
 
 .theme-ctp-frappe {
@@ -80,14 +70,7 @@
   --surface: 48 52 70;
   --surface-hover: 65 69 89;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-ctp-frappe);
-    background-color: var(--shiki-ctp-frappe-bg);
-    font-style: var(--shiki-ctp-frappe-font-style);
-    font-weight: var(--shiki-ctp-frappe-font-weight);
-    text-decoration: var(--shiki-ctp-frappe-text-decoration);
-  }
+  @mixin shiki-variables ctp-frappe;
 }
 
 .theme-ctp-macchiato {
@@ -102,14 +85,7 @@
   --surface: 36 39 58;
   --surface-hover: 54 58 79;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-ctp-macchiato);
-    background-color: var(--shiki-ctp-macchiato-bg);
-    font-style: var(--shiki-ctp-macchiato-font-style);
-    font-weight: var(--shiki-ctp-macchiato-font-weight);
-    text-decoration: var(--shiki-ctp-macchiato-text-decoration);
-  }
+  @mixin shiki-variables ctp-macchiato;
 }
 
 .theme-ctp-mocha {
@@ -124,14 +100,7 @@
   --surface: 30 30 46;
   --surface-hover: 49 50 68;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-ctp-mocha);
-    background-color: var(--shiki-ctp-mocha-bg);
-    font-style: var(--shiki-ctp-mocha-font-style);
-    font-weight: var(--shiki-ctp-mocha-font-weight);
-    text-decoration: var(--shiki-ctp-mocha-text-decoration);
-  }
+  @mixin shiki-variables ctp-mocha;
 }
 
 .theme-nord-light {
@@ -146,14 +115,7 @@
   --surface: 229 233 240;
   --surface-hover: 216 222 233;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-nord);
-    background-color: var(--shiki-nord-bg);
-    font-style: var(--shiki-nord-font-style);
-    font-weight: var(--shiki-nord-font-weight);
-    text-decoration: var(--shiki-nord-text-decoration);
-  }
+  @mixin shiki-variables nord;
 }
 
 .theme-nord-dark {
@@ -168,14 +130,7 @@
   --surface: 59 66 82;
   --surface-hover: 67 76 94;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-nord);
-    background-color: var(--shiki-nord-bg);
-    font-style: var(--shiki-nord-font-style);
-    font-weight: var(--shiki-nord-font-weight);
-    text-decoration: var(--shiki-nord-text-decoration);
-  }
+  @mixin shiki-variables nord;
 }
 
 .theme-rose-pine {
@@ -190,14 +145,7 @@
   --surface: 31 29 46;
   --surface-hover: 38 35 58;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-rose-pine);
-    background-color: var(--shiki-rose-pine-bg);
-    font-style: var(--shiki-rose-pine-font-style);
-    font-weight: var(--shiki-rose-pine-font-weight);
-    text-decoration: var(--shiki-rose-pine-text-decoration);
-  }
+  @mixin shiki-variables rose-pine;
 }
 
 .theme-rose-pine-moon {
@@ -212,14 +160,7 @@
   --surface: 42 39 63;
   --surface-hover: 57 53 82;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-rose-pine-moon);
-    background-color: var(--shiki-rose-pine-moon-bg);
-    font-style: var(--shiki-rose-pine-moon-font-style);
-    font-weight: var(--shiki-rose-pine-moon-font-weight);
-    text-decoration: var(--shiki-rose-pine-moon-text-decoration);
-  }
+  @mixin shiki-variables rose-pine-moon;
 }
 
 .theme-rose-pine-dawn {
@@ -234,14 +175,7 @@
   --surface: 255 250 243;
   --surface-hover: 242 233 222;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-rose-pine-dawn);
-    background-color: var(--shiki-rose-pine-dawn-bg);
-    font-style: var(--shiki-rose-pine-dawn-font-style);
-    font-weight: var(--shiki-rose-pine-dawn-font-weight);
-    text-decoration: var(--shiki-rose-pine-dawn-text-decoration);
-  }
+  @mixin shiki-variables rose-pine-dawn;
 }
 
 .theme-flexoki-light {
@@ -256,14 +190,7 @@
   --surface: 242 240 229;
   --surface-hover: 230 228 217;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-flexoki-light);
-    background-color: var(--shiki-flexoki-light-bg);
-    font-style: var(--shiki-flexoki-light-font-style);
-    font-weight: var(--shiki-flexoki-light-font-weight);
-    text-decoration: var(--shiki-flexoki-light-text-decoration);
-  }
+  @mixin shiki-variables flexoki-light;
 }
 
 .theme-flexoki-dark {
@@ -278,14 +205,7 @@
   --surface: 28 27 26;
   --surface-hover: 40 39 38;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-flexoki-dark);
-    background-color: var(--shiki-flexoki-dark-bg);
-    font-style: var(--shiki-flexoki-dark-font-style);
-    font-weight: var(--shiki-flexoki-dark-font-weight);
-    text-decoration: var(--shiki-flexoki-dark-text-decoration);
-  }
+  @mixin shiki-variables flexoki-dark;
 }
 
 .theme-gruvbox-light {
@@ -300,14 +220,7 @@
   --surface: 235 219 178;
   --surface-hover: 213 196 161;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-gruvbox-light);
-    background-color: var(--shiki-gruvbox-light-bg);
-    font-style: var(--shiki-gruvbox-light-font-style);
-    font-weight: var(--shiki-gruvbox-light-font-weight);
-    text-decoration: var(--shiki-gruvbox-light-text-decoration);
-  }
+  @mixin shiki-variables gruvbox-light;
 }
 
 .theme-gruvbox-dark {
@@ -322,12 +235,5 @@
   --surface: 60 56 54;
   --surface-hover: 80 73 69;
 
-  & .shiki,
-  & .shiki span {
-    color: var(--shiki-gruvbox-dark);
-    background-color: var(--shiki-gruvbox-dark-bg);
-    font-style: var(--shiki-gruvbox-dark-font-style);
-    font-weight: var(--shiki-gruvbox-dark-font-weight);
-    text-decoration: var(--shiki-gruvbox-dark-text-decoration);
-  }
+  @mixin shiki-variables gruvbox-dark;
 }

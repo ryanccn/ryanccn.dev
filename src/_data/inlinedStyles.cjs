@@ -13,11 +13,13 @@ const buildStyle = async (file, label) => {
 
   const source = await readFile(file);
 
-  const plugins = [require('autoprefixer')];
-  if (process.env.NODE_ENV === 'production') plugins.push(require('cssnano'));
+  const plugins = [require('postcss-preset-env')];
 
-  const css = await postcss(plugins).process(source,
-    { from: file, to: undefined });
+  if (process.env.NODE_ENV === 'production')
+    plugins.push(require('cssnano'));
+
+  const css = await postcss(plugins)
+    .process(source, { from: file, to: undefined });
 
   await logSize(css.content, label);
   return css.content;
