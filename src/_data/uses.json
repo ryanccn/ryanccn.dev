@@ -251,10 +251,10 @@
       "description": "Beautiful, customizable New Tab page"
     },
     {
-      "name": "1Blocker",
-      "url": "https://1blocker.com/",
+      "name": "AdGuard",
+      "url": "https://adguard.com/en/adguard-ios/overview.html",
       "description": "Safari ad and tracker blocking",
-      "paid": true,
+      "freemium": true,
       "ios": true
     }
   ],
