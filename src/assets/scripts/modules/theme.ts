@@ -14,6 +14,8 @@ const isThemeDark = {
   'rose-pine-dawn': false,
   'flexoki-light': false,
   'flexoki-dark': true,
+  'gruvbox-light': false,
+  'gruvbox-dark': true,
 } satisfies Record<string, boolean>;
 
 type ThemeId = keyof typeof isThemeDark;

@@ -24,8 +24,15 @@
     @apply bg-accent text-background;
   }
 
+  [id] {
+    scroll-margin-top: 2.5rem;
+  }
+
   * {
     min-width: 0;
+  }
+
+  * {
     outline-color: rgba(var(--accent) / 1);
     outline-offset: 2.5px;
     outline-width: 2.5px;

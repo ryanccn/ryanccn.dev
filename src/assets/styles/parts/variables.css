@@ -287,3 +287,47 @@
     text-decoration: var(--shiki-flexoki-dark-text-decoration);
   }
 }
+
+.theme-gruvbox-light {
+  --fg: 60 56 54;
+  --fg-brighter: 40 40 40;
+  --fg-less-dimmed: 80 73 69;
+  --fg-dimmed: 102 92 84;
+  --accent: 177 98 134;
+  --accent-lighter: 143 63 113;
+
+  --background: 251 241 199;
+  --surface: 235 219 178;
+  --surface-hover: 213 196 161;
+
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-gruvbox-light);
+    background-color: var(--shiki-gruvbox-light-bg);
+    font-style: var(--shiki-gruvbox-light-font-style);
+    font-weight: var(--shiki-gruvbox-light-font-weight);
+    text-decoration: var(--shiki-gruvbox-light-text-decoration);
+  }
+}
+
+.theme-gruvbox-dark {
+  --fg: 235 219 178;
+  --fg-brighter: 251 241 199;
+  --fg-less-dimmed: 213 196 161;
+  --fg-dimmed: 189 174 147;
+  --accent: 211 134 155;
+  --accent-lighter: 177 98 134;
+
+  --background: 40 40 40;
+  --surface: 60 56 54;
+  --surface-hover: 80 73 69;
+
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-gruvbox-dark);
+    background-color: var(--shiki-gruvbox-dark-bg);
+    font-style: var(--shiki-gruvbox-dark-font-style);
+    font-weight: var(--shiki-gruvbox-dark-font-weight);
+    text-decoration: var(--shiki-gruvbox-dark-text-decoration);
+  }
+}
