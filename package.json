@@ -32,7 +32,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.10",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.19.1",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.3",
