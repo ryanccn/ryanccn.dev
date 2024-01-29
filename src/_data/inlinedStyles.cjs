@@ -26,8 +26,12 @@ const buildStyle = async (file, label) => {
 };
 
 module.exports = async () => ({
-  fonts: await buildStyle(
+  inter: await buildStyle(
     `${__dirname}/../assets/fonts/inter/inter.css`,
-    'inlineStyles/fonts',
+    'inlineStyles/inter',
+  ),
+  spaceGrotesk: await buildStyle(
+    `${__dirname}/../assets/fonts/space-grotesk/space-grotesk.css`,
+    'inlineStyles/spaceGrotesk',
   ),
 });

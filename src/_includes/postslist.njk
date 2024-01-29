@@ -1,7 +1,7 @@
 <ol reversed class="{% if postslistcompact %}grid grid-cols-1 md:grid-cols-2 gap-12{% else %}flex flex-col gap-y-12{% endif %}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="{% if postslistcompact %}text-lg{% else %}text-xl{% endif %} text-fg hover:text-fg-brighter font-bold tracking-tight underline-offset-2 transition text-balance">
+    <a href="{{ i.url }}" class="{% if postslistcompact %}text-lg{% else %}text-xl{% endif %} font-display text-fg hover:text-fg-brighter font-bold tracking-tight underline-offset-2 transition text-balance">
       <h2>{{ i.data.title }}</h2>
     </a>
     <div class="flex flex-wrap gap-1 {% if postslistcompact %}text-xs{% else %}text-sm{% endif %}">

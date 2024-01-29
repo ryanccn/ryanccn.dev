@@ -29,11 +29,12 @@ eleventyComputed:
     <script async defer data-domain="ryanccn.dev" data-api="/sus/event" src="/sus/script.js"></script>
     {% endif %}
     <script nonce="{{ nonces.script }}">{{ inlinedScript | safe }}</script>
-    <style>{{ inlinedStyles.fonts | safe }}</style>
+    <style>{{ inlinedStyles.inter | safe }}{{ inlinedStyles.spaceGrotesk | safe }}</style>
 
     <link rel="stylesheet" href="/assets/styles.css?v={{ gitRev }}">
     <link rel="preload" as="style" href="/assets/styles.css?v={{ gitRev }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/space-grotesk/space-grotesk-latin.woff2?v=2a440841">
 
     <link rel="icon" href="/icons/favicon.svg?v={{ gitRev }}">
     <link rel="apple-touch-icon" href="/icons/background.png?v={{ gitRev }}">
@@ -82,7 +83,7 @@ eleventyComputed:
         {% asyncAll link in navLinks %}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
+          class="flex flex-row gap-x-2 items-center text-base font-display rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
           {% if link.accesskey %}accesskey="{{ link.accesskey }}"{% endif %}
         >
           {% icon link.icon, class='block size-4 shrink-0' %}
@@ -137,7 +138,7 @@ eleventyComputed:
       <div class="flex flex-row self-start items-center" data-theme-select>
         {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden'='true' %}
 
-        <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
+        <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium font-display bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
           <option value="light">Default Light</option>
           <option value="dark">Default Dark</option>
           <option value="flexoki-light">Flexoki Light</option>
@@ -158,12 +159,12 @@ eleventyComputed:
 
       <div class="flex-col gap-y-2 hidden md:flex">
         <div class="flex flex-row gap-x-1 text-xs">
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
+          <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
+          <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+          <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
         </div>
 
-        <a class="text-xs text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+        <a class="text-xs font-display text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
           Code licensed under MIT, content licensed under CC BY-SA 4.0
         </a>
       </div>
@@ -175,12 +176,12 @@ eleventyComputed:
 
     <footer class="flex flex-col gap-y-2 md:hidden mt-20">
       <div class="flex flex-row gap-x-1 text-xs">
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
+        <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
+        <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+        <a class="text-fg-dimmed font-display hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
       </div>
 
-      <a class="text-xs text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+      <a class="text-xs font-display text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
       </a>
     </footer>
