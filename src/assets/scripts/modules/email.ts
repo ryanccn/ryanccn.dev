@@ -1,7 +1,4 @@
-const rawEmail = new Uint8Array([
-  104, 101, 108, 108, 111, 64, 114, 121, 97, 110, 99, 99, 110, 46, 100, 101,
-  118,
-]);
+const rawEmail = new Uint8Array([104, 101, 108, 108, 111, 64, 114, 121, 97, 110, 99, 99, 110, 46, 100, 101, 118]);
 const decoder = new TextDecoder();
 
 let finishedAnim = true;

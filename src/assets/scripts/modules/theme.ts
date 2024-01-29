@@ -1,3 +1,5 @@
+/* global DEV:readonly */
+
 const getThemeSelect = () => document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
 
 const isThemeDark = {

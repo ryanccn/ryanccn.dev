@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es6",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "noEmit": true,
     "jsx": "preserve",
     "strict": true,
@@ -14,6 +14,6 @@
     "noUncheckedIndexedAccess": true,
     "composite": true,
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.ts"],
   "exclude": ["node_modules", "**/node_modules/*"],
 }

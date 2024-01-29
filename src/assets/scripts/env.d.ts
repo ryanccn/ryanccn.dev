@@ -1,1 +1,5 @@
-declare const DEV: boolean;
+declare global {
+  const DEV: boolean;
+}
+
+export {};

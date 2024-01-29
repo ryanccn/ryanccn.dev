@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const postcss = require('postcss');
 const { readFile } = require('node:fs/promises');
 
