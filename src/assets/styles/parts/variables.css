@@ -14,18 +14,14 @@
   --surface: 245 245 245;
   --surface-hover: 235 235 235;
 
-  --shiki-foreground: rgba(var(--fg) / 1);
-  --shiki-background: rgba(var(--surface) / 1);
-  --shiki-token-link: rgba(var(--accent) / 1);
-
-  --shiki-token-constant: #ef4444;
-  --shiki-token-string: #f97316;
-  --shiki-token-comment: #a3a3a3;
-  --shiki-token-keyword: #22c55e;
-  --shiki-token-parameter: #22c55e;
-  --shiki-token-function: #14b8a6;
-  --shiki-token-string-expression: #0ea5e9;
-  --shiki-token-punctuation: #6366f1;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+    font-style: var(--shiki-light-font-style);
+    font-weight: var(--shiki-light-font-weight);
+    text-decoration: var(--shiki-light-text-decoration);
+  }
 }
 
 .theme-dark {
@@ -40,14 +36,14 @@
   --surface: 30 30 30;
   --surface-hover: 40 40 40;
 
-  --shiki-token-constant: #fca5a5;
-  --shiki-token-string: #fdba74;
-  --shiki-token-comment: #a3a3a3;
-  --shiki-token-keyword: #bef264;
-  --shiki-token-parameter: #86efac;
-  --shiki-token-function: #5eead4;
-  --shiki-token-string-expression: #7dd3fc;
-  --shiki-token-punctuation: #a5b4fc;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
 }
 
 .theme-ctp-latte {
@@ -62,14 +58,14 @@
   --surface: 239 241 245;
   --surface-hover: 204 208 218;
 
-  --shiki-token-constant: #fe640b;
-  --shiki-token-string: #40a02b;
-  --shiki-token-comment: #9ca0b0;
-  --shiki-token-keyword: #8839ef;
-  --shiki-token-parameter: #e64553;
-  --shiki-token-function: #1e66f5;
-  --shiki-token-string-expression: #ea76cb;
-  --shiki-token-punctuation: #04a5e5;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-ctp-latte);
+    background-color: var(--shiki-ctp-latte-bg);
+    font-style: var(--shiki-ctp-latte-font-style);
+    font-weight: var(--shiki-ctp-latte-font-weight);
+    text-decoration: var(--shiki-ctp-latte-text-decoration);
+  }
 }
 
 .theme-ctp-frappe {
@@ -84,14 +80,14 @@
   --surface: 48 52 70;
   --surface-hover: 65 69 89;
 
-  --shiki-token-constant: #ef9f76;
-  --shiki-token-string: #a6d189;
-  --shiki-token-comment: #737994;
-  --shiki-token-keyword: #ca9ee6;
-  --shiki-token-parameter: #ea999c;
-  --shiki-token-function: #8caaee;
-  --shiki-token-string-expression: #f4b8e4;
-  --shiki-token-punctuation: #99d1db;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-ctp-frappe);
+    background-color: var(--shiki-ctp-frappe-bg);
+    font-style: var(--shiki-ctp-frappe-font-style);
+    font-weight: var(--shiki-ctp-frappe-font-weight);
+    text-decoration: var(--shiki-ctp-frappe-text-decoration);
+  }
 }
 
 .theme-ctp-macchiato {
@@ -106,14 +102,14 @@
   --surface: 36 39 58;
   --surface-hover: 54 58 79;
 
-  --shiki-token-constant: #f5a97f;
-  --shiki-token-string: #a6da95;
-  --shiki-token-comment: #6e738d;
-  --shiki-token-keyword: #c6a0f6;
-  --shiki-token-parameter: #ee99a0;
-  --shiki-token-function: #8aadf4;
-  --shiki-token-string-expression: #f5bde6;
-  --shiki-token-punctuation: #91d7e3;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-ctp-macchiato);
+    background-color: var(--shiki-ctp-macchiato-bg);
+    font-style: var(--shiki-ctp-macchiato-font-style);
+    font-weight: var(--shiki-ctp-macchiato-font-weight);
+    text-decoration: var(--shiki-ctp-macchiato-text-decoration);
+  }
 }
 
 .theme-ctp-mocha {
@@ -128,14 +124,14 @@
   --surface: 30 30 46;
   --surface-hover: 49 50 68;
 
-  --shiki-token-constant: #f5a97f;
-  --shiki-token-string: #a6da95;
-  --shiki-token-comment: #6e738d;
-  --shiki-token-keyword: #c6a0f6;
-  --shiki-token-parameter: #ee99a0;
-  --shiki-token-function: #8aadf4;
-  --shiki-token-string-expression: #f5bde6;
-  --shiki-token-punctuation: #91d7e3;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-ctp-mocha);
+    background-color: var(--shiki-ctp-mocha-bg);
+    font-style: var(--shiki-ctp-mocha-font-style);
+    font-weight: var(--shiki-ctp-mocha-font-weight);
+    text-decoration: var(--shiki-ctp-mocha-text-decoration);
+  }
 }
 
 .theme-nord-light {
@@ -150,19 +146,14 @@
   --surface: 229 233 240;
   --surface-hover: 216 222 233;
 
-  /* overrides because nord syntax highlighting only has dark mode */
-  --shiki-foreground: rgba(236 239 244 / 1);
-  --shiki-background: rgba(59 66 82 / 1);
-  --shiki-token-link: rgba(136 192 208 / 1);
-
-  --shiki-token-constant: #d8dee9;
-  --shiki-token-string: #a3be8c;
-  --shiki-token-comment: #4c566a;
-  --shiki-token-keyword: #81a1c1;
-  --shiki-token-parameter: #8fbcbb;
-  --shiki-token-function: #88c0d0;
-  --shiki-token-string-expression: #a3be8c;
-  --shiki-token-punctuation: #81a1c1;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-nord);
+    background-color: var(--shiki-nord-bg);
+    font-style: var(--shiki-nord-font-style);
+    font-weight: var(--shiki-nord-font-weight);
+    text-decoration: var(--shiki-nord-text-decoration);
+  }
 }
 
 .theme-nord-dark {
@@ -177,14 +168,14 @@
   --surface: 59 66 82;
   --surface-hover: 67 76 94;
 
-  --shiki-token-constant: #d8dee9;
-  --shiki-token-string: #a3be8c;
-  --shiki-token-comment: #4c566a;
-  --shiki-token-keyword: #81a1c1;
-  --shiki-token-parameter: #8fbcbb;
-  --shiki-token-function: #88c0d0;
-  --shiki-token-string-expression: #a3be8c;
-  --shiki-token-punctuation: #81a1c1;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-nord);
+    background-color: var(--shiki-nord-bg);
+    font-style: var(--shiki-nord-font-style);
+    font-weight: var(--shiki-nord-font-weight);
+    text-decoration: var(--shiki-nord-text-decoration);
+  }
 }
 
 .theme-rose-pine {
@@ -199,14 +190,14 @@
   --surface: 31 29 46;
   --surface-hover: 38 35 58;
 
-  --shiki-token-constant: #eb6f92;
-  --shiki-token-string: #f6c177;
-  --shiki-token-comment: #6e6a86;
-  --shiki-token-keyword: #31748f;
-  --shiki-token-parameter: #c4a7e7;
-  --shiki-token-function: #ebbcba;
-  --shiki-token-string-expression: #f6c177;
-  --shiki-token-punctuation: #908caa;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-rose-pine);
+    background-color: var(--shiki-rose-pine-bg);
+    font-style: var(--shiki-rose-pine-font-style);
+    font-weight: var(--shiki-rose-pine-font-weight);
+    text-decoration: var(--shiki-rose-pine-text-decoration);
+  }
 }
 
 .theme-rose-pine-moon {
@@ -221,14 +212,14 @@
   --surface: 42 39 63;
   --surface-hover: 57 53 82;
 
-  --shiki-token-constant: #eb6f92;
-  --shiki-token-string: #f6c177;
-  --shiki-token-comment: #6e6a86;
-  --shiki-token-keyword: #31748f;
-  --shiki-token-parameter: #c4a7e7;
-  --shiki-token-function: #ebbcba;
-  --shiki-token-string-expression: #f6c177;
-  --shiki-token-punctuation: #908caa;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-rose-pine-moon);
+    background-color: var(--shiki-rose-pine-moon-bg);
+    font-style: var(--shiki-rose-pine-moon-font-style);
+    font-weight: var(--shiki-rose-pine-moon-font-weight);
+    text-decoration: var(--shiki-rose-pine-moon-text-decoration);
+  }
 }
 
 .theme-rose-pine-dawn {
@@ -243,14 +234,14 @@
   --surface: 255 250 243;
   --surface-hover: 242 233 222;
 
-  --shiki-token-constant: #b4637a;
-  --shiki-token-string: #ea9d34;
-  --shiki-token-comment: #9893a5;
-  --shiki-token-keyword: #286983;
-  --shiki-token-parameter: #907aa9;
-  --shiki-token-function: #d7827e;
-  --shiki-token-string-expression: #ea9d34;
-  --shiki-token-punctuation: #797593;
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-rose-pine-dawn);
+    background-color: var(--shiki-rose-pine-dawn-bg);
+    font-style: var(--shiki-rose-pine-dawn-font-style);
+    font-weight: var(--shiki-rose-pine-dawn-font-weight);
+    text-decoration: var(--shiki-rose-pine-dawn-text-decoration);
+  }
 }
 
 .theme-flexoki-light {
@@ -265,14 +256,14 @@
   --surface: 242 240 229;
   --surface-hover: 230 228 217;
 
-  --shiki-token-constant: rgb(173, 131, 1);
-  --shiki-token-string: rgb(36, 131, 123);
-  --shiki-token-comment: rgb(183, 181, 172);
-  --shiki-token-keyword: rgb(102, 128, 11);
-  --shiki-token-parameter: rgb(111, 110, 105);
-  --shiki-token-function: rgb(188, 82, 21);
-  --shiki-token-string-expression: rgb(160, 47, 111);
-  --shiki-token-punctuation: rgb(32, 94, 166);
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-flexoki-light);
+    background-color: var(--shiki-flexoki-light-bg);
+    font-style: var(--shiki-flexoki-light-font-style);
+    font-weight: var(--shiki-flexoki-light-font-weight);
+    text-decoration: var(--shiki-flexoki-light-text-decoration);
+  }
 }
 
 .theme-flexoki-dark {
@@ -287,12 +278,56 @@
   --surface: 28 27 26;
   --surface-hover: 40 39 38;
 
-  --shiki-token-constant: rgb(208, 162, 21);
-  --shiki-token-string: rgb(58, 169, 159);
-  --shiki-token-comment: rgb(87, 86, 83);
-  --shiki-token-keyword: rgb(135, 154, 57);
-  --shiki-token-parameter: rgb(135, 133, 128);
-  --shiki-token-function: rgb(218, 112, 44);
-  --shiki-token-string-expression: rgb(209, 77, 65);
-  --shiki-token-punctuation: rgb(67, 133, 190);
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-flexoki-dark);
+    background-color: var(--shiki-flexoki-dark-bg);
+    font-style: var(--shiki-flexoki-dark-font-style);
+    font-weight: var(--shiki-flexoki-dark-font-weight);
+    text-decoration: var(--shiki-flexoki-dark-text-decoration);
+  }
+}
+
+.theme-gruvbox-light {
+  --fg: 60 56 54;
+  --fg-brighter: 40 40 40;
+  --fg-less-dimmed: 80 73 69;
+  --fg-dimmed: 102 92 84;
+  --accent: 177 98 134;
+  --accent-lighter: 143 63 113;
+
+  --background: 251 241 199;
+  --surface: 235 219 178;
+  --surface-hover: 213 196 161;
+
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-gruvbox-light);
+    background-color: var(--shiki-gruvbox-light-bg);
+    font-style: var(--shiki-gruvbox-light-font-style);
+    font-weight: var(--shiki-gruvbox-light-font-weight);
+    text-decoration: var(--shiki-gruvbox-light-text-decoration);
+  }
+}
+
+.theme-gruvbox-dark {
+  --fg: 235 219 178;
+  --fg-brighter: 251 241 199;
+  --fg-less-dimmed: 213 196 161;
+  --fg-dimmed: 189 174 147;
+  --accent: 211 134 155;
+  --accent-lighter: 177 98 134;
+
+  --background: 40 40 40;
+  --surface: 60 56 54;
+  --surface-hover: 80 73 69;
+
+  & .shiki,
+  & .shiki span {
+    color: var(--shiki-gruvbox-dark);
+    background-color: var(--shiki-gruvbox-dark-bg);
+    font-style: var(--shiki-gruvbox-dark-font-style);
+    font-weight: var(--shiki-gruvbox-dark-font-weight);
+    text-decoration: var(--shiki-gruvbox-dark-text-decoration);
+  }
 }

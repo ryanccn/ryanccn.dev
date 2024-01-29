@@ -306,7 +306,7 @@ After downloading the additional libraries and editing the `mainClass`, just lau
 
 Here is a table of the attributes from the MultiMC wiki:
 
-| uid         | Should be the same as the <name> of the file.                                               |
+| uid         | Should be the same as the &lt;name&gt; of the file.                                         |
 | ----------- | ------------------------------------------------------------------------------------------- |
 | name        | A human-readable name of the software this describes.                                       |
 | version     | The version of this patch, or the the library it is for                                     |
