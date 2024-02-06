@@ -35,10 +35,12 @@ eleventyComputed:
     <link rel="preload" as="style" href="/assets/styles.css?v={{ gitRev }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
 
-    <link rel="icon" href="/icons/favicon.svg?v={{ gitRev }}">
-    <link rel="apple-touch-icon" href="/icons/background.png?v={{ gitRev }}">
-    <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
+    <link rel="icon" href="/favicon.ico?v={{ gitRev }}" sizes="32x32">
+    <link rel="icon" href="/icons/icon.svg?v={{ gitRev }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ gitRev }}">
+    <link rel="manifest" href="/manifest.webmanifest">
 
+    <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
     <link rel="alternate" type="application/rss+xml" href="https://ryanccn.dev/feed/rss.xml">
     <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">

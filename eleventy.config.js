@@ -83,6 +83,8 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(sitePluginHtmlmin);
 
   eleventyConfig.addPassthroughCopy({
+    './src/assets/manifest.webmanifest': 'manifest.webmanifest',
+    './src/assets/icons/favicon.ico': 'favicon.ico',
     './src/assets/icons': 'icons',
     './src/assets/fonts': 'fonts',
     './src/images': 'images',
