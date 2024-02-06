@@ -1,7 +1,3 @@
-:root {
-  font-feature-settings: 'zero', 'ss01', 'cv01', 'cv10';
-}
-
 @define-mixin shiki-variables $theme {
   & .shiki,
   & .shiki span {

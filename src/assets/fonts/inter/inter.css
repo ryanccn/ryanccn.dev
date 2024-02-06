@@ -1,3 +1,7 @@
+:root {
+  font-feature-settings: 'zero', 'ss01', 'cv01', 'cv10';
+}
+
 /* latin */
 @font-face {
   font-family: 'Inter';
