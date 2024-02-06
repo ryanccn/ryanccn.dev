@@ -4,15 +4,15 @@ eleventyExcludeFromCollections: true
 ---
 
 /*
-  Referrer-Policy: strict-origin-when-cross-origin
-  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-{{ nonces.script }}'; style-src 'self' 'unsafe-inline'; font-src 'self'; child-src 'none'; frame-ancestors 'none'; base-uri 'none'; img-src * blob: data:; media-src * blob: data:; connect-src 'self'; form-action 'self'; manifest-src 'self';
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
   X-Permitted-Cross-Domain-Policies: none
+  X-Frame-Options: DENY
   Cross-Origin-Embedder-Policy: credentialless
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-{{ nonces.script }}'; style-src 'self' 'unsafe-inline'; font-src 'self'; child-src 'none'; frame-ancestors 'none'; base-uri 'none'; img-src * blob: data:; media-src * blob: data:; connect-src 'self'; form-action 'self';
 
 /fonts/*.woff2
   Cache-Control: public, max-age=2592000
