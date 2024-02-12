@@ -158,8 +158,8 @@ devDependencies:
     specifier: ^0.33.2
     version: 0.33.2
   shiki:
-    specifier: 1.0.0-beta.0
-    version: 1.0.0-beta.0
+    specifier: 1.1.2
+    version: 1.1.2
   simple-icons:
     specifier: ^11.3.0
     version: 11.3.0
@@ -1416,6 +1416,10 @@ packages:
 
   /@shikijs/core@1.0.0-beta.0:
     resolution: {integrity: sha512-uicyrkx379Q5sxQuGV3kduHPWIAkjxmeA5A4J6syscx8wiEyIV06i/Q6s9GeKLCb857Hi90H8e/FoFSbcjnZsw==}
+    dev: true
+
+  /@shikijs/core@1.1.2:
+    resolution: {integrity: sha512-ERVzNQz88ZkDqUpWeC57Kp+Kmx5RjqeDBR1M8AGWGom4yrkITiTfXCGmjchlDSw12MhDTuPYR4HVFW8uT61RaQ==}
     dev: true
 
   /@shikijs/markdown-it@1.0.0-beta.0:
@@ -5113,6 +5117,12 @@ packages:
     resolution: {integrity: sha512-CcP0IhEDQ3LWfJC44cfxfId9pjJi9Nephl8DxgrL4tKWprI/oz6deZyL0vB+XWxhTx/1uonzWQKaSQPwKx5dTA==}
     dependencies:
       '@shikijs/core': 1.0.0-beta.0
+    dev: true
+
+  /shiki@1.1.2:
+    resolution: {integrity: sha512-qNzFwTv5uhEDNUIwp7wHjsrffVeLbmOgWnM5mZZhoiz7G2qAUvqVfUzuWfieD45/YAKipzCtdV9SndacKtABow==}
+    dependencies:
+      '@shikijs/core': 1.1.2
     dev: true
 
   /signal-exit@4.1.0:
