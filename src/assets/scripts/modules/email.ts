@@ -6,22 +6,24 @@ let finishedAnim = true;
 addEventListener('DOMContentLoaded', () => {
   const button = document.querySelector<HTMLButtonElement>('button[data-email]');
 
-  if (button) button.addEventListener('click', async () => {
-    await navigator.clipboard.writeText(decoder.decode(rawEmail));
+  if (button) button.addEventListener('click', () => {
+    (async () => {
+      await navigator.clipboard.writeText(decoder.decode(rawEmail));
 
-    const mailIcon = button.querySelector('[data-email-icon="m"]')!;
-    const checkIcon = button.querySelector('[data-email-icon="d"]')!;
+      const mailIcon = button.querySelector('[data-email-icon="m"]')!;
+      const checkIcon = button.querySelector('[data-email-icon="d"]')!;
 
-    if (finishedAnim) {
-      mailIcon.classList.replace('block', 'hidden');
-      checkIcon.classList.replace('hidden', 'block');
-      finishedAnim = false;
+      if (finishedAnim) {
+        mailIcon.classList.replace('block', 'hidden');
+        checkIcon.classList.replace('hidden', 'block');
+        finishedAnim = false;
 
-      setTimeout(() => {
-        mailIcon.classList.replace('hidden', 'block');
-        checkIcon.classList.replace('block', 'hidden');
-        finishedAnim = true;
-      }, 2500);
-    }
+        setTimeout(() => {
+          mailIcon.classList.replace('hidden', 'block');
+          checkIcon.classList.replace('block', 'hidden');
+          finishedAnim = true;
+        }, 2500);
+      }
+    })().catch((error) => { console.error(error); });
   });
 });

@@ -1,19 +1,17 @@
 import js from '@eslint/js';
-import ts from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import stylistic from '@stylistic/eslint-plugin';
+import ts from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
+import stylistic from '@stylistic/eslint-plugin';
 
 import globals from 'globals';
 
-export default [
+export default ts.config(
   {
     ignores: ['**/.obsidian/**/*', '_site/**/*'],
   },
+
   {
-    files: ['**/*.js', '**/*.ts', '**/*.cjs', '**/*.mjs', '**/*.cts', '**/*.mts'],
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
         project: true,
       },
@@ -22,16 +20,19 @@ export default [
         ...globals.node,
       },
     },
-    plugins: {
-      js,
-      '@typescript-eslint': ts,
-      ts,
-      unicorn,
-    },
+  },
+
+  js.configs.recommended,
+  ...ts.configs.recommendedTypeChecked,
+  unicorn.configs['flat/recommended'],
+
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    ...ts.configs.disableTypeChecked,
+  },
+
+  {
     rules: {
-      ...js.configs.recommended.rules,
-      ...ts.configs.recommended.rules,
-      ...unicorn.configs['flat/recommended'].rules,
       'unicorn/filename-case': 'off',
       'unicorn/numeric-separators-style': 'off',
       'unicorn/no-null': 'off',
@@ -47,4 +48,4 @@ export default [
     arrowParens: true,
     braceStyle: '1tbs',
   }),
-];
+);

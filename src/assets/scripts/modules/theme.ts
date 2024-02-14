@@ -22,8 +22,8 @@ const isThemeDark = {
 
 type ThemeId = keyof typeof isThemeDark;
 
-const checkThemeStr = (str?: string | null): str is ThemeId => {
-  return !!str && Object.keys(isThemeDark).includes(str);
+const checkThemeStr = (str: unknown): str is ThemeId => {
+  return typeof str === 'string' && Object.keys(isThemeDark).includes(str);
 };
 
 const systemIsDark = () => {
