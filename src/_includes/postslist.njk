@@ -10,7 +10,7 @@
       {% endfor %}
     </div>
     <p class="{% if postslistcompact %}text-xs{% else %}text-sm{% endif %} text-fg-dimmed">
-      {{ views[i.fileSlug] | numberFormat }} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | customDateFormat }}
+      {{ views[i.fileSlug] | numberFormat }} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | prettyDateFormat }}
     </p>
   </li>
   {% endfor %}

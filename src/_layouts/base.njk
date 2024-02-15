@@ -14,7 +14,7 @@ navLinks:
     accesskey: b
 
 eleventyComputed:
-  socialImg: "{{ domain }}/previews/{{ title | slugify }}.png"
+  socialImg: "{{ consts.domain }}/previews/{{ title | slugify }}.png"
 ---
 
 <!doctype html>
@@ -25,19 +25,19 @@ eleventyComputed:
 
     <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
 
-    {% if inProduction %}
+    {% if consts.production %}
     <script async defer data-domain="ryanccn.dev" data-api="/sus/event" src="/sus/script.js"></script>
     {% endif %}
-    <script nonce="{{ nonces.script }}">{{ inlinedScript | safe }}</script>
-    <style>{{ inlinedStyles.fonts | safe }}</style>
+    <script nonce="{{ nonces.script }}">{{ inlineAssets.script | safe }}</script>
+    <style>{{ inlineAssets.styles.fonts | safe }}</style>
 
-    <link rel="stylesheet" href="/assets/styles.css?v={{ gitRev }}">
-    <link rel="preload" as="style" href="/assets/styles.css?v={{ gitRev }}">
+    <link rel="stylesheet" href="/assets/styles.css?v={{ consts.revision }}">
+    <link rel="preload" as="style" href="/assets/styles.css?v={{ consts.revision }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-roman-latin.woff2?v=2a440841">
 
-    <link rel="icon" href="/favicon.ico?v={{ gitRev }}" sizes="32x32">
-    <link rel="icon" href="/icons/icon.svg?v={{ gitRev }}" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ gitRev }}">
+    <link rel="icon" href="/favicon.ico?v={{ consts.revision }}" sizes="32x32">
+    <link rel="icon" href="/icons/icon.svg?v={{ consts.revision }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ consts.revision }}">
     <link rel="manifest" href="/manifest.webmanifest">
 
     <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
@@ -49,6 +49,7 @@ eleventyComputed:
 
     <meta name="title" content="{{ title }}">
     <meta name="description" content="{{ description_ }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ryan Cao">
@@ -60,10 +61,10 @@ eleventyComputed:
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description_ }}">
 
-    <meta property="og:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ gitRev }}">
+    <meta property="og:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ consts.revision }}">
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta name="twitter:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ gitRev }}">
+    <meta name="twitter:image" content="https://ryanccn.dev/og/{{ title | slugify }}.png?v={{ consts.revision }}">
   </head>
 
   <body>

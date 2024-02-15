@@ -12,7 +12,7 @@ class Page {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${data.collections.all.map((page) => `
   <url>
-    <loc>${data.domain}${page.url}</loc>
+    <loc>${data.consts.domain}${page.url}</loc>
     <lastmod>${page.date.toISOString()}</lastmod>
   </url>`,
     ).join('\n')}

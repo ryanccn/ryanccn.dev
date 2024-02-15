@@ -5,26 +5,36 @@
     <div class="relative flex flex-col gap-y-1 h-full rounded-lg">
       <div class="flex flex-row gap-1 flex-wrap items-center">
         <a href="{{ item.url }}" class="font-bold text-lg tracking-tight mr-2">{{ item.name }}</a>
+        
+        {% if item.date | usesIsNew %}
+        <span class="text-xs font-semibold bg-accent text-background px-1.5 py-0.5 rounded-sm">New</span>
+        {% endif %}
 
-        {% if item.openSource %}
+        {% if item.tags | includes("openSource") %}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Open source</span>
         {% endif %}
-        {% if item.paid %}
+        {% if item.tags | includes("paid") %}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Paid</span>
         {% endif %}
-        {% if item.freemium %}
+        {% if item.tags | includes("freemium") %}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Freemium</span>
         {% endif %}
-        {% if item.macos %}
+        {% if item.tags | includes("macos") %}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">macOS</span>
         {% endif %}
-        {% if item.ios %}
+        {% if item.tags | includes("ios") %}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">iOS</span>
         {% endif %}
       </div>
 
-      {% if "description" in item %}
+      {% if item.description %}
       <span class="text-fg-dimmed text-sm leading-snug text-pretty">{{ item.description }}</span>
+      {% endif %}
+
+      {% if item.replaces %}
+      <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty">
+        <abbr class="decoration-dotted underline underline-offset-2" title="I previously used {{ item.replaces }} but switched to {{ item.name }}.">Replaces</abbr> {{ item.replaces }}
+      </span>
       {% endif %}
 
       {% if "accessories" in item %}

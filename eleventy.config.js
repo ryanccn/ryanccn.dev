@@ -16,7 +16,6 @@ import { sitePluginMarkdown } from './src/_11ty/plugins/markdown.js';
 import { sitePluginShiki } from './src/_11ty/plugins/shiki.js';
 import { sitePluginHtmlmin } from './src/_11ty/plugins/htmlmin.js';
 
-/** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig */
 const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);

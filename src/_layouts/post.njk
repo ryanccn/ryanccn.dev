@@ -8,7 +8,7 @@ layout: 'base'
   <div class="not-prose mb-10 flex flex-col gap-1">
     <div class="flex flex-row items-center flex-wrap gap-2">
       {% icon "lucide:calendar", class="block size-4 text-fg-dimmed shrink-0" %}
-      <time datetime="{{ date | customDateFormat }}" class="font-semibold text-fg dt-published">{{ date | customDateFormat }}</span>
+      <time datetime="{{ date | prettyDateFormat }}" class="font-semibold text-fg dt-published">{{ date | prettyDateFormat }}</span>
     </div>
     <div class="flex flex-row items-center flex-wrap gap-2">
       {% icon "lucide:clock", class="block size-4 text-fg-dimmed shrink-0" %}
@@ -34,7 +34,7 @@ layout: 'base'
 
 <div class="flex flex-row items-center gap-2 mb-16 text-fg-dimmed text-sm">
   {% icon "lucide:calendar", class="block size-4 text-fg shrink-0" %}
-  <p>Published on <span class="font-semibold text-fg">{{ date | customDateFormat }}</span></p>
+  <p>Published on <span class="font-semibold text-fg">{{ date | prettyDateFormat }}</span></p>
 </div>
 
 {% include 'donationMessage.njk' %}

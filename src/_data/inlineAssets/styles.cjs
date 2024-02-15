@@ -9,7 +9,7 @@ const { readFile } = require('node:fs/promises');
  * @returns {Promise<string>}
  */
 const buildStyle = async (file, label) => {
-  const { logSize } = await import('../utils/log.js');
+  const { logSize } = await import('../../utils/log.js');
 
   const source = await readFile(file);
 
@@ -26,8 +26,5 @@ const buildStyle = async (file, label) => {
 };
 
 module.exports = async () => ({
-  fonts: await buildStyle(
-    `${__dirname}/../assets/fonts/inter/inter.css`,
-    'inlineStyles/fonts',
-  ),
+  fonts: await buildStyle('src/assets/fonts/inter/inter.css', 'inlineAssets/styles/fonts'),
 });

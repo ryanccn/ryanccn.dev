@@ -1,11 +1,9 @@
 import { build as esbuild } from 'esbuild';
-
-import { join } from 'node:path';
-import { logSize } from '../utils/log.js';
+import { logSize } from '../../utils/log.js';
 
 export default async () => {
   const result = await esbuild({
-    entryPoints: [join(process.cwd(), './src/assets/scripts/inlinedScript.ts')],
+    entryPoints: ['src/assets/scripts/inlinedScript.ts'],
     define: {
       DEV: JSON.stringify(process.env.NODE_ENV !== 'production'),
     },
@@ -17,7 +15,7 @@ export default async () => {
   });
 
   const output = result.outputFiles[0].text;
-  await logSize(output, 'inlinedScript');
+  await logSize(output, 'inlineAssets/script');
 
   return output;
 };

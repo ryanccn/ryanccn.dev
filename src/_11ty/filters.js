@@ -1,4 +1,4 @@
-import { format, isBefore, subYears } from 'date-fns';
+import { format, isAfter, isBefore, subMonths, subYears } from 'date-fns';
 
 /**
  * @param {String[]} k list of tags
@@ -38,22 +38,13 @@ export const sitePluginFilters = (eleventyConfig) => {
     return n;
   });
 
-  eleventyConfig.addFilter('numberFormat', (n) => {
-    return Intl.NumberFormat('en-US').format(n);
-  });
+  eleventyConfig.addFilter('numberFormat', (n) => Intl.NumberFormat('en-US').format(n));
 
   eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
 
-  eleventyConfig.addFilter('couldBeOutdated', (date) => {
-    return isBefore(date, subYears(new Date(), 2));
-  });
+  eleventyConfig.addFilter('includes', (arr, value) => Array.isArray(arr) && arr.includes(value));
 
-  eleventyConfig.addFilter(
-    'customDateFormat',
-    /**
-     * @param {Date} a a date object
-     * @return {String} a formatted string
-     */
-    (d) => format(d, 'yyyy-MM-dd'),
-  );
+  eleventyConfig.addFilter('couldBeOutdated', (date) => isBefore(date, subYears(new Date(), 2)));
+  eleventyConfig.addFilter('usesIsNew', (date) => date && isAfter(date, subMonths(new Date(), 1)));
+  eleventyConfig.addFilter('prettyDateFormat', (date) => format(date, 'yyyy-MM-dd'));
 };

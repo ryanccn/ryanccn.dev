@@ -20,10 +20,7 @@ class Page {
             id: post.url,
             url: this.absoluteUrl(post.url),
             title: post.data.title,
-            content_html: await this.htmlToAbsoluteUrls(
-              post.templateContent,
-              this.absoluteUrl(post.url),
-            ),
+            content_html: await this.htmlToAbsoluteUrls(post.templateContent, this.absoluteUrl(post.url)),
             date_published: post.data.date.toISOString(),
             tags: post.data.tags,
           })),
