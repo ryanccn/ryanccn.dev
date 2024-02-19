@@ -33,8 +33,8 @@ devDependencies:
     specifier: 1.1.2
     version: 1.1.2
   '@shikijs/transformers':
-    specifier: 1.1.2
-    version: 1.1.2
+    specifier: 1.1.5
+    version: 1.1.5
   '@stylistic/eslint-plugin':
     specifier: ^1.6.1
     version: 1.6.1(eslint@8.56.0)(typescript@5.3.3)
@@ -1401,6 +1401,10 @@ packages:
     resolution: {integrity: sha512-ERVzNQz88ZkDqUpWeC57Kp+Kmx5RjqeDBR1M8AGWGom4yrkITiTfXCGmjchlDSw12MhDTuPYR4HVFW8uT61RaQ==}
     dev: true
 
+  /@shikijs/core@1.1.5:
+    resolution: {integrity: sha512-cKc5vGQ4p/4sjx48BHIO7CvLaN32vqpz5Wh7v2n+U1EezGdfX4Wms7khBctKz3iCg9yYq4sfGUc2t+JWj6EUsw==}
+    dev: true
+
   /@shikijs/markdown-it@1.1.2:
     resolution: {integrity: sha512-A9kD0fpu4mfaJNwX31BTX7syMZ8pd37okzCMI2qLVWu1Fsacr5bct5aD3aLxPwXmgspD/xhWb2zUBkudOcTAZQ==}
     dependencies:
@@ -1413,6 +1417,12 @@ packages:
     resolution: {integrity: sha512-tldkUMW7RBkU2F6eXbiRMw3ja+hQer1EjwhD2NGOv6K0pgZdVp3JKjU8uisRtg65tyBqrVHq7zlLHVk7EKmUZA==}
     dependencies:
       shiki: 1.1.2
+    dev: true
+
+  /@shikijs/transformers@1.1.5:
+    resolution: {integrity: sha512-ot6KWPmLuSN9nA9FAhttOXZIjKIy7cnwpNtI9aWmYN72RUaDz8eojRfMGUXsXXUxW/buvcvdZQAQldk7/pFpdw==}
+    dependencies:
+      shiki: 1.1.5
     dev: true
 
   /@shuding/opentype.js@1.4.0-beta.0:
@@ -5420,6 +5430,12 @@ packages:
     resolution: {integrity: sha512-qNzFwTv5uhEDNUIwp7wHjsrffVeLbmOgWnM5mZZhoiz7G2qAUvqVfUzuWfieD45/YAKipzCtdV9SndacKtABow==}
     dependencies:
       '@shikijs/core': 1.1.2
+    dev: true
+
+  /shiki@1.1.5:
+    resolution: {integrity: sha512-754GuKIwkUdT810Xm8btuyNQPL+q3PqOkwGW/VlmAWyMYp+HbvvDt69sWXO1sm5aeczBJQjmQTTMR4GkKQNQPw==}
+    dependencies:
+      '@shikijs/core': 1.1.5
     dev: true
 
   /side-channel@1.0.5:

@@ -26,7 +26,7 @@
     "@ryanccn/eleventy-plugin-rss": "^1.2.2",
     "@ryanccn/gql": "^1.0.0",
     "@shikijs/markdown-it": "1.1.2",
-    "@shikijs/transformers": "1.1.2",
+    "@shikijs/transformers": "1.1.5",
     "@stylistic/eslint-plugin": "^1.6.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
