@@ -39,7 +39,7 @@
     "eleventy-plugin-icons": "4.4.1",
     "eleventy-plugin-reading-time": "^0.0.1",
     "eleventy-plugin-validate": "^0.1.2",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.1",
     "eslint": "^8.56.0",
     "eslint-plugin-unicorn": "^51.0.1",
     "execa": "^8.0.1",
