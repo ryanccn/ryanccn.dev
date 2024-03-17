@@ -16,7 +16,7 @@ const schema = z.record(z.array(
     description: z.string().min(1),
     url: z.string().url(),
     tags: z.array(schemaTags).default([]).optional(),
-    replaces: z.string().min(1).optional(),
+    replaces: z.array(z.string().min(1)).optional(),
     date: z.string().regex(/\d\d\d\d-\d\d-\d\d/).optional(),
 
     accessories: z.array(
@@ -110,11 +110,11 @@ const data = {
   ],
   'apps.dev': [
     {
-      name: 'WezTerm',
-      url: 'https://wezfurlong.org/wezterm/index.html',
-      description: 'Powerful cross-platform terminal emulator and multiplexer',
-      date: '2024-02-15',
-      replaces: 'iTerm2',
+      name: 'Ghostty',
+      url: 'https://mitchellh.com/ghostty',
+      description: 'GPU-accelerated terminal emulator pushing modern features.',
+      date: '2024-02-22',
+      replaces: ['WezTerm', 'iTerm2'],
       tags: ['openSource'],
     },
     {
@@ -195,7 +195,7 @@ const data = {
       name: 'BatFi',
       url: 'https://micropixels.software/batfi',
       description: 'macOS battery performance optimization',
-      replaces: 'AlDente',
+      replaces: ['AlDente'],
       tags: ['macos'],
     },
     {
@@ -284,7 +284,7 @@ const data = {
       url: 'https://adguard.com/en/adguard-ios/overview.html',
       description: 'Safari ad and tracker blocking',
       date: '2024-02-15',
-      replaces: '1Blocker',
+      replaces: ['1Blocker'],
       tags: ['freemium', 'ios'],
     },
   ],
@@ -311,6 +311,7 @@ const data = {
       name: 'Apple Music',
       url: 'https://www.apple.com/apple-music/',
       description: 'Music with a large library, local music sync, and Dolby Atmos',
+      replaces: ['Spotify'],
       tags: ['paid'],
     },
   ],

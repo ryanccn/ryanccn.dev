@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import postcss from 'postcss';
 
-const postcss = require('postcss');
-const { readFile } = require('node:fs/promises');
+import { readFile } from 'node:fs/promises';
+import { logSize } from '../../utils/log.js';
+import { interopDefault } from '../../utils/interopDefault.js';
 
 /**
  * @param {string} file
@@ -9,14 +10,12 @@ const { readFile } = require('node:fs/promises');
  * @returns {Promise<string>}
  */
 const buildStyle = async (file, label) => {
-  const { logSize } = await import('../../utils/log.js');
-
   const source = await readFile(file);
 
-  const plugins = [require('postcss-preset-env')];
+  const plugins = [await interopDefault(import('postcss-preset-env'))];
 
   if (process.env.NODE_ENV === 'production')
-    plugins.push(require('cssnano'));
+    plugins.push(await interopDefault(import('cssnano')));
 
   const css = await postcss(plugins)
     .process(source, { from: file, to: undefined });
@@ -25,6 +24,6 @@ const buildStyle = async (file, label) => {
   return css.content;
 };
 
-module.exports = async () => ({
+export default async () => ({
   fonts: await buildStyle('src/assets/fonts/inter/inter.css', 'inlineAssets/styles/fonts'),
 });

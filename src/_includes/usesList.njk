@@ -32,8 +32,8 @@
       {% endif %}
 
       {% if item.replaces %}
-      <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty">
-        <abbr class="decoration-dotted underline underline-offset-2" title="I previously used {{ item.replaces }} but switched to {{ item.name }}.">Replaces</abbr> {{ item.replaces }}
+      <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty mt-2">
+        Previously used: {{ item.replaces.join(', ') }}
       </span>
       {% endif %}
 
