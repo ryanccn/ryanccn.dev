@@ -34,7 +34,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^6.1.0",
     "datauri": "^4.1.0",
-    "date-fns": "^3.5.0",
+    "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "eleventy-plugin-icons": "4.4.1",
     "eleventy-plugin-reading-time": "^0.0.1",
