@@ -93,8 +93,8 @@ devDependencies:
     specifier: ^4.1.5
     version: 4.1.5
   lucide-static:
-    specifier: ^0.358.0
-    version: 0.358.0
+    specifier: ^0.368.0
+    version: 0.368.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -1257,7 +1257,7 @@ packages:
     engines: {node: '>= 14'}
     dependencies:
       eslint: 8.57.0
-      jschardet: 3.0.0
+      jschardet: 3.1.2
       lodash: 4.17.21
       utf8: 3.0.0
     transitivePeerDependencies:
@@ -3711,8 +3711,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jschardet@3.0.0:
-    resolution: {integrity: sha512-lJH6tJ77V8Nzd5QWRkFYCLc13a3vADkh3r/Fi8HupZGWk2OVVDfnZP8V/VgQgZ+lzW0kG2UGb5hFgt3V3ndotQ==}
+  /jschardet@3.1.2:
+    resolution: {integrity: sha512-mw3CBZGzW8nUBPYhFU2ztZ/kJ6NClQUQVpyzvFMfznZsoC///ZQ30J2RCUanNsr5yF22LqhgYr/lj807/ZleWA==}
     engines: {node: '>=0.1.90'}
     dev: true
 
@@ -3899,8 +3899,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.358.0:
-    resolution: {integrity: sha512-4t+KFGB1H09Em9uNh78+CQNw80w5Tslux+XSk2/zmd5YEtkyE3BOru3pKAKwHaZGE+Wi59S9NElKo/83jNuj+w==}
+  /lucide-static@0.368.0:
+    resolution: {integrity: sha512-XZaWkDMPfNezY8ylkXOH+6KWDkLsjiSnOcxG5OQcvQWQ0WSsSvTRRf5BQ+g4I85zBbxxqedO8KDYkse0/zRTMA==}
     dev: true
 
   /luxon@3.4.4:
