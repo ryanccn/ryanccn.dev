@@ -69,7 +69,6 @@ export default async () => {
 
   let after = null;
 
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     logData('contributions', `Fetching ${dim(`(after ${after})`)}`);
 

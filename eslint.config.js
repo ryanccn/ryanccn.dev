@@ -6,4 +6,8 @@ export default config({
   stylistic: {
     indent: 2,
   },
+  rules: {
+    'unicorn/no-anonymous-default-export': 'off',
+    'unicorn/import-style': 'off',
+  },
 });
