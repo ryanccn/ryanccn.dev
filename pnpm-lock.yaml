@@ -24,8 +24,8 @@ devDependencies:
     specifier: ^1.2.2
     version: 1.2.2
   '@ryanccn/eslint-config':
-    specifier: ^0.3.0
-    version: 0.3.0(@stylistic/eslint-plugin@1.7.2)(eslint-plugin-unicorn@52.0.0)(eslint@9.1.0)(typescript-eslint@7.7.0)(typescript@5.4.5)
+    specifier: ^0.3.1
+    version: 0.3.1(@stylistic/eslint-plugin@1.7.2)(eslint-plugin-unicorn@52.0.0)(eslint@9.1.0)(typescript-eslint@7.7.0)(typescript@5.4.5)
   '@ryanccn/gql':
     specifier: ^2.0.0
     version: 2.0.0
@@ -1481,8 +1481,8 @@ packages:
       - supports-color
     dev: true
 
-  /@ryanccn/eslint-config@0.3.0(@stylistic/eslint-plugin@1.7.2)(eslint-plugin-unicorn@52.0.0)(eslint@9.1.0)(typescript-eslint@7.7.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-YQ/bDYdein2YrD4RJRqL3qACfzoRoowdMpGAHdA73AQ938MjQQTHgVYO479gHXMYydYUUAMyj6pvyfe4wJ2+0Q==}
+  /@ryanccn/eslint-config@0.3.1(@stylistic/eslint-plugin@1.7.2)(eslint-plugin-unicorn@52.0.0)(eslint@9.1.0)(typescript-eslint@7.7.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-yE4kWSRukIdclX3KBFnUIRhZmnBOOJIAnlVjHZSXyQ7mtL1HnJX/qanLjSKIGkKlpMa6fcNoELRYKZgOo8orwg==}
     peerDependencies:
       '@eslint/eslintrc': ^3.0.1
       '@eslint/js': ^8.56.0
@@ -1528,7 +1528,7 @@ packages:
       eslint: 9.1.0
       eslint-define-config: 2.1.0
       eslint-plugin-unicorn: 52.0.0(eslint@9.1.0)
-      globals: 14.0.0
+      globals: 15.0.0
       kleur: 4.1.5
       local-pkg: 0.5.0
       typescript-eslint: 7.7.0(eslint@9.1.0)(typescript@5.4.5)
@@ -3248,6 +3248,11 @@ packages:
 
   /globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+    dev: true
+
+  /globals@15.0.0:
+    resolution: {integrity: sha512-m/C/yR4mjO6pXDTm9/R/SpYTAIyaUB4EOzcaaMEl7mds7Mshct9GfejiJNQGjHHbdMPey13Kpu4TMbYi9ex1pw==}
     engines: {node: '>=18'}
     dev: true
 

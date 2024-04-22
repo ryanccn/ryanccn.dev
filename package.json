@@ -23,7 +23,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@resvg/resvg-js": "^2.6.2",
     "@ryanccn/eleventy-plugin-rss": "^1.2.2",
-    "@ryanccn/eslint-config": "^0.3.0",
+    "@ryanccn/eslint-config": "^0.3.1",
     "@ryanccn/gql": "^2.0.0",
     "@shikijs/markdown-it": "1.3.0",
     "@shikijs/transformers": "1.3.0",
