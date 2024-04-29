@@ -144,8 +144,8 @@ devDependencies:
     specifier: 1.3.0
     version: 1.3.0
   simple-icons:
-    specifier: ^11.12.0
-    version: 11.12.0
+    specifier: ^11.14.0
+    version: 11.14.0
   sirv-cli:
     specifier: ^2.0.2
     version: 2.0.2
@@ -5392,8 +5392,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /simple-icons@11.12.0:
-    resolution: {integrity: sha512-atQCGhobuIrxTd4rDGYCip/OZwIW4FYX3PRt4BXAZcbIW71hktvX4sF620T2QJyQsNLAYo3QpiHh8ey2IseA/g==}
+  /simple-icons@11.14.0:
+    resolution: {integrity: sha512-KJ2R28d6tV+uu3GbRQTHizCGyjkI0QPhooYUcv4GjiE4XG0wSlqCFN/pUQK6gno46F0Fk2cyG5otFAK8EMaiYw==}
     engines: {node: '>=0.12.18'}
     dev: true
 
