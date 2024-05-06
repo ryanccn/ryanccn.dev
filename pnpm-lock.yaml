@@ -162,8 +162,8 @@ devDependencies:
     specifier: ^7.7.0
     version: 7.7.0(eslint@9.1.0)(typescript@5.4.5)
   zod:
-    specifier: ^3.22.5
-    version: 3.22.5
+    specifier: ^3.23.6
+    version: 3.23.6
 
 packages:
 
@@ -2686,7 +2686,7 @@ packages:
     dependencies:
       just-extend: 6.2.0
       kleur: 4.1.5
-      zod: 3.22.5
+      zod: 3.23.6
     dev: true
 
   /emoji-regex@10.3.0:
@@ -5902,6 +5902,6 @@ packages:
     resolution: {integrity: sha512-N+d4UJSJbt/R3wqY7Coqs5pcV0aUj2j9IaQ3rNj9bVCLld8tTGKRa2USARjnvZJWVx1NDmQev8EknoczaOQDOA==}
     dev: true
 
-  /zod@3.22.5:
-    resolution: {integrity: sha512-HqnGsCdVZ2xc0qWPLdO25WnseXThh0kEYKIdV5F/hTHO75hNZFp8thxSeHhiPrHZKrFTo1SOgkAj9po5bexZlw==}
+  /zod@3.23.6:
+    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
     dev: true
