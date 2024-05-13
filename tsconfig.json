@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
-    "target": "esnext",
-    "moduleResolution": "nodenext",
-    "allowJs": true,
-    "checkJs": false,
-    "noEmit": true,
-    "jsx": "preserve",
-    "strict": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
     "noUncheckedIndexedAccess": true,
-    "composite": true
+    "noImplicitOverride": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "module": "preserve",
+    "noEmit": true,
+    "lib": ["es2022", "dom", "dom.iterable"]
   },
   "include": ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.ts"],
   "exclude": ["node_modules", "**/node_modules/*"]
