@@ -12,7 +12,8 @@ class Page {
       data.collections.all.map((page) => {
         return {
           title: page.data.title,
-          slug: this.slugify(page.data.title),
+          // slug: this.slugify(page.data.title),
+          url: page.url,
           date: page.data.date,
         };
       }),

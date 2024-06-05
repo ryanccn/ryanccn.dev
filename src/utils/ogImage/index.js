@@ -6,6 +6,7 @@ import pLimit from 'p-limit';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { cpus } from 'node:os';
 import { blue, dim } from 'kleur/colors';
+import { dirname } from 'node:path';
 
 await mkdir('_site/og', { recursive: true });
 
@@ -164,16 +165,17 @@ const pageData = JSON.parse(await readFile('pages.json'));
 const lim = pLimit(cpus().length);
 
 await Promise.all(
-  pageData.map(({ title, slug, date }) =>
+  pageData.map(({ title, url, date }) =>
     lim(async () => {
       const renderedSvg = await svg({ title, date });
       const png = await renderAsync(renderedSvg).then((r) => r.asPng());
 
-      await writeFile(`_site/og/${slug}.png`, png);
+      const path = `_site/og/${url.replace(/^\//, '').replace(/\/$/, '') || 'index'}.png`;
 
-      console.log(
-        `${blue('[og]')} Generated ${dim('_site/og/')}${slug}${dim('.png')}`,
-      );
+      await mkdir(dirname(path), { recursive: true });
+      await writeFile(path, png);
+
+      console.log(`${blue('[og]')} Generated ${url} ${dim(`=> ${path}`)}`);
     }),
   ),
 );

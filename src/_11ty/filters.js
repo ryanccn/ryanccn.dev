@@ -47,4 +47,6 @@ export const sitePluginFilters = (eleventyConfig) => {
   eleventyConfig.addFilter('couldBeOutdated', (date) => isBefore(date, subYears(new Date(), 2)));
   eleventyConfig.addFilter('usesIsNew', (date) => date && isAfter(date, subMonths(new Date(), 1)));
   eleventyConfig.addFilter('prettyDateFormat', (date) => format(date, 'yyyy-MM-dd'));
+
+  eleventyConfig.addFilter('ogImage', (url) => `https://ryanccn.dev/og${(url.replace(/\/$/, '') || '/index')}.png`);
 };
