@@ -19,7 +19,7 @@ title: 'Projects'
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
   {% asyncEach org in organizations %}
     <li>
-      <a href="{{ org.url }}" class="p-6 flex flex-col bg-surface hover:bg-surface-hover transition-colors rounded h-full">
+      <a href="{{ org.url }}" class="p-5 flex flex-col bg-surface hover:bg-surface-hover transition-colors rounded-lg h-full">
         <div class="flex flex-row gap-2 items-center mb-3">
           <div class="flex flex-col gap-y-0.5">
             <span class="text-lg font-bold leading-snug">{{ org.name }}</span>
