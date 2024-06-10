@@ -32,7 +32,7 @@
     "@types/markdown-it": "^14.1.1",
     "@types/node": "^20.14.1",
     "cross-env": "^7.0.3",
-    "cssnano": "^7.0.1",
+    "cssnano": "^7.0.2",
     "datauri": "^4.1.0",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
