@@ -57,7 +57,7 @@
     "postcss-mixins": "^10.0.1",
     "postcss-preset-env": "^9.5.14",
     "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.4",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "rimraf": "^5.0.7",
     "satori": "^0.10.13",
     "sharp": "^0.33.4",
