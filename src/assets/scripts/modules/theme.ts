@@ -67,8 +67,17 @@ const theme = new Proxy(
       if (target.value === newValue) return true;
 
       target.value = newValue;
-      updateClass(newValue);
-      updateSelect(newValue);
+
+      if ('startViewTransition' in document && document.startViewTransition !== undefined) {
+        document.startViewTransition(() => {
+          updateClass(newValue);
+          updateSelect(newValue);
+        });
+      } else {
+        updateClass(newValue);
+        updateSelect(newValue);
+      }
+
       localStorage.setItem('theme', newValue);
 
       return true;
