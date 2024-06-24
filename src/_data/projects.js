@@ -25,29 +25,14 @@ const data = {
       link: 'https://github.com/ryanccn/ryanccn.dev',
     },
     {
-      name: 'Blåhaj',
-      description: 'A multipurpose, fun Discord bot.',
-      link: 'https://github.com/ryanccn/blahaj',
-    },
-    {
-      name: 'Mastoroute',
-      description: 'Unified share links for Mastodon',
-      link: 'https://mastoroute.deno.dev/',
-    },
-    {
-      name: 'Olek',
-      description: 'A minimalistic status page for my hosted services.',
-      link: 'https://status.ryanccn.dev/',
+      name: 'nrr',
+      description: 'Minimal, blazing fast Node.js script runner',
+      link: 'https://github.com/ryanccn/nrr',
     },
     {
       name: 'am',
       description: 'A beautiful and feature-packed Apple Music CLI',
       link: 'https://github.com/ryanccn/am',
-    },
-    {
-      name: 'nyoom',
-      description: 'A CLI Firefox userchrome manager',
-      link: 'https://github.com/ryanccn/nyoom',
     },
     {
       name: 'Vendflare',
@@ -60,14 +45,24 @@ const data = {
       link: 'https://github.com/ryanccn/modernflux',
     },
     {
-      name: 'nrr',
-      description: 'Minimal, blazing fast Node.js script runner',
-      link: 'https://github.com/ryanccn/nrr',
+      name: 'nyoom',
+      description: 'A CLI Firefox userchrome manager',
+      link: 'https://github.com/ryanccn/nyoom',
     },
     {
       name: 'What the DMARC',
       description: 'Explains your DMARC and SPF records',
       link: 'https://whatthedmarc.ryanccn.dev/',
+    },
+    {
+      name: 'Blåhaj',
+      description: 'A multipurpose, fun Discord bot.',
+      link: 'https://github.com/ryanccn/blahaj',
+    },
+    {
+      name: 'Mastoroute',
+      description: 'Unified share links for Mastodon',
+      link: 'https://mastoroute.deno.dev/',
     },
     {
       name: 'Daenerys',
@@ -100,11 +95,6 @@ const data = {
       link: 'https://github.com/ryanccn/attic-action',
     },
     {
-      name: 'GitHub Webhook Proxy',
-      description: 'GitHub webhook proxy on Cloudflare Workers',
-      link: 'https://github.com/ryanccn/github-webhook-proxy',
-    },
-    {
       name: 'sarif-strip-suppressed',
       description: 'CLI tool to strip suppressed results from SARIF files',
       link: 'https://github.com/ryanccn/sarif-strip-suppressed',
@@ -123,16 +113,6 @@ const data = {
       name: 'vivid-zsh',
       description: 'zsh plugins for vivid',
       link: 'https://github.com/ryanccn/vivid-zsh',
-    },
-    {
-      name: 'GitHub Language Stats',
-      description: 'GitHub language stats in an SVG',
-      link: 'https://github.com/ryanccn/github-language-stats',
-    },
-    {
-      name: 'firefish',
-      description: 'Personal fork of Firefish',
-      link: 'https://github.com/ryanccn/firefish',
     },
   ],
   mods: [
@@ -182,6 +162,11 @@ const data = {
     },
   ],
   archived: [
+    {
+      name: 'Olek',
+      description: 'A minimalistic status page for my hosted services.',
+      link: 'https://github.com/ryanccn/olek',
+    },
     {
       name: 'clank',
       description: 'A simple CLI that runs your C++ code JIT',
