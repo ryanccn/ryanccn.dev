@@ -27,8 +27,8 @@
 .theme-dark {
   --fg: 235 235 235;
   --fg-brighter: 245 245 245;
-  --fg-less-dimmed: 215 215 215;
-  --fg-dimmed: 195 195 195;
+  --fg-less-dimmed: 205 205 205;
+  --fg-dimmed: 175 175 175;
   --accent: 147 197 253;
   --accent-lighter: 96 165 250;
 

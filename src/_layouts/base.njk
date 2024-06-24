@@ -65,20 +65,20 @@ navLinks:
   </head>
 
   <body>
-    <header class="flex flex-col gap-y-10 md:w-72 shrink-0">
-      <a href="/" class="relative group flex self-start mb-1">
+    <div class="h-card" hidden style="display: none;">
+      <a href="/" class="p-name u-url">Ryan Cao</a>
+      <a class="u-photo" href="https://ryanccn.dev/icons/icon-512.png">Profile photo</a>
+      <p class="p-note">High school student and open source developer.</p>
+    </div>
+
+    <header class="flex flex-col md:w-72 shrink-0">
+      <a href="/" class="relative group flex self-start mb-14">
         {% icon "custom:me", class="absolute top-0 left-0 w-8 h-auto text-surface group-hover:text-surface-hover transition-colors z-10", "aria-hidden"="true" %}
         {% icon "custom:me", class="w-8 h-auto animate-me-icon text-fg hover:text-accent transition-colors z-20" %}
         <span class="sr-only">Ryan Cao</span>
       </a>
 
-      <div class="h-card" hidden style="display: none;">
-        <a href="/" class="p-name u-url">Ryan Cao</a>
-        <a class="u-photo" href="/icons/background.png">Profile photo</a>
-        <p class="p-note">High school student and open source developer.</p>
-      </div>
-
-      <div class="flex flex-col gap-y-4">
+      <div class="flex flex-col gap-y-4 mb-12">
         {% asyncAll link in navLinks %}
         <a
           href="{{ link.url }}"
@@ -91,7 +91,7 @@ navLinks:
         {% endall %}
       </div>
 
-      <div class="flex items-center flex-wrap gap-2">
+      <div class="flex items-center flex-wrap gap-2 mb-4">
         <a rel="me noreferrer" href="https://sk1.ryanccn.dev/@ryan" class="text-fg hover:text-accent transition-colors p-1" title="Fediverse">
           {% icon "simpleicon:mastodon", class="block size-5 overflow-visible" %}
         </a>
@@ -113,7 +113,7 @@ navLinks:
         </button>
       </div>
 
-      <div class="flex flex-row self-start items-center" data-theme-select>
+      <div class="flex flex-row self-start items-center mb-16" data-theme-select>
         {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden'='true' %}
 
         <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
@@ -136,13 +136,13 @@ navLinks:
       </div>
 
       <div class="flex-col gap-y-2 hidden md:flex">
-        <div class="flex flex-row gap-x-1 text-xs">
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-          <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
+        <div class="flex flex-row gap-x-1 items-center text-sm">
+          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{% icon "lucide:arrow-left", class="block size-4" %}</a>
+          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{% icon "lucide:shuffle", class="block size-4" %}</a>
         </div>
 
-        <a class="text-xs text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+        <a class="text-sm text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
           Code licensed under MIT, content licensed under CC BY-SA 4.0
         </a>
       </div>
@@ -153,13 +153,13 @@ navLinks:
     </main>
 
     <footer class="flex flex-col gap-y-2 md:hidden mt-20">
-      <div class="flex flex-row gap-x-1 text-xs">
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous">←</a>
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-        <a class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next">→</a>
+      <div class="flex flex-row gap-x-1 items-center text-sm">
+        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{% icon "lucide:arrow-left", class="block size-4" %}</a>
+        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{% icon "lucide:shuffle", class="block size-4" %}</a>
       </div>
 
-      <a class="text-xs text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
+      <a class="text-sm text-pretty text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
         Code licensed under MIT, content licensed under CC BY-SA 4.0
       </a>
     </footer>
