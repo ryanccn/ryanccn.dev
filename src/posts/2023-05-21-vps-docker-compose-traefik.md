@@ -426,7 +426,7 @@ However, I noticed that the server kept going down and returning Bad Gateway err
 
 Seeing that there were basically no solutions or fixes to the bug, I decided on a compromise: hosting the PostgreSQL database on my own server while hosting Umami's Next.js app. This way, I could also take advantage of Vercel's CDN to make the Umami instance faster globally.
 
-### Umami → Postgres
+### Umami -&gt; Postgres
 
 ```yaml
 version: "3"
