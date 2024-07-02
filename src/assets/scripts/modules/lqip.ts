@@ -1,5 +1,3 @@
-/* global DEV:readonly */
-
 document.addEventListener(
   'load',
   (e) => {

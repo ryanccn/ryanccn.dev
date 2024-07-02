@@ -3,10 +3,11 @@ import { cyan, red, magenta } from 'kleur/colors';
 class FetchError extends Error {
   /**
    * Construct an instance of `FetchError`
-   * @param {string} message the message to put in the error
+   * @param {string | undefined} [message]
+   * @param {ErrorOptions | undefined} [options]
    */
-  constructor(message) {
-    super(message);
+  constructor(message, options) {
+    super(message, options);
     this.name = 'FetchError';
   }
 }

@@ -1,8 +1,8 @@
 import { format, isAfter, isBefore, subMonths, subYears } from 'date-fns';
 
 /**
- * @param {String[]} k list of tags
- * @returns {String[]} list of *filtered* tags
+ * @param {string[]} k list of tags
+ * @returns {string[]} list of *filtered* tags
  */
 const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 

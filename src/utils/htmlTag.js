@@ -1,3 +1,5 @@
+import { timingSafeEqual } from 'node:crypto';
+
 const SECURE_RANDOM_SAFE = `${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}-${crypto.randomUUID()}`;
 
 class SafeValue {
@@ -7,7 +9,13 @@ class SafeValue {
   }
 
   verify(secret) {
-    return this.secret === secret;
+    if (this.secret.length !== secret.length) return false;
+
+    const encoder = new TextEncoder();
+    const [buf1, buf2] = [encoder.encode(this.secret), encoder.encode(secret)];
+    if (buf1.byteLength !== buf2.byteLength) return false;
+
+    return timingSafeEqual(buf1, buf2);
   }
 }
 
