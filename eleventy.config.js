@@ -1,6 +1,7 @@
 import 'dotenv/config.js';
 
-import { EleventyRenderPlugin } from '@11ty/eleventy';
+// import { EleventyRenderPlugin } from '@11ty/eleventy';
+import { VentoPlugin } from 'eleventy-plugin-vento';
 import pluginReadingTime from 'eleventy-plugin-reading-time';
 import pluginRss from '@ryanccn/eleventy-plugin-rss';
 
@@ -14,7 +15,6 @@ import { sitePluginShiki } from './src/_11ty/plugins/shiki.js';
 import { sitePluginHtmlmin } from './src/_11ty/plugins/htmlmin.js';
 
 const config = (eleventyConfig) => {
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
 
@@ -50,6 +50,13 @@ const config = (eleventyConfig) => {
           stroke: 'none',
         },
       },
+    },
+  });
+
+  eleventyConfig.addPlugin(VentoPlugin, {
+    ventoOptions: {
+      autoescape: true,
+      includes: 'src/_includes',
     },
   });
 

@@ -1,0 +1,24 @@
+{{ export function projectCard (project) }}
+
+<a class="flex flex-col justify-between p-5 rounded-lg transition-colors bg-surface hover:bg-surface-hover {{ if project.featured }}md:col-span-2{{ /if }}" href="{{ project.link }}">
+  <div class="flex flex-col gap-y-1">
+    <h3 class="font-bold text-base">
+      {{ project.name }}
+    </h3>
+    <p class="text-fg-dimmed text-sm leading-snug text-pretty">
+      {{ project.description }}
+    </p>
+  </div>
+
+  {{ if project.link.startsWith("https://github.com") }}
+  {{ icon('simpleicon:github', { "class": 'block size-4 mt-8 self-end text-current' }) }}
+  {{ else if project.link.startsWith("https://codeberg.org") }}
+  {{ icon('simpleicon:codeberg', { "class": 'block size-4 mt-8 self-end text-current' }) }}
+  {{ else if project.link.startsWith("https://modrinth.com") }}
+  {{ icon('simpleicon:modrinth', { "class": 'block size-4 mt-8 self-end text-current' }) }}
+  {{ else }}
+  {{ icon('lucide:arrow-up-right', { "class": 'block size-4 mt-8 self-end text-current' }) }}
+  {{ /if }}
+</a>
+
+{{ /export }}

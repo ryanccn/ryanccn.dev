@@ -1,0 +1,8 @@
+---
+layout: base
+---
+
+<article class="prose enhanced-prose font-prose mb-12">
+  {{ content |> safe }}
+  <p class="mt-16 text-fg-dimmed">Last updated on {{ date |> prettyDateFormat }}</p>
+</article>

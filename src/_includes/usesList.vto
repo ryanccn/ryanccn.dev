@@ -1,55 +1,56 @@
 
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {% for item in uses[usesListKey] %}
+  {{ for item of uses[usesListKey] }}
   <li>
     <div class="relative flex flex-col gap-y-1 h-full rounded-lg">
       <div class="flex flex-row gap-1 flex-wrap items-center">
         <a href="{{ item.url }}" class="font-bold text-lg tracking-tight mr-2">{{ item.name }}</a>
         
-        {% if item.date | usesIsNew %}
+        {{ set isNew = item.date |> usesIsNew }}
+        {{ if isNew }}
         <span class="text-xs font-semibold bg-accent text-background px-1.5 py-0.5 rounded-sm">New</span>
-        {% endif %}
+        {{ /if }}
 
-        {% if item.tags | includes("openSource") %}
+        {{ if item.tags?.includes("openSource") }}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Open source</span>
-        {% endif %}
-        {% if item.tags | includes("paid") %}
+        {{ /if }}
+        {{ if item.tags?.includes("paid") }}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Paid</span>
-        {% endif %}
-        {% if item.tags | includes("freemium") %}
+        {{ /if }}
+        {{ if item.tags?.includes("freemium") }}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Freemium</span>
-        {% endif %}
-        {% if item.tags | includes("macos") %}
+        {{ /if }}
+        {{ if item.tags?.includes("macos") }}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">macOS</span>
-        {% endif %}
-        {% if item.tags | includes("ios") %}
+        {{ /if }}
+        {{ if item.tags?.includes("ios") }}
         <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">iOS</span>
-        {% endif %}
+        {{ /if }}
       </div>
 
-      {% if item.description %}
+      {{ if item.description }}
       <span class="text-fg-dimmed text-sm leading-snug text-pretty">{{ item.description }}</span>
-      {% endif %}
+      {{ /if }}
 
-      {% if item.replaces %}
+      {{ if item.replaces }}
       <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty mt-2">
         Previously used: {{ item.replaces.join(', ') }}
       </span>
-      {% endif %}
+      {{ /if }}
 
-      {% if "accessories" in item %}
+      {{ if "accessories" in item }}
       <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
-        {% for accessory in item.accessories %}
+        {{ for accessory of item.accessories }}
         <div class="flex flex-col gap-y-1">
           <a href="{{ accessory.url }}" class="font-semibold text-sm text-fg-less-dimmed hover:text-fg transition-colors tracking-tight leading-snug">{{ accessory.name }}</a>
-          {% if "description" in accessory %}
+          {{ if "description" in accessory }}
           <span class="text-fg-dimmed text-xs leading-snug text-pretty">{{ accessory.description }}</span>
-          {% endif %}
+          {{ /if }}
         </div>
-        {% endfor %}
+        {{ /for }}
       </div>
-      {% endif %}
+      {{ /if }}
     </div>
   </li>
-  {% endfor %}
+  {{ /for }}
 </ul>
