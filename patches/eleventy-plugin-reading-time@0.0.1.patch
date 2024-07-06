@@ -1,0 +1,12 @@
+diff --git a/index.js b/index.js
+index f8dbcd816a799f52cc059bdf6b129ba0453ec607..c62a2ddbc4a2370e0bcbdab6c4ea6932fa691531 100644
+--- a/index.js
++++ b/index.js
+@@ -2,6 +2,6 @@ const readingTime = require('./lib/reading-time');
+ 
+ module.exports = function(eleventyConfig, pluginNamespace) {
+   eleventyConfig.namespace(pluginNamespace, () => {
+-    eleventyConfig.addNunjucksFilter('readingTime', readingTime);
++    eleventyConfig.addFilter('readingTime', readingTime);
+   });
+ };

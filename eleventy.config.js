@@ -53,13 +53,6 @@ const config = (eleventyConfig) => {
     },
   });
 
-  eleventyConfig.addPlugin(VentoPlugin, {
-    ventoOptions: {
-      autoescape: true,
-      includes: 'src/_includes',
-    },
-  });
-
   // eleventyConfig.setQuietMode(true);
   // eleventyConfig.addPlugin(pluginDirectoryOutput);
 
@@ -67,6 +60,14 @@ const config = (eleventyConfig) => {
   eleventyConfig.addPlugin(sitePluginFilters);
   eleventyConfig.addPlugin(sitePluginMarkdown);
   eleventyConfig.addPlugin(sitePluginShiki);
+
+  eleventyConfig.addPlugin(VentoPlugin, {
+    ventoOptions: {
+      autoescape: true,
+      includes: 'src/_includes',
+    },
+  });
+
   eleventyConfig.addPlugin(sitePluginHtmlmin);
 
   eleventyConfig.addPassthroughCopy({

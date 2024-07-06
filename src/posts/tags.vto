@@ -13,13 +13,13 @@ layout: base
 eleventyComputed:
   title: Tagged “{{ tag }}”
 eleventyImport:
-  collections: ["post"]
+  collections: ["posts"]
 permalink: /posts/tags/{{ tag |> slugify }}/
 ---
 
 <h1 class="title">Tagged “{{ tag }}”</h1>
 
 {{ set postslist = collections[tag] |> reverse }}
-{{ include "postslist.vto" }}
+{{ include "postsList.vto" }}
 
 <p class="mt-12"><a href="{{ '/posts/' |> url }}" class="accent-link font-medium transition">&lt;- All posts</a></p>

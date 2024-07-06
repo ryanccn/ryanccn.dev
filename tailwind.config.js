@@ -6,7 +6,7 @@ import colors from 'tailwindcss/colors';
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './src/**/*.{11ty.js,njk,liquid,md}',
+    './src/**/*.{11ty.js,njk,liquid,md,vto}',
     './src/_11ty/shortcodes/*.js',
     './src/assets/scripts/theme.ts',
   ],

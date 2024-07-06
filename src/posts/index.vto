@@ -3,16 +3,16 @@ layout: base
 title: 'Posts'
 permalink: '/posts/'
 eleventyImport:
-  collections: ["post"]
+  collections: ["posts"]
 override:tags: []
 ---
 
 <h1 class="title flex gap-x-4 items-end">
   <span>Blog</span>
-  <a href="/feed/rss.xml" title="RSS">{{ icon('lucide:rss', { "class": 'block size-6 transition opacity-75 hover:opacity-90' }) }}</a>
+  <a href="/feed/rss.xml" title="RSS">{{ await icon('lucide:rss', { "class": 'block size-6 transition opacity-75 hover:opacity-90' }) |> safe }}</a>
 </h1>
 
 <p class="subtitle mb-16">My ramblings about web development, privacy, and all sorts of other things.</p>
 
-{{ set postslist = collections.posts |> reverse }}
-{{ include "postslist.vto" }}
+{{ import { postsList } from "postsList.vto" }}
+{{ await postsList(collections.posts.toReversed()) |> safe }}

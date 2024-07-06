@@ -13,7 +13,7 @@ title: 'Projects'
 
 <ul class="projects-grid" id="projects">
   {{ for project of projects.projects }}
-    <li>{{ projectCard(project) }}</li>
+    <li>{{ await projectCard(project) |> safe }}</li>
   {{ /for }}
 </ul>
 
@@ -38,7 +38,7 @@ title: 'Projects'
 <h2 class="projects-page" id="contributions">Notable Contributions</h2>
 <ul class="projects-grid">
   {{ for project of projects.contributions }}
-    <li>{{ projectCard(project) }}</li>
+    <li>{{ await projectCard(project) |> safe }}</li>
   {{ /for }}
 </ul>
 
@@ -52,7 +52,7 @@ title: 'Projects'
       <span class="text-fg-dimmed">{{ repo.nameWithOwner.split('/')[0] }}/</span><span>{{ repo.nameWithOwner.split('/')[1] }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
-      {{ icon('lucide:star', { "class": 'block size-3 fill-current stroke-none' }) }}
+      {{ await icon('lucide:star', { "class": 'block size-3 fill-current stroke-none' }) |> safe }}
       <span class="text-xs font-medium">{{ repo.stargazerCount |> shortCount }}</span>
     </div>
   </li>
@@ -60,7 +60,7 @@ title: 'Projects'
 </ol>
 {{ else }}
 <div class="px-4 py-16 bg-surface text-fg/50 rounded-lg flex flex-col gap-y-2 items-center mb-12">
-  {{ icon('lucide:alert-triangle', { "class": 'block size-8' }) }}
+  {{ await icon('lucide:alert-triangle', { "class": 'block size-8' }) |> safe }}
   <span class="font-semibold">No data found!</span>
 </div>
 {{ /if }}
@@ -68,7 +68,7 @@ title: 'Projects'
 <h2 class="projects-page">Minecraft Mods</h2>
 <ul class="projects-grid">
   {{ for project of projects.mods }}
-    <li>{{ projectCard(project) }}</li>
+    <li>{{ await projectCard(project) |> safe }}</li>
   {{ /for }}
 </ul>
 
@@ -76,7 +76,7 @@ title: 'Projects'
   <h2 class="projects-page">Archived</h2>
   <ul class="projects-grid">
      {{ for project of projects.archived }}
-      <li>{{ projectCard(project) }}</li>
+      <li>{{ await projectCard(project) |> safe }}</li>
     {{ /for }}
   </ul>
 </section>

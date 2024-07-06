@@ -2,6 +2,8 @@
 layout: base
 title: 'Ryan Cao'
 permalink: '/'
+eleventyImport:
+  collections: ["posts"]
 ---
 
 <article class="prose enhanced-prose">
@@ -17,9 +19,11 @@ permalink: '/'
   <h2 class="text-2xl">Projects</h2>
 
   <ul class="not-prose projects-grid">
+    {{ import { projectCard } from "projectCard.vto" }}
     {{ for project of projects.projects |> head(7) }}
-      <li>{{ include "projectCard.vto" }}</li>
+      <li>{{ await projectCard(project) |> safe }}</li>
     {{ /for }}
+
     <li class="place-self-stretch">
       <a class="grid place-content-center w-full h-full py-4 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/projects/' | url }}">
         <span class="text-fg-less-dimmed font-medium">See more -&gt;</span>
@@ -30,8 +34,7 @@ permalink: '/'
   <h2 class="text-2xl">Blog posts</h2>
 
   <div class="not-prose">
-  {{ set postslist = collections.posts |> reverse |> head(5) }}
-  {{ set postslistcompact = true }}
-  {{ include "postslist.vto" }}
+  {{ import { postsList } from "postsList.vto" }}
+  {{ await postsList(collections.posts.toReversed().slice(0, 5), true) |> safe }}
   </div>
 </article>
