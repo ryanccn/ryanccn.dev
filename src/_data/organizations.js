@@ -22,13 +22,13 @@ const data = [
   {
     name: 'NixOS',
     role: 'Nixpkgs Maintainer',
-    description: 'Maintains packages on Nixpkgs',
+    description: 'Maintains some packages on Nixpkgs',
     url: 'https://nixos.org/',
   },
   {
     name: 'Prism Launcher',
-    role: 'Community Manager & Bot Maintainer',
-    description: 'Manages the community and also maintains the community Discord bot',
+    role: 'Bot Maintainer / (formerly) Community Manager',
+    description: 'Managed the community for two years, maintains the community Discord bot',
     url: 'https://prismlauncher.org/',
   },
   {
