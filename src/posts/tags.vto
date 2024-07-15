@@ -19,7 +19,7 @@ permalink: /posts/tags/{{ tag |> slugify }}/
 
 <h1 class="title">Tagged “{{ tag }}”</h1>
 
-{{ set postslist = collections[tag] |> reverse }}
-{{ include "postsList.vto" }}
+{{ import { postsList } from "postsList.vto" }}
+{{ await postsList(collections[tag].toReversed()) |> safe }}
 
 <p class="mt-12"><a href="{{ '/posts/' |> url }}" class="accent-link font-medium transition">&lt;- All posts</a></p>
