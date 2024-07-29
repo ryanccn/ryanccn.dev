@@ -135,8 +135,8 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7
       satori:
-        specifier: ^0.10.13
-        version: 0.10.13
+        specifier: ^0.10.14
+        version: 0.10.14
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
@@ -3126,8 +3126,8 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  satori@0.10.13:
-    resolution: {integrity: sha512-klCwkVYMQ/ZN5inJLHzrUmGwoRfsdP7idB5hfpJ1jfiJk1ErDitK8Hkc6Kll1+Ox2WtqEuGecSZLnmup3CGzvQ==}
+  satori@0.10.14:
+    resolution: {integrity: sha512-abovcqmwl97WKioxpkfuMeZmndB1TuDFY/R+FymrZyiGP+pMYomvgSzVPnbNMWHHESOPosVHGL352oFbdAnJcA==}
     engines: {node: '>=16'}
 
   section-matter@1.0.0:
@@ -6448,7 +6448,7 @@ snapshots:
     dependencies:
       mri: 1.2.0
 
-  satori@0.10.13:
+  satori@0.10.14:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
