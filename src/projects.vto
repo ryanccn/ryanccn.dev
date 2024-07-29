@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: base
 title: 'Projects'
 ---
 
@@ -9,15 +9,17 @@ title: 'Projects'
   The open source projects that I have built myself and those that I've contributed to over the years.
 </p>
 
+{{ import { projectCard } from "projectCard.vto" }}
+
 <ul class="projects-grid" id="projects">
-  {% asyncEach project in projects.projects %}
-    <li>{% include "projectCard.njk" %}</li>
-  {% endeach %}
+  {{ for project of projects.projects }}
+    <li>{{ await projectCard(project) |> safe }}</li>
+  {{ /for }}
 </ul>
 
 <h2 class="projects-page" id="minecraft">Organizations</h2>
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
-  {% asyncEach org in organizations %}
+  {{ for org of organizations }}
     <li>
       <a href="{{ org.url }}" class="p-5 flex flex-col bg-surface hover:bg-surface-hover transition-colors rounded-lg h-full">
         <div class="flex flex-row gap-2 items-center mb-3">
@@ -29,52 +31,52 @@ title: 'Projects'
         <p class="text-sm leading-snug text-fg-dimmed">{{ org.description }}</p>
       </a>
     </li>
-  {% endeach %}
+  {{ /for }}
 </ul>
 
 
 <h2 class="projects-page" id="contributions">Notable Contributions</h2>
 <ul class="projects-grid">
-  {% asyncEach project in projects.contributions %}
-    <li>{% include "projectCard.njk" %}</li>
-  {% endeach %}
+  {{ for project of projects.contributions }}
+    <li>{{ await projectCard(project) |> safe }}</li>
+  {{ /for }}
 </ul>
 
 <h2 class="projects-page" id="github">GitHub Contributions</h2>
 
-{% if contributions.length > 0 %}
+{{ if contributions.length > 0 }}
 <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-12">
-  {% asyncEach repo in contributions %}
+  {{ for repo of contributions }}
   <li class="flex gap-x-2 justify-between w-full">
     <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-transparent hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
       <span class="text-fg-dimmed">{{ repo.nameWithOwner.split('/')[0] }}/</span><span>{{ repo.nameWithOwner.split('/')[1] }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
-      {% icon 'lucide:star', class='block size-3 fill-current stroke-none' %}
-      <span class="text-xs font-medium">{{ repo.stargazerCount | shortCount }}</span>
+      {{ await icon('lucide:star', { "class": 'block size-3 fill-current stroke-none' }) |> safe }}
+      <span class="text-xs font-medium">{{ repo.stargazerCount |> shortCount }}</span>
     </div>
   </li>
-  {% endeach %}
+  {{ /for }}
 </ol>
-{% else %}
+{{ else }}
 <div class="px-4 py-16 bg-surface text-fg/50 rounded-lg flex flex-col gap-y-2 items-center mb-12">
-  {% icon 'lucide:alert-triangle', class='block size-8' %}
+  {{ await icon('lucide:alert-triangle', { "class": 'block size-8' }) |> safe }}
   <span class="font-semibold">No data found!</span>
 </div>
-{% endif %}
+{{ /if }}
 
 <h2 class="projects-page">Minecraft Mods</h2>
 <ul class="projects-grid">
-  {% asyncEach project in projects.mods %}
-    <li>{% include "projectCard.njk" %}</li>
-  {% endeach %}
+  {{ for project of projects.mods }}
+    <li>{{ await projectCard(project) |> safe }}</li>
+  {{ /for }}
 </ul>
 
 <section class="opacity-50" id="archived">
   <h2 class="projects-page">Archived</h2>
   <ul class="projects-grid">
-    {% asyncEach project in projects.archived %}
-      <li>{% include "projectCard.njk" %}</li>
-    {% endeach %}
+     {{ for project of projects.archived }}
+      <li>{{ await projectCard(project) |> safe }}</li>
+    {{ /for }}
   </ul>
 </section>

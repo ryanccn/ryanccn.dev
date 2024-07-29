@@ -1,0 +1,40 @@
+---
+layout: base
+---
+
+<article class="prose enhanced-prose mb-16 h-entry">
+  <h1 class="p-name">{{ title }}</h1>
+
+  <div class="not-prose mb-10 flex flex-col gap-1">
+    <div class="flex flex-row items-center flex-wrap gap-2">
+      {{ await icon("lucide:calendar", { "class": "block size-4 text-fg-dimmed shrink-0" }) |> safe }}
+      <time datetime="{{ date |> prettyDateFormat }}" class="font-semibold text-fg dt-published">{{ date |> prettyDateFormat }}</span>
+    </div>
+    <div class="flex flex-row items-center flex-wrap gap-2">
+      {{ await icon("lucide:clock", { "class": "block size-4 text-fg-dimmed shrink-0" }) |> safe }}
+      <span class="font-semibold text-fg">~{{ content |> readingTime }}</span>
+    </div>
+  </div>
+
+  {{ include 'outdatedWarning.vto' }}
+  {{ content |> safe }}
+</article>
+
+<div class="flex flex-row items-center gap-2 mb-3 text-fg-dimmed text-sm">
+  {{ await icon("simpleicon:creativecommons", { "class": "block size-4 text-fg shrink-0" }) |> safe }}
+  <p>Licensed under <a class="font-semibold plain-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
+
+<div class="flex flex-row items-center flex-wrap gap-2 mb-3 text-fg text-sm">
+  {{ await icon("lucide:tag", { "class": "block size-4 text-fg shrink-0" }) |> safe }}
+  {{ for tag of tags |> filterTagsList }}
+    <a href="/posts/tags/{{ tag |> slugify }}/">{{ tag }}</a>
+  {{ /for }}
+</div>
+
+<div class="flex flex-row items-center gap-2 mb-16 text-fg-dimmed text-sm">
+  {{ await icon("lucide:calendar", { "class": "block size-4 text-fg shrink-0" }) |> safe }}
+  <p>Published on <span class="font-semibold text-fg">{{ date |> prettyDateFormat }}</span></p>
+</div>
+
+{{ include 'donationMessage.vto' }}

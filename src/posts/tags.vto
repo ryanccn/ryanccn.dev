@@ -1,0 +1,25 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - postsTagList
+  addAllPagesToCollections: true
+layout: base
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+eleventyImport:
+  collections: ["posts"]
+permalink: /posts/tags/{{ tag |> slugify }}/
+---
+
+<h1 class="title">Tagged “{{ tag }}”</h1>
+
+{{ import { postsList } from "postsList.vto" }}
+{{ await postsList(collections[tag].toReversed()) |> safe }}
+
+<p class="mt-12"><a href="{{ '/posts/' |> url }}" class="accent-link font-medium transition">&lt;- All posts</a></p>

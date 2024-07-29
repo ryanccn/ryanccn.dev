@@ -20,13 +20,13 @@ navLinks:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
+    <title>{{ if title !== "Ryan Cao" }}{{ title }} &middot; {{ /if }}Ryan Cao</title>
 
-    {% if consts.production %}
+    {{ if consts.production }}
     <script async defer data-domain="ryanccn.dev" data-api="/sus/event" src="/sus/script.js"></script>
-    {% endif %}
-    <script nonce="{{ nonces.script }}">{{ inlineAssets.script | safe }}</script>
-    <style>{{ inlineAssets.styles.fonts | safe }}</style>
+    {{ /if }}
+    <script nonce="{{ nonces.script }}">{{ inlineAssets.script |> safe }}</script>
+    <style>{{ inlineAssets.styles.fonts |> safe }}</style>
 
     <link rel="stylesheet" href="/assets/styles.css?v={{ consts.revision }}">
     <link rel="preload" as="style" href="/assets/styles.css?v={{ consts.revision }}">
@@ -42,7 +42,7 @@ navLinks:
     <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 
-    {% set description_ = description or "High school student and open source developer." %}
+    {{ set description_ = description ?? "High school student and open source developer." }}
 
     <meta name="title" content="{{ title }}">
     <meta name="description" content="{{ description_ }}">
@@ -58,10 +58,10 @@ navLinks:
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description_ }}">
 
-    <meta property="og:image" content="{{ page.url | ogImage }}?v={{ consts.revision }}">
+    <meta property="og:image" content="{{ page.url |> ogImage }}?v={{ consts.revision }}">
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta name="twitter:image" content="{{ page.url | ogImage }}?v={{ consts.revision }}">
+    <meta name="twitter:image" content="{{ page.url |> ogImage }}?v={{ consts.revision }}">
   </head>
 
   <body>
@@ -73,48 +73,48 @@ navLinks:
 
     <header class="flex flex-col md:w-72 shrink-0">
       <a href="/" class="relative group flex self-start mb-14">
-        {% icon "custom:me", class="absolute top-0 left-0 w-8 h-auto text-surface group-hover:text-surface-hover transition-colors z-10", "aria-hidden"="true" %}
-        {% icon "custom:me", class="w-8 h-auto animate-me-icon text-fg hover:text-accent transition-colors z-20" %}
+        {{ await icon("custom:me", { "class": "absolute top-0 left-0 w-8 h-auto text-surface group-hover:text-surface-hover transition-colors z-10", "aria-hidden": "true" }) |> safe }}
+        {{ await icon("custom:me", { "class": "w-8 h-auto animate-me-icon text-fg hover:text-accent transition-colors z-20" }) |> safe }}
         <span class="sr-only">Ryan Cao</span>
       </a>
 
       <div class="flex flex-col gap-y-4 mb-12">
-        {% asyncAll link in navLinks %}
+        {{ for link of navLinks }}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
-          {% if link.accesskey %}accesskey="{{ link.accesskey }}"{% endif %}
+          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {{ if link.url === page.url }} text-accent {{ else }} text-fg hover:text-accent {{ /if }}"
+          {{ if link.accesskey }}accesskey="{{ link.accesskey }}"{{ /if }}
         >
-          {% icon link.icon, class='block size-4 shrink-0' %}
+          {{ await icon(link.icon, { "class": 'block size-4 shrink-0' }) |> safe }}
           <span>{{ link.title }}</span>
         </a>
-        {% endall %}
+        {{ /for }}
       </div>
 
       <div class="flex items-center flex-wrap gap-2 mb-4">
         <a rel="me noreferrer" href="https://sk1.ryanccn.dev/@ryan" class="text-fg hover:text-accent transition-colors p-1" title="Fediverse">
-          {% icon "simpleicon:mastodon", class="block size-5 overflow-visible" %}
+          {{ await icon("simpleicon:mastodon", { "class": "block size-5 overflow-visible" }) |> safe }}
         </a>
         <a rel="me authn" href="https://github.com/ryanccn" class="text-fg hover:text-accent transition-colors p-1" title="GitHub">
-          {% icon "simpleicon:github", class="block size-5 overflow-visible" %}
+          {{ await icon("simpleicon:github", { "class": "block size-5 overflow-visible" }) |> safe }}
         </a>
         <a rel="me noreferrer" href="https://x.com/RyanCaoDev" class="text-fg hover:text-accent transition-colors p-1" title="Twitter">
-          {% icon "simpleicon:x", class="block size-5 overflow-visible" %}
+          {{ await icon("simpleicon:x", { "class": "block size-5 overflow-visible" }) |> safe }}
         </a>
         <a rel="noreferrer" href="https://discord.gg/ty7GCnN87U" class="text-fg hover:text-accent transition-colors p-1" title="Discord">
-          {% icon "simpleicon:discord", class="block size-5 overflow-visible" %}
+          {{ await icon("simpleicon:discord", { "class": "block size-5 overflow-visible" }) |> safe }}
         </a>
         <a rel="noreferrer" href="https://ko-fi.com/ryancaodev" class="text-fg hover:text-accent transition-colors p-1" title="Ko-fi">
-          {% icon "simpleicon:kofi", class="block size-5 overflow-visible" %}
+          {{ await icon("simpleicon:kofi", { "class": "block size-5 overflow-visible" }) |> safe }}
         </a>
         <button data-email class="no-default text-fg hover:text-accent transition-colors p-1" title="Copy email address">
-          {% icon "lucide:mail", class="block size-5 overflow-visible", "data-email-icon"="m" %}
-          {% icon "lucide:check", class="hidden size-5 overflow-visible", "data-email-icon"="d" %}
+          {{ await icon("lucide:mail", { "class": "block size-5 overflow-visible", "data-email-icon": "m" }) |> safe }}
+          {{ await icon("lucide:check", { "class": "hidden size-5 overflow-visible", "data-email-icon": "d" }) |> safe }}
         </button>
       </div>
 
       <div class="flex flex-row self-start items-center mb-16" data-theme-select>
-        {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden'='true' %}
+        {{ await icon('lucide:palette', { "class": 'block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden': 'true' }) |> safe }}
 
         <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
           <option value="light">Default Light</option>
@@ -137,9 +137,9 @@ navLinks:
 
       <div class="flex-col gap-y-2 hidden md:flex">
         <div class="flex flex-row gap-x-1 items-center text-sm">
-          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{% icon "lucide:arrow-left", class="block size-4" %}</a>
+          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{{ await icon("lucide:arrow-left", { "class": "block size-4" }) |> safe }}</a>
           <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{% icon "lucide:shuffle", class="block size-4" %}</a>
+          <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{{ await icon("lucide:shuffle", { "class": "block size-4" }) |> safe }}</a>
         </div>
 
         <a class="text-sm text-balance text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">
@@ -149,14 +149,14 @@ navLinks:
     </header>
 
     <main class="flex flex-col">
-      {{ content | safe }}
+      {{ content |> safe }}
     </main>
 
     <footer class="flex flex-col gap-y-2 md:hidden mt-20">
       <div class="flex flex-row gap-x-1 items-center text-sm">
-        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{% icon "lucide:arrow-left", class="block size-4" %}</a>
+        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/previous" title="Previous">{% icon "lucide:arrow-left", class="block size-4" }}</a>
         <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
-        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{% icon "lucide:shuffle", class="block size-4" %}</a>
+        <a class="px-0.5 py-0.5 text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://xn--sr8hvo.ws/next" title="Next">{% icon "lucide:shuffle", class="block size-4" }}</a>
       </div>
 
       <a class="text-sm text-pretty text-fg-dimmed hover:text-fg-less-dimmed transition-colors" href="https://github.com/ryanccn/ryanccn.dev/blob/main/{{ page.inputPath }}">

@@ -11,30 +11,30 @@ date: 2023-09-01
 <h2 class="text-xl font-extrabold tracking-tight mb-4">Apps</h2>
 
 <h3 class="text-lg font-bold tracking-tight mb-10">General</h3>
-{% set usesListKey = "apps.general" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "apps.general" }}
+{{ include "usesList.vto" }}
 
 <h3 class="text-lg font-bold tracking-tight mt-14 mb-10">Development</h3>
-{% set usesListKey = "apps.dev" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "apps.dev" }}
+{{ include "usesList.vto" }}
 
 <h3 class="text-lg font-bold tracking-tight mt-14 mb-10">Utilities</h3>
-{% set usesListKey = "apps.utilities" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "apps.utilities" }}
+{{ include "usesList.vto" }}
 
 <h3 class="text-lg font-bold tracking-tight mt-14 mb-10">Browser Extensions</h3>
-{% set usesListKey = "apps.browserExtensions" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "apps.browserExtensions" }}
+{{ include "usesList.vto" }}
 
 <h2 class="text-xl font-extrabold tracking-tight mt-24 mb-4">Services</h2>
 
 <h3 class="text-lg font-bold tracking-tight mb-10">General</h3>
-{% set usesListKey = "services.general" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "services.general" }}
+{{ include "usesList.vto" }}
 
 <h3 class="text-lg font-bold tracking-tight mt-14 mb-10">Web development</h3>
-{% set usesListKey = "services.webDev" %}
-{% include "usesList.njk" %}
+{{ set usesListKey = "services.webDev" }}
+{{ include "usesList.vto" }}
 
 <h2 class="text-xl font-extrabold tracking-tight mt-20 mb-10">Developer tools</h2>
 <p class="mb-24">Refer to my <a class="accent-link" href="https://github.com/ryanccn/flake">Nix flake</a> for packages and configurations.</p>

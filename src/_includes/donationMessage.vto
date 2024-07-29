@@ -1,6 +1,6 @@
 <a href="https://ko-fi.com/ryancaodev" rel="noreferrer" class="relative group flex flex-col gap-y-3 px-8 py-6 rounded-lg bg-surface">
   <h2 class="font-bold text-lg tracking-tight text-balance">Buy me a coffee if you liked this article!</h2>
   <p class="text-pretty">Donating means a lot to me and supports my writing and my open source projects/contributions!</p>
-  {% icon "lucide:heart-handshake", class="absolute top-0 right-0 m-4 size-16 text-surface-hover group-hover:text-accent transition pointer-events-none" %}
+  {{ await icon("lucide:heart-handshake", { "class": "absolute top-0 right-0 m-4 size-16 text-surface-hover group-hover:text-accent transition pointer-events-none" }) |> safe }}
 </a>
 

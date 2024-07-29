@@ -1,0 +1,29 @@
+{{ export async function postsList (list, compact = false) }}
+
+<ol reversed class="{{ if compact }}grid grid-cols-1 md:grid-cols-2 gap-12{{ else }}flex flex-col gap-y-12{{ /if }}">
+  {{ for i of list }}
+  <li class="flex flex-col gap-y-2">
+    <a href="{{ i.url }}" class="{{ if compact }}text-lg{{ else }}text-xl{{ /if }} text-fg hover:text-fg-brighter font-bold tracking-tight underline-offset-2 transition text-balance">
+      <h2>{{ i.data.title }}</h2>
+    </a>
+    <div class="flex flex-wrap gap-1 {{ if compact }}text-xs{{ else }}text-sm{{ /if }}">
+      {{ for tag of i.data.tags |> filterTagsList }}
+      <a href="/posts/tags/{{ tag |> slugify }}/" class="px-2.5 py-0.5 bg-surface hover:bg-surface-hover transition rounded-full">{{ tag }}</a>
+      {{ /for }}
+    </div>
+    <p class="{{ if compact }}text-xs{{ else }}text-sm{{ /if }} text-fg-dimmed">
+      {{ views[i.fileSlug] |> numberFormat }} reads · ~{{ i.templateContent |> readingTime }} · {{ i.date |> prettyDateFormat }}
+    </p>
+  </li>
+  {{ /for }}
+
+  {{ if compact }}
+  <li class="place-self-stretch">
+    <a class="grid place-content-center w-full h-full py-4 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/posts/' |> url }}">
+      <span class="text-fg-less-dimmed font-medium">Read more -&gt;</span>
+    </a>
+  </li>
+  {{ /if }}
+</ol>
+
+{{ /export }}
