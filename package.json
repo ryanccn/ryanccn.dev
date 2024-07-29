@@ -59,7 +59,7 @@
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "rimraf": "^5.0.7",
-    "satori": "^0.10.13",
+    "satori": "^0.10.14",
     "sharp": "^0.33.4",
     "shiki": "1.9.1",
     "simple-icons": "^12.4.0",
