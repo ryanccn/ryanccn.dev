@@ -33,7 +33,7 @@
 
       {% if item.replaces %}
       <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty mt-2">
-        Previously used: {{ item.replaces.join(', ') }}
+        Previously used: {% for r in item.replaces %}<a href="{{ r.url }}" class="underline decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">{{ r.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
       </span>
       {% endif %}
 

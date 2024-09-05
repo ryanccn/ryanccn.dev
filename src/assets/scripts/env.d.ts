@@ -7,6 +7,7 @@ declare global {
 /** View Transitions API */
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface Document extends ViewTransitionsAPI {}
 }
 

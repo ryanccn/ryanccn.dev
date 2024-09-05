@@ -15,7 +15,7 @@ title: 'Projects'
   {% endeach %}
 </ul>
 
-<h2 class="projects-page" id="minecraft">Organizations</h2>
+<h2 class="projects-page" id="organizations">Organizations</h2>
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
   {% asyncEach org in organizations %}
     <li>
@@ -62,13 +62,6 @@ title: 'Projects'
   <span class="font-semibold">No data found!</span>
 </div>
 {% endif %}
-
-<h2 class="projects-page">Minecraft Mods</h2>
-<ul class="projects-grid">
-  {% asyncEach project in projects.mods %}
-    <li>{% include "projectCard.njk" %}</li>
-  {% endeach %}
-</ul>
 
 <section class="opacity-50" id="archived">
   <h2 class="projects-page">Archived</h2>

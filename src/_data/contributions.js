@@ -9,7 +9,6 @@ const excludes = [
   /^JayantGoel001\//, // joke repository
   /^Ampflower\/nocode$/, // joke repository
   /\.github$/, // configuration repositories
-  /^RyanModDev\//, // personal organization
 ];
 
 const gql = createGql('https://api.github.com/graphql', {

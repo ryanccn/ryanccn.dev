@@ -16,8 +16,12 @@ const schema = z.record(z.array(
     description: z.string().min(1),
     url: z.string().url(),
     tags: z.array(schemaTags).default([]).optional(),
-    replaces: z.array(z.string().min(1)).optional(),
     date: z.string().regex(/\d\d\d\d-\d\d-\d\d/).optional(),
+
+    replaces: z.array(z.object({
+      name: z.string().min(1),
+      url: z.string().url(),
+    }).strict()).optional(),
 
     accessories: z.array(
       z.object({
@@ -114,7 +118,10 @@ const data = {
       url: 'https://mitchellh.com/ghostty',
       description: 'GPU-accelerated terminal emulator pushing modern features.',
       date: '2024-02-22',
-      replaces: ['WezTerm', 'iTerm2'],
+      replaces: [
+        { name: 'WezTerm', url: 'https://wezfurlong.org/wezterm/index.html' },
+        { name: 'iTerm2', url: 'https://iterm2.com/' },
+      ],
       tags: ['openSource'],
     },
     {
@@ -173,6 +180,13 @@ const data = {
       tags: ['openSource', 'freemium', 'macos'],
     },
     {
+      name: 'Ice',
+      url: 'https://github.com/jordanbaird/Ice',
+      description: 'Powerful menu bar manager for macOS',
+      tags: ['openSource', 'macos'],
+      date: '2024-09-05',
+    },
+    {
       name: 'Stats',
       url: 'https://github.com/exelban/stats',
       description: 'Menu bar system statistics',
@@ -192,11 +206,12 @@ const data = {
       tags: ['macos'],
     },
     {
-      name: 'BatFi',
-      url: 'https://micropixels.software/batfi',
+      name: 'AlDente',
+      url: 'https://apphousekitchen.com/',
       description: 'macOS battery performance optimization',
-      replaces: ['AlDente'],
-      tags: ['macos'],
+      replaces: [{ name: 'BatFi', url: 'https://micropixels.software/apps/batfi' }],
+      tags: ['macos', 'freemium'],
+      date: '2024-09-05',
     },
     {
       name: 'MediaMate',
@@ -284,7 +299,7 @@ const data = {
       url: 'https://adguard.com/en/adguard-ios/overview.html',
       description: 'Safari ad and tracker blocking',
       date: '2024-02-15',
-      replaces: ['1Blocker'],
+      replaces: [{ name: '1Blocker', url: 'https://1blocker.com/' }],
       tags: ['freemium', 'ios'],
     },
   ],
@@ -311,7 +326,7 @@ const data = {
       name: 'Apple Music',
       url: 'https://www.apple.com/apple-music/',
       description: 'Music with a large library, local music sync, and Dolby Atmos',
-      replaces: ['Spotify'],
+      replaces: [{ name: 'Spotify', url: 'https://open.spotify.com/' }],
       tags: ['paid'],
     },
   ],

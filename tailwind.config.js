@@ -40,8 +40,8 @@ export default {
 
     extend: {
       fontFamily: {
-        sans: ['Inter', '"Inter fallback"', ...defaultTheme.fontFamily.sans],
-        display: ['Inter', '"Inter fallback"', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        display: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

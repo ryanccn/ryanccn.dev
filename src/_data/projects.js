@@ -115,30 +115,6 @@ const data = {
       link: 'https://github.com/ryanccn/vivid-zsh',
     },
   ],
-  mods: [
-    {
-      name: 'Vanillish',
-      description: 'A lightweight and beautiful vanilla experience',
-      link: 'https://modrinth.com/modpack/vanillish',
-      featured: true,
-    },
-    {
-      name: 'EmuNO',
-      description: 'Disables various macOS-specific behaviors, making your life better',
-      link: 'https://modrinth.com/mod/emuno',
-      featured: true,
-    },
-    {
-      name: 'uwuify chat',
-      description: 'uwuify the chat messages owo',
-      link: 'https://modrinth.com/mod/uwuify-chat',
-    },
-    {
-      name: 'quilted-dependabot',
-      description: 'Update certain dependencies for Quilt',
-      link: 'https://github.com/RyanModDev/quilted-dependabot',
-    },
-  ],
   contributions: [
     {
       name: 'Vencord',
@@ -186,11 +162,6 @@ const data = {
       name: 'Osmosis',
       description: 'An experimental Stable Diffusion frontend',
       link: 'https://github.com/ryanccn/osmosis',
-    },
-    {
-      name: 'Myriad Bows',
-      description: 'A Myriad enchantment for bows that consumes arrows depending on your luck',
-      link: 'https://github.com/RyanModDev/MyriadBows',
     },
   ],
 };
