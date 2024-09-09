@@ -27,7 +27,7 @@
     "@ryanccn/gql": "^2.0.0",
     "@shikijs/markdown-it": "1.16.2",
     "@shikijs/transformers": "1.16.2",
-    "@stylistic/eslint-plugin": "^2.7.2",
+    "@stylistic/eslint-plugin": "^2.8.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.5.4",
