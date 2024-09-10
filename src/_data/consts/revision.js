@@ -1,5 +1,5 @@
-import { execa } from 'execa';
+import { x } from 'tinyexec';
 
-export default async () => {
-  return execa`git rev-parse --short HEAD`.then((a) => a.stdout);
+export default () => {
+  return x('git', ['rev-parse', '--short', 'HEAD']).then((a) => a.stdout.trim());
 };

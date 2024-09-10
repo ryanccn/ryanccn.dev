@@ -45,6 +45,11 @@ const data = {
       link: 'https://github.com/ryanccn/modernflux',
     },
     {
+      name: 'morlana',
+      description: 'nix-darwin utilities',
+      link: 'https://github.com/ryanccn/morlana',
+    },
+    {
       name: 'nyoom',
       description: 'A CLI Firefox userchrome manager',
       link: 'https://github.com/ryanccn/nyoom',
@@ -83,11 +88,6 @@ const data = {
       name: 'Tenable',
       description: 'An alternative, smaller script and associated proxy for Plausible Analytics',
       link: 'https://github.com/ryanccn/tenable',
-    },
-    {
-      name: 'Choirpack',
-      description: 'Simple and powerful Node.js package manager utilities built around Corepack',
-      link: 'https://github.com/ryanccn/choirpack',
     },
     {
       name: 'attic-action',

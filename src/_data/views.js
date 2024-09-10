@@ -3,12 +3,13 @@ import { format } from 'date-fns';
 
 import { logData } from '../utils/log.js';
 import { bold } from 'kleur/colors';
+import pLimit from 'p-limit';
 
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const getViews = async ({ slug, originalUrl }) => {
-  if (!process.env.PLAUSIBLE_TOKEN) return 0;
+  if (!process.env.PLAUSIBLE_TOKEN) return 1234;
 
   logData('views', `Fetching for ${bold(slug)}`);
 
@@ -37,7 +38,7 @@ const getViews = async ({ slug, originalUrl }) => {
 };
 
 export default async () => {
-  const ret = {};
+  const lim = pLimit(8);
 
   const postData = await readdir(join(process.cwd(), 'src', 'posts'))
     .then((files) => files
@@ -46,11 +47,9 @@ export default async () => {
       .map((s) => ({ slug: s, originalUrl: `/posts/${s}/` })),
     );
 
-  await Promise.all(
-    postData.map(async (p) => {
-      ret[p.slug] = await getViews(p);
-    }),
+  const viewsEntries = await Promise.all(
+    postData.map((p) => lim(async () => [p.slug, await getViews(p)])),
   );
 
-  return ret;
+  return Object.fromEntries(viewsEntries);
 };

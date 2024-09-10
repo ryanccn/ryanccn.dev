@@ -1,10 +1,8 @@
-const storageKey = 'animate-me-icon-v1';
+const storageKey = 'ami-v2';
 
 const existing = sessionStorage.getItem(storageKey);
-if (existing === 'true') {
+if (existing) {
   document.documentElement.classList.add('no-animate-me-icon');
 } else {
-  sessionStorage.setItem(storageKey, 'true');
+  sessionStorage.setItem(storageKey, '1');
 }
-
-export {};

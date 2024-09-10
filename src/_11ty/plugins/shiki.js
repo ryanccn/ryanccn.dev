@@ -20,8 +20,8 @@ export const sitePluginShiki = async (eleventyConfig) => {
 
   const plugin = await Shiki({
     themes: {
-      'light': 'min-light',
-      'dark': 'min-dark',
+      'light': 'github-light-default',
+      'dark': 'github-dark-default',
       'ctp-latte': 'catppuccin-latte',
       'ctp-frappe': 'catppuccin-frappe',
       'ctp-macchiato': 'catppuccin-macchiato',

@@ -20,4 +20,6 @@ permalink: /posts/tags/{{ tag | slugify }}/
 {% set postslist = collections[tag] | reverse %}
 {% include "postslist.njk" %}
 
-<p class="mt-12"><a href="{{ '/posts/' | url }}" class="accent-link font-medium transition">&lt;- All posts</a></p>
+<p class="mt-12">
+  <a href="{{ '/posts/' | url }}" class="accent-link font-medium transition">&lt;- All posts</a>
+</p>

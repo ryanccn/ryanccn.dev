@@ -93,7 +93,7 @@ navLinks:
 
       <div class="flex items-center flex-wrap gap-2 mb-4">
         <a rel="me noreferrer" href="https://sk1.ryanccn.dev/@ryan" class="text-fg hover:text-accent transition-colors p-1" title="Fediverse">
-          {% icon "simpleicon:mastodon", class="block size-5 overflow-visible" %}
+          {% icon "custom:fediverse", class="block size-5 overflow-visible" %}
         </a>
         <a rel="me authn" href="https://github.com/ryanccn" class="text-fg hover:text-accent transition-colors p-1" title="GitHub">
           {% icon "simpleicon:github", class="block size-5 overflow-visible" %}
@@ -113,7 +113,7 @@ navLinks:
         </button>
       </div>
 
-      <div class="flex flex-row self-start items-center mb-16" data-theme-select>
+      <div class="flex flex-row self-start items-center mb-16" id="theme-select">
         {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20', 'aria-hidden'='true' %}
 
         <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">

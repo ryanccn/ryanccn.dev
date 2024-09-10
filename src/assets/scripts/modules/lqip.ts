@@ -10,5 +10,3 @@ document.addEventListener(
   },
   { capture: true, passive: true },
 );
-
-export {};

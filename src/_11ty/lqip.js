@@ -23,13 +23,11 @@
 // https://github.com/ampproject/amp-toolbox/blob/0c8755016ae825b11b63b98be83271fd14cc0486/packages/optimizer/lib/transformers/AddBlurryImagePlaceholders.js
 
 import sharp from 'sharp';
-import sizeOf from 'image-size';
+import { imageMeta } from 'image-meta';
 import { optimize } from 'svgo';
 
-import DataUriParser from 'datauri/parser.js';
-const datauri = new DataUriParser();
-
 import { html } from '../utils/htmlTag.js';
+import { readFile } from 'node:fs/promises';
 
 const PIXEL_TARGET = 128;
 
@@ -48,7 +46,7 @@ function escaper(match) {
 }
 
 async function getDataURI(src) {
-  const info = sizeOf(src);
+  const info = imageMeta(await readFile(src));
   const imgDimension = getBitmapDimensions_(info.width, info.height);
   const buffer = await sharp(src)
     .rotate() // Manifest rotation from metadata
@@ -57,7 +55,7 @@ async function getDataURI(src) {
     .toBuffer();
 
   const result = {
-    src: datauri.format('.png', buffer).content,
+    src: `data:image/png;base64,${buffer.toString('base64')}`,
     width: info.width,
     height: info.height,
   };

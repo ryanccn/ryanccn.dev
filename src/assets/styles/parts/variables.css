@@ -10,33 +10,47 @@
 }
 
 :root {
-  --fg: 25 25 25;
+  --fg: 33 37 41;
   --fg-brighter: 0 0 0;
-  --fg-less-dimmed: 50 50 50;
-  --fg-dimmed: 75 75 75;
-  --accent: 37 99 235;
-  --accent-lighter: 59 130 246;
+  --fg-less-dimmed: 52 58 64;
+  --fg-dimmed: 73 80 87;
+  --accent: 25 113 194;
+  --accent-lighter: 28 126 214;
 
   --background: 255 255 255;
-  --surface: 245 245 245;
-  --surface-hover: 235 235 235;
+  --surface: 241 243 245;
+  --surface-hover: 233 236 239;
+
+  --warning: 252 196 25;
 
   @mixin shiki-variables light;
+
+  & .shiki,
+  & .shiki span {
+    background-color: inherit;
+  }
 }
 
 .theme-dark {
-  --fg: 235 235 235;
-  --fg-brighter: 245 245 245;
-  --fg-less-dimmed: 205 205 205;
-  --fg-dimmed: 175 175 175;
-  --accent: 147 197 253;
-  --accent-lighter: 96 165 250;
+  --fg: 248 249 250;
+  --fg-brighter: 255 255 255;
+  --fg-less-dimmed: 222 226 230;
+  --fg-dimmed: 206 212 218;
+  --accent: 77 171 247;
+  --accent-lighter: 116 192 252;
 
-  --background: 20 20 20;
-  --surface: 30 30 30;
-  --surface-hover: 40 40 40;
+  --background: 33 37 41;
+  --surface: 52 58 64;
+  --surface-hover: 73 80 87;
+
+  --warning: 255 224 102;
 
   @mixin shiki-variables dark;
+
+  & .shiki,
+  & .shiki span {
+    background-color: inherit;
+  }
 }
 
 .theme-ctp-latte {
@@ -50,6 +64,8 @@
   --background: 230 233 239;
   --surface: 239 241 245;
   --surface-hover: 204 208 218;
+
+  --warning: 223 142 29;
 
   @mixin shiki-variables ctp-latte;
 }
@@ -66,6 +82,8 @@
   --surface: 48 52 70;
   --surface-hover: 65 69 89;
 
+  --warning: 229 200 144;
+
   @mixin shiki-variables ctp-frappe;
 }
 
@@ -80,6 +98,8 @@
   --background: 30 32 48;
   --surface: 36 39 58;
   --surface-hover: 54 58 79;
+
+  --warning: 238 212 159;
 
   @mixin shiki-variables ctp-macchiato;
 }
@@ -96,6 +116,8 @@
   --surface: 30 30 46;
   --surface-hover: 49 50 68;
 
+  --warning: 249 226 175;
+
   @mixin shiki-variables ctp-mocha;
 }
 
@@ -110,6 +132,8 @@
   --background: 236 239 244;
   --surface: 229 233 240;
   --surface-hover: 216 222 233;
+
+  --warning: 235 203 139;
 
   @mixin shiki-variables nord;
 }
@@ -126,6 +150,8 @@
   --surface: 59 66 82;
   --surface-hover: 67 76 94;
 
+  --warning: 235 203 139;
+
   @mixin shiki-variables nord;
 }
 
@@ -140,6 +166,8 @@
   --background: 25 23 36;
   --surface: 31 29 46;
   --surface-hover: 38 35 58;
+
+  --warning: 246 193 119;
 
   @mixin shiki-variables rose-pine;
 }
@@ -156,6 +184,8 @@
   --surface: 42 39 63;
   --surface-hover: 57 53 82;
 
+  --warning: 246 193 119;
+
   @mixin shiki-variables rose-pine-moon;
 }
 
@@ -170,6 +200,8 @@
   --background: 250 244 237;
   --surface: 255 250 243;
   --surface-hover: 242 233 222;
+
+  --warning: 234 157 52;
 
   @mixin shiki-variables rose-pine-dawn;
 }
@@ -186,6 +218,8 @@
   --surface: 242 240 229;
   --surface-hover: 230 228 217;
 
+  --warning: 173 131 1;
+
   @mixin shiki-variables flexoki-light;
 }
 
@@ -200,6 +234,8 @@
   --background: 16 15 15;
   --surface: 28 27 26;
   --surface-hover: 40 39 38;
+
+  --warning: 208 162 21;
 
   @mixin shiki-variables flexoki-dark;
 }
@@ -216,6 +252,8 @@
   --surface: 235 219 178;
   --surface-hover: 213 196 161;
 
+  --warning: 215 153 32;
+
   @mixin shiki-variables gruvbox-light;
 }
 
@@ -230,6 +268,8 @@
   --background: 40 40 40;
   --surface: 60 56 54;
   --surface-hover: 80 73 69;
+
+  --warning: 251 189 48;
 
   @mixin shiki-variables gruvbox-dark;
 }

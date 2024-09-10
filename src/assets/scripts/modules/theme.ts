@@ -1,6 +1,4 @@
-/* global DEV:readonly */
-
-const getThemeSelect = () => document.querySelector<HTMLSelectElement>('[data-theme-select] > select');
+const getThemeSelect = () => document.querySelector<HTMLSelectElement>('#theme-select > select');
 
 const isThemeDark = {
   'light': false,
@@ -145,5 +143,3 @@ addEventListener('hashchange', () => {
   const newOverride = getHashOverride();
   if (newOverride) theme.value = newOverride;
 });
-
-export {};

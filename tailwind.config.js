@@ -30,12 +30,7 @@ export default {
       'surface': 'rgba(var(--surface) / <alpha-value>)',
       'surface-hover': 'rgba(var(--surface-hover) / <alpha-value>)',
 
-      'tailwind': {
-        yellow: colors.yellow,
-        amber: colors.amber,
-        sky: colors.sky,
-        green: colors.green,
-      },
+      'warning': 'rgba(var(--warning) / <alpha-value>)',
     },
 
     extend: {

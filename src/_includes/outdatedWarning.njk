@@ -1,5 +1,8 @@
 {% set shouldShow = page.date | couldBeOutdated %}
 
 {% if shouldShow %}
-{% warning "This article may contain outdated information, as it is more than two years old." %}
+<div class="not-prose flex flex-row gap-x-2.5 items-center text-warning">
+  {% icon "lucide:message-square-warning", class="block size-5 shrink-0" %}
+  <span class="font-medium text-sm text-pretty">This article may contain outdated information, as it is more than two years old.</span>
+</div>
 {% endif %}

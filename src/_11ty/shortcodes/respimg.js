@@ -1,4 +1,5 @@
-import { imageSize } from 'image-size';
+import { imageMeta } from 'image-meta';
+import { readFile } from 'node:fs/promises';
 import lqip from '../lqip.js';
 
 import { html, safe } from '../../utils/htmlTag.js';
@@ -30,7 +31,7 @@ export default async (src, alt, width, height) => {
   }
 
   if (!width || !height) {
-    const originalDimensions = imageSize(resolvedPath);
+    const originalDimensions = imageMeta(await readFile(resolvedPath));
 
     width ||= originalDimensions.width;
     height ||= originalDimensions.height;
