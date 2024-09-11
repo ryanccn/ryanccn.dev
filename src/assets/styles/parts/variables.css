@@ -31,7 +31,7 @@
   }
 }
 
-.theme-dark {
+.theme-dim {
   --fg: 248 249 250;
   --fg-brighter: 255 255 255;
   --fg-less-dimmed: 222 226 230;
@@ -39,9 +39,31 @@
   --accent: 77 171 247;
   --accent-lighter: 116 192 252;
 
-  --background: 33 37 41;
-  --surface: 52 58 64;
-  --surface-hover: 73 80 87;
+  --background: 32 34 36;
+  --surface: 48 51 54;
+  --surface-hover: 64 68 72;
+
+  --warning: 255 224 102;
+
+  @mixin shiki-variables dark;
+
+  & .shiki,
+  & .shiki span {
+    background-color: inherit;
+  }
+}
+
+.theme-dark {
+  --fg: 248 249 250;
+  --fg-brighter: 255 255 255;
+  --fg-less-dimmed: 222 226 230;
+  --fg-dimmed: 206 212 218;
+  --accent: 80 174 250;
+  --accent-lighter: 119 195 255;
+
+  --background: 16 17 18;
+  --surface: 32 34 36;
+  --surface-hover: 48 51 54;
 
   --warning: 255 224 102;
 

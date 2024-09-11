@@ -2,6 +2,7 @@ const getThemeSelect = () => document.querySelector<HTMLSelectElement>('#theme-s
 
 const isThemeDark = {
   'light': false,
+  'dim': true,
   'dark': true,
   'ctp-latte': false,
   'ctp-frappe': true,
