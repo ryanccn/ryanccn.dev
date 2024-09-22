@@ -4,14 +4,14 @@ const decoder = new TextDecoder();
 let finishedAnim = true;
 
 addEventListener('DOMContentLoaded', () => {
-  const button = document.querySelector<HTMLButtonElement>('button[data-email]');
+  const button = document.querySelector<HTMLButtonElement>('button#copy-email');
 
   if (button) button.addEventListener('click', () => {
     (async () => {
       await navigator.clipboard.writeText(decoder.decode(rawEmail));
 
-      const mailIcon = button.querySelector('[data-email-icon="m"]')!;
-      const checkIcon = button.querySelector('[data-email-icon="d"]')!;
+      const mailIcon = button.querySelector('[data-icon="m"]')!;
+      const checkIcon = button.querySelector('[data-icon="d"]')!;
 
       if (finishedAnim) {
         mailIcon.classList.replace('block', 'hidden');

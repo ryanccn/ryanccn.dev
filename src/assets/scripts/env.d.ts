@@ -12,7 +12,7 @@ declare global {
 }
 
 declare interface ViewTransitionsAPI {
-  startViewTransition?(updateCallback?: () => void | Promise<void>): ViewTransition;
+  startViewTransition(updateCallback?: () => void | Promise<void>): ViewTransition;
 }
 
 interface ViewTransition {

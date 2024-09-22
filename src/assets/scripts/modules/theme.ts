@@ -1,3 +1,5 @@
+import { storageAvailable } from './utils';
+
 const getThemeSelect = () => document.querySelector<HTMLSelectElement>('#theme-select > select');
 
 const isThemeDark = {
@@ -40,12 +42,16 @@ const getHashOverride = () => {
 };
 
 const getLocalStorageValue = (): ThemeId => {
+  const defaultTheme: ThemeId = systemIsDark() ? 'dark' : 'light';
+
+  if (!storageAvailable('local')) {
+    return defaultTheme;
+  }
+
   let lsv = localStorage.getItem('theme');
 
   if (!checkThemeStr(lsv)) {
     if (DEV) console.log(`[theme] set localStorage to system (original ${lsv} is invalid)`);
-
-    const defaultTheme: ThemeId = systemIsDark() ? 'dark' : 'light';
 
     localStorage.setItem('theme', defaultTheme);
     lsv = defaultTheme;
@@ -67,7 +73,7 @@ const theme = new Proxy(
 
       target.value = newValue;
 
-      if ('startViewTransition' in document && document.startViewTransition !== undefined) {
+      if ('startViewTransition' in document) {
         document.startViewTransition(() => {
           updateClass(newValue);
           updateSelect(newValue);
@@ -77,7 +83,9 @@ const theme = new Proxy(
         updateSelect(newValue);
       }
 
-      localStorage.setItem('theme', newValue);
+      if (storageAvailable('local')) {
+        localStorage.setItem('theme', newValue);
+      }
 
       return true;
     },
