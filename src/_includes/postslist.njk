@@ -2,7 +2,8 @@
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
     <a href="{{ i.url }}" class="{% if postslistcompact %}text-lg{% else %}text-xl{% endif %} text-fg hover:text-fg-brighter font-bold tracking-tight underline-offset-2 transition text-balance">
-      <h2>{{ i.data.title }}</h2>
+      {% set headingElement %}{% if postslistcompact %}h3{% else %}h2{% endif %}{% endset %}
+      <{{ headingElement }}>{{ i.data.title }}</{{ headingElement }}>
     </a>
     <div class="flex flex-wrap gap-1 {% if postslistcompact %}text-xs{% else %}text-sm{% endif %}">
       {% for tag in i.data.tags | filterTagsList %}
