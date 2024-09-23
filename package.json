@@ -59,7 +59,7 @@
     "satori": "^0.11.1",
     "sharp": "^0.33.5",
     "shiki": "1.18.0",
-    "simple-icons": "^13.10.0",
+    "simple-icons": "^13.11.0",
     "sirv-cli": "^2.0.2",
     "svgo": "^3.3.2",
     "tailwindcss": "^3.4.12",
