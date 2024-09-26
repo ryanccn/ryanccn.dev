@@ -1,6 +1,7 @@
 import { AssetCache } from '@11ty/eleventy-fetch';
 import { createGql } from '@ryanccn/gql';
 
+import { format, subMonths, subDays, addDays } from 'date-fns';
 import { logData } from '../utils/log.js';
 import { dim } from 'kleur/colors';
 
@@ -19,40 +20,38 @@ const gql = createGql('https://api.github.com/graphql', {
 });
 
 /**
- * @param {string | null} after
+ * @param {Date} from
+ * @param {Date} to
  */
-const queryContributions = (after) =>
+const queryContributions = (from, to) =>
   gql`
-    query NotableContributions($after: String) {
+    query NotableContributions($from: DateTime!, $to: DateTime!) {
       viewer {
-        repositoriesContributedTo(
-          first: 15
-          after: $after
-          contributionTypes: [COMMIT, PULL_REQUEST]
-          orderBy: { field: STARGAZERS, direction: DESC }
-        ) {
-          edges {
-            node {
+        contributionsCollection(from: $from, to: $to) {
+          pullRequestContributionsByRepository(maxRepositories: 100) {
+            repository {
+              id
+
+              name
               owner {
                 login
-                avatarUrl
               }
               nameWithOwner
               url
+
               stargazerCount
               isPrivate
               isFork
             }
           }
-
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
+          hasActivityInThePast
         }
       }
     }
-  `({ after });
+  `({
+    from: from.toISOString(),
+    to: to.toISOString(),
+  });
 
 export default async () => {
   if (!process.env.GITHUB_TOKEN) return [];
@@ -66,34 +65,46 @@ export default async () => {
 
   let data = [];
 
-  let after = null;
+  let cursor = new Date();
 
   while (true) {
-    logData('contributions', `Fetching ${dim(`(after ${after})`)}`);
+    const from = addDays(subMonths(cursor, 6), 1);
 
-    const response = await queryContributions(after);
+    logData('contributions', `Fetching ${dim(`(${format(from, 'yyyy/MM/dd')}-${format(cursor, 'yyyy/MM/dd')})`)}`);
+
+    const response = await queryContributions(subMonths(cursor, 6), cursor);
 
     if (!response.success) {
-      throw new Error(`Error fetching GitHub contributions: ${response.response.status} ${response.response.statusText}`);
+      throw new Error(`Error fetching GitHub contributions: ${response.error}`);
     }
 
     const {
       data: {
-        viewer: { repositoriesContributedTo },
+        viewer: {
+          contributionsCollection: {
+            pullRequestContributionsByRepository,
+            hasActivityInThePast,
+          },
+        },
       },
     } = response;
 
-    data.push(...repositoriesContributedTo.edges.map((k) => k.node));
-    after = repositoriesContributedTo.pageInfo.endCursor;
+    data.push(...pullRequestContributionsByRepository
+      .map((k) => k.repository)
+      .filter((repo) => !repo.isPrivate && !repo.isFork && repo.owner.login !== 'ryanccn')
+      .filter((repo) => !excludes.some((e) => e.test(repo.nameWithOwner)))
+      .filter((k) => !data.some((j) => j.id == k.id)),
+    );
 
-    if (!repositoriesContributedTo.pageInfo.hasNextPage) break;
+    cursor = subDays(from, 1);
+
+    if (!hasActivityInThePast || data.length > 19) break;
   }
 
   data = data
-    .filter((repo) => !repo.isPrivate && !repo.isFork)
-    .filter((repo) => !excludes.some((e) => e.test(repo.nameWithOwner)));
+    .toSorted((a, b) => b.stargazerCount - a.stargazerCount)
+    .slice(0, 19);
 
   await cache.save(data, 'json');
-
   return data;
 };

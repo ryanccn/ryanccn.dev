@@ -47,7 +47,7 @@ title: 'Projects'
   {% asyncEach repo in contributions %}
   <li class="flex gap-x-2 justify-between w-full">
     <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-transparent hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
-      <span class="text-fg-dimmed">{{ repo.nameWithOwner.split('/')[0] }}/</span><span>{{ repo.nameWithOwner.split('/')[1] }}</span>
+      <span class="text-fg-dimmed">{{ repo.owner.login }}/</span><span>{{ repo.name }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
       {% icon 'lucide:star', class='block size-3 fill-current stroke-none' %}
@@ -55,6 +55,10 @@ title: 'Projects'
     </div>
   </li>
   {% endeach %}
+  <a
+    href="https://github.com/ryanccn"
+    class="text-fg-dimmed hover:text-fg-less-dimmed transition-colors text-sm font-medium place-self-end"
+  >See more →</a>
 </ol>
 {% else %}
 <div class="px-4 py-16 bg-surface text-fg/50 rounded-lg flex flex-col gap-y-2 items-center mb-12">
