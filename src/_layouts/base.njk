@@ -3,15 +3,12 @@ navLinks:
   - title: Projects
     url: /projects/
     icon: lucide:album
-    accesskey: p
   - title: Uses
     url: /uses/
     icon: lucide:bookmark
-    accesskey: u
   - title: Blog
     url: /posts/
     icon: lucide:pencil
-    accesskey: b
 ---
 
 <!doctype html>
@@ -83,7 +80,6 @@ navLinks:
         <a
           href="{{ link.url }}"
           class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
-          {% if link.accesskey %}accesskey="{{ link.accesskey }}"{% endif %}
         >
           {% icon link.icon, class='block size-4 shrink-0' %}
           <span>{{ link.title }}</span>
@@ -116,7 +112,7 @@ navLinks:
       <div class="flex flex-row self-start items-center mb-16" id="theme-select">
         {% icon 'lucide:palette', class='block size-4 ml-3 my-2 shrink-0 z-20 pointer-events-none', 'aria-hidden'='true' %}
 
-        <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded" accesskey="t">
+        <select aria-label="Select a theme" class="-ml-7 py-2 pl-10 pr-3 z-10 appearance-none text-sm font-medium bg-surface hover:bg-surface-hover transition rounded">
           <option value="light">Default Light</option>
           <option value="dim">Default Dim</option>
           <option value="dark">Default Dark</option>
