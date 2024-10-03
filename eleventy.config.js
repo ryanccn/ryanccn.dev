@@ -13,7 +13,7 @@ import { sitePluginMarkdown } from './src/_11ty/plugins/markdown.js';
 import { sitePluginShiki } from './src/_11ty/plugins/shiki.js';
 import { sitePluginHtmlmin } from './src/_11ty/plugins/htmlmin.js';
 
-const config = (eleventyConfig) => {
+const configFn = (eleventyConfig) => {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
@@ -78,14 +78,14 @@ const config = (eleventyConfig) => {
   eleventyConfig.ignores.add('README.md');
 
   eleventyConfig.setServerOptions({ domDiff: false });
-
-  return {
-    markdownTemplateEngine: 'njk',
-    dir: {
-      input: 'src',
-      layouts: '_layouts',
-    },
-  };
 };
 
-export default config;
+export const config = {
+  dir: {
+    input: 'src',
+    layouts: '_layouts',
+  },
+  markdownTemplateEngine: 'njk',
+};
+
+export default configFn;

@@ -214,8 +214,7 @@
         "meta.function-call.generic"
       ],
       "settings": {
-        "foreground": "#BC5215",
-        "fontStyle": "bold"
+        "foreground": "#BC5215"
       }
     },
     {

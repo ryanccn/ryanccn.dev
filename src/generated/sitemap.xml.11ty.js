@@ -15,7 +15,7 @@ class Page {
     <loc>${data.consts.domain}${page.url}</loc>
     <lastmod>${page.date.toISOString()}</lastmod>
   </url>`,
-  ).join('\n')}
+    ).join('\n')}
 </urlset>
 `.trimStart();
   }

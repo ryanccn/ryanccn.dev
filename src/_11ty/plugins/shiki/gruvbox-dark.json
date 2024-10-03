@@ -397,15 +397,7 @@
       "name": "Python Function decorator",
       "scope": "entity.name.function.decorator",
       "settings": {
-        "foreground": "#fabd2f",
-        "fontStyle": "bold"
-      }
-    },
-    {
-      "name": "Python ALL CAPS",
-      "scope": "constant.other.caps",
-      "settings": {
-        "fontStyle": "bold"
+        "foreground": "#fabd2f"
       }
     },
     {
@@ -480,8 +472,7 @@
     {
       "scope": "entity.name.function.target",
       "settings": {
-        "foreground": "#b8bb26",
-        "fontStyle": "bold"
+        "foreground": "#b8bb26"
       }
     },
     {
@@ -509,8 +500,7 @@
     {
       "scope": "storage.type.annotation",
       "settings": {
-        "foreground": "#83a598",
-        "fontStyle": "bold"
+        "foreground": "#83a598"
       }
     },
     {
@@ -522,8 +512,7 @@
     {
       "scope": "comment.block.javadoc variable.parameter.java",
       "settings": {
-        "foreground": "#b8bb26",
-        "fontStyle": "bold"
+        "foreground": "#b8bb26"
       }
     },
     {
@@ -564,14 +553,12 @@
     {
       "scope": "markup.bold",
       "settings": {
-        "fontStyle": "bold",
         "foreground": "#fe8019"
       }
     },
     {
       "scope": "markup.heading",
       "settings": {
-        "fontStyle": "bold",
         "foreground": "#fe8019"
       }
     },
@@ -720,8 +707,7 @@
     {
       "scope": ["text.html entity.name.tag", "text.html punctuation.tag"],
       "settings": {
-        "foreground": "#8ec07c",
-        "fontStyle": "bold"
+        "foreground": "#8ec07c"
       }
     },
     {

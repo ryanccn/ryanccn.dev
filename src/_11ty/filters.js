@@ -22,7 +22,7 @@ export const sitePluginFilters = (eleventyConfig) => {
   eleventyConfig.addFilter('filterTagsList', (k) => filterTagsList(k));
 
   eleventyConfig.addCollection('postsTagList', (collection) => {
-    let tagSet = new Set();
+    const tagSet = new Set();
 
     for (const item of collection.getFilteredByTag('posts')) {
       for (const tag of item?.data?.tags || []) tagSet.add(tag);
