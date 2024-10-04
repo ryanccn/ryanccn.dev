@@ -39,7 +39,7 @@
     "eleventy-plugin-reading-time": "^0.0.1",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
-    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-plugin-unicorn": "^56.0.0",
     "html-minifier": "^4.0.0",
     "image-meta": "^0.2.1",
     "kleur": "^4.1.5",

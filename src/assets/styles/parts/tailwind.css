@@ -32,14 +32,11 @@
     min-width: 0;
   }
 
-  * {
+  *:focus-visible {
+    outline-style: solid;
     outline-color: rgba(var(--accent) / 1);
     outline-offset: 2.5px;
     outline-width: 2.5px;
-  }
-
-  *:focus-visible {
-    outline-style: solid;
   }
 
   .title {
