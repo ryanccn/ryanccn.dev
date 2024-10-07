@@ -56,7 +56,7 @@
     "postcss-preset-env": "^10.0.5",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "satori": "^0.11.1",
+    "satori": "^0.11.2",
     "sharp": "^0.33.5",
     "shiki": "1.21.0",
     "simple-icons": "^13.12.0",
