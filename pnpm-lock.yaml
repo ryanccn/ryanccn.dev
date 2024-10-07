@@ -135,8 +135,8 @@ importers:
         specifier: 1.21.0
         version: 1.21.0
       simple-icons:
-        specifier: ^13.12.0
-        version: 13.12.0
+        specifier: ^13.13.0
+        version: 13.13.0
       sirv-cli:
         specifier: ^2.0.2
         version: 2.0.2
@@ -1718,6 +1718,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   eslint@9.11.1:
@@ -3165,8 +3166,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons@13.12.0:
-    resolution: {integrity: sha512-UY6Zpet45M8ON24y0x3LsvNkh7a+zxzX4u8KulYXEbJnQ8J1mdel9Tl+7aKmpvKck0TYsU7K58RhfRwd2/7G1Q==}
+  simple-icons@13.13.0:
+    resolution: {integrity: sha512-lHit5FeMG4Uga9M81Hf6UKugVTC9xnuSYM+AqZ4UMIoaRnkraq2T1RvvgRGk2T1CjONim3NfwzLx26hbDhvZlg==}
     engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
@@ -6556,7 +6557,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons@13.12.0: {}
+  simple-icons@13.13.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:
