@@ -14,7 +14,7 @@ const threshold = { md: 50, lg: 75 };
  * @param {string} name name of the file
  */
 const logSize = async (str, name) => {
-  const byteLength = te.encode(str).length;
+  const { byteLength } = te.encode(str);
   const kib = byteLength / 1024;
 
   const brLength = await brotliCompress(str).then((bf) => bf.byteLength);

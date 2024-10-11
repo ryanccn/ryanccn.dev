@@ -5,6 +5,8 @@ import { format, subMonths, subDays, addDays } from 'date-fns';
 import { logData } from '../utils/log.js';
 import { dim } from 'kleur/colors';
 
+const LIMIT = 19;
+
 const excludes = [
   /^PolyMC\//, // dead project
   /^JayantGoel001\//, // joke repository
@@ -72,7 +74,7 @@ export default async () => {
 
     logData('contributions', `Fetching ${dim(`(${format(from, 'yyyy/MM/dd')}-${format(cursor, 'yyyy/MM/dd')})`)}`);
 
-    const response = await queryContributions(subMonths(cursor, 6), cursor);
+    const response = await queryContributions(from, cursor);
 
     if (!response.success) {
       throw new Error(`Error fetching GitHub contributions: ${response.error}`);
@@ -98,12 +100,12 @@ export default async () => {
 
     cursor = subDays(from, 1);
 
-    if (!hasActivityInThePast || data.length > 19) break;
+    if (!hasActivityInThePast || data.length > LIMIT) break;
   }
 
   data = data
     .toSorted((a, b) => b.stargazerCount - a.stargazerCount)
-    .slice(0, 19);
+    .slice(0, LIMIT);
 
   await cache.save(data, 'json');
   return data;

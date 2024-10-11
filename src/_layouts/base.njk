@@ -29,14 +29,13 @@ navLinks:
     <link rel="preload" as="style" href="/assets/styles.css?v={{ consts.revision }}">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-normal-latin-compact.woff2?v=f451ff04">
 
-    <link rel="icon" href="/favicon.ico?v={{ consts.revision }}" sizes="32x32">
-    <link rel="icon" href="/icons/icon.svg?v={{ consts.revision }}" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ consts.revision }}">
+    <link rel="icon" href="/icons/icon.svg?v={{ consts.revision }}" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ consts.revision }}" type="image/png" sizes="180x180">
     <link rel="manifest" href="/manifest.webmanifest">
 
     <link rel="canonical" href="https://ryanccn.dev{{ page.url }}">
-    <link rel="alternate" type="application/rss+xml" href="https://ryanccn.dev/feed/rss.xml">
-    <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml">
+    <link rel="alternate" type="application/rss+xml" href="https://ryanccn.dev/feed/rss.xml" title="RSS feed">
+    <link rel="alternate" type="application/atom+xml" href="https://ryanccn.dev/feed/atom.xml" title="Atom feed">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 
     {% set description_ = description or "High school student and open source developer." %}
