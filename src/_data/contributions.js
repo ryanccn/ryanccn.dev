@@ -1,7 +1,7 @@
 import { AssetCache } from '@11ty/eleventy-fetch';
 import { createGql } from '@ryanccn/gql';
 
-import { format, subMonths, subDays, addDays } from 'date-fns';
+import { format, subDays, addDays, subYears } from 'date-fns';
 import { logData } from '../utils/log.js';
 import { dim } from 'kleur/colors';
 
@@ -30,7 +30,7 @@ const queryContributions = (from, to) =>
     query NotableContributions($from: DateTime!, $to: DateTime!) {
       viewer {
         contributionsCollection(from: $from, to: $to) {
-          pullRequestContributionsByRepository(maxRepositories: 100) {
+          commitContributionsByRepository(maxRepositories: 100) {
             repository {
               id
 
@@ -70,7 +70,7 @@ export default async () => {
   let cursor = new Date();
 
   while (true) {
-    const from = addDays(subMonths(cursor, 6), 1);
+    const from = addDays(subYears(cursor, 1), 1);
 
     logData('contributions', `Fetching ${dim(`(${format(from, 'yyyy/MM/dd')}-${format(cursor, 'yyyy/MM/dd')})`)}`);
 
@@ -84,23 +84,23 @@ export default async () => {
       data: {
         viewer: {
           contributionsCollection: {
-            pullRequestContributionsByRepository,
+            commitContributionsByRepository,
             hasActivityInThePast,
           },
         },
       },
     } = response;
 
-    data.push(...pullRequestContributionsByRepository
+    data.push(...commitContributionsByRepository
       .map((k) => k.repository)
       .filter((repo) => !repo.isPrivate && !repo.isFork && repo.owner.login !== 'ryanccn')
       .filter((repo) => !excludes.some((e) => e.test(repo.nameWithOwner)))
-      .filter((k) => !data.some((j) => j.id == k.id)),
+      .filter((k) => !data.some((j) => j.id === k.id)),
     );
 
     cursor = subDays(from, 1);
 
-    if (!hasActivityInThePast || data.length > LIMIT) break;
+    if (!hasActivityInThePast) break;
   }
 
   data = data
