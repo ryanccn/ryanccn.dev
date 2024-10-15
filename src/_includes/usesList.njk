@@ -31,9 +31,9 @@
       <span class="text-fg-dimmed text-sm leading-snug text-pretty">{{ item.description }}</span>
       {% endif %}
 
-      {% if item.replaces %}
+      {% if item.previously %}
       <span class="text-fg-dimmed/75 text-sm leading-snug text-pretty mt-2">
-        Previously used: {% for r in item.replaces %}<a href="{{ r.url }}" class="underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">{{ r.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        Previously used: {% for r in item.previously %}<a href="{{ r.url }}" class="underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">{{ r.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
       </span>
       {% endif %}
 

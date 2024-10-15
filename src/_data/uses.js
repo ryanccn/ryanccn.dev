@@ -18,7 +18,7 @@ const schema = z.record(z.array(
     tags: z.array(schemaTags).default([]).optional(),
     date: z.string().regex(/\d\d\d\d-\d\d-\d\d/).optional(),
 
-    replaces: z.array(z.object({
+    previously: z.array(z.object({
       name: z.string().min(1),
       url: z.string().url(),
     }).strict()).optional(),
@@ -118,7 +118,7 @@ const data = {
       url: 'https://mitchellh.com/ghostty',
       description: 'GPU-accelerated terminal emulator pushing modern features.',
       date: '2024-02-22',
-      replaces: [
+      previously: [
         { name: 'WezTerm', url: 'https://wezfurlong.org/wezterm/index.html' },
         { name: 'iTerm2', url: 'https://iterm2.com/' },
       ],
@@ -209,7 +209,9 @@ const data = {
       name: 'AlDente',
       url: 'https://apphousekitchen.com/',
       description: 'macOS battery performance optimization',
-      replaces: [{ name: 'BatFi', url: 'https://micropixels.software/apps/batfi' }],
+      previously: [
+        { name: 'BatFi', url: 'https://micropixels.software/apps/batfi' },
+      ],
       tags: ['macos', 'freemium'],
       date: '2024-09-05',
     },
@@ -223,13 +225,13 @@ const data = {
     {
       name: 'Velja',
       url: 'https://sindresorhus.com/velja',
-      description: 'Multi-browser link opening',
+      description: 'Powerful browser picker',
       tags: ['macos'],
     },
     {
       name: 'Pure Paste',
       url: 'https://sindresorhus.com/pure-paste',
-      description: 'Clipboard sanitization',
+      description: 'Paste as plain text by default',
       tags: ['macos'],
     },
     {
@@ -237,6 +239,20 @@ const data = {
       url: 'https://replay.software/sleeve',
       description: 'Music accessory',
       tags: ['paid', 'macos'],
+    },
+    {
+      name: 'Espanso',
+      url: 'https://github.com/espanso/espanso',
+      description: 'Cross-platform text expander',
+      tags: ['openSource'],
+      date: '2024-10-15',
+    },
+    {
+      name: 'DaisyDisk',
+      url: 'https://daisydiskapp.com/',
+      description: 'Visual disk space analyzer and cleaner',
+      tags: ['macos', 'paid'],
+      date: '2024-10-15',
     },
     {
       name: 'System Color Picker',
@@ -299,7 +315,7 @@ const data = {
       url: 'https://adguard.com/en/adguard-ios/overview.html',
       description: 'Safari ad and tracker blocking',
       date: '2024-02-15',
-      replaces: [{ name: '1Blocker', url: 'https://1blocker.com/' }],
+      previously: [{ name: '1Blocker', url: 'https://1blocker.com/' }],
       tags: ['freemium', 'ios'],
     },
   ],
@@ -326,7 +342,7 @@ const data = {
       name: 'Apple Music',
       url: 'https://www.apple.com/apple-music/',
       description: 'Music with a large library, local music sync, and Dolby Atmos',
-      replaces: [{ name: 'Spotify', url: 'https://open.spotify.com/' }],
+      previously: [{ name: 'Spotify', url: 'https://open.spotify.com/' }],
       tags: ['paid'],
     },
   ],

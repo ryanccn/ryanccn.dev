@@ -20,11 +20,6 @@ const data = {
       link: 'https://moddermore.net/',
     },
     {
-      name: 'ryanccn.dev',
-      description: 'My personal website, made with Eleventy and Tailwind CSS!',
-      link: 'https://github.com/ryanccn/ryanccn.dev',
-    },
-    {
       name: 'nrr',
       description: 'Minimal, blazing fast Node.js script runner',
       link: 'https://github.com/ryanccn/nrr',
@@ -60,19 +55,14 @@ const data = {
       link: 'https://whatthedmarc.ryanccn.dev/',
     },
     {
-      name: 'Blåhaj',
-      description: 'A multipurpose, fun Discord bot.',
-      link: 'https://github.com/ryanccn/blahaj',
+      name: 'spdx-gen',
+      description: 'SPDX license generator',
+      link: 'https://github.com/ryanccn/spdx-gen',
     },
     {
       name: 'Mastoroute',
       description: 'Unified share links for Mastodon',
       link: 'https://mastoroute.deno.dev/',
-    },
-    {
-      name: 'Daenerys',
-      description: 'Gain insights from DNS records',
-      link: 'https://daenerys.vercel.app/',
     },
     {
       name: 'flake',
@@ -85,19 +75,14 @@ const data = {
       link: 'https://github.com/ryanccn/ryan-mono',
     },
     {
-      name: 'Tenable',
-      description: 'An alternative, smaller script and associated proxy for Plausible Analytics',
-      link: 'https://github.com/ryanccn/tenable',
-    },
-    {
       name: 'attic-action',
       description: 'Cache Nix derivations on GitHub Actions with Attic',
       link: 'https://github.com/ryanccn/attic-action',
     },
     {
-      name: 'sarif-strip-suppressed',
-      description: 'CLI tool to strip suppressed results from SARIF files',
-      link: 'https://github.com/ryanccn/sarif-strip-suppressed',
+      name: 'Tenable',
+      description: 'An alternative, smaller script and associated proxy for Plausible Analytics',
+      link: 'https://github.com/ryanccn/tenable',
     },
     {
       name: '@ryanccn/gql',
@@ -113,6 +98,11 @@ const data = {
       name: 'vivid-zsh',
       description: 'zsh plugins for vivid',
       link: 'https://github.com/ryanccn/vivid-zsh',
+    },
+    {
+      name: 'sarif-strip-suppressed',
+      description: 'CLI tool to strip suppressed results from SARIF files',
+      link: 'https://github.com/ryanccn/sarif-strip-suppressed',
     },
   ],
   contributions: [
@@ -162,6 +152,11 @@ const data = {
       name: 'Osmosis',
       description: 'An experimental Stable Diffusion frontend',
       link: 'https://github.com/ryanccn/osmosis',
+    },
+    {
+      name: 'Blåhaj',
+      description: 'A multipurpose, fun Discord bot.',
+      link: 'https://github.com/ryanccn/blahaj',
     },
   ],
 };
