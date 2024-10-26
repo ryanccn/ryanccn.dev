@@ -19,7 +19,7 @@ navLinks:
 
     <title>{% if title !== "Ryan Cao" %}{{ title }} &middot; {% endif %}Ryan Cao</title>
 
-    {% if consts.production %}
+    {% if consts.production and includeAnalytics !== false %}
     <script async defer data-domain="ryanccn.dev" data-api="/sus/event" src="/sus/script.js"></script>
     {% endif %}
     <script nonce="{{ nonces.script }}">{{ inlineAssets.script | safe }}</script>
@@ -88,13 +88,13 @@ navLinks:
 
       <div class="flex items-center flex-wrap gap-2 mb-4">
         <a rel="me noreferrer" href="https://sk1.ryanccn.dev/@ryan" class="text-fg hover:text-accent transition-colors p-1" title="Fediverse">
-          {% icon "custom:fediverse", class="block size-5 overflow-visible" %}
+          {% icon "simpleicon:mastodon", class="block size-5 overflow-visible" %}
+        </a>
+        <a rel="me noreferrer" href="https://bsky.app/profile/ryanccn.dev" class="text-fg hover:text-accent transition-colors p-1" title="Bluesky">
+          {% icon "simpleicon:bluesky", class="block size-5 overflow-visible" %}
         </a>
         <a rel="me authn" href="https://github.com/ryanccn" class="text-fg hover:text-accent transition-colors p-1" title="GitHub">
           {% icon "simpleicon:github", class="block size-5 overflow-visible" %}
-        </a>
-        <a rel="me noreferrer" href="https://x.com/RyanCaoDev" class="text-fg hover:text-accent transition-colors p-1" title="Twitter">
-          {% icon "simpleicon:x", class="block size-5 overflow-visible" %}
         </a>
         <a rel="noreferrer" href="https://discord.gg/ty7GCnN87U" class="text-fg hover:text-accent transition-colors p-1" title="Discord">
           {% icon "simpleicon:discord", class="block size-5 overflow-visible" %}

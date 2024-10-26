@@ -75,8 +75,6 @@ const configFn = (eleventyConfig) => {
   eleventyConfig.addWatchTarget('src/assets/**/*.{js,ts,css}');
   eleventyConfig.addWatchTarget('.env');
 
-  eleventyConfig.ignores.add('README.md');
-
   eleventyConfig.setServerOptions({ domDiff: false });
 };
 
