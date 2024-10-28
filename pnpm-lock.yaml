@@ -135,8 +135,8 @@ importers:
         specifier: 1.22.1
         version: 1.22.1
       simple-icons:
-        specifier: ^13.14.1
-        version: 13.14.1
+        specifier: ^13.15.0
+        version: 13.15.0
       sirv-cli:
         specifier: ^3.0.0
         version: 3.0.0
@@ -3205,8 +3205,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons@13.14.1:
-    resolution: {integrity: sha512-Syxm5ZpLgfePbZ8TXoOgiazaUqutE48eXhY8Mix2vK0uPji2rl+A2XG/sEyPBwIVj0tZeXuWolyTtMURASswTg==}
+  simple-icons@13.15.0:
+    resolution: {integrity: sha512-8SzFj9CvPlDnjDLISsAWTvpCs7om2zbSJZ1hNLRo6quWKLqFwjCD9opS24Q/yD0bdsnVHPpF0N3hitpHrY5u9w==}
     engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
@@ -6638,7 +6638,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons@13.14.1: {}
+  simple-icons@13.15.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:
