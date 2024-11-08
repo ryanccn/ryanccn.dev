@@ -75,7 +75,7 @@ navLinks:
       </a>
 
       <div class="flex flex-col gap-y-4 mb-12">
-        {% asyncAll link in navLinks %}
+        {% asyncEach link in navLinks %}
         <a
           href="{{ link.url }}"
           class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
@@ -83,7 +83,7 @@ navLinks:
           {% icon link.icon, class='block size-4 shrink-0' %}
           <span>{{ link.title }}</span>
         </a>
-        {% endall %}
+        {% endeach %}
       </div>
 
       <div class="flex items-center flex-wrap gap-2 mb-4">

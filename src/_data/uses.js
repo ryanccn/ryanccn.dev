@@ -400,18 +400,6 @@ const data = {
       tags: ['freemium'],
     },
     {
-      name: 'Upstash',
-      url: 'https://upstash.com/',
-      description: 'Redis databases and queues',
-      tags: ['freemium'],
-    },
-    {
-      name: 'Neon',
-      url: 'https://neon.tech/',
-      description: 'Serverless Postgres',
-      tags: ['openSource', 'freemium'],
-    },
-    {
       name: 'Doppler',
       url: 'https://doppler.com/',
       description: 'Secrets orchestration',

@@ -1,6 +1,6 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "Gruvbox Dark Medium",
+  "name": "gruvbox-dark",
   "type": "dark",
   "semanticHighlighting": true,
   "tokenColors": [

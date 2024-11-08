@@ -4,22 +4,32 @@ title: 'Ryan Cao'
 permalink: '/'
 ---
 
-<article class="prose enhanced-prose">
-  <h1>Hello, I&rsquo;m Ryan!</h1>
-  <p class="subtitle">High school student, open source developer, and privacy enthusiast.</p>
+<article>
+  <h1 class="title">Hello, I&rsquo;m Ryan!</h1>
+  <p class="subtitle mb-10">High school student, open source developer, and privacy enthusiast.</p>
 
-  <p>I do some web development in my spare time. I have a website here, and I also made <a href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>, a web app for making Minecraft mod lists that's becoming pretty popular! I'm well versed with technologies such as <a href="https://reactjs.org/">React</a>, <a href="https://nextjs.org/">Next.js</a>, <a href="https://vuejs.org/">Vue</a>, <a href="https://11ty.dev/">Eleventy</a>, etc.</p>
-  <p>In the open source world, I contribute to a wide variety of projects and organizations. Among my highest profile contributions are <a href="https://catppuccin.com/">Catppuccin</a> and <a href="https://prismlauncher.org/">Prism Launcher</a>, but you can see <a href="/projects/#github">a full list of my contributions on GitHub here</a>.</p>
-  <p>I&rsquo;m active on a variety of social platforms, which you can check down below in the footer.</p>
-  <p>Oh, and, I write blog posts about what I do. Feel free to <a href="/posts/">read them</a>! There are {{ collections.posts.length }} of them at the moment.</p>
+  <p class="leading-relaxed mb-4">
+    I do some web development in my spare time. I made <a class="accent-link" href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>,
+    a web app for making Minecraft mod lists that&rsquo;s pretty popular; I also have an assortment of other web platform projects.
+    Lately, I've been doing more programming with <a class="accent-link" href="https://www.rust-lang.org/">Rust</a>, a language that
+    I've come to really enjoy using!
+  </p>
+  <p class="leading-relaxed mb-4">
+    In the open source world, I contribute to a lot of projects and organizations. Among my highest profile contributions are to
+    <a class="accent-link" href="https://catppuccin.com/">Catppuccin</a> and <a class="accent-link" href="https://prismlauncher.org/">Prism Launcher</a>,
+    but you can see all of my activities on <a class="accent-link" href="https://github.com/ryanccn">my GitHub</a>.
+  </p>
+  <p class="leading-relaxed">
+    I write blog posts about what I do! Feel free to <a class="accent-link" href="/posts/">peruse the archive</a>;
+    there are {{ collections.posts.length }} of them at the moment.
+  </p>
 
+  <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Projects</h2>
 
-  <h2 class="text-2xl">Projects</h2>
-
-  <ul class="not-prose projects-grid">
-    {% asyncAll project in projects.projects | head(7) %}
+  <ul class="projects-grid">
+    {% asyncEach project in projects.projects | head(7) %}
       <li>{% include "projectCard.njk" %}</li>
-    {% endall %}
+    {% endeach %}
     <li class="place-self-stretch">
       <a class="grid place-content-center w-full h-full py-8 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/projects/' | url }}">
         <span class="text-fg-less-dimmed font-medium">See more -&gt;</span>
@@ -27,11 +37,9 @@ permalink: '/'
     </li>
   </ul>
 
-  <h2 class="text-2xl">Blog posts</h2>
+  <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Blog posts</h2>
 
-  <div class="not-prose">
   {% set postslist = collections.posts | reverse | head(5) %}
-  {% set postslistcompact = true %}
+  {% set postsListCompactFlag = true %}
   {% include "postslist.njk" %}
-  </div>
 </article>

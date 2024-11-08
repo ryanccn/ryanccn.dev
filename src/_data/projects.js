@@ -21,7 +21,7 @@ const data = {
     },
     {
       name: 'nrr',
-      description: 'Minimal, blazing fast Node.js script runner',
+      description: 'Minimal, blazing fast npm scripts runner',
       link: 'https://github.com/ryanccn/nrr',
     },
     {
@@ -46,7 +46,7 @@ const data = {
     },
     {
       name: 'nyoom',
-      description: 'A CLI Firefox userchrome manager',
+      description: 'A small Firefox userchrome manager',
       link: 'https://github.com/ryanccn/nyoom',
     },
     {
@@ -103,28 +103,6 @@ const data = {
       name: 'sarif-strip-suppressed',
       description: 'CLI tool to strip suppressed results from SARIF files',
       link: 'https://github.com/ryanccn/sarif-strip-suppressed',
-    },
-  ],
-  contributions: [
-    {
-      name: 'Vencord',
-      description: 'The cutest Discord client mod',
-      link: 'https://vencord.dev/',
-    },
-    {
-      name: 'Fig',
-      description: 'Autocomplete for terminals',
-      link: 'https://github.com/withfig/autocomplete',
-    },
-    {
-      name: 'InvokeAI',
-      description: 'Stable Diffusion web interface',
-      link: 'https://invoke-ai.github.io/InvokeAI/',
-    },
-    {
-      name: 'jet',
-      description: 'Eleventy & Tailwind site template',
-      link: 'https://github.com/marcamos/jet',
     },
   ],
   archived: [

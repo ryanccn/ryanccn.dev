@@ -49,7 +49,7 @@
 
   .enhanced-prose {
     @apply prose-h1:title break-words prose-headings:tracking-tight;
-    @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-2 prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
+    @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-dotted prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
     @apply prose-p:text-pretty;
     @apply prose-pre:rounded-lg prose-pre:border-[1.5px] prose-pre:border-surface;
     @apply prose-img:mx-auto;
@@ -83,11 +83,11 @@
   }
 
   .accent-link {
-    @apply font-medium text-accent underline decoration-accent/50 decoration-2 underline-offset-2 transition-colors hover:text-accent-lighter hover:decoration-accent-lighter/50;
+    @apply font-medium text-accent underline decoration-accent/50 decoration-dotted underline-offset-2 transition-colors hover:text-accent-lighter hover:decoration-accent-lighter/50;
   }
 
   .plain-link {
-    @apply font-medium text-fg underline decoration-fg/50 decoration-2 underline-offset-2 transition-colors hover:text-fg-brighter hover:decoration-fg/60;
+    @apply font-medium text-fg underline decoration-fg/50 decoration-dotted underline-offset-2 transition-colors hover:text-fg-brighter hover:decoration-fg/60;
   }
 
   .buttonish,
@@ -105,10 +105,6 @@
   }
 
   .projects-grid {
-    @apply mb-12 grid grid-cols-1 gap-2 md:grid-cols-2;
-
-    & li a {
-      @apply h-full;
-    }
+    @apply mb-12 grid grid-cols-1 gap-8 md:grid-cols-2;
   }
 }

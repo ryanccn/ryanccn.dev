@@ -1,6 +1,7 @@
 ---
 layout: 'base'
 title: 'Projects'
+date: 2024-11-09
 ---
 
 <h1 class="title">Projects</h1>
@@ -16,27 +17,27 @@ title: 'Projects'
 </ul>
 
 <h2 class="projects-page" id="organizations">Organizations</h2>
-<ul class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-12">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
   {% asyncEach org in organizations %}
-    <li>
-      <a href="{{ org.url }}" class="p-5 flex flex-col bg-surface hover:bg-surface-hover transition-colors rounded-lg h-full">
-        <div class="flex flex-row gap-2 items-center mb-3">
-          <div class="flex flex-col gap-y-0.5">
-            <span class="text-lg font-bold leading-snug">{{ org.name }}</span>
-            <span class="text-fg-less-dimmed text-sm font-semibold leading-snug">{{ org.role }}</span>
-          </div>
-        </div>
-        <p class="text-sm leading-snug text-fg-dimmed">{{ org.description }}</p>
+    <li class="flex flex-col gap-y-1 h-full">
+      <a href="{{ org.url }}" class="group flex flex-row flex-wrap gap-x-2 items-center">
+        <h3 class="font-bold text-lg tracking-tight underline underline-offset-2 decoration-dotted decoration-fg-dimmed group-hover:decoration-fg-less-dimmed transition-colors">
+          {{ org.name }}
+        </h3>
+
+        {% if org.formerly %}
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Formerly</span>
+        {% endif %}
       </a>
+
+      <span class="text-fg-less-dimmed font-medium text-sm leading-snug text-pretty">
+        {{ org.role }}
+      </span>
+
+      <span class="mt-2.5 text-fg-dimmed text-sm leading-snug text-pretty">
+        {{ org.description }}
+      </span>
     </li>
-  {% endeach %}
-</ul>
-
-
-<h2 class="projects-page" id="contributions">Notable Contributions</h2>
-<ul class="projects-grid">
-  {% asyncEach project in projects.contributions %}
-    <li>{% include "projectCard.njk" %}</li>
   {% endeach %}
 </ul>
 
@@ -46,11 +47,11 @@ title: 'Projects'
 <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-12">
   {% asyncEach repo in contributions %}
   <li class="flex gap-x-2 justify-between w-full">
-    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-transparent hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
-      <span class="text-fg-dimmed">{{ repo.owner.login }}/</span><span>{{ repo.name }}</span>
+    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
+      <span class="text-fg-less-dimmed">{{ repo.owner.login }}/</span><span>{{ repo.name }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
-      {% icon 'lucide:star', class='block size-3 fill-current stroke-none' %}
+      {% icon 'lucide:star', class='block size-3 fill-current stroke-none shrink-0' %}
       <span class="text-xs font-medium">{{ repo.stargazerCount | shortCount }}</span>
     </div>
   </li>

@@ -14,6 +14,24 @@ const excludes = [
   /\.github$/, // configuration repositories
 ];
 
+/**
+ * @param {T[]} arr
+ * @param {(arg0: T) => S} keyFn
+ * @template T, S
+ */
+const uniqueByKey = (arr, keyFn = (a) => a) => {
+  /** @type {Set<S>} */
+  const seenKey = new Set();
+
+  return arr.filter((item) => {
+    const key = keyFn(item);
+    if (seenKey.has(key)) return false;
+
+    seenKey.add(key);
+    return true;
+  });
+};
+
 const gql = createGql('https://api.github.com/graphql', {
   method: 'POST',
   headers: {
@@ -62,7 +80,7 @@ export default async () => {
 
   if (cache.isCacheValid('1d')) {
     logData('contributions', 'Using cached data');
-    return await cache.getCachedValue();
+    return cache.getCachedValue();
   }
 
   let data = [];
@@ -81,22 +99,24 @@ export default async () => {
     }
 
     const {
-      data: {
-        viewer: {
-          contributionsCollection: {
-            commitContributionsByRepository,
-            hasActivityInThePast,
-          },
+      viewer: {
+        contributionsCollection: {
+          commitContributionsByRepository,
+          hasActivityInThePast,
         },
       },
-    } = response;
+    } = response.data;
 
     data.push(...commitContributionsByRepository
       .map((k) => k.repository)
-      .filter((repo) => !repo.isPrivate && !repo.isFork && repo.owner.login !== 'ryanccn')
-      .filter((repo) => !excludes.some((e) => e.test(repo.nameWithOwner)))
-      .filter((k) => !data.some((j) => j.id === k.id)),
+      .filter((repo) =>
+        !repo.isPrivate && !repo.isFork
+        && repo.owner.login !== 'ryanccn'
+        && !excludes.some((e) => e.test(repo.nameWithOwner)),
+      ),
     );
+
+    data = uniqueByKey([...data], (repo) => repo.id);
 
     cursor = subDays(from, 1);
 

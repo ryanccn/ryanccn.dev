@@ -1,8 +1,8 @@
 import 'dotenv/config.js';
 
-import { EleventyRenderPlugin } from '@11ty/eleventy';
+import { EleventyHtmlBasePlugin } from '@11ty/eleventy';
 import pluginReadingTime from 'eleventy-plugin-reading-time';
-import pluginRss from '@ryanccn/eleventy-plugin-rss';
+import pluginRss from '@11ty/eleventy-plugin-rss';
 
 import pluginIcons from 'eleventy-plugin-icons';
 import { optimize as svgo } from 'svgo';
@@ -14,7 +14,7 @@ import { sitePluginShiki } from './src/_11ty/plugins/shiki.js';
 import { sitePluginHtmlmin } from './src/_11ty/plugins/htmlmin.js';
 
 const configFn = (eleventyConfig) => {
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pluginReadingTime);
   eleventyConfig.addPlugin(pluginRss);
 

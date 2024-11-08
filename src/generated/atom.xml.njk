@@ -18,7 +18,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
-  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
+  <link href="{{ permalink | htmlBaseUrl(metadata.url) }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
@@ -27,13 +27,13 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts | reverse | head(5) %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content xml:lang="{{ metadata.language }}" type="html">{{ post.content | renderTransforms(post.data.page, metadata.base) }}</content>
   </entry>
   {%- endfor %}
 </feed>

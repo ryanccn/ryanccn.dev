@@ -5,9 +5,9 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const readJSON = async (path) =>
-  readFile(join(__dirname, path), { encoding: 'utf8' }).then((r) => JSON.parse(r));
+  readFile(join(dirname(fileURLToPath(import.meta.url)), path), { encoding: 'utf8' })
+    .then((r) => JSON.parse(r));
 
 export const sitePluginShiki = async (eleventyConfig) => {
   const [

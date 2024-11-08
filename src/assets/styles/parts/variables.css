@@ -32,10 +32,10 @@
 }
 
 .theme-dim {
-  --fg: 248 249 250;
+  --fg: 241 243 245;
   --fg-brighter: 255 255 255;
-  --fg-less-dimmed: 222 226 230;
-  --fg-dimmed: 206 212 218;
+  --fg-less-dimmed: 206 212 218;
+  --fg-dimmed: 134 142 150;
   --accent: 77 171 247;
   --accent-lighter: 116 192 252;
 
@@ -54,10 +54,10 @@
 }
 
 .theme-dark {
-  --fg: 248 249 250;
+  --fg: 241 243 245;
   --fg-brighter: 255 255 255;
-  --fg-less-dimmed: 222 226 230;
-  --fg-dimmed: 206 212 218;
+  --fg-less-dimmed: 206 212 218;
+  --fg-dimmed: 134 142 150;
   --accent: 80 174 250;
   --accent-lighter: 119 195 255;
 

@@ -18,9 +18,9 @@ class Page {
           .slice(0, 5)
           .map(async (post) => ({
             id: post.url,
-            url: this.absoluteUrl(post.url),
+            url: this.htmlBaseUrl(post.url, 'https://ryanccn.dev/'),
             title: post.data.title,
-            content_html: await this.htmlToAbsoluteUrls(post.templateContent, this.absoluteUrl(post.url)),
+            content_html: await this.renderTransforms(post.content, post.data.page, 'https://ryanccn.dev/'),
             date_published: post.data.date.toISOString(),
             tags: post.data.tags,
           })),

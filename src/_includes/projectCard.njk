@@ -1,21 +1,21 @@
-<a
-  class="flex flex-col justify-between p-5 rounded-lg transition-colors bg-surface hover:bg-surface-hover {% if project.featured %}md:col-span-2{% endif %}"
-  href="{{ project.link }}"
->
-  <div class="flex flex-col gap-y-1">
-    <h3 class="font-bold text-base">{{ project.name }}</h3>
-    <p class="text-fg-dimmed text-sm leading-snug text-pretty">
-      {{ project.description }}
-    </p>
-  </div>
+<div class="flex flex-col gap-y-1 h-full">
+  <a href="{{ project.link }}" class="group flex flex-row gap-x-2 items-center">
+    <h3 class="font-bold text-lg tracking-tight underline underline-offset-2 decoration-dotted decoration-fg-dimmed group-hover:decoration-fg-less-dimmed transition-colors">
+      {{ project.name }}
+    </h3>
 
-  {% if project.link.startsWith("https://github.com") %}
-    {% icon 'simpleicon:github', class='block size-4 mt-8 self-end text-current' %}
-  {% elif project.link.startsWith("https://codeberg.org") %}
-    {% icon 'simpleicon:codeberg', class='block size-4 mt-8 self-end text-current' %}
-  {% elif project.link.startsWith("https://modrinth.com") %}
-    {% icon 'simpleicon:modrinth', class='block size-4 mt-8 self-end text-current' %}
-  {% else %}
-    {% icon 'lucide:arrow-up-right', class='block size-4 mt-8 self-end text-current' %}
-  {% endif %}
-</a>
+    {% if project.link.startsWith("https://github.com") %}
+      {% icon 'simpleicon:github', class='block size-4 text-current' %}
+    {% elif project.link.startsWith("https://codeberg.org") %}
+      {% icon 'simpleicon:codeberg', class='block size-4 text-current' %}
+    {% elif project.link.startsWith("https://modrinth.com") %}
+      {% icon 'simpleicon:modrinth', class='block size-4 text-current' %}
+    {% else %}
+      {% icon 'lucide:arrow-up-right', class='block size-4 text-current' %}
+    {% endif %}
+  </a>
+
+  <span class="text-fg-dimmed text-sm leading-snug text-pretty">
+    {{ project.description }}
+  </span>
+</div>

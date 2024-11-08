@@ -1,21 +1,22 @@
-<ol reversed class="{% if postslistcompact %}grid grid-cols-1 md:grid-cols-2 gap-12{% else %}flex flex-col gap-y-12{% endif %}">
+<ol reversed class="grid gap-12 grid-cols-1 {% if postsListCompactFlag %}md:grid-cols-2{% endif %}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="{% if postslistcompact %}text-lg{% else %}text-xl{% endif %} text-fg hover:text-fg-brighter font-bold tracking-tight underline-offset-2 transition text-balance">
-      {% set headingElement %}{% if postslistcompact %}h3{% else %}h2{% endif %}{% endset %}
-      <{{ headingElement }}>{{ i.data.title }}</{{ headingElement }}>
+    <a href="{{ i.url }}" class="text-lg font-bold tracking-tight text-balance underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">
+      {% set headingElem %}{% if postsListCompactFlag %}h3{% else %}h2{% endif %}{% endset %}
+      <{{ headingElem }}>{{ i.data.title }}</{{ headingElem }}>
     </a>
-    <div class="flex flex-wrap gap-1 {% if postslistcompact %}text-xs{% else %}text-sm{% endif %}">
+    <div class="flex flex-wrap gap-1 text-xs">
       {% for tag in i.data.tags | filterTagsList %}
       <a href="/posts/tags/{{ tag | slugify }}/" class="px-2.5 py-0.5 bg-surface hover:bg-surface-hover transition rounded-full">{{ tag }}</a>
       {% endfor %}
     </div>
-    <p class="{% if postslistcompact %}text-xs{% else %}text-sm{% endif %} text-fg-dimmed">
+    <p class="text-xs text-fg-dimmed">
       {{ views[i.fileSlug] | numberFormat }} reads · ~{{ i.templateContent | readingTime }} · {{ i.date | prettyDateFormat }}
     </p>
   </li>
   {% endfor %}
-  {% if postslistcompact %}
+
+  {% if postsListCompactFlag %}
   <li class="place-self-stretch">
     <a class="grid place-content-center size-full py-8 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/posts/' | url }}">
       <span class="text-fg-less-dimmed font-medium">Read more -&gt;</span>

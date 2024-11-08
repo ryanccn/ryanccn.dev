@@ -8,6 +8,7 @@ const schema = z.array(
     role: z.string().min(1),
     description: z.string().min(1),
     url: z.string().url(),
+    formerly: z.boolean().default(false).optional(),
   }).strict(),
 );
 
@@ -22,20 +23,21 @@ const data = [
   {
     name: 'NixOS',
     role: 'Nixpkgs Maintainer',
-    description: 'Maintains some packages on Nixpkgs',
+    description: 'Maintains a few packages on Nixpkgs',
     url: 'https://nixos.org/',
-  },
-  {
-    name: 'Prism Launcher',
-    role: 'Bot Maintainer / (formerly) Community Manager',
-    description: 'Managed the community for two years, maintains the community Discord bot',
-    url: 'https://prismlauncher.org/',
   },
   {
     name: 'Elk',
     role: 'Triage team',
     description: 'Triages issues and pull requests',
     url: 'https://elk.zone/',
+  },
+  {
+    name: 'Prism Launcher',
+    role: 'Community Manager',
+    description: 'Managed and moderated the community for two years',
+    url: 'https://prismlauncher.org/',
+    formerly: true,
   },
 ];
 

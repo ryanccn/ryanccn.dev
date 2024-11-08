@@ -19,15 +19,15 @@
   <channel>
     <title>{{ metadata.title }}</title>
     <link>{{ metadata.url }}</link>
-    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ permalink | htmlBaseUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
     {%- for post in collections.posts | reverse | head(5) %}
-    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.url) %}
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+      <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
