@@ -23,7 +23,7 @@
     "@awmottaz/prettier-plugin-void-html": "^1.6.1",
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@resvg/resvg-js": "^2.6.2",
-    "@ryanccn/eslint-config": "^0.4.1",
+    "@ryanccn/eslint-config": "^0.4.2",
     "@ryanccn/gql": "^2.0.0",
     "@shikijs/markdown-it": "1.22.2",
     "@shikijs/transformers": "1.22.2",
