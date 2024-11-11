@@ -12,8 +12,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       '@11ty/eleventy-fetch':
-        specifier: 5.0.0-beta.4
-        version: 5.0.0-beta.4
+        specifier: 5.0.0-beta.5
+        version: 5.0.0-beta.5
       '@11ty/eleventy-plugin-rss':
         specifier: ^2.0.2
         version: 2.0.2
@@ -172,8 +172,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@11ty/eleventy-fetch@5.0.0-beta.4':
-    resolution: {integrity: sha512-pooFtzQjKZ+0c78c2kIoEy+2iQcOGdecd84qUfIx/I5YrQ9wKAGqlsn5cmD6bg2w5EwWX7OYta1yn9EksXtnuQ==}
+  '@11ty/eleventy-fetch@5.0.0-beta.5':
+    resolution: {integrity: sha512-j+JQsJxbkbvpKXtXzfLDOgiG/ud6lJo9KpWcmt5VFirYGGxxxS4Vq8x01dhoM/j7O6hA/+VKOhuCNpbJORaVbw==}
     engines: {node: '>=18'}
 
   '@11ty/eleventy-plugin-bundle@3.0.0':
@@ -3548,7 +3548,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@11ty/eleventy-fetch@5.0.0-beta.4':
+  '@11ty/eleventy-fetch@5.0.0-beta.5':
     dependencies:
       debug: 4.3.7
       flat-cache: 6.1.1
