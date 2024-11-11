@@ -50,7 +50,7 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "npm-run-all2": "^7.0.1",
     "p-limit": "^6.1.0",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.48",
     "postcss-import": "^16.1.0",
     "postcss-mixins": "^11.0.3",
     "postcss-preset-env": "^10.0.9",
