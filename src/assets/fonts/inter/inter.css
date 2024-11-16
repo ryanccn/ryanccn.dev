@@ -9,7 +9,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-latin-compact.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-normal-latin-compact.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+A, U+20-7E, U+A0, U+A9, U+AE, U+B7, U+C0-DD, U+DF-FF, U+152,
     U+153, U+2DA, U+2010, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2026,
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-latin-rest.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-normal-latin-rest.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0-9, U+B-1F, U+7F-9F, U+A1-A8, U+AA-AD, U+AF-B6, U+B8-BF,
     U+DE, U+131, U+2BB, U+2BC, U+2C6, U+2DC, U+2000-200F, U+2011, U+2012,
@@ -38,7 +38,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-latin-ext.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-normal-latin-ext.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -50,7 +50,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-greek.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-normal-greek.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0370-03FF;
 }
 
@@ -61,7 +61,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-greek-ext.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-normal-greek-ext.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
 
@@ -72,7 +72,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-cyrillic.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-normal-cyrillic.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
@@ -83,7 +83,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-cyrillic-ext.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-normal-cyrillic-ext.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
@@ -96,7 +96,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-normal-vietnamese.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-normal-vietnamese.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
@@ -109,7 +109,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-latin-compact.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-italic-latin-compact.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+A, U+20-7E, U+A0, U+A9, U+AE, U+B7, U+C0-DD, U+DF-FF, U+152,
     U+153, U+2DA, U+2010, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2026,
@@ -123,7 +123,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-latin-rest.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-italic-latin-rest.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0-9, U+B-1F, U+7F-9F, U+A1-A8, U+AA-AD, U+AF-B6, U+B8-BF,
     U+DE, U+131, U+2BB, U+2BC, U+2C6, U+2DC, U+2000-200F, U+2011, U+2012,
@@ -138,7 +138,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-latin-ext.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-italic-latin-ext.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -150,7 +150,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-greek.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-italic-greek.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0370-03FF;
 }
 
@@ -161,7 +161,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-greek-ext.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-italic-greek-ext.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
 
@@ -172,7 +172,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-cyrillic.woff2?v=f451ff04) format('woff2');
+  src: url(/fonts/inter/inter-italic-cyrillic.woff2?v=1c90ecfa) format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
@@ -183,7 +183,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-cyrillic-ext.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-italic-cyrillic-ext.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
@@ -196,7 +196,7 @@
   font-style: italic;
   font-weight: 100 900;
   font-stretch: 100%;
-  src: url(/fonts/inter/inter-italic-vietnamese.woff2?v=f451ff04)
+  src: url(/fonts/inter/inter-italic-vietnamese.woff2?v=1c90ecfa)
     format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;

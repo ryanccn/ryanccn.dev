@@ -27,7 +27,7 @@ permalink: '/'
   <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Projects</h2>
 
   <ul class="projects-grid">
-    {% asyncEach project in projects.projects | head(7) %}
+    {% asyncEach project in projects.projects | take(7) %}
       <li>{% include "projectCard.njk" %}</li>
     {% endeach %}
     <li class="place-self-stretch">
@@ -39,7 +39,7 @@ permalink: '/'
 
   <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Blog posts</h2>
 
-  {% set postslist = collections.posts | reverse | head(5) %}
+  {% set postslist = collections.posts | reverse | take(5) %}
   {% set postsListCompactFlag = true %}
   {% include "postslist.njk" %}
 </article>

@@ -7,17 +7,7 @@ import { format, isAfter, isBefore, subMonths, subYears } from 'date-fns';
 const filterTagsList = (k) => k.filter((a) => !['all', 'posts'].includes(a));
 
 export const sitePluginFilters = (eleventyConfig) => {
-  eleventyConfig.addFilter(
-    'head',
-    /**
-     * @param {unknown[]} arr array of *stuff*
-     * @param {number} k number of items to return
-     * @returns truncated array
-     */
-    (arr, k) => {
-      return arr.slice(0, k);
-    },
-  );
+  eleventyConfig.addFilter('take', (arr, count) => arr.slice(0, count));
 
   eleventyConfig.addFilter('filterTagsList', (k) => filterTagsList(k));
 
@@ -31,16 +21,8 @@ export const sitePluginFilters = (eleventyConfig) => {
     return filterTagsList([...tagSet]);
   });
 
-  eleventyConfig.addFilter('shortCount', (n) => {
-    if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-    if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
-
-    return n;
-  });
-
   eleventyConfig.addFilter('numberFormat', (n) => Intl.NumberFormat('en-US').format(n));
-
-  eleventyConfig.addFilter('encodeURIComponent', encodeURIComponent);
+  eleventyConfig.addFilter('compactNumberFormat', (n) => Intl.NumberFormat('en-US', { notation: 'compact' }).format(n));
 
   eleventyConfig.addFilter('includes', (arr, value) => Array.isArray(arr) && arr.includes(value));
 

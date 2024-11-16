@@ -52,7 +52,7 @@ date: 2024-11-09
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
       {% icon 'lucide:star', class='block size-3 fill-current stroke-none shrink-0' %}
-      <span class="text-xs font-medium">{{ repo.stargazerCount | shortCount }}</span>
+      <span class="text-xs font-medium">{{ repo.stargazerCount | compactNumberFormat }}</span>
     </div>
   </li>
   {% endeach %}

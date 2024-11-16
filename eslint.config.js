@@ -1,7 +1,7 @@
 import { config } from '@ryanccn/eslint-config';
 
 export default config({
-  ignores: ['**/.obsidian', '**/_site'],
+  ignores: ['**/.obsidian', '**/_site', '**/.wrangler'],
   globals: ['es2024', 'node'],
   stylistic: {
     indent: 2,

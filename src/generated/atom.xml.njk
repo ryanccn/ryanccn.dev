@@ -26,7 +26,7 @@
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.posts | reverse | head(5) %}
+  {%- for post in collections.posts | reverse | take(5) %}
   {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
