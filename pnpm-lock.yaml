@@ -12,8 +12,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       '@11ty/eleventy-fetch':
-        specifier: 5.0.0-beta.4
-        version: 5.0.0-beta.4
+        specifier: 5.0.1
+        version: 5.0.1
       '@11ty/eleventy-plugin-rss':
         specifier: ^2.0.2
         version: 2.0.2
@@ -172,8 +172,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@11ty/eleventy-fetch@5.0.0-beta.4':
-    resolution: {integrity: sha512-pooFtzQjKZ+0c78c2kIoEy+2iQcOGdecd84qUfIx/I5YrQ9wKAGqlsn5cmD6bg2w5EwWX7OYta1yn9EksXtnuQ==}
+  '@11ty/eleventy-fetch@5.0.1':
+    resolution: {integrity: sha512-n79UhOAWG7XcJkRIoV8cZBpKgGln6mn+2UgsZkP6Xjgg8BqiMfxlYMJrNobSDdw3utyRAs8w/ZAPXoc18qrvMw==}
     engines: {node: '>=18'}
 
   '@11ty/eleventy-plugin-bundle@3.0.0':
@@ -929,6 +929,10 @@ packages:
   '@resvg/resvg-js@2.6.2':
     resolution: {integrity: sha512-xBaJish5OeGmniDj9cW5PRa/PtmuVU3ziqrbr5xJj901ZDN4TosrVaNZpEiLZAxdfnhAe7uQ7QFWfjPe9d9K2Q==}
     engines: {node: '>= 10'}
+
+  '@rgrove/parse-xml@4.2.0':
+    resolution: {integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==}
+    engines: {node: '>=14.0.0'}
 
   '@ryanccn/eslint-config@0.4.2':
     resolution: {integrity: sha512-C5nqcDyOAg+jVRfItvCTLB1Mdr6YQUKqJYaIPDtnjbaS/e2WWan0qzXHY/ofUEttwEOORb1SucRlgjJP6ZuTkg==}
@@ -3565,10 +3569,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@11ty/eleventy-fetch@5.0.0-beta.4':
+  '@11ty/eleventy-fetch@5.0.1':
     dependencies:
+      '@rgrove/parse-xml': 4.2.0
       debug: 4.3.7
       flat-cache: 6.1.1
+      graceful-fs: 4.2.11
       p-queue: 6.6.2
     transitivePeerDependencies:
       - supports-color
@@ -4279,6 +4285,8 @@ snapshots:
       '@resvg/resvg-js-win32-arm64-msvc': 2.6.2
       '@resvg/resvg-js-win32-ia32-msvc': 2.6.2
       '@resvg/resvg-js-win32-x64-msvc': 2.6.2
+
+  '@rgrove/parse-xml@4.2.0': {}
 
   '@ryanccn/eslint-config@0.4.2(@eslint/eslintrc@3.2.0)(@eslint/js@9.15.0)(@stylistic/eslint-plugin@2.10.1(eslint@9.15.0(jiti@2.1.2))(typescript@5.6.3))(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@2.1.2))(typescript@5.6.3))(eslint-plugin-unicorn@56.0.0(eslint@9.15.0(jiti@2.1.2)))(eslint@9.15.0(jiti@2.1.2))(typescript-eslint@8.14.0(eslint@9.15.0(jiti@2.1.2))(typescript@5.6.3))(typescript@5.6.3)':
     dependencies:
