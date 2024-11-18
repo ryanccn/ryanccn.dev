@@ -25,7 +25,7 @@
     "@resvg/resvg-js": "^2.6.2",
     "@ryanccn/eslint-config": "^0.4.2",
     "@ryanccn/gql": "^2.0.0",
-    "@shikijs/markdown-it": "1.23.0",
+    "@shikijs/markdown-it": "1.23.1",
     "@shikijs/transformers": "1.23.0",
     "@stylistic/eslint-plugin": "^2.10.1",
     "@tailwindcss/typography": "^0.5.15",
