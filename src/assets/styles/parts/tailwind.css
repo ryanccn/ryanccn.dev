@@ -16,8 +16,9 @@
 
     @apply overflow-x-hidden overflow-y-scroll;
 
-    @apply antialiased;
-    text-rendering: optimizeLegibility;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility; */
   }
 
   ::selection {
@@ -40,7 +41,7 @@
   }
 
   .title {
-    @apply mb-6 text-balance text-4xl font-extrabold tracking-tight text-fg-brighter;
+    @apply mb-6 text-balance text-4xl font-bold tracking-tight text-fg-brighter;
   }
 
   .subtitle {

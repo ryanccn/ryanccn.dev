@@ -25,5 +25,5 @@ const buildStyle = async (file, label) => {
 };
 
 export default async () => ({
-  fonts: await buildStyle('src/assets/fonts/inter/inter.css', 'inlineAssets/styles/fonts'),
+  fonts: await buildStyle('src/assets/fonts/ibm-plex-sans/ibm-plex-sans.css', 'inlineAssets/styles/fonts'),
 });

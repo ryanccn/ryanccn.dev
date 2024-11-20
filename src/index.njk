@@ -11,11 +11,11 @@ permalink: '/'
   <p class="leading-relaxed mb-4">
     I do some web development in my spare time. I made <a class="accent-link" href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>,
     a web app for making Minecraft mod lists that&rsquo;s pretty popular; I also have an assortment of other web platform projects.
-    Lately, I've been doing more programming with <a class="accent-link" href="https://www.rust-lang.org/">Rust</a>, a language that
-    I've come to really enjoy using!
+    Lately, I&rsquo;ve been doing more programming with <a class="accent-link" href="https://www.rust-lang.org/">Rust</a>, a language that
+    I&rsquo;ve come to really enjoy using!
   </p>
   <p class="leading-relaxed mb-4">
-    In the open source world, I contribute to a lot of projects and organizations. Among my highest profile contributions are to
+    In the open source world, I contribute to a lot of projects and organizations. <abbr title="us" class="no-underline">Among</abbr> my highest profile contributions are to
     <a class="accent-link" href="https://catppuccin.com/">Catppuccin</a> and <a class="accent-link" href="https://prismlauncher.org/">Prism Launcher</a>,
     but you can see all of my activities on <a class="accent-link" href="https://github.com/ryanccn">my GitHub</a>.
   </p>
@@ -24,7 +24,7 @@ permalink: '/'
     there are {{ collections.posts.length }} of them at the moment.
   </p>
 
-  <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Projects</h2>
+  <h2 class="text-2xl font-bold tracking-tight mt-12 mb-8">Projects</h2>
 
   <ul class="projects-grid">
     {% asyncEach project in projects.projects | take(7) %}
@@ -32,12 +32,12 @@ permalink: '/'
     {% endeach %}
     <li class="place-self-stretch">
       <a class="grid place-content-center w-full h-full py-8 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/projects/' | url }}">
-        <span class="text-fg-less-dimmed font-medium">See more -&gt;</span>
+        <span class="text-fg-less-dimmed font-medium">See more →</span>
       </a>
     </li>
   </ul>
 
-  <h2 class="text-2xl font-extrabold tracking-tight mt-12 mb-8">Blog posts</h2>
+  <h2 class="text-2xl font-bold tracking-tight mt-12 mb-8">Blog posts</h2>
 
   {% set postslist = collections.posts | reverse | take(5) %}
   {% set postsListCompactFlag = true %}

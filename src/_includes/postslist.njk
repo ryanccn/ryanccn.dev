@@ -1,11 +1,11 @@
 <ol reversed class="grid gap-12 grid-cols-1 {% if postsListCompactFlag %}md:grid-cols-2{% endif %}">
   {% for i in postslist %}
   <li class="flex flex-col gap-y-2">
-    <a href="{{ i.url }}" class="text-lg font-bold tracking-tight text-balance underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">
+    <a href="{{ i.url }}" class="text-lg font-semibold tracking-tight text-balance underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors">
       {% set headingElem %}{% if postsListCompactFlag %}h3{% else %}h2{% endif %}{% endset %}
       <{{ headingElem }}>{{ i.data.title }}</{{ headingElem }}>
     </a>
-    <div class="flex flex-wrap gap-1 text-xs">
+    <div class="flex flex-wrap gap-1 text-xs font-medium">
       {% for tag in i.data.tags | filterTagsList %}
       <a href="/posts/tags/{{ tag | slugify }}/" class="px-2.5 py-0.5 bg-surface hover:bg-surface-hover transition rounded-full">{{ tag }}</a>
       {% endfor %}
@@ -19,7 +19,7 @@
   {% if postsListCompactFlag %}
   <li class="place-self-stretch">
     <a class="grid place-content-center size-full py-8 rounded-md border-dashed border-2 border-surface hover:border-surface-hover transition" href="{{ '/posts/' | url }}">
-      <span class="text-fg-less-dimmed font-medium">Read more -&gt;</span>
+      <span class="text-fg-less-dimmed font-medium">Read more →</span>
     </a>
   </li>
   {% endif %}

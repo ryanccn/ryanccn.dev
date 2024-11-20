@@ -14,7 +14,7 @@ class Page {
 
   async render() {
     const sourceFile = `src/assets/styles/styles.css`;
-    const source = await readFile(sourceFile);
+    const source = await readFile(sourceFile, { encoding: 'utf8' });
 
     const plugins = await Promise.all([
       interopDefault(import('postcss-import')),

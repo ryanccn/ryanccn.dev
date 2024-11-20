@@ -27,7 +27,7 @@ navLinks:
 
     <link rel="stylesheet" href="/assets/styles.css?v={{ consts.revision }}">
     <link rel="preload" as="style" href="/assets/styles.css?v={{ consts.revision }}">
-    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter/inter-normal-latin-compact.woff2?v=f451ff04">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/ibm-plex-sans/ibm-plex-sans-normal-latin-compact.woff2?v=4a11c4a3">
 
     <link rel="icon" href="/icons/icon.svg?v={{ consts.revision }}" type="image/svg+xml" sizes="any">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v={{ consts.revision }}" type="image/png" sizes="180x180">
@@ -78,7 +78,7 @@ navLinks:
         {% asyncEach link in navLinks %}
         <a
           href="{{ link.url }}"
-          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-bold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
+          class="flex flex-row gap-x-2 items-center text-base rounded-sm font-semibold tracking-tight transition-colors {% if link.url === page.url -%} text-accent {%- else -%} text-fg hover:text-accent {%- endif %}"
         >
           {% icon link.icon, class='block size-4 shrink-0' %}
           <span>{{ link.title }}</span>

@@ -35,8 +35,8 @@ export default {
 
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        display: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
+        display: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

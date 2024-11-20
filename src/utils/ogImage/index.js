@@ -18,27 +18,27 @@ const weights = [
   { name: 'Medium', italic: 'MediumItalic', weight: 500 },
   { name: 'SemiBold', italic: 'SemiBoldItalic', weight: 600 },
   { name: 'Bold', italic: 'BoldItalic', weight: 700 },
-  { name: 'ExtraBold', italic: 'ExtraBoldItalic', weight: 800 },
-  { name: 'Black', italic: 'BlackItalic', weight: 900 },
+  // { name: 'ExtraBold', italic: 'ExtraBoldItalic', weight: 800 },
+  // { name: 'Black', italic: 'BlackItalic', weight: 900 },
 ];
 
 const fonts = [];
 
 for (const weight of weights) {
-  const [roman, italic] = await Promise.all([
-    readFile(`./src/utils/ogImage/fonts/Inter-${weight.name}-frozen.ttf`),
-    readFile(`./src/utils/ogImage/fonts/Inter-${weight.italic}-frozen.ttf`),
+  const [normal, italic] = await Promise.all([
+    readFile(`./src/utils/ogImage/fonts/IBMPlexSans-${weight.name}.otf`),
+    readFile(`./src/utils/ogImage/fonts/IBMPlexSans-${weight.italic}.otf`),
   ]);
 
   fonts.push(
     {
-      name: 'Inter Frozen',
-      data: roman,
+      name: 'IBM Plex Sans',
+      data: normal,
       weight: weight.weight,
       style: 'normal',
     },
     {
-      name: 'Inter Frozen',
+      name: 'IBM Plex Sans',
       data: italic,
       weight: weight.weight,
       style: 'italic',
@@ -60,7 +60,7 @@ const svg = async ({ title, date }) =>
           flexDirection: 'column',
           justifyContent: 'space-between',
 
-          fontFamily: 'Inter Frozen',
+          fontFamily: 'IBM Plex Sans',
           fontSize: '64px',
           backgroundColor: '#141414',
           color: '#f5f5f5',
@@ -86,7 +86,7 @@ const svg = async ({ title, date }) =>
                     style: {
                       textWrap: 'balance',
                       fontSize: '2em',
-                      fontWeight: 800,
+                      fontWeight: 700,
                       letterSpacing: '-0.025em',
                     },
                     children: title,
