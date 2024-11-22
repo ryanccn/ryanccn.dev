@@ -1,6 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-display: var(--font-sans);
+
+  --color-*: initial;
+
+  --color-transparent: transparent;
+  --color-black: black;
+  --color-white: white;
+  --color-current: currentColor;
+
+  --color-fg: rgba(var(--fg) / 1);
+  --color-fg-brighter: rgba(var(--fg-brighter) / 1);
+  --color-fg-less-dimmed: rgba(var(--fg-less-dimmed) / 1);
+  --color-fg-dimmed: rgba(var(--fg-dimmed) / 1);
+
+  --color-accent: rgba(var(--accent) / 1);
+  --color-accent-lighter: rgba(var(--accent-lighter) / 1);
+
+  --color-background: rgba(var(--background) / 1);
+  --color-surface: rgba(var(--surface) / 1);
+  --color-surface-hover: rgba(var(--surface-hover) / 1);
+
+  --color-warning: rgba(var(--warning) / 1);
+}
 
 @layer components {
   html {
@@ -25,6 +53,17 @@
     @apply bg-accent text-background;
   }
 
+  input,
+  textarea,
+  select,
+  button {
+    border: 0px solid;
+    border-radius: 0;
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+  }
+
   [id] {
     scroll-margin-top: 2.5rem;
   }
@@ -39,73 +78,75 @@
     outline-offset: 2.5px;
     outline-width: 2.5px;
   }
+}
 
-  .title {
-    @apply mb-6 text-balance text-4xl font-bold tracking-tight text-fg-brighter;
+@utility ry-title {
+  @apply text-fg-brighter mb-6 text-4xl font-bold tracking-tight text-balance;
+}
+
+@utility ry-subtitle {
+  @apply text-fg-less-dimmed -mt-2 text-xl tracking-tight text-balance;
+}
+
+@utility ry-link {
+  @apply font-medium underline decoration-dotted underline-offset-2 transition-colors;
+
+  &.accent {
+    @apply text-accent decoration-accent/50 hover:text-accent-lighter hover:decoration-accent-lighter/50;
   }
-
-  .subtitle {
-    @apply -mt-2 text-balance text-xl tracking-tight text-fg-less-dimmed;
+  &.plain {
+    @apply text-fg decoration-fg/50 hover:text-fg-brighter hover:decoration-fg/60;
   }
+}
 
-  .enhanced-prose {
-    @apply prose-h1:title break-words prose-headings:tracking-tight;
-    @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-dotted prose-a:underline-offset-2 prose-a:transition-colors hover:prose-a:text-accent-lighter hover:prose-a:decoration-accent-lighter/50;
+@utility ry-button {
+  @apply flex items-center gap-x-3 rounded-sm px-4 py-2 text-sm font-medium;
+  @apply bg-surface hover:bg-surface-hover transition-[color,background-color,border-color,text-decoration-color,fill,stroke,opacity,brightness] disabled:opacity-75;
+
+  &.primary {
+    @apply bg-accent text-white;
+  }
+}
+
+@layer overrides {
+  .prose {
+    --tw-prose-body: var(--color-fg);
+    --tw-prose-headings: var(--color-fg-brighter);
+    --tw-prose-links: var(--color-fg);
+    --tw-prose-code: var(--color-fg);
+    --tw-prose-bold: var(--color-fg-brighter);
+    --tw-prose-quotes: var(--color-fg);
+    --tw-prose-quote-borders: var(--color-surface);
+    --tw-prose-bullets: var(--color-fg-dimmed);
+    --tw-prose-counters: var(--color-fg-dimmed);
+    --tw-prose-hr: var(--color-surface);
+    --tw-prose-captions: var(--color-fg-dimmed);
+    --tw-prose-th-borders: var(--color-surface-hover);
+    --tw-prose-td-borders: var(--color-surface);
+
+    @apply prose-h1:ry-title prose-headings:tracking-tight break-words;
+    @apply prose-a:text-accent prose-a:decoration-accent/50 prose-a:decoration-dotted prose-a:underline-offset-2 prose-a:transition-colors prose-a:hover:text-accent-lighter prose-a:hover:decoration-accent-lighter/50;
     @apply prose-p:text-pretty;
     @apply prose-pre:rounded-lg prose-pre:border-[1.5px] prose-pre:border-surface;
     @apply prose-img:mx-auto;
     @apply max-w-none;
-
-    --tw-prose-body: rgba(var(--fg) / 1);
-    --tw-prose-headings: rgba(var(--fg-brighter) / 1);
-    --tw-prose-links: rgba(var(--fg) / 1);
-    --tw-prose-code: rgba(var(--fg) / 1);
-    --tw-prose-bold: rgba(var(--fg-brighter) / 1);
-    --tw-prose-quotes: rgba(var(--fg) / 1);
-    --tw-prose-quote-borders: rgba(var(--surface) / 1);
-    --tw-prose-bullets: rgba(var(--fg-dimmed) / 1);
-    --tw-prose-hr: rgba(var(--surface) / 1);
-    --tw-prose-captions: rgba(var(--fg-dimmed) / 1);
-    --tw-prose-th-borders: rgba(var(--surface-hover) / 1);
-    --tw-prose-td-borders: rgba(var(--surface) / 1);
 
     & :is(h2, h3, h4, h5) {
       @apply relative;
     }
 
     & :is(h2, h3, h4, h5) .anchor {
-      @apply absolute left-0 top-0 -ml-4 inline-block;
-      @apply text-base font-medium text-fg-dimmed no-underline hover:text-fg-less-dimmed;
+      @apply absolute top-0 left-0 -ml-4 inline-block;
+      @apply text-fg-dimmed hover:text-fg-less-dimmed text-base font-medium no-underline;
     }
 
     & :is(h2, h3, h4, h5):target .anchor {
       @apply text-accent hover:text-accent-lighter;
     }
-  }
 
-  .accent-link {
-    @apply font-medium text-accent underline decoration-accent/50 decoration-dotted underline-offset-2 transition-colors hover:text-accent-lighter hover:decoration-accent-lighter/50;
-  }
-
-  .plain-link {
-    @apply font-medium text-fg underline decoration-fg/50 decoration-dotted underline-offset-2 transition-colors hover:text-fg-brighter hover:decoration-fg/60;
-  }
-
-  .buttonish,
-  button:not(.no-default) {
-    @apply flex items-center gap-x-3 rounded px-4 py-2 text-sm font-medium;
-    @apply bg-surface transition-[color,background-color,border-color,text-decoration-color,fill,stroke,opacity,brightness] hover:bg-surface-hover disabled:opacity-75;
-
-    &.primary {
-      @apply bg-accent text-white;
+    & blockquote p::before,
+    & blockquote p::after {
+      content: '';
     }
-  }
-
-  h2.projects-page {
-    @apply mb-6 text-2xl font-bold tracking-tight;
-  }
-
-  .projects-grid {
-    @apply mb-12 grid grid-cols-1 gap-8 md:grid-cols-2;
   }
 }

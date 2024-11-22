@@ -19,8 +19,7 @@ class Page {
     const plugins = await Promise.all([
       interopDefault(import('postcss-import')),
       interopDefault(import('postcss-mixins')),
-      interopDefault(import('tailwindcss')),
-      interopDefault(import('postcss-preset-env')),
+      interopDefault(import('@tailwindcss/postcss')),
     ]);
 
     if (process.env.NODE_ENV === 'production')

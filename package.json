@@ -28,6 +28,7 @@
     "@shikijs/markdown-it": "1.23.1",
     "@shikijs/transformers": "1.23.1",
     "@stylistic/eslint-plugin": "^2.11.0",
+    "@tailwindcss/postcss": "4.0.0-beta.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.9.1",
@@ -62,11 +63,11 @@
     "simple-icons": "^13.17.0",
     "sirv-cli": "^3.0.0",
     "svgo": "^3.3.2",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "4.0.0-beta.1",
     "tinyexec": "^0.3.1",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.15.0",
     "zod": "^3.23.8"
   },
-  "packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
+  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
 }

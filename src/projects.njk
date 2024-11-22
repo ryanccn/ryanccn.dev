@@ -4,19 +4,20 @@ title: 'Projects'
 date: 2024-11-09
 ---
 
-<h1 class="title">Projects</h1>
+<h1 class="ry-title">Projects</h1>
 
-<p class="subtitle mb-16">
+<p class="ry-subtitle mb-16">
   The open source projects that I have built myself and those that I've contributed to over the years.
 </p>
 
-<ul class="projects-grid" id="projects">
+<ul class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2" id="projects">
   {% asyncEach project in projects.projects %}
     <li>{% include "projectCard.njk" %}</li>
   {% endeach %}
 </ul>
 
-<h2 class="projects-page" id="organizations">Organizations</h2>
+<h2 class="mb-6 text-2xl font-bold tracking-tight" id="organizations">Organizations</h2>
+
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
   {% asyncEach org in organizations %}
     <li class="flex flex-col gap-y-1 h-full">
@@ -26,7 +27,7 @@ date: 2024-11-09
         </h3>
 
         {% if org.formerly %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Formerly</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">Formerly</span>
         {% endif %}
       </a>
 
@@ -41,13 +42,13 @@ date: 2024-11-09
   {% endeach %}
 </ul>
 
-<h2 class="projects-page" id="github">GitHub Contributions</h2>
+<h2 class="mb-6 text-2xl font-bold tracking-tight" id="github">GitHub Contributions</h2>
 
 {% if contributions.length > 0 %}
 <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 mb-12">
   {% asyncEach repo in contributions %}
   <li class="flex gap-x-2 justify-between w-full">
-    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden overflow-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
+    <a rel="noreferrer" class="font-semibold text-sm overflow-hidden text-ellipsis whitespace-nowrap min-w-0 underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors" href="{{ repo.url }}">
       <span class="text-fg-less-dimmed">{{ repo.owner.login }}/</span><span>{{ repo.name }}</span>
     </a>
     <div class="flex gap-x-1 items-center text-fg-dimmed">
@@ -69,8 +70,9 @@ date: 2024-11-09
 {% endif %}
 
 <section class="opacity-50" id="archived">
-  <h2 class="projects-page">Archived</h2>
-  <ul class="projects-grid">
+  <h2 class="mb-6 text-2xl font-bold tracking-tight">Archived</h2>
+
+  <ul class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
     {% asyncEach project in projects.archived %}
       <li>{% include "projectCard.njk" %}</li>
     {% endeach %}

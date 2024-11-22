@@ -7,23 +7,23 @@
         <a href="{{ item.url }}" class="font-semibold text-lg tracking-tight underline underline-offset-2 decoration-dotted decoration-fg-dimmed hover:decoration-fg-less-dimmed transition-colors mr-2">{{ item.name }}</a>
         
         {% if item.date | usesIsNew %}
-        <span class="text-xs font-semibold bg-accent text-background px-1.5 py-0.5 rounded-sm">New</span>
+        <span class="text-xs font-semibold bg-accent text-background px-1.5 py-0.5 rounded-xs">New</span>
         {% endif %}
 
         {% if item.tags | includes("openSource") %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Open source</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">Open source</span>
         {% endif %}
         {% if item.tags | includes("paid") %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Paid</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">Paid</span>
         {% endif %}
         {% if item.tags | includes("freemium") %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">Freemium</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">Freemium</span>
         {% endif %}
         {% if item.tags | includes("macos") %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">macOS</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">macOS</span>
         {% endif %}
         {% if item.tags | includes("ios") %}
-        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-sm">iOS</span>
+        <span class="text-xs font-medium bg-surface px-1.5 py-0.5 rounded-xs">iOS</span>
         {% endif %}
       </div>
 

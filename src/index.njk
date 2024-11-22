@@ -5,28 +5,28 @@ permalink: '/'
 ---
 
 <article>
-  <h1 class="title">Hello, I&rsquo;m Ryan!</h1>
-  <p class="subtitle mb-10">High school student, open source developer, and privacy enthusiast.</p>
+  <h1 class="ry-title">Hello, I&rsquo;m Ryan!</h1>
+  <p class="ry-subtitle mb-10">High school student, open source developer, and privacy enthusiast.</p>
 
   <p class="leading-relaxed mb-4">
-    I do some web development in my spare time. I made <a class="accent-link" href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>,
+    I do some web development in my spare time. I made <a class="ry-link accent" href="https://moddermore.net/?ref=ryanccn.dev">Moddermore</a>,
     a web app for making Minecraft mod lists that&rsquo;s pretty popular; I also have an assortment of other web platform projects.
-    Lately, I&rsquo;ve been doing more programming with <a class="accent-link" href="https://www.rust-lang.org/">Rust</a>, a language that
+    Lately, I&rsquo;ve been doing more programming with <a class="ry-link accent" href="https://www.rust-lang.org/">Rust</a>, a language that
     I&rsquo;ve come to really enjoy using!
   </p>
   <p class="leading-relaxed mb-4">
     In the open source world, I contribute to a lot of projects and organizations. <abbr title="us" class="no-underline">Among</abbr> my highest profile contributions are to
-    <a class="accent-link" href="https://catppuccin.com/">Catppuccin</a> and <a class="accent-link" href="https://prismlauncher.org/">Prism Launcher</a>,
-    but you can see all of my activities on <a class="accent-link" href="https://github.com/ryanccn">my GitHub</a>.
+    <a class="ry-link accent" href="https://catppuccin.com/">Catppuccin</a> and <a class="ry-link accent" href="https://prismlauncher.org/">Prism Launcher</a>,
+    but you can see all of my activities on <a class="ry-link accent" href="https://github.com/ryanccn">my GitHub</a>.
   </p>
   <p class="leading-relaxed">
-    I write blog posts about what I do! Feel free to <a class="accent-link" href="/posts/">peruse the archive</a>;
+    I write blog posts about what I do! Feel free to <a class="ry-link accent" href="/posts/">peruse the archive</a>;
     there are {{ collections.posts.length }} of them at the moment.
   </p>
 
   <h2 class="text-2xl font-bold tracking-tight mt-12 mb-8">Projects</h2>
 
-  <ul class="projects-grid">
+  <ul class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
     {% asyncEach project in projects.projects | take(7) %}
       <li>{% include "projectCard.njk" %}</li>
     {% endeach %}
