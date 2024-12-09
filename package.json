@@ -44,7 +44,7 @@
     "html-minifier": "^4.0.0",
     "image-meta": "^0.2.1",
     "kleur": "^4.1.5",
-    "lucide-static": "^0.460.0",
+    "lucide-static": "^0.468.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-emoji": "^3.0.0",

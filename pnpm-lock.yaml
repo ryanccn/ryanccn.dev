@@ -90,8 +90,8 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
       lucide-static:
-        specifier: ^0.460.0
-        version: 0.460.0
+        specifier: ^0.468.0
+        version: 0.468.0
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0
@@ -2322,8 +2322,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-static@0.460.0:
-    resolution: {integrity: sha512-X6pIdg7jVxv7YQ/uR241hwhNiztcAfmj181TbcX7HCxxk/3mGaRtAc6b2ftUvQBufbJE6ehgyzO2uVsa604tWg==}
+  lucide-static@0.468.0:
+    resolution: {integrity: sha512-JvpWui2umxRyEVMoETfMzb+qKqibV/sdoqJbKmW1JLdkuhXluJKoO6NqCbvCK/vAbUuH5bTEFD4T6uECsrNcnA==}
 
   luxon@3.5.0:
     resolution: {integrity: sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==}
@@ -5716,7 +5716,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-static@0.460.0: {}
+  lucide-static@0.468.0: {}
 
   luxon@3.5.0: {}
 
