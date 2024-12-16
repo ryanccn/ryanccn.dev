@@ -46,7 +46,7 @@ importers:
         version: 4.0.0-beta.1
       '@tailwindcss/typography':
         specifier: ^0.5.15
-        version: 0.5.15(tailwindcss@4.0.0-beta.1)
+        version: 0.5.15(tailwindcss@4.0.0-beta.7)
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2
@@ -147,8 +147,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       tailwindcss:
-        specifier: 4.0.0-beta.1
-        version: 4.0.0-beta.1
+        specifier: 4.0.0-beta.7
+        version: 4.0.0-beta.7
       tinyexec:
         specifier: ^0.3.1
         version: 0.3.1
@@ -3350,6 +3350,9 @@ packages:
   tailwindcss@4.0.0-beta.1:
     resolution: {integrity: sha512-Pnj2oLtAiNgnd+eHfW4RFuG8EIklYF1FModYFtr6bXrgLoZndePW5jX17Zwyo7Oeq+0dXTekjjMr5IRnQHgCXg==}
 
+  tailwindcss@4.0.0-beta.7:
+    resolution: {integrity: sha512-9JXrCC5UVt2bjV9lrjO+B7MPY+bgpWCf5sPbu+Ih5rGvGE6STwA94N6Ah1xMa0Avzp48fB/S1l0vByTp2HEzAw==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -4419,13 +4422,13 @@ snapshots:
       postcss: 8.4.49
       tailwindcss: 4.0.0-beta.1
 
-  '@tailwindcss/typography@0.5.15(tailwindcss@4.0.0-beta.1)':
+  '@tailwindcss/typography@0.5.15(tailwindcss@4.0.0-beta.7)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.0.0-beta.1
+      tailwindcss: 4.0.0-beta.7
 
   '@trysound/sax@0.2.0': {}
 
@@ -6752,6 +6755,8 @@ snapshots:
       picocolors: 1.0.0
 
   tailwindcss@4.0.0-beta.1: {}
+
+  tailwindcss@4.0.0-beta.7: {}
 
   tapable@2.2.1: {}
 
